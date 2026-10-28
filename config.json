@@ -15,6 +15,18 @@
         "comingSoon": true,
         "dailySummary": true
       }
+    },
+    {
+      "id": "p93877b",
+      "name": "Osama",
+      "invite": "58f7ea1a4c412bf6d14c8306",
+      "active": true,
+      "alerts": {
+        "newWeek": true,
+        "newMovies": true,
+        "comingSoon": true,
+        "dailySummary": true
+      }
     }
   ],
   "watches": [
