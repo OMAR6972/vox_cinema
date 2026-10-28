@@ -1,1 +1,55 @@
-{"watches": [{"id": "my-movie-almaza", "movie": {"vox": []}, "match": ["change-me"], "cinemas": ["city-centre-almaza"], "until": "2026-10-28", "channels": ["telegram"]}]}
+{
+  "watches": [
+    {
+      "id": "clayface-almaza",
+      "movie": {
+        "vox": [
+          "clayface"
+        ]
+      },
+      "match": [
+        "clayface"
+      ],
+      "cinemas": [
+        "city-centre-almaza"
+      ],
+      "channels": [
+        "telegram"
+      ]
+    },
+    {
+      "id": "resident-evil-almaza",
+      "movie": {
+        "vox": [
+          "resident-evil"
+        ]
+      },
+      "match": [
+        "resident-evil"
+      ],
+      "cinemas": [
+        "city-centre-almaza"
+      ],
+      "channels": [
+        "telegram"
+      ]
+    },
+    {
+      "id": "heart-of-the-beast-almaza",
+      "movie": {
+        "vox": [
+          "heart-of-the-beast"
+        ]
+      },
+      "match": [
+        "heart-of-the-beast"
+      ],
+      "cinemas": [
+        "city-centre-almaza"
+      ],
+      "channels": [
+        "telegram"
+      ]
+    }
+  ]
+}
