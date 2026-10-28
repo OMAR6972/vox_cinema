@@ -1,0 +1,40 @@
+name: VOX Alerts
+
+on:
+  schedule:
+    - cron: "3,13,23,33,43,53 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vox-alerts
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Check VOX and send alerts
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python -m alerts
+      - name: Save what the bot remembers
+        if: ${{ !cancelled() }}
+        run: |
+          if [ -n "$(git status --porcelain alerts-state.json movies.json)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add alerts-state.json movies.json
+            git commit -m "chore: bot memory"
+            for i in 1 2 3; do git pull --rebase && git push && break; sleep 3; done
+          fi

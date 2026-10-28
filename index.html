@@ -2,294 +2,276 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>VOX Alerts Panel</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VOX Alerts</title>
 <style>
-:root {
-  --bg: #f6f4f1; --surface: #ffffff; --fg: #1d1a1c; --muted: #6b6468; --line: #e0dcd8;
-  --accent: #b3122b; --accent-fg: #ffffff; --accent-soft: #fbe9ec; --ok: #1d7a46; --bad: #b3122b;
-  --font-display: "Bricolage Grotesque", "Segoe UI", sans-serif;
-  --font-body: "Figtree", "Segoe UI", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
-  color-scheme: light;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #151214; --surface: #1f1b1d; --fg: #f1ece8; --muted: #a39a9e; --line: #342e31;
-    --accent: #ff4d63; --accent-fg: #1a0508; --accent-soft: #35161c; --ok: #5fcf8e; --bad: #ff7a8a;
-    color-scheme: dark;
-  }
-}
-* { box-sizing: border-box; }
-[hidden] { display: none !important; }
-html, body { margin: 0; }
-body {
-  background: var(--bg); color: var(--fg); font: 400 16px/1.55 var(--font-body);
-  padding-block: max(32px, env(safe-area-inset-top, 0px)) 120px;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
-}
-.wrap { max-width: 760px; margin: 0 auto; display: grid; gap: 24px; }
-h1 { font: 700 clamp(28px, 6vw, 40px)/1.1 var(--font-display); margin: 0; letter-spacing: -0.02em; }
-h2 { font: 600 20px/1.25 var(--font-display); margin: 0; }
-p { margin: 0; }
-.lede, .help { color: var(--muted); }
-.help { font-size: 14px; }
-.meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-.chip { font-size: 13px; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--muted); }
-section { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: grid; gap: 14px; min-width: 0; }
-.head { display: flex; gap: 12px; align-items: baseline; }
-.n { font: 600 13px var(--font-mono); color: var(--accent); }
-.tabs { display: flex; gap: 8px; flex-wrap: wrap; }
-.tab { font: 500 14px var(--font-body); padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); cursor: pointer; }
-.tab[aria-pressed="true"] { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
-label.opt { display: flex; gap: 10px; align-items: center; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; cursor: pointer; min-width: 0; background: var(--bg); }
-label.opt:hover { border-color: var(--muted); }
-label.opt:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
-label.opt input { accent-color: var(--accent); width: 18px; height: 18px; flex: none; margin: 0; }
-label.opt.locked { cursor: default; }
-label.opt.off { opacity: .6; cursor: not-allowed; }
-.title { overflow-wrap: anywhere; flex: 1; min-width: 0; }
-.tag { font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; white-space: nowrap; }
-.stack { display: grid; gap: 8px; }
-.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
-input[type="text"], input[type="password"] { flex: 1 1 220px; min-width: 0; font: inherit; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
-button, a.btn { font: 600 15px var(--font-body); border-radius: 10px; padding: 10px 16px; cursor: pointer; border: 1px solid var(--line); background: var(--surface); color: var(--fg); text-decoration: none; display: inline-block; }
-button.primary, a.btn.primary { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
-button:disabled { opacity: .5; cursor: not-allowed; }
-button.link { border: 0; background: none; color: var(--muted); padding: 4px 0; font-weight: 500; text-decoration: underline; }
-:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-ol { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
-.bar {
-  position: fixed; left: 0; right: 0; bottom: 0; background: var(--surface); border-top: 1px solid var(--line);
-  padding: 12px max(16px, env(safe-area-inset-right, 0px)) max(12px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
-}
-.bar .in { max-width: 760px; margin: 0 auto; display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
-.msg { font-size: 14px; min-height: 1.4em; }
-.msg.ok { color: var(--ok); } .msg.bad { color: var(--bad); }
-code { font-family: var(--font-mono); font-size: .9em; }
+:root{--bg:#f6f4ef;--card:#fff;--fg:#1d1b18;--mute:#6d675e;--line:#e3ded3;--acc:#b3261e;--acc-fg:#fff;--ok:#1b7a3e;--bad:#b3261e;--chip:#efe9dc}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17150f;--card:#221f18;--fg:#f2eee4;--mute:#a49d8e;--line:#38342a;--acc:#ff6b5e;--acc-fg:#1a0705;--ok:#58d28a;--bad:#ff8a80;--chip:#2f2b20}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding:20px max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+main{max-width:760px;margin:0 auto;display:grid;gap:16px}
+h1{margin:0;font-size:1.7rem;letter-spacing:-.02em}h2{margin:0 0 8px;font-size:1.1rem}
+p{margin:0 0 8px}.mute{color:var(--mute);font-size:.9rem}
+section,.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:12px}
+[hidden]{display:none!important}
+button,input,select{font:inherit;color:inherit}
+button{border:1px solid var(--line);background:var(--chip);border-radius:10px;padding:8px 14px;cursor:pointer}
+button.primary{background:var(--acc);color:var(--acc-fg);border-color:var(--acc);font-weight:600}
+button.link{background:none;border:0;color:var(--acc);padding:4px}
+input[type=text],input[type=password],input[type=date],input[type=time],select{width:100%;padding:9px 10px;border-radius:10px;border:1px solid var(--line);background:var(--bg)}
+label.opt{display:flex;gap:8px;align-items:center}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.row>*{min-width:0}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}.tabs button[aria-pressed=true]{background:var(--fg);color:var(--bg)}
+.chip{display:inline-flex;gap:6px;align-items:center;background:var(--chip);border-radius:99px;padding:3px 10px;font-size:.9rem}
+.chip button{padding:0 2px;border:0;background:none}
+.days button[aria-pressed=true]{background:var(--acc);color:var(--acc-fg);border-color:var(--acc)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:6px 14px}
+.msg{min-height:1.2em;font-size:.92rem}.msg.ok{color:var(--ok)}.msg.bad{color:var(--bad)}
+.title{font-weight:600}
+.split{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+code{background:var(--chip);padding:1px 6px;border-radius:6px;word-break:break-all}
+.fld{display:grid;gap:4px}.fld>span{font-weight:600;font-size:.92rem}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <h1>VOX Alerts Panel</h1>
-    <p class="lede">Tick the movies you want and press Save. Your Telegram gets a message about each one automatically.</p>
-    <div class="meta"><span class="chip">Cinema: VOX City Centre Almaza</span><span class="chip" id="updated">Movie list: loading</span></div>
-  </header>
+<main>
+<header><h1>🎬 VOX Alerts</h1><p class="mute">Pick movies, days and times. The bot messages you (and your friends) on Telegram when they appear.</p></header>
 
-  <section id="setup" hidden aria-labelledby="setupTitle">
-    <div class="head"><span class="n">First time only</span><h2 id="setupTitle">Connect this panel to your bot</h2></div>
-    <p class="help">The panel needs a key from GitHub so it can save your choices. It stays in this browser and is never sent anywhere except GitHub.</p>
-    <ol>
-      <li>Open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">the GitHub key page</a>.</li>
-      <li>Name it <b>VOX panel</b>. Set the expiry to the longest allowed.</li>
-      <li>Under <b>Repository access</b> choose <b>Only select repositories</b> and pick <b>vox_cinema</b>.</li>
-      <li>Under <b>Permissions</b> open <b>Repository permissions</b>, find <b>Contents</b> and set it to <b>Read and write</b>.</li>
-      <li>Press <b>Generate token</b>, copy the key, and paste it below.</li>
-    </ol>
-    <div class="row">
-      <label for="token" class="help" style="flex-basis:100%">Your key</label>
-      <input type="password" id="token" autocomplete="off" placeholder="github_pat_...">
-      <button type="button" class="primary" id="connect">Connect</button>
-    </div>
-    <p class="msg" id="setupMsg" role="status"></p>
-  </section>
+<section id="setup" hidden>
+  <h2>Connect</h2>
+  <p class="mute">Paste your GitHub key once on this device so the page can save your choices. It stays in this browser only.</p>
+  <input type="password" id="token" placeholder="GitHub key" autocomplete="off">
+  <div class="row"><button class="primary" id="connect">Connect</button></div>
+  <div class="msg" id="setupMsg"></div>
+</section>
 
-  <section id="main" hidden aria-labelledby="s1">
-    <div class="head"><span class="n">1</span><h2 id="s1">Which movies?</h2></div>
-    <div class="stack">
-      <label for="search" class="help">Search</label>
-      <input type="text" id="search" placeholder="Type a movie name" autocomplete="off">
-    </div>
-    <div class="tabs" role="group" aria-label="Filter">
-      <button type="button" class="tab" data-f="almaza" aria-pressed="true">At Almaza</button>
-      <button type="button" class="tab" data-f="now" aria-pressed="false">Now showing</button>
-      <button type="button" class="tab" data-f="soon" aria-pressed="false">Coming soon</button>
-      <button type="button" class="tab" data-f="all" aria-pressed="false">All</button>
-    </div>
-    <div class="grid" id="movies"></div>
-    <p class="help" id="count"></p>
-  </section>
+<div id="app" hidden>
+  <div class="row split"><div class="tabs" id="tabs">
+    <button data-tab="watches" aria-pressed="true">Movies</button>
+    <button data-tab="people" aria-pressed="false">People</button>
+    <button data-tab="settings" aria-pressed="false">Settings</button></div>
+    <button class="link" id="forget">Disconnect</button></div>
+  <section id="status"><div class="mute" id="statusText">Checking the bot…</div></section>
 
-  <section id="opts" hidden aria-labelledby="s2">
-    <div class="head"><span class="n">2</span><h2 id="s2">Options</h2></div>
-    <div class="stack">
-      <label class="opt locked"><input type="checkbox" checked disabled><span class="title">Message me when tickets can be booked</span></label>
-      <label class="opt"><input type="checkbox" id="headsUp"><span class="title">Message me when a movie first appears on VOX</span></label>
-      <label class="opt"><input type="checkbox" id="autoAdd"><span class="title">Also watch every new movie that shows up at VOX, automatically</span></label>
-      <label class="opt off"><input type="checkbox" disabled><span class="title">Send to Discord too</span><span class="tag">Not set up</span></label>
-      <p class="help">Messages go to Telegram. The bot checks about every 15 minutes and the movie list refreshes every 6 hours.</p>
-    </div>
-    <div><button type="button" class="link" id="forget">Disconnect this browser</button></div>
-  </section>
-</div>
-
-<div class="bar" id="bar" hidden>
-  <div class="in">
-    <p class="msg" id="msg" role="status"></p>
-    <button type="button" class="primary" id="save">Save</button>
+  <div id="tab-watches" class="tabpane" style="display:grid;gap:16px">
+    <div class="row split"><h2 style="margin:0">What I'm watching</h2><button class="primary" id="addWatch">+ Add a movie</button></div>
+    <div id="watchList" style="display:grid;gap:10px"></div>
+    <section id="editor" hidden></section>
   </div>
+
+  <div id="tab-people" class="tabpane" style="display:none;gap:16px">
+    <div class="row split"><h2 style="margin:0">Who gets alerts</h2><button class="primary" id="addPerson">+ Add a friend</button></div>
+    <div class="card row" id="newPerson" hidden><input type="text" id="newName" placeholder="Friend's first name" style="max-width:240px"><button class="primary" id="newOk">Add</button></div>
+    <div id="peopleList" style="display:grid;gap:10px"></div>
+  </div>
+
+  <div id="tab-settings" class="tabpane" style="display:none;gap:16px">
+    <section><h2>Daily roundup time</h2>
+      <p class="mute">People who turned on the roundup get one message a day at this time (Cairo).</p>
+      <input type="time" id="summaryTime"></section>
+  </div>
+
+  <section>
+    <div class="row"><button class="primary" id="save">Save changes</button><span class="msg" id="msg"></span></div>
+    <p class="mute">The bot picks up changes at its next check (every 10 minutes or so).</p>
+  </section>
 </div>
+</main>
 
 <script>
 var OWNER = "OMAR6972", REPO = "vox_cinema";
-var API = "https://api.github.com/repos/" + OWNER + "/" + REPO + "/contents/";
+var API = "https://api.github.com/repos/" + OWNER + "/" + REPO;
 var $ = function (id) { return document.getElementById(id); };
-var state = { movies: [], selected: {}, filter: "almaza", other: [], watchesSha: null, panelSha: null, dirty: false };
+var WD = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+var S = { cfg: null, sha: null, movies: [], cinemas: [], exps: [], bot: null, links: {}, editing: null, dirty: false };
 
 function getToken() { try { return localStorage.getItem("voxToken") || ""; } catch (e) { return ""; } }
 function setToken(t) { try { if (t) localStorage.setItem("voxToken", t); else localStorage.removeItem("voxToken"); } catch (e) {} }
 function enc(s) { return btoa(unescape(encodeURIComponent(s))); }
 function dec(s) { return decodeURIComponent(escape(atob(s.replace(/\n/g, "")))); }
-function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-function say(el, text, kind) { el.textContent = text; el.className = "msg" + (kind ? " " + kind : ""); }
+function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+function say(t, k) { var m = $("msg"); m.textContent = t; m.className = "msg" + (k ? " " + k : ""); }
+function rid() { var a = new Uint8Array(6); crypto.getRandomValues(a); return Array.prototype.map.call(a, function (b) { return ("0" + b.toString(16)).slice(-2); }).join(""); }
+function dirty() { S.dirty = true; say("Not saved yet."); }
 
 function gh(path, opts) {
   opts = opts || {};
   opts.headers = Object.assign({ Authorization: "Bearer " + getToken(), Accept: "application/vnd.github+json" }, opts.headers || {});
   return fetch(API + path, opts).then(function (r) {
-    if (r.status === 401 || r.status === 403) throw new Error("GitHub rejected the key. Create a new one and reconnect.");
-    return r;
-  });
-}
-
-function readFile(name) {
-  return gh(name + "?ref=main&_=" + Date.now()).then(function (r) {
-    if (r.status === 404) return null;
-    if (!r.ok) throw new Error("Could not read " + name + " (" + r.status + ").");
+    if (r.status === 401) throw new Error("GitHub did not accept the key.");
+    if (!r.ok) throw new Error("GitHub said " + r.status);
     return r.json();
   });
 }
+function readFile(name) { return gh("/contents/" + name + "?ref=main&_=" + Date.now()).then(function (r) { return { sha: r.sha, data: JSON.parse(dec(r.content)) }; }); }
+function pub(name) { return fetch(name + "?_=" + Date.now()).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }
 
-function writeFile(name, text, sha, message) {
-  var body = { message: message, content: enc(text), branch: "main" };
-  if (sha) body.sha = sha;
-  return gh(name, { method: "PUT", body: JSON.stringify(body) }).then(function (r) {
-    if (r.status === 409 || r.status === 422) throw new Error("The settings changed elsewhere. Reload the page and try again.");
-    if (!r.ok) throw new Error("Save failed (" + r.status + ").");
-    return r.json();
-  });
+function pretty(d) { var p = d.split("-"); return WD[new Date(+p[0], p[1] - 1, +p[2]).getDay()] + " " + (+p[2]) + "/" + (+p[1]); }
+function pt(t) { var p = t.split(":"), h = +p[0]; return ((h % 12) || 12) + ":" + p[1] + (h >= 12 ? " PM" : " AM"); }
+function describe(w) {
+  var b = [];
+  if (w.dates && w.dates.length) b.push(w.dates.map(pretty).join(", "));
+  if (w.weekdays && w.weekdays.length) b.push("every " + w.weekdays.map(function (d) { return WD[d]; }).join("/"));
+  if (!(w.dates && w.dates.length) && !(w.weekdays && w.weekdays.length)) b.push("any day");
+  if (w.times && w.times.length) b.push("around " + w.times.map(pt).join(" / ") + " (±" + (w.flex || 30) + " min)");
+  b.push(w.cinemas && w.cinemas.length ? w.cinemas.join(", ") : "any cinema");
+  if (w.experiences && w.experiences.length) b.push(w.experiences.join(", "));
+  return b.join(" · ");
 }
+function names(ids) { return ids.map(function (id) { var p = S.cfg.people.find(function (x) { return x.id === id; }); return p ? p.name : "?"; }).join(", ") || "nobody"; }
 
-function isManaged(w) {
-  return !w.kind && w.movie && Array.isArray(w.movie.vox) && w.movie.vox.length === 1 && w.id === w.movie.vox[0] + "-almaza";
+function renderWatches() {
+  var l = S.cfg.watches;
+  $("watchList").innerHTML = l.length ? l.map(function (w, i) {
+    return '<div class="card"><div class="split"><div><div class="title">' + esc(w.title) + (w.active === false ? ' <span class="mute">(paused)</span>' : '') + '</div>' +
+      '<div class="mute">' + esc(describe(w)) + '</div><div class="mute">For: ' + esc(names(w.recipients || [])) + '</div></div>' +
+      '<div class="row"><button data-edit="' + i + '">Edit</button></div></div></div>';
+  }).join("") : '<div class="card mute">Nothing yet. Tap “Add a movie”.</div>';
 }
+$("watchList").addEventListener("click", function (e) { var i = e.target.getAttribute("data-edit"); if (i != null) openEditor(+i); });
 
-function loadMovies() {
-  return fetch("movies.json?_=" + Date.now()).then(function (r) { return r.json(); }).then(function (d) {
-    state.movies = d.movies || [];
-    var when = d.updated ? new Date(d.updated) : null;
-    $("updated").textContent = "Movie list: " + (when && !isNaN(when) ? when.toLocaleString([], { dateStyle: "medium", timeStyle: "short" }) : "unknown");
-  });
+function chips(list, fmt, attr) { return list.map(function (v, i) { return '<span class="chip">' + esc(fmt(v)) + ' <button type="button" ' + attr + '="' + i + '" aria-label="remove">×</button></span>'; }).join(""); }
+
+function openEditor(i) {
+  var isNew = i == null;
+  var w = isNew ? { id: "", slug: "", title: "", recipients: ["me"], cinemas: ["City Centre Almaza"], dates: [], weekdays: [], times: [], flex: 30, experiences: [], includeSoldOut: false, mode: "all", active: true, intro: true }
+                : JSON.parse(JSON.stringify(S.cfg.watches[i]));
+  S.editing = { i: i, w: w };
+  var ed = $("editor"); ed.hidden = false;
+  var movieOpts = '<option value="">Choose a movie…</option>' + S.movies.map(function (m) { return '<option value="' + esc(m.slug) + '"' + (m.slug === w.slug ? " selected" : "") + '>' + esc(m.title) + (m.status === "soon" ? " (coming soon)" : "") + '</option>'; }).join("");
+  if (w.slug && !S.movies.some(function (m) { return m.slug === w.slug; })) movieOpts += '<option value="' + esc(w.slug) + '" selected>' + esc(w.title) + '</option>';
+  ed.innerHTML = '<h2>' + (isNew ? "Add a movie" : "Edit " + esc(w.title)) + '</h2>' +
+    '<label class="fld"><span>Movie</span><select id="e_movie"' + (isNew ? "" : " disabled") + '>' + movieOpts + '</select></label>' +
+    '<div class="fld"><span>Which days? <small class="mute">(leave empty for any day)</small></span><div class="row days" id="e_wd">' +
+      WD.map(function (n, d) { return '<button type="button" data-wd="' + d + '" aria-pressed="' + (w.weekdays.indexOf(d) >= 0) + '">' + n + '</button>'; }).join("") + '</div>' +
+      '<div class="row"><input type="date" id="e_date" style="max-width:200px"><button type="button" id="e_addDate">Add date</button></div><div class="row" id="e_dates"></div></div>' +
+    '<div class="fld"><span>Around what time? <small class="mute">(leave empty for any time)</small></span><div class="row"><input type="time" id="e_time" style="max-width:160px"><button type="button" id="e_addTime">Add time</button>' +
+      '<select id="e_flex" style="max-width:200px">' + [15, 30, 60, 90, 120].map(function (n) { return '<option value="' + n + '"' + (n === (w.flex || 30) ? " selected" : "") + '>± ' + n + ' minutes</option>'; }).join("") + '</select></div><div class="row" id="e_times"></div></div>' +
+    '<div class="fld"><span>Which cinema?</span><div class="grid" id="e_cin"></div></div>' +
+    '<div class="fld"><span>Screen type <small class="mute">(none ticked = any)</small></span><div class="grid" id="e_exp"></div></div>' +
+    '<label class="opt"><input type="checkbox" id="e_sold"' + (w.includeSoldOut ? " checked" : "") + '> Also tell me about sold-out times</label>' +
+    '<label class="opt"><input type="checkbox" id="e_mine"' + (w.mode === "mine" ? " checked" : "") + '> Only message me when one of MY days appears</label>' +
+    '<div class="fld"><span>Who should get these alerts?</span><div class="grid" id="e_rec"></div></div>' +
+    '<label class="opt"><input type="checkbox" id="e_active"' + (w.active !== false ? " checked" : "") + '> Active</label>' +
+    '<label class="opt"><input type="checkbox" id="e_intro"' + (w.intro ? " checked" : "") + '> Send a “here’s what’s out now” message first</label>' +
+    '<div class="row"><button class="primary" id="e_ok">Done</button><button id="e_cancel">Cancel</button>' + (isNew ? "" : '<button id="e_del" style="margin-left:auto">Delete</button>') + '</div>';
+  var cins = S.cinemas.slice(); w.cinemas.forEach(function (c) { if (cins.indexOf(c) < 0) cins.push(c); });
+  $("e_cin").innerHTML = cins.map(function (c) { return '<label class="opt"><input type="checkbox" data-cin="' + esc(c) + '"' + (w.cinemas.indexOf(c) >= 0 ? " checked" : "") + '> ' + esc(c) + '</label>'; }).join("");
+  var exps = S.exps.slice(); w.experiences.forEach(function (c) { if (exps.indexOf(c) < 0) exps.push(c); });
+  $("e_exp").innerHTML = exps.map(function (c) { return '<label class="opt"><input type="checkbox" data-exp="' + esc(c) + '"' + (w.experiences.indexOf(c) >= 0 ? " checked" : "") + '> ' + esc(c) + '</label>'; }).join("") || '<span class="mute">Will appear after the first bot check.</span>';
+  $("e_rec").innerHTML = S.cfg.people.map(function (p) { return '<label class="opt"><input type="checkbox" data-rec="' + esc(p.id) + '"' + (w.recipients.indexOf(p.id) >= 0 ? " checked" : "") + '> ' + esc(p.name) + '</label>'; }).join("");
+  function paint() { $("e_dates").innerHTML = chips(w.dates, pretty, "data-rd"); $("e_times").innerHTML = chips(w.times, pt, "data-rt"); }
+  paint();
+  ed.onclick = function (e) {
+    var t = e.target;
+    if (t.getAttribute("data-wd") != null) { var d = +t.getAttribute("data-wd"), k = w.weekdays.indexOf(d); if (k >= 0) w.weekdays.splice(k, 1); else w.weekdays.push(d); t.setAttribute("aria-pressed", k < 0); }
+    if (t.getAttribute("data-rd") != null) { w.dates.splice(+t.getAttribute("data-rd"), 1); paint(); }
+    if (t.getAttribute("data-rt") != null) { w.times.splice(+t.getAttribute("data-rt"), 1); paint(); }
+    if (t.id === "e_addDate" && $("e_date").value && w.dates.indexOf($("e_date").value) < 0) { w.dates.push($("e_date").value); w.dates.sort(); $("e_date").value = ""; paint(); }
+    if (t.id === "e_addTime" && $("e_time").value && w.times.indexOf($("e_time").value) < 0) { w.times.push($("e_time").value); w.times.sort(); $("e_time").value = ""; paint(); }
+    if (t.id === "e_cancel") { ed.hidden = true; S.editing = null; }
+    if (t.id === "e_del") { S.cfg.watches.splice(i, 1); ed.hidden = true; S.editing = null; renderWatches(); dirty(); }
+    if (t.id === "e_ok") {
+      var slug = isNew ? $("e_movie").value : w.slug;
+      if (!slug) { alert_("Pick a movie first."); return; }
+      if (isNew) { var m = S.movies.find(function (x) { return x.slug === slug; }); w.slug = slug; w.title = m ? m.title : slug; w.id = slug + "-" + rid().slice(0, 4); }
+      w.flex = +$("e_flex").value;
+      w.cinemas = [].map.call(document.querySelectorAll("[data-cin]:checked"), function (x) { return x.getAttribute("data-cin"); });
+      w.experiences = [].map.call(document.querySelectorAll("[data-exp]:checked"), function (x) { return x.getAttribute("data-exp"); });
+      w.recipients = [].map.call(document.querySelectorAll("[data-rec]:checked"), function (x) { return x.getAttribute("data-rec"); });
+      w.includeSoldOut = $("e_sold").checked; w.mode = $("e_mine").checked ? "mine" : "all";
+      w.active = $("e_active").checked; w.intro = $("e_intro").checked;
+      if (!w.recipients.length) { alert_("Tick at least one person to send it to."); return; }
+      if (isNew) S.cfg.watches.unshift(w); else S.cfg.watches[i] = Object.assign(S.cfg.watches[i], w);
+      ed.hidden = true; S.editing = null; renderWatches(); dirty();
+    }
+  };
+  ed.scrollIntoView({ behavior: "smooth", block: "start" });
 }
+function alert_(t) { say(t, "bad"); }
+$("addWatch").addEventListener("click", function () { openEditor(null); });
 
-function loadSettings() {
-  return Promise.all([readFile("watches.json"), readFile("panel.json")]).then(function (res) {
-    var w = res[0], p = res[1];
-    var doc = w ? JSON.parse(dec(w.content)) : { watches: [] };
-    state.watchesSha = w ? w.sha : null;
-    var panel = { autoAddNew: false, headsUp: true };
-    if (p) { state.panelSha = p.sha; try { panel = Object.assign(panel, JSON.parse(dec(p.content))); } catch (e) {} }
-    state.selected = {}; state.other = [];
-    (doc.watches || []).forEach(function (x) {
-      if (isManaged(x)) state.selected[x.movie.vox[0]] = true; else state.other.push(x);
-    });
-    $("headsUp").checked = !!panel.headsUp;
-    $("autoAdd").checked = !!panel.autoAddNew;
-    state.panel = panel;
-  });
+function inviteUrl(p) { return S.bot ? "https://t.me/" + S.bot + "?start=" + p.invite : ""; }
+function renderPeople() {
+  $("peopleList").innerHTML = S.cfg.people.map(function (p, i) {
+    var a = Object.assign({ newWeek: true, newMovies: true, comingSoon: false, dailySummary: true }, p.alerts || {});
+    var linked = p.owner || p.chatId || S.links[p.id];
+    var link = !p.owner && p.invite ? inviteUrl(p) : "";
+    var msg = encodeURIComponent("Hi " + p.name + "! Tap this to get VOX movie alerts on Telegram: " + link);
+    return '<div class="card"><div class="split"><div class="title">' + esc(p.name) + (p.owner ? ' <span class="mute">(you)</span>' : '') +
+      ' <span class="mute">' + (linked ? "✅ connected" : "⏳ not connected yet") + '</span></div>' +
+      (p.owner ? "" : '<button class="link" data-delp="' + i + '">Remove</button>') + '</div>' +
+      (link && !linked ? '<div class="mute">Send them this link, they tap it, press Start:</div><div><code>' + esc(link) + '</code></div>' +
+        '<div class="row"><button data-copy="' + esc(link) + '">Copy link</button><a href="https://wa.me/?text=' + msg + '" target="_blank" rel="noopener"><button type="button">Share on WhatsApp</button></a></div>' : '') +
+      '<div class="grid">' +
+      [["newWeek", "New dates dropped"], ["newMovies", "A movie opens for booking"], ["comingSoon", "New in Coming Soon"], ["dailySummary", "Daily roundup"]].map(function (x) {
+        return '<label class="opt"><input type="checkbox" data-pa="' + i + ":" + x[0] + '"' + (a[x[0]] ? " checked" : "") + '> ' + x[1] + '</label>';
+      }).join("") + '</div></div>';
+  }).join("");
 }
-
-function visible() {
-  var q = $("search").value.trim().toLowerCase();
-  return state.movies.filter(function (m) {
-    if (state.selected[m.slug]) { /* always show picked movies */ }
-    else if (state.filter === "almaza" && !m.almaza) return false;
-    else if (state.filter === "now" && m.status !== "now") return false;
-    else if (state.filter === "soon" && m.status !== "soon") return false;
-    return !q || m.title.toLowerCase().indexOf(q) !== -1 || m.slug.indexOf(q) !== -1;
-  });
-}
-
-function render() {
-  var list = visible();
-  $("movies").innerHTML = list.length ? list.map(function (m, i) {
-    var tag = m.status === "soon" ? '<span class="tag">Soon</span>' : (m.almaza ? "" : '<span class="tag">Other cinemas</span>');
-    return '<label class="opt"><input type="checkbox" data-slug="' + esc(m.slug) + '"' + (state.selected[m.slug] ? " checked" : "") +
-      '><span class="title">' + esc(m.title) + "</span>" + tag + "</label>";
-  }).join("") : '<p class="help">No movies match. Try another filter.</p>';
-  var n = Object.keys(state.selected).length;
-  $("count").textContent = n + (n === 1 ? " movie picked" : " movies picked");
-}
-
-function show(connected) {
-  $("setup").hidden = connected;
-  $("main").hidden = !connected; $("opts").hidden = !connected; $("bar").hidden = !connected;
-}
-
-function start() {
-  if (!getToken()) { show(false); loadMovies().catch(function () {}); return; }
-  say($("msg"), "Loading your settings...");
-  show(true);
-  Promise.all([loadMovies(), loadSettings()]).then(function () {
-    render(); say($("msg"), "");
-  }).catch(function (e) {
-    if (/rejected/.test(e.message)) { setToken(""); show(false); say($("setupMsg"), e.message, "bad"); }
-    else say($("msg"), e.message, "bad");
-  });
-}
-
-$("connect").addEventListener("click", function () {
-  var t = $("token").value.trim();
-  if (!t) { say($("setupMsg"), "Paste your key first.", "bad"); return; }
-  setToken(t);
-  say($("setupMsg"), "Checking the key...");
-  readFile("watches.json").then(function () { $("token").value = ""; say($("setupMsg"), ""); start(); })
-    .catch(function (e) { setToken(""); say($("setupMsg"), e.message + " Check that the key has Contents: Read and write on vox_cinema.", "bad"); });
+$("peopleList").addEventListener("change", function (e) {
+  var v = e.target.getAttribute("data-pa"); if (!v) return; var p = v.split(":"), per = S.cfg.people[+p[0]];
+  per.alerts = Object.assign({ newWeek: true, newMovies: true, comingSoon: false, dailySummary: true }, per.alerts || {}); per.alerts[p[1]] = e.target.checked; dirty();
 });
+$("peopleList").addEventListener("click", function (e) {
+  var c = e.target.getAttribute("data-copy");
+  if (c) { (navigator.clipboard ? navigator.clipboard.writeText(c) : Promise.reject()).then(function () { say("Link copied.", "ok"); }, function () { say("Select the link and copy it by hand.", "bad"); }); }
+  var d = e.target.getAttribute("data-delp");
+  if (d != null) { var p = S.cfg.people[+d]; S.cfg.people.splice(+d, 1); S.cfg.watches.forEach(function (w) { w.recipients = (w.recipients || []).filter(function (r) { return r !== p.id; }); }); renderPeople(); renderWatches(); dirty(); }
+});
+$("addPerson").addEventListener("click", function () { $("newPerson").hidden = false; $("newName").focus(); });
+$("newOk").addEventListener("click", function () {
+  var n = $("newName").value.trim(); if (!n) return;
+  S.cfg.people.push({ id: "p" + rid().slice(0, 6), name: n, invite: rid() + rid(), active: true, alerts: { newWeek: true, newMovies: true, comingSoon: false, dailySummary: false } });
+  $("newName").value = ""; $("newPerson").hidden = true; renderPeople(); dirty();
+});
+$("summaryTime").addEventListener("change", function () { S.cfg.settings.summaryTime = $("summaryTime").value; dirty(); });
 
-$("forget").addEventListener("click", function () { setToken(""); start(); });
-$("search").addEventListener("input", render);
-document.querySelectorAll(".tab").forEach(function (b) {
+document.querySelectorAll("#tabs button").forEach(function (b) {
   b.addEventListener("click", function () {
-    state.filter = b.getAttribute("data-f");
-    document.querySelectorAll(".tab").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
-    render();
+    document.querySelectorAll("#tabs button").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+    document.querySelectorAll(".tabpane").forEach(function (p) { p.style.display = p.id === "tab-" + b.getAttribute("data-tab") ? "grid" : "none"; });
   });
 });
-$("movies").addEventListener("change", function (e) {
-  var s = e.target.getAttribute("data-slug");
-  if (!s) return;
-  if (e.target.checked) state.selected[s] = true; else delete state.selected[s];
-  say($("msg"), "Not saved yet.");
-  render();
-});
-["headsUp", "autoAdd"].forEach(function (id) { $(id).addEventListener("change", function () { say($("msg"), "Not saved yet."); }); });
 
-$("save").addEventListener("click", function () {
-  var slugs = Object.keys(state.selected);
-  if (!slugs.length && !state.other.length) { say($("msg"), "Pick at least one movie first.", "bad"); return; }
-  var heads = $("headsUp").checked, auto = $("autoAdd").checked;
-  var channels = (state.panel && state.panel.channels) || ["telegram"];
-  var managed = slugs.map(function (s) {
-    var w = { id: s + "-almaza", movie: { vox: [s] } };
-    if (heads) w.match = [s];
-    w.cinemas = ["city-centre-almaza"]; w.channels = channels;
-    return w;
+function ago(iso) { var m = Math.round((Date.now() - Date.parse(iso)) / 60000); return m < 1 ? "just now" : m < 60 ? m + " min ago" : Math.round(m / 60) + " h ago"; }
+function loadStatus() {
+  fetch(API + "/actions/workflows/vox-alerts.yml/runs?per_page=1&_=" + Date.now(), { headers: { Authorization: "Bearer " + getToken(), Accept: "application/vnd.github+json" } })
+    .then(function (r) { return r.json(); }).then(function (d) {
+      var r = (d.workflow_runs || [])[0];
+      $("statusText").textContent = !r ? "The bot hasn’t run yet." : r.status !== "completed" ? "🟡 The bot is checking VOX right now…"
+        : (r.conclusion === "success" ? "🟢 Bot is working. Last check " : "🔴 Last check had a problem, ") + ago(r.updated_at) + ".";
+    }).catch(function () { $("statusText").textContent = ""; });
+}
+
+function load() {
+  return Promise.all([readFile("config.json"), pub("movies.json"), pub("alerts-state.json")]).then(function (res) {
+    S.cfg = res[0].data; S.sha = res[0].sha;
+    S.cfg.settings = S.cfg.settings || {}; S.cfg.people = S.cfg.people || []; S.cfg.watches = S.cfg.watches || [];
+    var m = res[1] || {}; S.movies = m.movies || []; S.cinemas = m.cinemas || []; S.exps = m.experiences || []; S.bot = m.bot || null;
+    if (S.cinemas.indexOf("City Centre Almaza") < 0) S.cinemas.unshift("City Centre Almaza");
+    S.links = (res[2] || {}).links || {};
+    $("summaryTime").value = S.cfg.settings.summaryTime || "12:00";
+    renderWatches(); renderPeople(); loadStatus();
   });
-  var doc = { watches: managed.concat(state.other) };
-  var panel = Object.assign({}, state.panel || {}, { autoAddNew: auto, headsUp: heads, channels: channels });
-  $("save").disabled = true; say($("msg"), "Saving...");
-  writeFile("watches.json", JSON.stringify(doc, null, 2) + "\n", state.watchesSha, "Update my movies from the panel")
-    .then(function (r) { state.watchesSha = r.content.sha; return writeFile("panel.json", JSON.stringify(panel, null, 2) + "\n", state.panelSha, "Update panel options"); })
-    .then(function (r) { state.panelSha = r.content.sha; state.panel = panel; say($("msg"), "Saved. The bot uses this on its next check, within about 15 minutes.", "ok"); })
-    .catch(function (e) { say($("msg"), e.message, "bad"); })
+}
+function start() {
+  if (!getToken()) { $("setup").hidden = false; $("app").hidden = true; return; }
+  $("setup").hidden = true; $("app").hidden = false;
+  load().catch(function (e) { setToken(""); $("setup").hidden = false; $("app").hidden = true; $("setupMsg").textContent = e.message; $("setupMsg").className = "msg bad"; });
+}
+$("connect").addEventListener("click", function () {
+  var t = $("token").value.trim(); if (!t) return; setToken(t); $("token").value = ""; start();
+});
+$("forget").addEventListener("click", function () { setToken(""); start(); });
+$("save").addEventListener("click", function () {
+  $("save").disabled = true; say("Saving…");
+  gh("/contents/config.json", { method: "PUT", body: JSON.stringify({ message: "Update alerts settings", content: enc(JSON.stringify(S.cfg, null, 2) + "\n"), sha: S.sha, branch: "main" }) })
+    .then(function (r) { S.sha = r.content.sha; S.dirty = false; say("Saved ✔  The bot uses this at its next check.", "ok"); })
+    .catch(function (e) { say(e.message + " (If it says 409, reload the page and try again.)", "bad"); })
     .then(function () { $("save").disabled = false; });
 });
-
+window.addEventListener("beforeunload", function (e) { if (S.dirty) { e.preventDefault(); e.returnValue = ""; } });
 start();
 </script>
 </body>
