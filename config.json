@@ -35,20 +35,23 @@
       "slug": "clayface",
       "title": "Clayface",
       "recipients": [
-        "me"
+        "me",
+        "p93877b"
       ],
       "cinemas": [
         "City Centre Almaza"
       ],
       "dates": [],
-      "weekdays": [],
+      "weekdays": [
+        4
+      ],
       "times": [],
       "flex": 30,
       "experiences": [],
       "includeSoldOut": false,
       "mode": "all",
       "active": true,
-      "intro": false
+      "intro": true
     },
     {
       "id": "resident-evil",
