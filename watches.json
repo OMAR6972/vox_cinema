@@ -50,6 +50,159 @@
       "channels": [
         "telegram"
       ]
+    },
+    {
+      "id": "avengers-endgame-encore-infinity-vision-almaza",
+      "movie": {
+        "vox": [
+          "avengers-endgame-encore-infinity-vision"
+        ]
+      },
+      "match": [
+        "avengers-endgame-encore-infinity-vision"
+      ],
+      "cinemas": [
+        "city-centre-almaza"
+      ],
+      "channels": [
+        "telegram"
+      ]
+    },
+    {
+      "id": "avengers-doomsday-almaza",
+      "movie": {
+        "vox": [
+          "avengers-doomsday"
+        ]
+      },
+      "match": [
+        "avengers-doomsday"
+      ],
+      "cinemas": [
+        "city-centre-almaza"
+      ],
+      "channels": [
+        "telegram"
+      ]
+    },
+    {
+      "id": "avengers-doomsday-infinity-vision-almaza",
+      "movie": {
+        "vox": [
+          "avengers-doomsday-infinity-vision"
+        ]
+      },
+      "match": [
+        "avengers-doomsday-infinity-vision"
+      ],
+      "cinemas": [
+        "city-centre-almaza"
+      ],
+      "channels": [
+        "telegram"
+      ]
+    },
+    {
+      "id": "dune-part-three-almaza",
+      "movie": {
+        "vox": [
+          "dune-part-three"
+        ]
+      },
+      "match": [
+        "dune-part-three"
+      ],
+      "cinemas": [
+        "city-centre-almaza"
+      ],
+      "channels": [
+        "telegram"
+      ]
+    },
+    {
+      "id": "other-mommy-almaza",
+      "movie": {
+        "vox": [
+          "other-mommy"
+        ]
+      },
+      "match": [
+        "other-mommy"
+      ],
+      "cinemas": [
+        "city-centre-almaza"
+      ],
+      "channels": [
+        "telegram"
+      ]
+    },
+    {
+      "id": "spider-man-brand-new-day-almaza",
+      "movie": {
+        "vox": [
+          "spider-man-brand-new-day"
+        ]
+      },
+      "match": [
+        "spider-man-brand-new-day"
+      ],
+      "cinemas": [
+        "city-centre-almaza"
+      ],
+      "channels": [
+        "telegram"
+      ]
+    },
+    {
+      "id": "street-fighter-almaza",
+      "movie": {
+        "vox": [
+          "street-fighter"
+        ]
+      },
+      "match": [
+        "street-fighter"
+      ],
+      "cinemas": [
+        "city-centre-almaza"
+      ],
+      "channels": [
+        "telegram"
+      ]
+    },
+    {
+      "id": "verity-almaza",
+      "movie": {
+        "vox": [
+          "verity"
+        ]
+      },
+      "match": [
+        "verity"
+      ],
+      "cinemas": [
+        "city-centre-almaza"
+      ],
+      "channels": [
+        "telegram"
+      ]
+    },
+    {
+      "id": "the-odyssey-almaza",
+      "movie": {
+        "vox": [
+          "the-odyssey"
+        ]
+      },
+      "match": [
+        "the-odyssey"
+      ],
+      "cinemas": [
+        "city-centre-almaza"
+      ],
+      "channels": [
+        "telegram"
+      ]
     }
   ]
 }
