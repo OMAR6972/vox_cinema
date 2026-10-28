@@ -1,5 +1,7 @@
 {
-  "autoAddNew": false,
+  "autoAddNew": true,
   "headsUp": true,
-  "channels": ["telegram"]
+  "channels": [
+    "telegram"
+  ]
 }
