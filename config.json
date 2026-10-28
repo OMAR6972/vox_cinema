@@ -12,7 +12,7 @@
       "alerts": {
         "newWeek": true,
         "newMovies": true,
-        "comingSoon": false,
+        "comingSoon": true,
         "dailySummary": true
       }
     }
