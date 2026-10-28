@@ -1,6 +1,34 @@
 {
-  "updated": "2026-10-29T00:00:00+00:00",
+  "updated": "2026-10-28T23:20:03+00:00",
   "movies": [
+    {
+      "slug": "avengers-endgame-encore-infinity-vision",
+      "title": "Avengers Endgame: Encore (Infinity Vision)",
+      "status": "now",
+      "almaza": true,
+      "firstSeen": "2026-10-28"
+    },
+    {
+      "slug": "avengers-doomsday",
+      "title": "Avengers: Doomsday",
+      "status": "now",
+      "almaza": true,
+      "firstSeen": "2026-10-28"
+    },
+    {
+      "slug": "avengers-doomsday-infinity-vision",
+      "title": "Avengers: Doomsday (Infinity Vision)",
+      "status": "now",
+      "almaza": true,
+      "firstSeen": "2026-10-28"
+    },
+    {
+      "slug": "bts-world-tour-arirang-in-s-o-paulo-live",
+      "title": "BTS WORLD TOUR 'ARIRANG' IN SÃO PAULO: LIVE",
+      "status": "now",
+      "almaza": true,
+      "firstSeen": "2026-10-28"
+    },
     {
       "slug": "clayface",
       "title": "Clayface",
@@ -9,39 +37,11 @@
       "firstSeen": "2026-10-29"
     },
     {
-      "slug": "whalefall",
-      "title": "Whalefall",
+      "slug": "dune-part-three",
+      "title": "Dune: Part Three",
       "status": "now",
       "almaza": true,
-      "firstSeen": "2026-10-29"
-    },
-    {
-      "slug": "street-fighter",
-      "title": "Street Fighter",
-      "status": "now",
-      "almaza": true,
-      "firstSeen": "2026-10-29"
-    },
-    {
-      "slug": "resident-evil",
-      "title": "Resident Evil",
-      "status": "now",
-      "almaza": true,
-      "firstSeen": "2026-10-29"
-    },
-    {
-      "slug": "the-odyssey",
-      "title": "The Odyssey",
-      "status": "now",
-      "almaza": true,
-      "firstSeen": "2026-10-29"
-    },
-    {
-      "slug": "verity",
-      "title": "Verity",
-      "status": "now",
-      "almaza": true,
-      "firstSeen": "2026-10-29"
+      "firstSeen": "2026-10-28"
     },
     {
       "slug": "heart-of-the-beast",
@@ -51,8 +51,36 @@
       "firstSeen": "2026-10-29"
     },
     {
-      "slug": "sense-and-sensibility",
-      "title": "Sense and Sensibility",
+      "slug": "hope-korean",
+      "title": "Hope",
+      "status": "now",
+      "almaza": true,
+      "firstSeen": "2026-10-29"
+    },
+    {
+      "slug": "hybe-cheering-party-3d",
+      "title": "HYBE CHEERING PARTY 3D",
+      "status": "now",
+      "almaza": true,
+      "firstSeen": "2026-10-28"
+    },
+    {
+      "slug": "mahmoud-el-tany-arabic",
+      "title": "Mahmoud El Tany",
+      "status": "now",
+      "almaza": true,
+      "firstSeen": "2026-10-29"
+    },
+    {
+      "slug": "matloub-3a2eleyain-arabic",
+      "title": "Matloub 3a2eleyain",
+      "status": "now",
+      "almaza": true,
+      "firstSeen": "2026-10-29"
+    },
+    {
+      "slug": "naseeb-arabic",
+      "title": "Naseeb",
       "status": "now",
       "almaza": true,
       "firstSeen": "2026-10-29"
@@ -65,29 +93,36 @@
       "firstSeen": "2026-10-29"
     },
     {
-      "slug": "hope-korean",
-      "title": "Hope (Korean)",
+      "slug": "resident-evil",
+      "title": "Resident Evil",
       "status": "now",
       "almaza": true,
       "firstSeen": "2026-10-29"
     },
     {
-      "slug": "the-mongoose",
-      "title": "The Mongoose",
+      "slug": "sense-and-sensibility",
+      "title": "Sense and Sensibility",
       "status": "now",
       "almaza": true,
       "firstSeen": "2026-10-29"
     },
     {
-      "slug": "wildwood",
-      "title": "Wildwood",
+      "slug": "seventeen-world-tour-new",
+      "title": "SEVENTEEN WORLD TOUR 'NEW_'",
       "status": "now",
       "almaza": true,
       "firstSeen": "2026-10-29"
     },
     {
-      "slug": "the-magic-faraway-tree",
-      "title": "The Magic Faraway Tree",
+      "slug": "spider-man-brand-new-day",
+      "title": "Spider-Man: Brand New Day",
+      "status": "now",
+      "almaza": true,
+      "firstSeen": "2026-10-28"
+    },
+    {
+      "slug": "street-fighter",
+      "title": "Street Fighter",
       "status": "now",
       "almaza": true,
       "firstSeen": "2026-10-29"
@@ -107,39 +142,137 @@
       "firstSeen": "2026-10-29"
     },
     {
-      "slug": "seventeen-world-tour-new",
-      "title": "Seventeen World Tour",
+      "slug": "the-magic-faraway-tree",
+      "title": "The Magic Faraway Tree",
+      "status": "now",
+      "almaza": true,
+      "firstSeen": "2026-10-29"
+    },
+    {
+      "slug": "the-mongoose",
+      "title": "The Mongoose",
+      "status": "now",
+      "almaza": true,
+      "firstSeen": "2026-10-29"
+    },
+    {
+      "slug": "the-odyssey",
+      "title": "The Odyssey",
+      "status": "now",
+      "almaza": true,
+      "firstSeen": "2026-10-29"
+    },
+    {
+      "slug": "verity",
+      "title": "Verity",
       "status": "now",
       "almaza": true,
       "firstSeen": "2026-10-29"
     },
     {
       "slug": "wala-kan-ala-el-bal-arabic",
-      "title": "Wala Kan Ala El Bal (Arabic)",
+      "title": "Wala Kan Ala El-Bal",
       "status": "now",
       "almaza": true,
       "firstSeen": "2026-10-29"
     },
     {
-      "slug": "matloub-3a2eleyain-arabic",
-      "title": "Matloub 3a2eleyain (Arabic)",
+      "slug": "whalefall",
+      "title": "Whalefall",
       "status": "now",
       "almaza": true,
       "firstSeen": "2026-10-29"
     },
     {
-      "slug": "naseeb-arabic",
-      "title": "Naseeb (Arabic)",
+      "slug": "wildwood",
+      "title": "Wildwood",
       "status": "now",
       "almaza": true,
       "firstSeen": "2026-10-29"
     },
     {
-      "slug": "mahmoud-el-tany-arabic",
-      "title": "Mahmoud El Tany (Arabic)",
-      "status": "now",
-      "almaza": true,
-      "firstSeen": "2026-10-29"
+      "slug": "bts-world-tour-arirang-in-s-o-paulo-delayed",
+      "title": "BTS WORLD TOUR 'ARIRANG' IN SÃO PAULO: DELAYED",
+      "status": "soon",
+      "almaza": false,
+      "firstSeen": "2026-10-28"
+    },
+    {
+      "slug": "children-of-blood-and-bone",
+      "title": "Children of Blood and Bone",
+      "status": "soon",
+      "almaza": false,
+      "firstSeen": "2026-10-28"
+    },
+    {
+      "slug": "day-drinker",
+      "title": "Day Drinker",
+      "status": "soon",
+      "almaza": false,
+      "firstSeen": "2026-10-28"
+    },
+    {
+      "slug": "godzilla-minus-zero-japanese",
+      "title": "Godzilla Minus Zero",
+      "status": "soon",
+      "almaza": false,
+      "firstSeen": "2026-10-28"
+    },
+    {
+      "slug": "godzilla-minus-zero-preview-screening-japanese",
+      "title": "Godzilla Minus Zero - Preview Screening",
+      "status": "soon",
+      "almaza": false,
+      "firstSeen": "2026-10-28"
+    },
+    {
+      "slug": "hadoota-arabic",
+      "title": "Hadoota",
+      "status": "soon",
+      "almaza": false,
+      "firstSeen": "2026-10-28"
+    },
+    {
+      "slug": "hexed",
+      "title": "Hexed",
+      "status": "soon",
+      "almaza": false,
+      "firstSeen": "2026-10-28"
+    },
+    {
+      "slug": "jumanji-open-world",
+      "title": "Jumanji: Open World",
+      "status": "soon",
+      "almaza": false,
+      "firstSeen": "2026-10-28"
+    },
+    {
+      "slug": "narnia-the-magicians-nephew",
+      "title": "Narnia: The Magician's Nephew",
+      "status": "soon",
+      "almaza": false,
+      "firstSeen": "2026-10-28"
+    },
+    {
+      "slug": "the-cat-in-the-hat",
+      "title": "The Cat In The Hat",
+      "status": "soon",
+      "almaza": false,
+      "firstSeen": "2026-10-28"
+    },
+    {
+      "slug": "the-hunger-games-sunrise-on-the-reaping",
+      "title": "The Hunger Games: Sunrise on the Reaping",
+      "status": "soon",
+      "almaza": false,
+      "firstSeen": "2026-10-28"
+    },
+    {
+      "slug": "violent-night-2",
+      "title": "Violent Night 2",
+      "status": "soon",
+      "almaza": false,
+      "firstSeen": "2026-10-28"
     }
   ]
 }
