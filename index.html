@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VOX Alerts Panel</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --bg: #f6f4f1; --surface: #ffffff; --fg: #1d1a1c; --muted: #6b6468; --line: #e0dcd8;
+  --accent: #b3122b; --accent-fg: #ffffff; --accent-soft: #fbe9ec; --ok: #1d7a46; --bad: #b3122b;
+  --font-display: "Bricolage Grotesque", "Segoe UI", sans-serif;
+  --font-body: "Figtree", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #151214; --surface: #1f1b1d; --fg: #f1ece8; --muted: #a39a9e; --line: #342e31;
+    --accent: #ff4d63; --accent-fg: #1a0508; --accent-soft: #35161c; --ok: #5fcf8e; --bad: #ff7a8a;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { margin: 0; }
+body {
+  background: var(--bg); color: var(--fg); font: 400 16px/1.55 var(--font-body);
+  padding-block: max(32px, env(safe-area-inset-top, 0px)) 120px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 760px; margin: 0 auto; display: grid; gap: 24px; }
+h1 { font: 700 clamp(28px, 6vw, 40px)/1.1 var(--font-display); margin: 0; letter-spacing: -0.02em; }
+h2 { font: 600 20px/1.25 var(--font-display); margin: 0; }
+p { margin: 0; }
+.lede, .help { color: var(--muted); }
+.help { font-size: 14px; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.chip { font-size: 13px; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--muted); }
+section { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: grid; gap: 14px; min-width: 0; }
+.head { display: flex; gap: 12px; align-items: baseline; }
+.n { font: 600 13px var(--font-mono); color: var(--accent); }
+.tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.tab { font: 500 14px var(--font-body); padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); cursor: pointer; }
+.tab[aria-pressed="true"] { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+label.opt { display: flex; gap: 10px; align-items: center; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; cursor: pointer; min-width: 0; background: var(--bg); }
+label.opt:hover { border-color: var(--muted); }
+label.opt:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+label.opt input { accent-color: var(--accent); width: 18px; height: 18px; flex: none; margin: 0; }
+label.opt.locked { cursor: default; }
+label.opt.off { opacity: .6; cursor: not-allowed; }
+.title { overflow-wrap: anywhere; flex: 1; min-width: 0; }
+.tag { font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; white-space: nowrap; }
+.stack { display: grid; gap: 8px; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+input[type="text"], input[type="password"] { flex: 1 1 220px; min-width: 0; font: inherit; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+button, a.btn { font: 600 15px var(--font-body); border-radius: 10px; padding: 10px 16px; cursor: pointer; border: 1px solid var(--line); background: var(--surface); color: var(--fg); text-decoration: none; display: inline-block; }
+button.primary, a.btn.primary { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+button.link { border: 0; background: none; color: var(--muted); padding: 4px 0; font-weight: 500; text-decoration: underline; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+ol { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+.bar {
+  position: fixed; left: 0; right: 0; bottom: 0; background: var(--surface); border-top: 1px solid var(--line);
+  padding: 12px max(16px, env(safe-area-inset-right, 0px)) max(12px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+}
+.bar .in { max-width: 760px; margin: 0 auto; display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.msg { font-size: 14px; min-height: 1.4em; }
+.msg.ok { color: var(--ok); } .msg.bad { color: var(--bad); }
+code { font-family: var(--font-mono); font-size: .9em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>VOX Alerts Panel</h1>
+    <p class="lede">Tick the movies you want and press Save. Your Telegram gets a message about each one automatically.</p>
+    <div class="meta"><span class="chip">Cinema: VOX City Centre Almaza</span><span class="chip" id="updated">Movie list: loading</span></div>
+  </header>
+
+  <section id="setup" hidden aria-labelledby="setupTitle">
+    <div class="head"><span class="n">First time only</span><h2 id="setupTitle">Connect this panel to your bot</h2></div>
+    <p class="help">The panel needs a key from GitHub so it can save your choices. It stays in this browser and is never sent anywhere except GitHub.</p>
+    <ol>
+      <li>Open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">the GitHub key page</a>.</li>
+      <li>Name it <b>VOX panel</b>. Set the expiry to the longest allowed.</li>
+      <li>Under <b>Repository access</b> choose <b>Only select repositories</b> and pick <b>vox_cinema</b>.</li>
+      <li>Under <b>Permissions</b> open <b>Repository permissions</b>, find <b>Contents</b> and set it to <b>Read and write</b>.</li>
+      <li>Press <b>Generate token</b>, copy the key, and paste it below.</li>
+    </ol>
+    <div class="row">
+      <label for="token" class="help" style="flex-basis:100%">Your key</label>
+      <input type="password" id="token" autocomplete="off" placeholder="github_pat_...">
+      <button type="button" class="primary" id="connect">Connect</button>
+    </div>
+    <p class="msg" id="setupMsg" role="status"></p>
+  </section>
+
+  <section id="main" hidden aria-labelledby="s1">
+    <div class="head"><span class="n">1</span><h2 id="s1">Which movies?</h2></div>
+    <div class="stack">
+      <label for="search" class="help">Search</label>
+      <input type="text" id="search" placeholder="Type a movie name" autocomplete="off">
+    </div>
+    <div class="tabs" role="group" aria-label="Filter">
+      <button type="button" class="tab" data-f="almaza" aria-pressed="true">At Almaza</button>
+      <button type="button" class="tab" data-f="now" aria-pressed="false">Now showing</button>
+      <button type="button" class="tab" data-f="soon" aria-pressed="false">Coming soon</button>
+      <button type="button" class="tab" data-f="all" aria-pressed="false">All</button>
+    </div>
+    <div class="grid" id="movies"></div>
+    <p class="help" id="count"></p>
+  </section>
+
+  <section id="opts" hidden aria-labelledby="s2">
+    <div class="head"><span class="n">2</span><h2 id="s2">Options</h2></div>
+    <div class="stack">
+      <label class="opt locked"><input type="checkbox" checked disabled><span class="title">Message me when tickets can be booked</span></label>
+      <label class="opt"><input type="checkbox" id="headsUp"><span class="title">Message me when a movie first appears on VOX</span></label>
+      <label class="opt"><input type="checkbox" id="autoAdd"><span class="title">Also watch every new movie that shows up at VOX, automatically</span></label>
+      <label class="opt off"><input type="checkbox" disabled><span class="title">Send to Discord too</span><span class="tag">Not set up</span></label>
+      <p class="help">Messages go to Telegram. The bot checks about every 15 minutes and the movie list refreshes every 6 hours.</p>
+    </div>
+    <div><button type="button" class="link" id="forget">Disconnect this browser</button></div>
+  </section>
+</div>
+
+<div class="bar" id="bar" hidden>
+  <div class="in">
+    <p class="msg" id="msg" role="status"></p>
+    <button type="button" class="primary" id="save">Save</button>
+  </div>
+</div>
+
+<script>
+var OWNER = "OMAR6972", REPO = "vox_cinema";
+var API = "https://api.github.com/repos/" + OWNER + "/" + REPO + "/contents/";
+var $ = function (id) { return document.getElementById(id); };
+var state = { movies: [], selected: {}, filter: "almaza", other: [], watchesSha: null, panelSha: null, dirty: false };
+
+function getToken() { try { return localStorage.getItem("voxToken") || ""; } catch (e) { return ""; } }
+function setToken(t) { try { if (t) localStorage.setItem("voxToken", t); else localStorage.removeItem("voxToken"); } catch (e) {} }
+function enc(s) { return btoa(unescape(encodeURIComponent(s))); }
+function dec(s) { return decodeURIComponent(escape(atob(s.replace(/\n/g, "")))); }
+function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+function say(el, text, kind) { el.textContent = text; el.className = "msg" + (kind ? " " + kind : ""); }
+
+function gh(path, opts) {
+  opts = opts || {};
+  opts.headers = Object.assign({ Authorization: "Bearer " + getToken(), Accept: "application/vnd.github+json" }, opts.headers || {});
+  return fetch(API + path, opts).then(function (r) {
+    if (r.status === 401 || r.status === 403) throw new Error("GitHub rejected the key. Create a new one and reconnect.");
+    return r;
+  });
+}
+
+function readFile(name) {
+  return gh(name + "?ref=main&_=" + Date.now()).then(function (r) {
+    if (r.status === 404) return null;
+    if (!r.ok) throw new Error("Could not read " + name + " (" + r.status + ").");
+    return r.json();
+  });
+}
+
+function writeFile(name, text, sha, message) {
+  var body = { message: message, content: enc(text), branch: "main" };
+  if (sha) body.sha = sha;
+  return gh(name, { method: "PUT", body: JSON.stringify(body) }).then(function (r) {
+    if (r.status === 409 || r.status === 422) throw new Error("The settings changed elsewhere. Reload the page and try again.");
+    if (!r.ok) throw new Error("Save failed (" + r.status + ").");
+    return r.json();
+  });
+}
+
+function isManaged(w) {
+  return !w.kind && w.movie && Array.isArray(w.movie.vox) && w.movie.vox.length === 1 && w.id === w.movie.vox[0] + "-almaza";
+}
+
+function loadMovies() {
+  return fetch("movies.json?_=" + Date.now()).then(function (r) { return r.json(); }).then(function (d) {
+    state.movies = d.movies || [];
+    var when = d.updated ? new Date(d.updated) : null;
+    $("updated").textContent = "Movie list: " + (when && !isNaN(when) ? when.toLocaleString([], { dateStyle: "medium", timeStyle: "short" }) : "unknown");
+  });
+}
+
+function loadSettings() {
+  return Promise.all([readFile("watches.json"), readFile("panel.json")]).then(function (res) {
+    var w = res[0], p = res[1];
+    var doc = w ? JSON.parse(dec(w.content)) : { watches: [] };
+    state.watchesSha = w ? w.sha : null;
+    var panel = { autoAddNew: false, headsUp: true };
+    if (p) { state.panelSha = p.sha; try { panel = Object.assign(panel, JSON.parse(dec(p.content))); } catch (e) {} }
+    state.selected = {}; state.other = [];
+    (doc.watches || []).forEach(function (x) {
+      if (isManaged(x)) state.selected[x.movie.vox[0]] = true; else state.other.push(x);
+    });
+    $("headsUp").checked = !!panel.headsUp;
+    $("autoAdd").checked = !!panel.autoAddNew;
+    state.panel = panel;
+  });
+}
+
+function visible() {
+  var q = $("search").value.trim().toLowerCase();
+  return state.movies.filter(function (m) {
+    if (state.selected[m.slug]) { /* always show picked movies */ }
+    else if (state.filter === "almaza" && !m.almaza) return false;
+    else if (state.filter === "now" && m.status !== "now") return false;
+    else if (state.filter === "soon" && m.status !== "soon") return false;
+    return !q || m.title.toLowerCase().indexOf(q) !== -1 || m.slug.indexOf(q) !== -1;
+  });
+}
+
+function render() {
+  var list = visible();
+  $("movies").innerHTML = list.length ? list.map(function (m, i) {
+    var tag = m.status === "soon" ? '<span class="tag">Soon</span>' : (m.almaza ? "" : '<span class="tag">Other cinemas</span>');
+    return '<label class="opt"><input type="checkbox" data-slug="' + esc(m.slug) + '"' + (state.selected[m.slug] ? " checked" : "") +
+      '><span class="title">' + esc(m.title) + "</span>" + tag + "</label>";
+  }).join("") : '<p class="help">No movies match. Try another filter.</p>';
+  var n = Object.keys(state.selected).length;
+  $("count").textContent = n + (n === 1 ? " movie picked" : " movies picked");
+}
+
+function show(connected) {
+  $("setup").hidden = connected;
+  $("main").hidden = !connected; $("opts").hidden = !connected; $("bar").hidden = !connected;
+}
+
+function start() {
+  if (!getToken()) { show(false); loadMovies().catch(function () {}); return; }
+  say($("msg"), "Loading your settings...");
+  show(true);
+  Promise.all([loadMovies(), loadSettings()]).then(function () {
+    render(); say($("msg"), "");
+  }).catch(function (e) {
+    if (/rejected/.test(e.message)) { setToken(""); show(false); say($("setupMsg"), e.message, "bad"); }
+    else say($("msg"), e.message, "bad");
+  });
+}
+
+$("connect").addEventListener("click", function () {
+  var t = $("token").value.trim();
+  if (!t) { say($("setupMsg"), "Paste your key first.", "bad"); return; }
+  setToken(t);
+  say($("setupMsg"), "Checking the key...");
+  readFile("watches.json").then(function () { $("token").value = ""; say($("setupMsg"), ""); start(); })
+    .catch(function (e) { setToken(""); say($("setupMsg"), e.message + " Check that the key has Contents: Read and write on vox_cinema.", "bad"); });
+});
+
+$("forget").addEventListener("click", function () { setToken(""); start(); });
+$("search").addEventListener("input", render);
+document.querySelectorAll(".tab").forEach(function (b) {
+  b.addEventListener("click", function () {
+    state.filter = b.getAttribute("data-f");
+    document.querySelectorAll(".tab").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+    render();
+  });
+});
+$("movies").addEventListener("change", function (e) {
+  var s = e.target.getAttribute("data-slug");
+  if (!s) return;
+  if (e.target.checked) state.selected[s] = true; else delete state.selected[s];
+  say($("msg"), "Not saved yet.");
+  render();
+});
+["headsUp", "autoAdd"].forEach(function (id) { $(id).addEventListener("change", function () { say($("msg"), "Not saved yet."); }); });
+
+$("save").addEventListener("click", function () {
+  var slugs = Object.keys(state.selected);
+  if (!slugs.length && !state.other.length) { say($("msg"), "Pick at least one movie first.", "bad"); return; }
+  var heads = $("headsUp").checked, auto = $("autoAdd").checked;
+  var channels = (state.panel && state.panel.channels) || ["telegram"];
+  var managed = slugs.map(function (s) {
+    var w = { id: s + "-almaza", movie: { vox: [s] } };
+    if (heads) w.match = [s];
+    w.cinemas = ["city-centre-almaza"]; w.channels = channels;
+    return w;
+  });
+  var doc = { watches: managed.concat(state.other) };
+  var panel = Object.assign({}, state.panel || {}, { autoAddNew: auto, headsUp: heads, channels: channels });
+  $("save").disabled = true; say($("msg"), "Saving...");
+  writeFile("watches.json", JSON.stringify(doc, null, 2) + "\n", state.watchesSha, "Update my movies from the panel")
+    .then(function (r) { state.watchesSha = r.content.sha; return writeFile("panel.json", JSON.stringify(panel, null, 2) + "\n", state.panelSha, "Update panel options"); })
+    .then(function (r) { state.panelSha = r.content.sha; state.panel = panel; say($("msg"), "Saved. The bot uses this on its next check, within about 15 minutes.", "ok"); })
+    .catch(function (e) { say($("msg"), e.message, "bad"); })
+    .then(function () { $("save").disabled = false; });
+});
+
+start();
+</script>
+</body>
+</html>
