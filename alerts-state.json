@@ -165,6 +165,11 @@
       "release": "26 November 2026"
     },
     {
+      "slug": "maserati-the-brothers",
+      "title": "Maserati: The Brothers",
+      "release": "03 December 2026"
+    },
+    {
       "slug": "violent-night-2",
       "title": "Violent Night 2",
       "release": "04 December 2026"
@@ -436,7 +441,13 @@
     "p93877b": 873090130,
     "p2a27be": 8989948590
   },
-  "changes": [],
+  "changes": [
+    {
+      "at": "2026-10-29T07:30:41+00:00",
+      "type": "coming",
+      "title": "Maserati: The Brothers"
+    }
+  ],
   "summary": {
     "lastSentDate": null
   },
@@ -5614,7 +5625,8 @@
     "the-influencer-project": "https://assets.voxcinemas.com/posters/P_HO00013662_1790335024160.png",
     "the-mongoose": "https://assets.voxcinemas.com/posters/P_HO00013562_1786693196377.jpg",
     "wildwood": "https://assets.voxcinemas.com/posters/P_HO00013671_1790335323648.png",
-    "bts-world-tour-arirang-in-s-o-paulo-live": "https://assets.voxcinemas.com/posters/P_HO00013633_1789488803565.jpg"
+    "bts-world-tour-arirang-in-s-o-paulo-live": "https://assets.voxcinemas.com/posters/P_HO00013633_1789488803565.jpg",
+    "maserati-the-brothers": "/assets/images/placeholder-poster.webp"
   },
   "nowShowing": [
     {
