@@ -23,7 +23,7 @@
       "invite": "58f7ea1a4c412bf6d14c8306",
       "active": true,
       "alerts": {
-        "newWeek": true,
+        "newWeek": false,
         "newMovies": true,
         "comingSoon": false,
         "dailySummary": false
@@ -49,7 +49,7 @@
       "invite": "528235f7561e21e2ef8d243c",
       "active": true,
       "alerts": {
-        "newWeek": true,
+        "newWeek": false,
         "newMovies": true,
         "comingSoon": false,
         "dailySummary": false
