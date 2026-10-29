@@ -25,8 +25,8 @@
       "alerts": {
         "newWeek": true,
         "newMovies": true,
-        "comingSoon": true,
-        "dailySummary": true
+        "comingSoon": false,
+        "dailySummary": false
       }
     },
     {
@@ -51,8 +51,8 @@
       "alerts": {
         "newWeek": true,
         "newMovies": true,
-        "comingSoon": true,
-        "dailySummary": true
+        "comingSoon": false,
+        "dailySummary": false
       }
     }
   ],
