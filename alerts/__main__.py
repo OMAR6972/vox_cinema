@@ -26,6 +26,10 @@ def main() -> int:
                  owner_chat_id=os.environ.get("TELEGRAM_CHAT_ID"),
                  discord_url=os.environ.get("DISCORD_WEBHOOK_URL"))
     try:
+        if os.environ.get("VOX_TEST"):
+            for p in eng.people:
+                eng.deliver(p, "✅ <b>VOX Alerts test</b>\nIf you can read this, alerts reach you.")
+            return 0
         eng.run()
     finally:
         eng.state.pop("lastRun", None)
