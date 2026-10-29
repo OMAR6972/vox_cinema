@@ -5633,5 +5633,156 @@
       0
     ]
   },
-  "trackingSince": "2026-10-29T02:23:15+00:00"
+  "trackingSince": "2026-10-29T02:23:15+00:00",
+  "posters": {
+    "bts-world-tour-arirang-in-s-o-paulo-delayed": "https://assets.voxcinemas.com/posters/P_HO00013745_1792240609627.jpg",
+    "godzilla-minus-zero-preview-screening-japanese": "https://assets.voxcinemas.com/posters/P_HO00013743_1792131559982.jpg",
+    "the-cat-in-the-hat": "https://assets.voxcinemas.com/posters/P_HO00012362_1753429880767.jpg",
+    "godzilla-minus-zero-japanese": "https://assets.voxcinemas.com/posters/P_HO00013634_1789645703698.jpg",
+    "hadoota-arabic": "https://assets.voxcinemas.com/posters/P_HO00013755_1792132981558.jpg",
+    "the-hunger-games-sunrise-on-the-reaping": "https://assets.voxcinemas.com/posters/P_HO00013542_1790335408400.png",
+    "hexed": "https://assets.voxcinemas.com/posters/P_HO00013335_1782228087065.jpg",
+    "violent-night-2": "https://assets.voxcinemas.com/posters/P_HO00013590_1787744179734.jpg",
+    "avengers-doomsday": "https://assets.voxcinemas.com/posters/P_HO00013527_1784878779866.jpg",
+    "avengers-doomsday-infinity-vision": "https://assets.voxcinemas.com/posters/P_HO00013676_1790601922411.jpg",
+    "dune-part-three": "https://assets.voxcinemas.com/posters/P_HO00013132_1777639610268.jpg",
+    "jumanji-open-world": "https://assets.voxcinemas.com/posters/P_HO00013552_1792992941546.jpg",
+    "children-of-blood-and-bone": "https://assets.voxcinemas.com/posters/P_HO00013577_1787744001464.jpg",
+    "narnia-the-magicians-nephew": "https://assets.voxcinemas.com/posters/P_HO00013747_1792133293834.jpg",
+    "day-drinker": "https://assets.voxcinemas.com/posters/P_HO00013689_1790927489815.jpg",
+    "wala-kan-ala-el-bal-arabic": "https://assets.voxcinemas.com/posters/P_HO00013648_1792992542800.jpg",
+    "matloub-3a2eleyain-arabic": "https://assets.voxcinemas.com/posters/P_HO00013664_1791446223943.jpg",
+    "naseeb-arabic": "https://assets.voxcinemas.com/posters/P_HO00013764_1792133076768.jpg",
+    "clayface": "https://assets.voxcinemas.com/posters/P_HO00013587_1792992609492.jpg",
+    "whalefall": "https://assets.voxcinemas.com/posters/P_HO00013581_1787744273942.jpg",
+    "hope-korean": "https://assets.voxcinemas.com/posters/P_HO00013775_1792992825725.jpg",
+    "sense-and-sensibility": "https://assets.voxcinemas.com/posters/P_HO00013636_1789645652221.jpg",
+    "other-mommy": "https://assets.voxcinemas.com/posters/P_HO00013661_1790166755402.jpg",
+    "verity": "https://assets.voxcinemas.com/posters/P_HO00013148_1779080275617.jpg",
+    "heart-of-the-beast": "https://assets.voxcinemas.com/posters/P_HO00013349_1782370147754.jpg",
+    "street-fighter": "https://assets.voxcinemas.com/posters/P_HO00013107_1791888704674.jpg",
+    "resident-evil": "https://assets.voxcinemas.com/posters/P_HO00013591_1787744773009.jpg",
+    "the-odyssey": "https://assets.voxcinemas.com/posters/P_HO00013488_1783655908489.jpg",
+    "mahmoud-el-tany-arabic": "https://assets.voxcinemas.com/posters/P_HO00013538_1786431574055.jpg",
+    "avengers-endgame-encore-infinity-vision": "https://assets.voxcinemas.com/posters/P_HO00013622_1789359764263.jpg",
+    "spider-man-brand-new-day": "https://assets.voxcinemas.com/posters/P_HO00013065_1782227665332.jpg",
+    "the-magic-faraway-tree": "https://assets.voxcinemas.com/posters/P_HO00013545_1785912650442.png",
+    "the-dino-family": "https://assets.voxcinemas.com/posters/P_HO00013580_1789548138971.jpg",
+    "hybe-cheering-party-3d": "https://assets.voxcinemas.com/posters/P_HO00013680_1791356103469.jpg",
+    "seventeen-world-tour-new": "https://assets.voxcinemas.com/posters/P_HO00013677_1791356215555.jpg",
+    "the-influencer-project": "https://assets.voxcinemas.com/posters/P_HO00013662_1790335024160.png",
+    "the-mongoose": "https://assets.voxcinemas.com/posters/P_HO00013562_1786693196377.jpg",
+    "wildwood": "https://assets.voxcinemas.com/posters/P_HO00013671_1790335323648.png",
+    "bts-world-tour-arirang-in-s-o-paulo-live": "https://assets.voxcinemas.com/posters/P_HO00013633_1789488803565.jpg"
+  },
+  "nowShowing": [
+    {
+      "slug": "wala-kan-ala-el-bal-arabic",
+      "title": "Wala Kan Ala El-Bal"
+    },
+    {
+      "slug": "matloub-3a2eleyain-arabic",
+      "title": "Matloub 3a2eleyain"
+    },
+    {
+      "slug": "naseeb-arabic",
+      "title": "Naseeb"
+    },
+    {
+      "slug": "clayface",
+      "title": "Clayface"
+    },
+    {
+      "slug": "whalefall",
+      "title": "Whalefall"
+    },
+    {
+      "slug": "hope-korean",
+      "title": "Hope"
+    },
+    {
+      "slug": "sense-and-sensibility",
+      "title": "Sense and Sensibility"
+    },
+    {
+      "slug": "other-mommy",
+      "title": "Other Mommy"
+    },
+    {
+      "slug": "dune-part-three",
+      "title": "Dune: Part Three"
+    },
+    {
+      "slug": "avengers-doomsday-infinity-vision",
+      "title": "Avengers: Doomsday (Infinity Vision)"
+    },
+    {
+      "slug": "verity",
+      "title": "Verity"
+    },
+    {
+      "slug": "heart-of-the-beast",
+      "title": "Heart of the Beast"
+    },
+    {
+      "slug": "street-fighter",
+      "title": "Street Fighter"
+    },
+    {
+      "slug": "resident-evil",
+      "title": "Resident Evil"
+    },
+    {
+      "slug": "the-odyssey",
+      "title": "The Odyssey"
+    },
+    {
+      "slug": "mahmoud-el-tany-arabic",
+      "title": "Mahmoud El Tany"
+    },
+    {
+      "slug": "avengers-endgame-encore-infinity-vision",
+      "title": "Avengers Endgame: Encore (Infinity Vision)"
+    },
+    {
+      "slug": "spider-man-brand-new-day",
+      "title": "Spider-Man: Brand New Day"
+    },
+    {
+      "slug": "the-magic-faraway-tree",
+      "title": "The Magic Faraway Tree"
+    },
+    {
+      "slug": "the-dino-family",
+      "title": "The Dino Family"
+    },
+    {
+      "slug": "hybe-cheering-party-3d",
+      "title": "HYBE CHEERING PARTY 3D"
+    },
+    {
+      "slug": "seventeen-world-tour-new",
+      "title": "SEVENTEEN WORLD TOUR 'NEW_'"
+    },
+    {
+      "slug": "the-influencer-project",
+      "title": "The Influencer Project"
+    },
+    {
+      "slug": "the-mongoose",
+      "title": "The Mongoose"
+    },
+    {
+      "slug": "wildwood",
+      "title": "Wildwood"
+    },
+    {
+      "slug": "bts-world-tour-arirang-in-s-o-paulo-live",
+      "title": "BTS WORLD TOUR 'ARIRANG' IN SÃO PAULO: LIVE"
+    },
+    {
+      "slug": "avengers-doomsday",
+      "title": "Avengers: Doomsday"
+    }
+  ]
 }
