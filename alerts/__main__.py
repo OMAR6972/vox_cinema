@@ -23,7 +23,8 @@ def main() -> int:
     tg = Telegram(token)
     tg.start()
     eng = Engine(config, state, tg, lambda path: fetch_page(BASE + path, VOX_HEADERS),
-                 owner_chat_id=os.environ.get("TELEGRAM_CHAT_ID"))
+                 owner_chat_id=os.environ.get("TELEGRAM_CHAT_ID"),
+                 discord_url=os.environ.get("DISCORD_WEBHOOK_URL"))
     try:
         eng.run()
     finally:

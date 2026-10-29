@@ -10,7 +10,7 @@
 // curl_cffi's Chrome TLS impersonation to get past both cinemas' WAFs, and
 // Workers' fetch() has no way to forge a TLS fingerprint.
 
-const WORKFLOW_FILE = "check-showtimes.yml";
+const WORKFLOW_FILE = "vox-alerts.yml";
 
 export default {
   async scheduled(event, env) {

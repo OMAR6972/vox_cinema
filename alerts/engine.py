@@ -8,6 +8,7 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
+from . import discord as D
 from . import formatter as F
 from .matcher import evaluate, sessions_for_watch
 from .vox import (parse_coming_soon, parse_filters, parse_showtimes_page, showtimes_path)
@@ -40,12 +41,13 @@ def default_state():
 
 
 class Engine:
-    def __init__(self, config, state, telegram, fetch, owner_chat_id=None, now=None, sleep=time.sleep, delay=0.4):
+    def __init__(self, config, state, telegram, fetch, owner_chat_id=None, discord_url=None, now=None, sleep=time.sleep, delay=0.4):
         self.config = config
         self.state = {**default_state(), **state}
         self.tg = telegram
         self.fetch = fetch           # fetch(path) -> html
         self.owner_chat_id = owner_chat_id
+        self.discord_url = discord_url
         self.now = now or datetime.now(timezone.utc)
         self.sleep = sleep
         self.delay = delay
@@ -65,16 +67,24 @@ class Engine:
         return p.get("chatId") or self.state["links"].get(p["id"])
 
     def deliver(self, p, html, buttons=None):
+        if p.get("active") is False:
+            return False
+        ok = False
         cid = self.chat_id(p)
-        if not cid or p.get("active") is False:
-            return False
-        try:
-            self.tg.send(cid, html, buttons)
-            self.sent += 1
-            return True
-        except Exception as e:  # one person's failure must not block the others
-            log.warning("could not message %s: %s", p.get("name"), e)
-            return False
+        if cid:
+            try:
+                self.tg.send(cid, html, buttons)
+                ok = True
+            except Exception as e:  # one person's failure must not block the others
+                log.warning("could not message %s on Telegram: %s", p.get("name"), e)
+        if p.get("discord") and self.discord_url:
+            try:
+                D.send(self.discord_url, html)
+                ok = True
+            except Exception as e:
+                log.warning("could not post to Discord: %s", e)
+        self.sent += ok
+        return ok
 
     # ---- telegram replies ----
     def handle_updates(self):

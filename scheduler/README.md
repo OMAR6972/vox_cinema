@@ -1,6 +1,6 @@
 # Scheduler (Cloudflare Worker)
 
-A ~30-line Worker whose only job is to press "run" on the `Check Showtimes` workflow every 15
+A ~30-line Worker whose only job is to press "run" on the `VOX Alerts` workflow every 15
 minutes, on time.
 
 **Why this exists:** GitHub's `schedule` trigger is best-effort. It runs on a deprioritized queue,
@@ -54,7 +54,7 @@ If you forked this repo, change `GITHUB_REPO` in `wrangler.jsonc` to your own `o
 
 ### Step 3 — Confirm it fired
 
-Wait for the next quarter hour, then check **Actions** — you should see a `Check Showtimes` run
+Wait for the next quarter hour, then check **Actions** — you should see a `VOX Alerts` run
 whose trigger is `workflow_dispatch`, starting within seconds of `:00 / :15 / :30 / :45`.
 
 Worker-side logs live in **Cloudflare dashboard → Workers & Pages → vox-cinema-scheduler → Logs**,

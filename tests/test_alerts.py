@@ -138,3 +138,14 @@ def test_new_watch_with_intro_and_new_dates_event():
     texts = [t for _, t, _ in tg.sent]
     assert any("I'll be watching" in t for t in texts)
     assert any("new dates" in t for t in texts)
+
+
+def test_discord_markdown_and_delivery():
+    from alerts.discord import to_discord
+    assert to_discord('<b>Hi</b> <a href="https://x/y">Book</a> &amp; <i>go</i>') == "**Hi** [Book](<https://x/y>) & _go_"
+    sent = []
+    cfg = {"settings": {}, "people": [{"id": "d", "name": "Chan", "isGroup": True, "discord": True}], "watches": []}
+    e = Engine(cfg, {}, FakeTG(), FakeVox(), discord_url="https://hook", now=NOW, sleep=lambda s: None)
+    import alerts.engine as eng
+    eng.D.send = lambda url, html, **k: sent.append((url, html))
+    assert e.deliver(cfg["people"][0], "<b>x</b>") and sent == [("https://hook", "<b>x</b>")]

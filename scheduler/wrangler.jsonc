@@ -9,11 +9,11 @@
   // you happen to be running `wrangler tail`.
   "observability": { "enabled": true },
 
-  // Every 15 minutes. 96 firings/day, against a free-plan budget of 100,000.
-  "triggers": { "crons": ["*/15 * * * *"] },
+  // Every 10 minutes. 144 firings/day, against a free-plan budget of 100,000.
+  "triggers": { "crons": ["*/10 * * * *"] },
 
   "vars": {
-    "GITHUB_REPO": "moghazy17/vox_cinema",
+    "GITHUB_REPO": "OMAR6972/vox_cinema",
     "GITHUB_REF": "main"
   }
 
