@@ -295,7 +295,9 @@
       "everHadSessions": true
     },
     "avengers-doomsday": {
-      "booked": [],
+      "booked": [
+        "me"
+      ],
       "seen": {
         "0047-276883": "2026-12-16",
         "0047-276866": "2026-12-16",
@@ -497,7 +499,7 @@
   "summary": {
     "lastSentDate": null
   },
-  "offset": 601723925,
+  "offset": 601723934,
   "failures": 0,
   "warned": false,
   "lastError": null,
