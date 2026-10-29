@@ -164,3 +164,17 @@ def test_all_watches_person_gets_every_movie():
     eng.D.send = lambda url, html, **k: got.append(html)
     e.run()
     assert any("9:00 PM" in h for h in got)
+
+
+def test_send_current_times_button_resends_once():
+    vox, tg = FakeVox(), FakeTG()
+    cfg = {"settings": {"summaryTime": "23:59"}, "people": [{"id": "me", "name": "Omar", "owner": True}],
+           "watches": [{"id": "w", "slug": "dune", "title": "Dune", "recipients": ["me"]}]}
+    st = make(cfg, vox=vox, tg=tg).run()
+    assert tg.sent == []
+    cfg["watches"][0]["introNonce"] = "abc"
+    st = make(cfg, st, vox, tg).run()
+    assert any("I'll be watching" in t for _, t, _ in tg.sent)
+    n = len(tg.sent)
+    make(cfg, st, vox, tg).run()
+    assert len(tg.sent) == n

@@ -212,7 +212,11 @@ class Engine:
         sessions = sessions_for_watch(self.snapshot, w, today)
         booked = st.setdefault("booked", [])
         first_look = "seen" not in st
-        intro = bool(first_look and w.get("intro"))
+        nonce = w.get("introNonce")
+        resend = bool(nonce and st.get("introNonce") != nonce)  # "send current times now" pressed in the panel
+        intro = bool((first_look and w.get("intro")) or resend)
+        if resend:
+            st["introNonce"] = nonce
         if first_look and not intro:
             st["seen"] = {s["id"]: s["date"] for s in sessions}
             st["everHadSessions"] = bool(sessions)

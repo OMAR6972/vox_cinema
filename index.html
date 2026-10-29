@@ -72,7 +72,7 @@ code{background:var(--chip);padding:1px 6px;border-radius:6px;word-break:break-a
   </div>
 
   <section>
-    <div class="row"><button class="primary" id="save">Save changes</button><span class="msg" id="msg"></span></div>
+    <div class="row"><button id="save">Save changes</button><button class="primary" id="saveRun">Save &amp; check now</button><span class="msg" id="msg"></span></div>
     <p class="mute">The bot picks up changes at its next check (every 10 minutes or so).</p>
   </section>
 </div>
@@ -125,10 +125,14 @@ function renderWatches() {
   $("watchList").innerHTML = l.length ? l.map(function (w, i) {
     return '<div class="card"><div class="split"><div><div class="title">' + esc(w.title) + (w.active === false ? ' <span class="mute">(paused)</span>' : '') + '</div>' +
       '<div class="mute">' + esc(describe(w)) + '</div><div class="mute">For: ' + esc(names(w.recipients || [])) + '</div></div>' +
-      '<div class="row"><button data-edit="' + i + '">Edit</button></div></div></div>';
+      '<div class="row"><button data-send="' + i + '">Send current times</button><button data-edit="' + i + '">Edit</button></div></div></div>';
   }).join("") : '<div class="card mute">Nothing yet. Tap “Add a movie”.</div>';
 }
-$("watchList").addEventListener("click", function (e) { var i = e.target.getAttribute("data-edit"); if (i != null) openEditor(+i); });
+$("watchList").addEventListener("click", function (e) {
+  var i = e.target.getAttribute("data-edit"); if (i != null) openEditor(+i);
+  var j = e.target.getAttribute("data-send");
+  if (j != null) { S.cfg.watches[+j].introNonce = rid(); dirty(); say("Marked. Press “Save & check now” and everyone on this movie gets what’s out right now.", "ok"); }
+});
 
 function chips(list, fmt, attr) { return list.map(function (v, i) { return '<span class="chip">' + esc(fmt(v)) + ' <button type="button" ' + attr + '="' + i + '" aria-label="remove">×</button></span>'; }).join(""); }
 
@@ -269,13 +273,31 @@ $("connect").addEventListener("click", function () {
   var t = $("token").value.trim(); if (!t) return; setToken(t); $("token").value = ""; start();
 });
 $("forget").addEventListener("click", function () { setToken(""); start(); });
-$("save").addEventListener("click", function () {
-  $("save").disabled = true; say("Saving…");
-  gh("/contents/config.json", { method: "PUT", body: JSON.stringify({ message: "Update alerts settings", content: enc(JSON.stringify(S.cfg, null, 2) + "\n"), sha: S.sha, branch: "main" }) })
-    .then(function (r) { S.sha = r.content.sha; S.dirty = false; say("Saved ✔  The bot uses this at its next check.", "ok"); })
-    .catch(function (e) { say(e.message + " (If it says 409, reload the page and try again.)", "bad"); })
-    .then(function () { $("save").disabled = false; });
-});
+function saveCfg() {
+  return gh("/contents/config.json", { method: "PUT", body: JSON.stringify({ message: "Update alerts settings", content: enc(JSON.stringify(S.cfg, null, 2) + "\n"), sha: S.sha, branch: "main" }) })
+    .then(function (r) { S.sha = r.content.sha; S.dirty = false; });
+}
+function runNow() {
+  return fetch(API + "/actions/workflows/vox-alerts.yml/dispatches", { method: "POST", headers: { Authorization: "Bearer " + getToken(), Accept: "application/vnd.github+json" }, body: JSON.stringify({ ref: "main" }) })
+    .then(function (r) {
+      if (r.status === 204) return;
+      if (r.status === 403 || r.status === 404) throw new Error("Saved, but your GitHub key isn’t allowed to start the bot. Edit the key on GitHub and set Actions to “Read and write”.");
+      throw new Error("GitHub said " + r.status);
+    });
+}
+function doSave(run) {
+  $("save").disabled = $("saveRun").disabled = true; say("Saving…");
+  (S.dirty ? saveCfg() : Promise.resolve())
+    .then(function () { return run ? (say("Saved. Starting the bot…"), runNow()) : null; })
+    .then(function () {
+      say(run ? "Saved ✔ The bot is checking now. Give it about a minute, then people who pressed Start are connected." : "Saved ✔ The bot uses this at its next check.", "ok");
+      if (run) { setTimeout(loadStatus, 4000); setTimeout(loadStatus, 30000); setTimeout(function () { load(); }, 60000); }
+    })
+    .catch(function (e) { say(e.message + (/409/.test(e.message) ? " Reload the page and try again." : ""), "bad"); })
+    .then(function () { $("save").disabled = $("saveRun").disabled = false; });
+}
+$("save").addEventListener("click", function () { doSave(false); });
+$("saveRun").addEventListener("click", function () { doSave(true); });
 window.addEventListener("beforeunload", function (e) { if (S.dirty) { e.preventDefault(); e.returnValue = ""; } });
 start();
 </script>
