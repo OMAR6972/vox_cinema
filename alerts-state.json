@@ -259,7 +259,8 @@
         "0047-276669": "2026-11-04",
         "0047-276702": "2026-11-04"
       },
-      "everHadSessions": true
+      "everHadSessions": true,
+      "introNonce": "bfd7ccd119da"
     },
     "resident-evil": {
       "booked": [],
