@@ -1,7 +1,8 @@
 {
   "settings": {
     "summaryTime": "12:00",
-    "adminPersonId": "me"
+    "adminPersonId": "me",
+    "newWindowHours": 6
   },
   "people": [
     {

@@ -178,3 +178,23 @@ def test_send_current_times_button_resends_once():
     n = len(tg.sent)
     make(cfg, st, vox, tg).run()
     assert len(tg.sent) == n
+
+
+def test_first_seen_marks_only_recent_and_labels_old():
+    vox, tg = FakeVox(), FakeTG()
+    cfg = {"settings": {"summaryTime": "23:59"}, "people": [{"id": "me", "name": "Omar", "owner": True}],
+           "watches": [{"id": "w", "slug": "dune", "title": "Dune", "recipients": ["me"]}]}
+    st = make(cfg, vox=vox, tg=tg).run()
+    assert st["firstSeen"]["a"][1] == 0 and "trackingSince" in st
+    vox.days["2026-10-28"].append(sess("b", "2026-10-28", 21 * 60, slug="dune", cinema="Almaza"))
+    from datetime import timedelta
+    st = Engine(cfg, st, tg, vox, owner_chat_id="111", now=NOW + timedelta(hours=1), sleep=lambda s: None).run()
+    assert st["firstSeen"]["b"][1] == int((NOW + timedelta(hours=1)).timestamp())
+    msg = [t for _, t, _ in tg.sent if "times just dropped" in t][0]
+    assert "🆕" in msg and "9:00 PM" in msg and "7:00 PM" not in msg and "other times were already out" in msg
+    # 8 hours later, with an intro resend: nothing is "new" any more, and the ages are spelled out
+    cfg["watches"][0]["introNonce"] = "x"
+    tg.sent.clear()
+    Engine(cfg, st, tg, vox, owner_chat_id="111", now=NOW + timedelta(hours=9), sleep=lambda s: None).run()
+    msg = [t for _, t, _ in tg.sent if "I'll be watching" in t][0]
+    assert "🆕" not in msg and "first seen 8 h ago" in msg and "already out when I started tracking" in msg

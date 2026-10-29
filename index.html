@@ -31,6 +31,7 @@ label.opt{display:flex;gap:8px;align-items:center}
 .split{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
 code{background:var(--chip);padding:1px 6px;border-radius:6px;word-break:break-all}
 .fld{display:grid;gap:4px}.fld>span{font-weight:600;font-size:.92rem}
+#bar{position:sticky;bottom:0;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 14px;box-shadow:0 -4px 16px rgba(0,0,0,.12);padding-bottom:max(10px,env(safe-area-inset-bottom))}
 </style>
 </head>
 <body>
@@ -66,15 +67,17 @@ code{background:var(--chip);padding:1px 6px;border-radius:6px;word-break:break-a
   </div>
 
   <div id="tab-settings" class="tabpane" style="display:none;gap:16px">
+    <section><h2>What counts as “new”</h2>
+      <p class="mute">A showing gets 🆕 only if the bot first saw it this many hours ago or less. Older ones say when the bot first saw them.</p>
+      <div class="row"><input type="number" id="newHours" min="1" max="168" style="max-width:110px"> <span>hours</span></div></section>
     <section><h2>Daily roundup time</h2>
       <p class="mute">People who turned on the roundup get one message a day at this time (Cairo).</p>
       <input type="time" id="summaryTime"></section>
   </div>
 
-  <section>
-    <div class="row"><button id="save">Save changes</button><button class="primary" id="saveRun">Save &amp; check now</button><span class="msg" id="msg"></span></div>
-    <p class="mute">The bot picks up changes at its next check (every 10 minutes or so).</p>
-  </section>
+  <div id="bar">
+    <div class="row"><button class="primary" id="saveRun">Save &amp; check now</button><button id="save">Save only</button><span class="msg" id="msg"></span></div>
+  </div>
 </div>
 </main>
 
@@ -234,6 +237,7 @@ $("addDiscord").addEventListener("click", function () {
   S.cfg.people.push({ id: "discord", name: "Discord channel", isGroup: true, discord: true, allWatches: true, active: true, alerts: { newWeek: true, newMovies: true, comingSoon: false, dailySummary: true } });
   renderPeople(); dirty();
 });
+$("newHours").addEventListener("change", function () { var n = Math.max(1, Math.min(168, +$("newHours").value || 6)); S.cfg.settings.newWindowHours = n; $("newHours").value = n; dirty(); });
 $("summaryTime").addEventListener("change", function () { S.cfg.settings.summaryTime = $("summaryTime").value; dirty(); });
 
 document.querySelectorAll("#tabs button").forEach(function (b) {
@@ -260,7 +264,7 @@ function load() {
     var m = res[1] || {}; S.movies = m.movies || []; S.cinemas = m.cinemas || []; S.exps = m.experiences || []; S.bot = m.bot || null;
     if (S.cinemas.indexOf("City Centre Almaza") < 0) S.cinemas.unshift("City Centre Almaza");
     S.links = (res[2] || {}).links || {};
-    $("summaryTime").value = S.cfg.settings.summaryTime || "12:00";
+    $("summaryTime").value = S.cfg.settings.summaryTime || "12:00"; $("newHours").value = S.cfg.settings.newWindowHours || 6;
     renderWatches(); renderPeople(); loadStatus();
   });
 }

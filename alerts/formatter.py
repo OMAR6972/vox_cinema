@@ -49,6 +49,39 @@ def describe_watch(w) -> str:
     return " · ".join(bits)
 
 
+def ago(secs) -> str:
+    secs = max(0, int(secs))
+    if secs < 3600:
+        return f"{max(1, secs // 60)} min ago"
+    if secs < 48 * 3600:
+        return f"{secs // 3600} h ago"
+    return f"{secs // 86400} days ago"
+
+
+def _is_new(s, ctx) -> bool:
+    ts = s.get("ts")
+    return bool(ctx and ts and ctx["now"] - ts < ctx["window"])
+
+
+def _age_line(sessions, ctx):
+    """'🕒 2 new, added 35 min ago · 8 first seen 3 days ago' so you know how fresh a day is."""
+    if not ctx or not sessions:
+        return None
+    news = [s for s in sessions if _is_new(s, ctx)]
+    olds = [s for s in sessions if not _is_new(s, ctx)]
+    parts = []
+    if news:
+        parts.append(f"{len(news)} new, added {ago(ctx['now'] - max(s['ts'] for s in news))}")
+    known = [s["ts"] for s in olds if s.get("ts")]
+    base = [s for s in olds if not s.get("ts")]
+    if known:
+        parts.append(f"{len(known)} first seen {ago(ctx['now'] - min(known))}")
+    if base:
+        since = (ctx.get("since") or "")[:10]
+        parts.append(f"{len(base)} already out when I started tracking" + (f" ({pretty_date(since)})" if since else ""))
+    return i("🕒 " + " · ".join(parts))
+
+
 def _group(lst, key):
     m = {}
     for x in lst:
@@ -56,11 +89,11 @@ def _group(lst, key):
     return m
 
 
-def _compact_times(lst, new_marks=False):
+def _compact_times(lst, ctx=None):
     out = []
     for exp, ss in _group(sorted(lst, key=lambda s: s["min"]), lambda s: s["exp"]).items():
         parts = [link(s["time"], s["url"]) + ("" if s["available"] else " (sold out)")
-                 + (" 🆕" if new_marks and s.get("isNew") else "") for s in ss]
+                 + (" 🆕" if _is_new(s, ctx) else "") for s in ss]
         out.append(f"{esc(exp)}: " + " · ".join(parts))
     return out
 
@@ -86,12 +119,12 @@ def date_ranges(dates) -> str:
     return ", ".join(parts)
 
 
-def _day_block(w, block, new_marks=False):
+def _day_block(w, block, ctx=None):
     lines = [f"📅 {b(pretty_date_long(block['date']))}"]
     allv = block["matches"] + block["others"] if block["mode"] == "match" else block["sessions"]
     multi = len({s["cinema"] for s in allv}) > 1
     wanted = " / ".join(pretty_time(parse_hhmm(t)) for t in (w.get("times") or []))
-    mark = lambda s: " 🆕" if new_marks and s.get("isNew") else ""
+    mark = lambda s: " 🆕" if _is_new(s, ctx) else ""
     if block["mode"] == "match":
         for n, s in enumerate(block["matches"][:4]):
             reason = ""
@@ -103,7 +136,7 @@ def _day_block(w, block, new_marks=False):
             for cinema, ss in _group(block["others"], lambda s: s["cinema"]).items():
                 if multi:
                     lines.append(f"📍 {esc(cinema)}")
-                lines.extend("   " + l for l in _compact_times(ss, new_marks))
+                lines.extend("   " + l for l in _compact_times(ss, ctx))
     elif block["mode"] == "closest":
         lines.append(f"Nothing near {esc(wanted)} 😕 Here's everything that day, closest first:")
         for s in block["sessions"][:10]:
@@ -113,7 +146,12 @@ def _day_block(w, block, new_marks=False):
     else:
         for cinema, ss in _group(block["sessions"], lambda s: s["cinema"]).items():
             lines.append(f"📍 {esc(cinema)}")
-            lines.extend("   " + l for l in _compact_times(ss, new_marks))
+            lines.extend("   " + l for l in _compact_times(ss, ctx))
+        if block.get("already"):
+            lines.append(i(f"+ {block['already']} other times were already out"))
+    age = _age_line(allv, ctx)
+    if age:
+        lines.append(age)
     return "\n".join(lines)
 
 
@@ -122,6 +160,7 @@ def render_watch_message(plan, person) -> str:
     name = first_name(person)
     title = b(w["title"])
     out = []
+    ctx = plan.get("ctx")
     kind = plan["kind"]
     if plan["intro"]:
         out.append(f"👋 Hey {esc(name)}! I'll be watching {title} for you.")
@@ -140,7 +179,7 @@ def render_watch_message(plan, person) -> str:
         else:
             out.append(f"🎬 {esc(name)}! {title} is out for {b(day_names)} 🎯")
         for d in plan["days"][:MAX_DAYS]:
-            out.append("\n" + _day_block(w, d, new_marks=(kind == "update")))
+            out.append("\n" + _day_block(w, d, ctx))
         if plan.get("otherDays"):
             out.append(f"\n{i('Also out:')} {date_ranges(plan['otherDays'])}")
         out.append(f"\n{link('All ' + w['title'] + ' times on VOX', movie_url(w['slug'], plan['days'][0]['date']))}")
@@ -188,7 +227,7 @@ def render_watch_message(plan, person) -> str:
         else:
             out.append(f"🎬 {esc(name)}! New {title} times just dropped:")
         for d in plan["days"][:MAX_DAYS]:
-            out.append("\n" + _day_block(w, d))
+            out.append("\n" + _day_block(w, d, ctx))
         if len(plan["days"]) > MAX_DAYS:
             out.append(i(f"\n…plus {len(plan['days']) - MAX_DAYS} more days on the VOX site"))
         first = plan["days"][0]["date"] if plan["days"] else None

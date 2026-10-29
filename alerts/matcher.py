@@ -68,12 +68,16 @@ def _group_by_date(lst):
     return m
 
 
-def day_block(w, date, lst, seen):
+def day_block(w, date, lst, seen, intro=False):
     prefs = _prefs(w)
     flex = float(w.get("flex", 30) if w.get("flex") is not None else 30)
     sessions = [dict(s, dist=distance(w, s), isNew=s["id"] not in seen) for s in lst]
     if not prefs:
-        return {"date": date, "mode": "all", "sessions": sorted(sessions, key=lambda s: s["min"])}
+        ordered = sorted(sessions, key=lambda s: s["min"])
+        fresh = [s for s in ordered if s["isNew"]]
+        if not intro and fresh and len(fresh) < len(ordered):
+            return {"date": date, "mode": "all", "sessions": fresh, "already": len(ordered) - len(fresh)}
+        return {"date": date, "mode": "all", "sessions": ordered}
     matches = sorted((s for s in sessions if s["dist"] <= flex), key=lambda s: (s["dist"], s["min"]))
     if matches:
         others = sorted((s for s in sessions if s["dist"] > flex), key=lambda s: s["min"])
@@ -101,7 +105,7 @@ def evaluate(w, sessions, seen=frozenset(), intro=False):
         wanted_all = [d for d in all_dates if day_wanted(w, d)]
         to_show = wanted_all if intro else wanted_fresh
         if to_show:
-            days = [day_block(w, d, by_date[d], seen) for d in to_show]
+            days = [day_block(w, d, by_date[d], seen, intro) for d in to_show]
             update = (not intro) and all(any(s["id"] in seen for s in by_date[d]) for d in to_show)
             other = [d for d in (all_dates if intro else fresh_dates) if not day_wanted(w, d)]
             return dict(base, kind="update" if update else "yourday", days=days, otherDays=other)
@@ -112,4 +116,4 @@ def evaluate(w, sessions, seen=frozenset(), intro=False):
         return dict(base, kind="silent")
 
     show = all_dates if intro else fresh_dates
-    return dict(base, kind="schedule", days=[day_block(w, d, by_date[d], seen) for d in show])
+    return dict(base, kind="schedule", days=[day_block(w, d, by_date[d], seen, intro) for d in show])

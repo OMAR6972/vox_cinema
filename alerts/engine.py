@@ -186,6 +186,19 @@ class Engine:
                     st["knownMovies"][s["slug"]] = {"firstSeen": self.now.isoformat(timespec="seconds"), "title": s["title"]}
                     if not first_run:
                         new_slugs.append(s["slug"])
+        # first-seen record: every showing, every movie, with the moment the bot first saw it
+        fs = st.setdefault("firstSeen", {})
+        now_ts = int(self.now.timestamp())
+        if "trackingSince" not in st:
+            st["trackingSince"] = self.now.isoformat(timespec="seconds")
+            stamp = 0  # already out before tracking began: real first-seen time unknown
+        else:
+            stamp = now_ts
+        for lst in sessions.values():
+            for sx in lst:
+                if sx["id"] not in fs:
+                    fs[sx["id"]] = [sx["date"], stamp]
+        st["firstSeen"] = {k: v for k, v in fs.items() if v[0] >= today}
         st["dates"] = [d for d in home.dates if d >= today]
         st["baselineDone"] = True
         st["lastCheck"] = self.now.isoformat(timespec="seconds")
@@ -210,6 +223,9 @@ class Engine:
         st = self.state["watches"].setdefault(w["id"], {})
         today = today_cairo(self.now)
         sessions = sessions_for_watch(self.snapshot, w, today)
+        fs = self.state.get("firstSeen", {})
+        for sx in sessions:
+            sx["ts"] = (fs.get(sx["id"]) or [None, 0])[1]
         booked = st.setdefault("booked", [])
         first_look = "seen" not in st
         nonce = w.get("introNonce")
@@ -224,6 +240,9 @@ class Engine:
         st.setdefault("seen", {})
         wv = dict(w, everHadSessions=st.get("everHadSessions", True))
         plan = evaluate(wv, sessions, seen=set(st["seen"]), intro=intro)
+        if plan:
+            plan["ctx"] = {"now": int(self.now.timestamp()), "since": self.state.get("trackingSince"),
+                           "window": float((self.config.get("settings") or {}).get("newWindowHours", 6)) * 3600}
         if plan and plan["kind"] != "silent":
             everyone = [x["id"] for x in self.people if x.get("allWatches")]
             for pid in list(dict.fromkeys(list(w.get("recipients", [])) + everyone)):
