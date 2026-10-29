@@ -260,7 +260,8 @@
         "0047-276702": "2026-11-04"
       },
       "everHadSessions": true,
-      "introNonce": "bfd7ccd119da"
+      "introNonce": "bfd7ccd119da",
+      "filters": "[[\"City Centre Almaza\"], [], false]"
     },
     "resident-evil": {
       "booked": [],
@@ -273,7 +274,8 @@
         "0047-276137": "2026-11-03",
         "0047-276143": "2026-11-04"
       },
-      "everHadSessions": true
+      "everHadSessions": true,
+      "filters": "[[\"City Centre Almaza\"], [], false]"
     },
     "heart-of-the-beast": {
       "booked": [],
@@ -292,7 +294,8 @@
         "0047-276513": "2026-11-04",
         "0047-276381": "2026-11-04"
       },
-      "everHadSessions": true
+      "everHadSessions": true,
+      "filters": "[[\"City Centre Almaza\"], [], false]"
     },
     "avengers-doomsday-infinity-vision": {
       "booked": [],
@@ -360,7 +363,8 @@
         "0047-276771": "2026-12-17",
         "0047-276777": "2026-12-18"
       },
-      "everHadSessions": true
+      "everHadSessions": true,
+      "filters": "[[\"City Centre Almaza\"], [], false]"
     },
     "dune-part-three": {
       "booked": [],
@@ -422,7 +426,8 @@
         "0032-169660": "2026-12-23",
         "0032-169661": "2026-12-23"
       },
-      "everHadSessions": true
+      "everHadSessions": true,
+      "filters": "[[\"City Centre Alexandria\", \"City Centre Almaza\"], [\"GOLD\", \"IMAX\", \"MAX\", \"Standard\"], false]"
     }
   },
   "links": {
