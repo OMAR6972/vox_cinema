@@ -218,63 +218,72 @@
       "title": "Godzilla Minus Zero",
       "status": "soon",
       "release": "05 November 2026",
-      "poster": "https://assets.voxcinemas.com/posters/P_HO00013634_1789645703698.jpg"
+      "poster": "posters/godzilla-minus-zero-japanese.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013634_1789645703698.jpg"
     },
     {
       "slug": "hadoota-arabic",
       "title": "Hadoota",
       "status": "soon",
       "release": "12 November 2026",
-      "poster": "https://assets.voxcinemas.com/posters/P_HO00013755_1792132981558.jpg"
+      "poster": "posters/hadoota-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013755_1792132981558.jpg"
     },
     {
       "slug": "the-hunger-games-sunrise-on-the-reaping",
       "title": "The Hunger Games: Sunrise on the Reaping",
       "status": "soon",
       "release": "19 November 2026",
-      "poster": "https://assets.voxcinemas.com/posters/P_HO00013542_1790335408400.png"
+      "poster": "posters/the-hunger-games-sunrise-on-the-reaping.png",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013542_1790335408400.png"
     },
     {
       "slug": "hexed",
       "title": "Hexed",
       "status": "soon",
       "release": "26 November 2026",
-      "poster": "https://assets.voxcinemas.com/posters/P_HO00013335_1782228087065.jpg"
+      "poster": "posters/hexed.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013335_1782228087065.jpg"
     },
     {
       "slug": "violent-night-2",
       "title": "Violent Night 2",
       "status": "soon",
       "release": "04 December 2026",
-      "poster": "https://assets.voxcinemas.com/posters/P_HO00013590_1787744179734.jpg"
+      "poster": "posters/violent-night-2.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013590_1787744179734.jpg"
     },
     {
       "slug": "jumanji-open-world",
       "title": "Jumanji: Open World",
       "status": "soon",
       "release": "24 December 2026",
-      "poster": "https://assets.voxcinemas.com/posters/P_HO00013552_1792992941546.jpg"
+      "poster": "posters/jumanji-open-world.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013552_1792992941546.jpg"
     },
     {
       "slug": "children-of-blood-and-bone",
       "title": "Children of Blood and Bone",
       "status": "soon",
       "release": "14 January 2027",
-      "poster": "https://assets.voxcinemas.com/posters/P_HO00013577_1787744001464.jpg"
+      "poster": "posters/children-of-blood-and-bone.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013577_1787744001464.jpg"
     },
     {
       "slug": "narnia-the-magicians-nephew",
       "title": "Narnia: The Magician's Nephew",
       "status": "soon",
       "release": "11 February 2027",
-      "poster": "https://assets.voxcinemas.com/posters/P_HO00013747_1792133293834.jpg"
+      "poster": "posters/narnia-the-magicians-nephew.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013747_1792133293834.jpg"
     },
     {
       "slug": "day-drinker",
       "title": "Day Drinker",
       "status": "soon",
       "release": "01 April 2027",
-      "poster": "https://assets.voxcinemas.com/posters/P_HO00013689_1790927489815.jpg"
+      "poster": "posters/day-drinker.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013689_1790927489815.jpg"
     }
   ],
   "cinemas": [
