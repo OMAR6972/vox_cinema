@@ -213,3 +213,17 @@ def test_posters_and_single_stop_reply():
     tg.queue = [{"update_id": i, "callback_query": {"id": f"q{i}", "data": "stop:w", "message": {"chat": {"id": 111}}}} for i in range(1, 5)]
     make(cfg, st, vox, tg).run()
     assert len([t for _, t, _ in tg.sent if "no more alerts" in t]) == 1
+
+
+def test_poster_copy(tmp_path):
+    from alerts.posters import looks_like_image, sync_posters
+    jpg = b"\xff\xd8\xff" + b"0" * 50
+    assert looks_like_image(jpg) and not looks_like_image(b"<html>")
+    movies = [{"slug": "dune", "poster": "https://x/p/a.jpg"}, {"slug": "bad", "poster": "https://x/p/b.png"}]
+    def dl(u):
+        if "b.png" in u:
+            raise RuntimeError("403")
+        return jpg
+    assert sync_posters(tmp_path, movies, dl) == 1
+    assert movies[0]["poster"] == "posters/dune.jpg" and (tmp_path / "posters/dune.jpg").exists()
+    assert movies[1]["poster"].startswith("https://")

@@ -8,13 +8,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f4f1ea;--panel:#fffdf8;--panel2:#f0ebe0;--fg:#1c1a16;--mute:#6b6558;--line:#e2dccd;
-  --acc:#c8321f;--acc-fg:#fff;--ok:#1b7a3e;--bad:#c8321f;--glow:rgba(200,50,31,.14);
-  --display:"Bricolage Grotesque","DM Sans",system-ui,sans-serif;--body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --bg:#eef5fc;--panel:#ffffff;--panel2:#e6f0fb;--fg:#10243a;--mute:#5a7088;--line:#d5e3f3;
+  --acc:#2f80d6;--acc-fg:#ffffff;--ok:#16803c;--bad:#c23b3b;--glow:rgba(47,128,214,.12);
+  --display:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#13110d;--panel:#1d1a14;--panel2:#272319;--fg:#f4efe3;--mute:#a79f8d;--line:#352f22;
-  --acc:#ff6a4d;--acc-fg:#1c0904;--ok:#5fd68f;--bad:#ff8f7a;--glow:rgba(255,106,77,.16);}}
+  --bg:#0d1824;--panel:#14263a;--panel2:#1b3149;--fg:#eaf3fc;--mute:#97aec6;--line:#25405c;
+  --acc:#6db4f5;--acc-fg:#06223e;--ok:#5fd68f;--bad:#ff9a92;--glow:rgba(109,180,245,.15);}}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--body);
@@ -23,8 +23,8 @@ body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--body);
 main{max-width:880px;margin:0 auto;display:grid;gap:18px}
 [hidden]{display:none!important}
 h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.02em}
-h1{font-size:2rem;font-weight:800}
-h2{font-size:1.25rem;font-weight:800}
+h1{font-size:1.9rem;font-weight:700}
+h2{font-size:1.2rem;font-weight:700}
 p{margin:0}
 .mute{color:var(--mute);font-size:.92rem}
 button,input,select{font:inherit;color:inherit}
@@ -42,17 +42,17 @@ input::placeholder{color:var(--mute)}
 .pill{display:inline-flex;gap:8px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:5px 12px;font-size:.88rem}
 .tabs{display:flex;gap:6px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:5px;width:max-content;max-width:100%}
 .tabs button{border:0;background:none;min-height:40px}
-.tabs button[aria-pressed=true]{background:var(--fg);color:var(--bg);font-weight:700}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;display:grid;gap:12px}
+.tabs button[aria-pressed=true]{background:var(--acc);color:var(--acc-fg);font-weight:700}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;display:grid;gap:12px;box-shadow:0 1px 3px rgba(20,60,110,.06)}
 
 /* poster cards */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:14px}
-.mc{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+.mc{box-shadow:0 1px 3px rgba(20,60,110,.07);background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;position:relative}
 .mc.paused{opacity:.55}
-.poster{aspect-ratio:2/3;background:linear-gradient(160deg,var(--panel2),var(--line));display:grid;place-items:center;font:800 2.4rem var(--display);color:var(--mute);overflow:hidden}
+.poster{aspect-ratio:2/3;background:linear-gradient(160deg,var(--panel2),var(--line));display:grid;place-items:center;font:700 2.4rem var(--display);color:var(--mute);overflow:hidden}
 .poster img{width:100%;height:100%;object-fit:cover;display:block}
 .mc .body{padding:10px 12px 12px;display:grid;gap:6px;flex:1}
-.mc .t{font-family:var(--display);font-weight:800;line-height:1.15}
+.mc .t{font-weight:700;line-height:1.15}
 .mc .s{font-size:.8rem;color:var(--mute);line-height:1.35}
 .mc .who{font-size:.78rem;color:var(--mute)}
 .mc .act{display:flex;gap:6px;margin-top:auto;flex-wrap:wrap}
@@ -92,6 +92,8 @@ input::placeholder{color:var(--mute)}
 .who-chip[aria-pressed=true]{border-color:var(--acc);background:var(--glow)}
 .who-chip[aria-pressed=true] .av{background:var(--acc);color:var(--acc-fg)}
 
+.pc .pa{aspect-ratio:3/2;display:grid;place-items:center;background:linear-gradient(160deg,var(--panel2),var(--glow))}
+.pc .av2{width:64px;height:64px;font-size:1.6rem}
 /* picker */
 .pick{cursor:pointer;text-align:left;padding:0;border-radius:14px;overflow:hidden;background:var(--panel);border:1px solid var(--line);min-height:0;display:block;width:100%}
 .pick .p{aspect-ratio:2/3}
@@ -112,6 +114,7 @@ input::placeholder{color:var(--mute)}
 .msg.ok{color:var(--ok)}.msg.bad{color:var(--bad)}
 .dot{width:9px;height:9px;border-radius:50%;background:var(--mute)}
 .dot.g{background:var(--ok)}.dot.r{background:var(--bad)}.dot.y{background:#e0a61a}
+body{background:linear-gradient(180deg,var(--bg),var(--bg))}
 </style>
 </head>
 <body>
@@ -145,7 +148,7 @@ input::placeholder{color:var(--mute)}
       <div class="head"><div><h2>People &amp; channels</h2><p class="mute">Everyone who can receive alerts. Each person picks which kinds of news they want.</p></div>
         <div class="row"><button id="addDiscord">+ Discord channel</button><button class="primary" id="addPerson">+ Add a friend</button></div></div>
       <div class="card row" id="newPerson" hidden><input type="text" id="newName" placeholder="Friend's first name" style="max-width:260px"><button class="primary" id="newOk">Add</button></div>
-      <div id="peopleList" style="display:grid;gap:12px"></div>
+      <div class="grid" id="peopleList"></div>
     </section>
 
     <section id="tab-settings" class="tabpane" style="display:none;gap:14px">
@@ -303,7 +306,7 @@ function toggleIn(arr, v) { var k = arr.indexOf(v); if (k >= 0) arr.splice(k, 1)
 
 $("veil").addEventListener("click", function (e) {
   var t = e.target;
-  if (t.id === "veil" || t.hasAttribute("data-close")) { $("veil").hidden = true; S.ed = null; return; }
+  if (t.id === "veil" || t.hasAttribute("data-close")) { $("veil").hidden = true; S.ed = null; S.pi = null; return; }
   var pick = t.closest("[data-slug]");
   if (pick && pick.classList.contains("pick")) { openEditor(null, pick.getAttribute("data-slug")); return; }
   if (!S.ed) return;
@@ -334,29 +337,43 @@ var KINDS = [["newWeek", "New dates dropped", "Example: “VOX just added Wed 16
   ["comingSoon", "New in Coming Soon", "Example: “The Mongoose was added to Coming Soon”, before it has showtimes."],
   ["dailySummary", "Daily roundup", "Example: one noon summary of everything that changed in the last 24 hours."]];
 function inviteUrl(p) { return S.bot ? "https://t.me/" + S.bot + "?start=" + p.invite : ""; }
+function pstate(p) { return p.discord ? "💬 Discord channel" : (p.owner || p.chatId || S.links[p.id]) ? "✅ Connected" : "⏳ Waiting for Start"; }
 function renderPeople() {
   $("peopleList").innerHTML = S.cfg.people.map(function (p, i) {
     var a = Object.assign({ newWeek: true, newMovies: true, comingSoon: false, dailySummary: true }, p.alerts || {});
-    var linked = p.owner || p.discord || p.chatId || S.links[p.id];
-    var link = !p.owner && !p.discord && p.invite ? inviteUrl(p) : "";
-    var msg = encodeURIComponent("Hi " + p.name + "! Tap this to get VOX movie alerts on Telegram: " + link);
-    var state = p.discord ? "💬 Discord channel · gets every movie" : linked ? "✅ Connected" : "⏳ Waiting for them to press Start";
-    return '<div class="card person"><div class="row between"><div class="row" style="flex-wrap:nowrap"><div class="av2">' + esc(p.discord ? "#" : p.name.charAt(0)) + '</div><div><div style="font-weight:700">' + esc(p.name) + (p.owner ? ' <span class="mute">(you)</span>' : "") + '</div><div class="mute">' + state + '</div></div></div>' +
-      (p.owner ? "" : '<button class="link" data-delp="' + i + '">Remove</button>') + '</div>' +
-      (link && !linked ? '<div class="linkbox">Send them this link. They tap it and press Start:<br><b>' + esc(link) + '</b></div><div class="row"><button data-copy="' + esc(link) + '">Copy link</button><a href="https://wa.me/?text=' + msg + '" target="_blank" rel="noopener"><button type="button">Share on WhatsApp</button></a></div>' : "") +
-      '<div class="opts">' + KINDS.map(function (k) {
-        return '<label class="tog"><input type="checkbox" data-pa="' + i + ":" + k[0] + '"' + (a[k[0]] ? " checked" : "") + '><span>' + k[1] + '<small>' + k[2] + '</small></span></label>';
-      }).join("") + '</div></div>';
+    var on = KINDS.filter(function (k) { return a[k[0]]; }).length;
+    var n = p.discord ? S.cfg.watches.length : S.cfg.watches.filter(function (w) { return (w.recipients || []).indexOf(p.id) >= 0; }).length;
+    var pending = !p.owner && !p.discord && !(p.chatId || S.links[p.id]);
+    return '<div class="mc pc"><div class="pa"><div class="av2">' + esc(p.discord ? "#" : p.name.charAt(0)) + '</div></div>' +
+      '<div class="body"><div class="t">' + esc(p.name) + (p.owner ? ' <span class="mute">(you)</span>' : "") + '</div><div class="s">' + pstate(p) + '</div>' +
+      '<div class="who">' + n + ' movie' + (n === 1 ? "" : "s") + ' · ' + on + ' of 4 news types on</div>' +
+      '<div class="act"><button data-pedit="' + i + '">' + (pending ? "Invite link" : "Edit") + '</button>' + (p.owner ? "" : '<button data-delp="' + i + '">Remove</button>') + '</div></div></div>';
   }).join("");
 }
-$("peopleList").addEventListener("change", function (e) {
-  var v = e.target.getAttribute("data-pa"); if (!v) return; var p = v.split(":"), per = S.cfg.people[+p[0]];
-  per.alerts = Object.assign({ newWeek: true, newMovies: true, comingSoon: false, dailySummary: true }, per.alerts || {}); per.alerts[p[1]] = e.target.checked; dirty();
+function openPerson(i) {
+  var p = S.cfg.people[i], a = Object.assign({ newWeek: true, newMovies: true, comingSoon: false, dailySummary: true }, p.alerts || {});
+  var link = !p.owner && !p.discord && p.invite ? inviteUrl(p) : "";
+  var linked = p.owner || p.discord || p.chatId || S.links[p.id];
+  var msg = encodeURIComponent("Hi " + p.name + "! Tap this to get VOX movie alerts on Telegram: " + link);
+  S.pi = i;
+  $("sheet").innerHTML = '<div class="row between"><div class="row" style="flex-wrap:nowrap"><div class="av2">' + esc(p.discord ? "#" : p.name.charAt(0)) + '</div><div><h2>' + esc(p.name) + '</h2><p class="mute">' + pstate(p) + '</p></div></div><button class="ghost" data-close>Close</button></div>' +
+    (link && !linked ? '<div class="step"><h3><span class="n">1</span>Send them their link</h3><p class="eg">Example: paste it in WhatsApp. They tap it, Telegram opens, they press <b>Start</b>. Then press <b>Save &amp; check now</b> here and they are connected.</p><div class="linkbox"><b>' + esc(link) + '</b></div><div class="row"><button data-copy="' + esc(link) + '">Copy link</button><a href="https://wa.me/?text=' + msg + '" target="_blank" rel="noopener"><button type="button">Share on WhatsApp</button></a></div></div>' : "") +
+    '<div class="step"><h3>What news does ' + esc(p.discord ? "the channel" : p.name) + ' want?</h3><div class="opts">' + KINDS.map(function (k) {
+      return '<label class="tog"><input type="checkbox" data-pa="' + k[0] + '"' + (a[k[0]] ? " checked" : "") + '><span>' + k[1] + '<small>' + k[2] + '</small></span></label>'; }).join("") + '</div></div>' +
+    '<button class="primary" data-close>Done</button>';
+  $("veil").hidden = false;
+}
+$("sheet").addEventListener("change", function (e) {
+  var k = e.target.getAttribute("data-pa"); if (!k || S.pi == null) return; var per = S.cfg.people[S.pi];
+  per.alerts = Object.assign({ newWeek: true, newMovies: true, comingSoon: false, dailySummary: true }, per.alerts || {}); per.alerts[k] = e.target.checked; renderPeople(); dirty();
+});
+$("sheet").addEventListener("click", function (e) {
+  var c = e.target.getAttribute("data-copy");
+  if (c) { (navigator.clipboard ? navigator.clipboard.writeText(c) : Promise.reject()).then(function () { say("Link copied.", "ok"); }, function () { say("Select the link and copy it by hand.", "bad"); }); }
 });
 $("peopleList").addEventListener("click", function (e) {
   var b = e.target.closest("button"); if (!b) return;
-  var c = b.getAttribute("data-copy");
-  if (c) { (navigator.clipboard ? navigator.clipboard.writeText(c) : Promise.reject()).then(function () { say("Link copied.", "ok"); }, function () { say("Select the link and copy it by hand.", "bad"); }); }
+  var ed = b.getAttribute("data-pedit"); if (ed != null) return openPerson(+ed);
   var d = b.getAttribute("data-delp");
   if (d != null) { var p = S.cfg.people[+d]; S.cfg.people.splice(+d, 1); S.cfg.watches.forEach(function (w) { w.recipients = (w.recipients || []).filter(function (r) { return r !== p.id; }); }); renderPeople(); renderWatches(); dirty(); }
 });
@@ -365,7 +382,7 @@ $("newOk").addEventListener("click", function () {
   var n = $("newName").value.trim(); if (!n) return;
   S.cfg.people.push({ id: "p" + rid().slice(0, 6), name: n, invite: rid() + rid(), active: true, alerts: { newWeek: true, newMovies: true, comingSoon: false, dailySummary: false } });
   $("newName").value = ""; $("newPerson").hidden = true; renderPeople(); renderWatches(); dirty();
-  say("Added. Press “Save only” first, then send them their link.", "ok");
+  say("Added. Press “Save only” first, then send them their link.", "ok"); openPerson(S.cfg.people.length - 1);
 });
 $("addDiscord").addEventListener("click", function () {
   if (S.cfg.people.some(function (p) { return p.discord; })) { say("You already have a Discord channel.", "bad"); return; }

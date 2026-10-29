@@ -8,6 +8,7 @@ import sys
 from check_showtimes import VOX_HEADERS, fetch_page
 
 from .engine import ROOT, Engine, read_json, write_json
+from .posters import cffi_download, sync_posters
 from .tg import Telegram
 from .vox import BASE
 
@@ -37,6 +38,10 @@ def main() -> int:
         write_json(ROOT / "alerts-state.json", eng.state)
         if hasattr(eng, "snapshot"):
             doc = eng.movies_doc()
+            try:
+                sync_posters(ROOT, doc["movies"], lambda u: cffi_download(u, BASE))
+            except Exception as e:  # posters are a nicety; never fail the run for them
+                logging.warning("poster copy skipped: %s", e)
             old = read_json(ROOT / "movies.json", {})
             if doc != {k: old.get(k) for k in doc}:
                 write_json(ROOT / "movies.json", {**doc, "bot": tg.username})
