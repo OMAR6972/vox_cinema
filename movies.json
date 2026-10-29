@@ -71,13 +71,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013664_1791446223943.jpg"
     },
     {
-      "slug": "moscow-cairo-arabic",
-      "title": "Moscow Cairo",
-      "status": "now",
-      "poster": "posters/moscow-cairo-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013799_1793184407811.jpg"
-    },
-    {
       "slug": "naseeb-arabic",
       "title": "Naseeb",
       "status": "now",
@@ -202,6 +195,13 @@
       "status": "now",
       "poster": "posters/hybe-cheering-party-3d.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013680_1791356103469.jpg"
+    },
+    {
+      "slug": "moscow-cairo-arabic",
+      "title": "Moscow Cairo",
+      "status": "now",
+      "poster": "posters/moscow-cairo-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013799_1793184407811.jpg"
     },
     {
       "slug": "bts-world-tour-arirang-in-s-o-paulo-delayed",
