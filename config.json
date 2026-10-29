@@ -14,7 +14,7 @@
         "newWeek": true,
         "newMovies": true,
         "comingSoon": true,
-        "dailySummary": true
+        "dailySummary": false
       }
     },
     {
