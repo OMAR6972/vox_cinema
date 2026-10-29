@@ -227,3 +227,13 @@ def test_poster_copy(tmp_path):
     assert sync_posters(tmp_path, movies, dl) == 1
     assert movies[0]["poster"] == "posters/dune.jpg" and (tmp_path / "posters/dune.jpg").exists()
     assert movies[1]["poster"].startswith("https://")
+
+
+def test_old_posters_are_deleted(tmp_path):
+    from alerts.posters import sync_posters
+    (tmp_path / "posters").mkdir()
+    (tmp_path / "posters/gone.jpg").write_bytes(b"x")
+    (tmp_path / "posters/kept.jpg").write_bytes(b"x")
+    (tmp_path / "posters/live.jpg").write_bytes(b"x")
+    sync_posters(tmp_path, [{"slug": "live", "poster": "https://x/live.jpg"}], lambda u: b"", keep=["kept"])
+    assert sorted(p.name for p in (tmp_path / "posters").iterdir()) == ["kept.jpg", "live.jpg"]

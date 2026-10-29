@@ -39,7 +39,8 @@ def main() -> int:
         if hasattr(eng, "snapshot"):
             doc = eng.movies_doc()
             try:
-                sync_posters(ROOT, doc["movies"], lambda u: cffi_download(u, BASE))
+                sync_posters(ROOT, doc["movies"], lambda u: cffi_download(u, BASE),
+                             keep=[w["slug"] for w in config.get("watches", [])])
             except Exception as e:  # posters are a nicety; never fail the run for them
                 logging.warning("poster copy skipped: %s", e)
             old = read_json(ROOT / "movies.json", {})

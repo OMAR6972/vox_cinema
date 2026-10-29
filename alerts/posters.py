@@ -12,7 +12,7 @@ def local_name(slug: str, url: str) -> str:
     return f"posters/{slug}.{(m.group(1).lower() if m else 'jpg')}"
 
 
-def sync_posters(root: Path, movies: list, download, limit: int = 15) -> int:
+def sync_posters(root: Path, movies: list, download, limit: int = 15, keep=()) -> int:
     """download(url) -> bytes. Fills movie['poster'] with a repo path when a local copy exists."""
     (root / "posters").mkdir(exist_ok=True)
     fetched = 0
@@ -33,6 +33,11 @@ def sync_posters(root: Path, movies: list, download, limit: int = 15) -> int:
         if path.exists():
             m["remote"] = url
             m["poster"] = rel
+    # tidy up: delete posters of movies VOX no longer lists (unless one of your watches still uses it)
+    wanted = {m["slug"] for m in movies} | set(keep)
+    for f in (root / "posters").iterdir():
+        if f.is_file() and f.stem not in wanted:
+            f.unlink()
     return fetched
 
 

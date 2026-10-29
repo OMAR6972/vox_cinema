@@ -22,7 +22,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
+      # ref: main = the newest saved memory, even when this run waited in line behind another one.
+      # Without it, a queued run starts from the commit that existed when it was *requested* and can repeat alerts.
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
