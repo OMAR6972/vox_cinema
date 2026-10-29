@@ -279,26 +279,6 @@
       "mode": "all",
       "active": true,
       "intro": false
-    },
-    {
-      "id": "the-odyssey",
-      "slug": "the-odyssey",
-      "title": "The Odyssey",
-      "recipients": [
-        "me"
-      ],
-      "cinemas": [
-        "City Centre Almaza"
-      ],
-      "dates": [],
-      "weekdays": [],
-      "times": [],
-      "flex": 30,
-      "experiences": [],
-      "includeSoldOut": false,
-      "mode": "all",
-      "active": true,
-      "intro": false
     }
   ]
 }
