@@ -162,13 +162,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013488_1783655908489.jpg"
     },
     {
-      "slug": "the-smurfs-timeless-adventure-volume-2",
-      "title": "The Smurfs Timeless Adventure Volume 2",
-      "status": "now",
-      "poster": "posters/the-smurfs-timeless-adventure-volume-2.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013574_1790163129866.jpg"
-    },
-    {
       "slug": "verity",
       "title": "Verity",
       "status": "now",
@@ -195,6 +188,13 @@
       "status": "now",
       "poster": "posters/wildwood.png",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013671_1790335323648.png"
+    },
+    {
+      "slug": "the-smurfs-timeless-adventure-volume-2",
+      "title": "The Smurfs Timeless Adventure Volume 2",
+      "status": "now",
+      "poster": "posters/the-smurfs-timeless-adventure-volume-2.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013574_1790163129866.jpg"
     },
     {
       "slug": "hybe-cheering-party-3d",
