@@ -71,6 +71,13 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013664_1791446223943.jpg"
     },
     {
+      "slug": "moscow-cairo-arabic",
+      "title": "Moscow Cairo",
+      "status": "now",
+      "poster": "posters/moscow-cairo-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013799_1793184407811.jpg"
+    },
+    {
       "slug": "naseeb-arabic",
       "title": "Naseeb",
       "status": "now",
@@ -153,6 +160,13 @@
       "status": "now",
       "poster": "posters/the-odyssey.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013488_1783655908489.jpg"
+    },
+    {
+      "slug": "the-smurfs-timeless-adventure-volume-2",
+      "title": "The Smurfs Timeless Adventure Volume 2",
+      "status": "now",
+      "poster": "posters/the-smurfs-timeless-adventure-volume-2.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013574_1790163129866.jpg"
     },
     {
       "slug": "verity",
