@@ -244,6 +244,13 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013755_1792132981558.jpg"
     },
     {
+      "slug": "ebenezer",
+      "title": "Ebenezer",
+      "status": "soon",
+      "release": "12 November 2026",
+      "poster": "/assets/images/placeholder-poster.webp"
+    },
+    {
       "slug": "the-hunger-games-sunrise-on-the-reaping",
       "title": "The Hunger Games: Sunrise on the Reaping",
       "status": "soon",

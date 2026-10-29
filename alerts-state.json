@@ -163,6 +163,11 @@
       "release": "12 November 2026"
     },
     {
+      "slug": "ebenezer",
+      "title": "Ebenezer",
+      "release": "12 November 2026"
+    },
+    {
       "slug": "the-hunger-games-sunrise-on-the-reaping",
       "title": "The Hunger Games: Sunrise on the Reaping",
       "release": "19 November 2026"
@@ -464,6 +469,11 @@
       "at": "2026-10-29T07:40:40+00:00",
       "type": "movie",
       "title": "Moscow Cairo"
+    },
+    {
+      "at": "2026-10-29T08:16:40+00:00",
+      "type": "coming",
+      "title": "Ebenezer"
     }
   ],
   "summary": {
@@ -5686,7 +5696,8 @@
     "bts-world-tour-arirang-in-s-o-paulo-live": "https://assets.voxcinemas.com/posters/P_HO00013633_1789488803565.jpg",
     "maserati-the-brothers": "/assets/images/placeholder-poster.webp",
     "the-smurfs-timeless-adventure-volume-2": "https://assets.voxcinemas.com/posters/P_HO00013574_1790163129866.jpg",
-    "moscow-cairo-arabic": "https://assets.voxcinemas.com/posters/P_HO00013799_1793184407811.jpg"
+    "moscow-cairo-arabic": "https://assets.voxcinemas.com/posters/P_HO00013799_1793184407811.jpg",
+    "ebenezer": "/assets/images/placeholder-poster.webp"
   },
   "nowShowing": [
     {
