@@ -62,22 +62,23 @@
       "title": "Clayface",
       "recipients": [
         "me",
-        "p93877b"
+        "p93877b",
+        "discord",
+        "p2a27be"
       ],
       "cinemas": [
         "City Centre Almaza"
       ],
       "dates": [],
-      "weekdays": [
-        4
-      ],
+      "weekdays": [],
       "times": [],
       "flex": 30,
       "experiences": [],
       "includeSoldOut": false,
       "mode": "all",
       "active": true,
-      "intro": true
+      "intro": true,
+      "introNonce": "bfd7ccd119da"
     },
     {
       "id": "resident-evil",
