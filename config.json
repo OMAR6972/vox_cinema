@@ -27,6 +27,20 @@
         "comingSoon": true,
         "dailySummary": true
       }
+    },
+    {
+      "id": "discord",
+      "name": "Discord channel",
+      "isGroup": true,
+      "discord": true,
+      "allWatches": true,
+      "active": true,
+      "alerts": {
+        "newWeek": true,
+        "newMovies": true,
+        "comingSoon": false,
+        "dailySummary": true
+      }
     }
   ],
   "watches": [

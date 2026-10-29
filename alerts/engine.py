@@ -221,7 +221,8 @@ class Engine:
         wv = dict(w, everHadSessions=st.get("everHadSessions", True))
         plan = evaluate(wv, sessions, seen=set(st["seen"]), intro=intro)
         if plan and plan["kind"] != "silent":
-            for pid in w.get("recipients", []):
+            everyone = [x["id"] for x in self.people if x.get("allWatches")]
+            for pid in list(dict.fromkeys(list(w.get("recipients", [])) + everyone)):
                 p = self.person(pid)
                 if not p or (pid in booked and not intro):
                     continue

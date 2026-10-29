@@ -199,7 +199,7 @@ function renderPeople() {
     var link = !p.owner && !p.discord && p.invite ? inviteUrl(p) : "";
     var msg = encodeURIComponent("Hi " + p.name + "! Tap this to get VOX movie alerts on Telegram: " + link);
     return '<div class="card"><div class="split"><div class="title">' + esc(p.name) + (p.owner ? ' <span class="mute">(you)</span>' : '') +
-      ' <span class="mute">' + (p.discord ? "💬 Discord channel (everyone in it sees the alerts)" : linked ? "✅ connected" : "⏳ not connected yet") + '</span></div>' +
+      ' <span class="mute">' + (p.discord ? "💬 Discord channel · gets alerts for every movie" : linked ? "✅ connected" : "⏳ not connected yet") + '</span></div>' +
       (p.owner ? "" : '<button class="link" data-delp="' + i + '">Remove</button>') + '</div>' +
       (link && !linked ? '<div class="mute">Send them this link, they tap it, press Start:</div><div><code>' + esc(link) + '</code></div>' +
         '<div class="row"><button data-copy="' + esc(link) + '">Copy link</button><a href="https://wa.me/?text=' + msg + '" target="_blank" rel="noopener"><button type="button">Share on WhatsApp</button></a></div>' : '') +
@@ -227,7 +227,7 @@ $("newOk").addEventListener("click", function () {
 });
 $("addDiscord").addEventListener("click", function () {
   if (S.cfg.people.some(function (p) { return p.discord; })) { say("You already have a Discord channel.", "bad"); return; }
-  S.cfg.people.push({ id: "discord", name: "Discord channel", isGroup: true, discord: true, active: true, alerts: { newWeek: true, newMovies: true, comingSoon: false, dailySummary: true } });
+  S.cfg.people.push({ id: "discord", name: "Discord channel", isGroup: true, discord: true, allWatches: true, active: true, alerts: { newWeek: true, newMovies: true, comingSoon: false, dailySummary: true } });
   renderPeople(); dirty();
 });
 $("summaryTime").addEventListener("change", function () { S.cfg.settings.summaryTime = $("summaryTime").value; dirty(); });

@@ -149,3 +149,18 @@ def test_discord_markdown_and_delivery():
     import alerts.engine as eng
     eng.D.send = lambda url, html, **k: sent.append((url, html))
     assert e.deliver(cfg["people"][0], "<b>x</b>") and sent == [("https://hook", "<b>x</b>")]
+
+
+def test_all_watches_person_gets_every_movie():
+    vox, tg = FakeVox(), FakeTG()
+    cfg = {"settings": {}, "people": [{"id": "me", "name": "Omar", "owner": True},
+                                      {"id": "d", "name": "Chan", "discord": True, "isGroup": True, "allWatches": True}],
+           "watches": [{"id": "w", "slug": "dune", "title": "Dune", "recipients": ["me"]}]}
+    st = make(cfg, vox=vox, tg=tg).run()
+    vox.days["2026-10-28"].append(sess("b", "2026-10-28", 21 * 60, slug="dune", cinema="Almaza"))
+    e = Engine(cfg, st, tg, vox, owner_chat_id="111", discord_url="https://hook", now=NOW, sleep=lambda s: None)
+    got = []
+    import alerts.engine as eng
+    eng.D.send = lambda url, html, **k: got.append(html)
+    e.run()
+    assert any("9:00 PM" in h for h in got)
