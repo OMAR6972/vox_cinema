@@ -131,6 +131,23 @@ def parse_coming_soon(html: str) -> list:
     return _dedupe(out)
 
 
+def parse_posters(html: str) -> dict:
+    """slug -> poster image URL, from a VOX movie listing (whatson / comingsoon)."""
+    soup = BeautifulSoup(html, "html.parser")
+    out = {}
+    for art in soup.select("article.movie-summary[data-slug]"):
+        img = art.select_one("img.poster")
+        if img and img.get("src"):
+            out[art["data-slug"]] = img["src"]
+    return out
+
+
+def parse_listing_titles(html: str) -> list:
+    soup = BeautifulSoup(html, "html.parser")
+    return [{"slug": a["data-slug"], "title": a.get("data-title") or a["data-slug"]}
+            for a in soup.select("article.movie-summary[data-slug]")]
+
+
 def showtimes_path(iso: str | None = None) -> str:
     return f"/showtimes?d={iso_to_compact(iso)}" if iso else "/showtimes"
 

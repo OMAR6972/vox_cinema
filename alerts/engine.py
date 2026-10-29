@@ -11,7 +11,8 @@ from pathlib import Path
 from . import discord as D
 from . import formatter as F
 from .matcher import evaluate, sessions_for_watch
-from .vox import (parse_coming_soon, parse_filters, parse_showtimes_page, showtimes_path)
+from .vox import (parse_coming_soon, parse_filters, parse_listing_titles, parse_posters, parse_showtimes_page,
+                  showtimes_path)
 from .vtime import add_days, now_cairo_hhmm, today_cairo
 
 log = logging.getLogger("vox_alerts")
@@ -131,12 +132,14 @@ class Engine:
             if p and w and action in ("booked", "stop"):
                 ws = self.state["watches"].setdefault(wid, {})
                 ws.setdefault("booked", [])
-                if p["id"] not in ws["booked"]:
+                already = p["id"] in ws["booked"]
+                if not already:
                     ws["booked"].append(p["id"])
                 text = (f"🎉 Enjoy the movie! I won't ping you about {w['title']} again." if action == "booked"
                         else f"🔕 Okay, no more alerts about {w['title']} for you.")
                 self.tg.answer_callback(q["id"], "Done")
-                self.tg.send(q["message"]["chat"]["id"], F.esc(text))
+                if not already:  # tapped several times while waiting: answer once
+                    self.tg.send(q["message"]["chat"]["id"], F.esc(text))
             else:
                 self.tg.answer_callback(q["id"], "Done")
 
@@ -167,8 +170,11 @@ class Engine:
             movies.update(page.movies)
 
         new_coming = []
+        posters = st.setdefault("posters", {})
         try:
-            lst = parse_coming_soon(self.fetch("/movies/comingsoon"))
+            soon_html = self.fetch("/movies/comingsoon")
+            posters.update(parse_posters(soon_html))
+            lst = parse_coming_soon(soon_html)
             if lst:
                 known = {m["slug"] for m in st["comingSoon"]}
                 if st["comingSoon"]:
@@ -177,6 +183,14 @@ class Engine:
         except Exception as e:
             log.info("coming soon skipped: %s", e)
 
+        # posters + titles for movies now showing (one extra page, only when a poster is missing)
+        try:
+            if any(sl not in posters for sl in movies):
+                now_html = self.fetch("/movies/whatson")
+                posters.update(parse_posters(now_html))
+                st["nowShowing"] = parse_listing_titles(now_html)
+        except Exception as e:
+            log.info("posters skipped: %s", e)
         prev_dates = set(st["dates"])
         new_dates = [] if first_run else [d for d in home.dates if d >= today and d not in prev_dates]
         new_slugs = []
@@ -365,12 +379,18 @@ class Engine:
                 showing.setdefault(s["slug"], {"title": s["title"], "cinemas": set(), "exps": set()})
                 showing[s["slug"]]["cinemas"].add(s["cinema"])
                 showing[s["slug"]]["exps"].add(s["exp"])
+        posters = self.state.get("posters", {})
         for slug, v in sorted(showing.items(), key=lambda kv: kv[1]["title"].lower()):
-            out.append({"slug": slug, "title": v["title"], "status": "now"})
+            out.append({"slug": slug, "title": v["title"], "status": "now", "poster": posters.get(slug)})
             seen.add(slug)
+        for m in self.state.get("nowShowing", []):
+            if m["slug"] not in seen:
+                out.append({"slug": m["slug"], "title": m["title"], "status": "now", "poster": posters.get(m["slug"])})
+                seen.add(m["slug"])
         for m in self.state["comingSoon"]:
             if m["slug"] not in seen:
-                out.append({"slug": m["slug"], "title": m["title"], "status": "soon", "release": m.get("release")})
+                out.append({"slug": m["slug"], "title": m["title"], "status": "soon", "release": m.get("release"),
+                            "poster": posters.get(m["slug"])})
         cinemas = sorted({c for v in showing.values() for c in v["cinemas"] if c})
         exps = sorted({e for v in showing.values() for e in v["exps"] if e})
         return {"movies": out, "cinemas": cinemas, "experiences": exps}

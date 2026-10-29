@@ -2,91 +2,178 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>VOX Alerts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f6f4ef;--card:#fff;--fg:#1d1b18;--mute:#6d675e;--line:#e3ded3;--acc:#b3261e;--acc-fg:#fff;--ok:#1b7a3e;--bad:#b3261e;--chip:#efe9dc}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17150f;--card:#221f18;--fg:#f2eee4;--mute:#a49d8e;--line:#38342a;--acc:#ff6b5e;--acc-fg:#1a0705;--ok:#58d28a;--bad:#ff8a80;--chip:#2f2b20}}
+:root{
+  --bg:#f4f1ea;--panel:#fffdf8;--panel2:#f0ebe0;--fg:#1c1a16;--mute:#6b6558;--line:#e2dccd;
+  --acc:#c8321f;--acc-fg:#fff;--ok:#1b7a3e;--bad:#c8321f;--glow:rgba(200,50,31,.14);
+  --display:"Bricolage Grotesque","DM Sans",system-ui,sans-serif;--body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#13110d;--panel:#1d1a14;--panel2:#272319;--fg:#f4efe3;--mute:#a79f8d;--line:#352f22;
+  --acc:#ff6a4d;--acc-fg:#1c0904;--ok:#5fd68f;--bad:#ff8f7a;--glow:rgba(255,106,77,.16);}}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding:20px max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
-main{max-width:760px;margin:0 auto;display:grid;gap:16px}
-h1{margin:0;font-size:1.7rem;letter-spacing:-.02em}h2{margin:0 0 8px;font-size:1.1rem}
-p{margin:0 0 8px}.mute{color:var(--mute);font-size:.9rem}
-section,.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:12px}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--body);
+  padding-block:max(18px,env(safe-area-inset-top)) 110px;
+  padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+main{max-width:880px;margin:0 auto;display:grid;gap:18px}
 [hidden]{display:none!important}
+h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.02em}
+h1{font-size:2rem;font-weight:800}
+h2{font-size:1.25rem;font-weight:800}
+p{margin:0}
+.mute{color:var(--mute);font-size:.92rem}
 button,input,select{font:inherit;color:inherit}
-button{border:1px solid var(--line);background:var(--chip);border-radius:10px;padding:8px 14px;cursor:pointer}
-button.primary{background:var(--acc);color:var(--acc-fg);border-color:var(--acc);font-weight:600}
-button.link{background:none;border:0;color:var(--acc);padding:4px}
-input[type=text],input[type=password],input[type=date],input[type=time],select{width:100%;padding:9px 10px;border-radius:10px;border:1px solid var(--line);background:var(--bg)}
-label.opt{display:flex;gap:8px;align-items:center}
-.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.row>*{min-width:0}
-.tabs{display:flex;gap:6px;flex-wrap:wrap}.tabs button[aria-pressed=true]{background:var(--fg);color:var(--bg)}
-.chip{display:inline-flex;gap:6px;align-items:center;background:var(--chip);border-radius:99px;padding:3px 10px;font-size:.9rem}
-.chip button{padding:0 2px;border:0;background:none}
-.days button[aria-pressed=true]{background:var(--acc);color:var(--acc-fg);border-color:var(--acc)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:6px 14px}
-.msg{min-height:1.2em;font-size:.92rem}.msg.ok{color:var(--ok)}.msg.bad{color:var(--bad)}
-.title{font-weight:600}
-.split{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
-code{background:var(--chip);padding:1px 6px;border-radius:6px;word-break:break-all}
-.fld{display:grid;gap:4px}.fld>span{font-weight:600;font-size:.92rem}
-#bar{position:sticky;bottom:0;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 14px;box-shadow:0 -4px 16px rgba(0,0,0,.12);padding-bottom:max(10px,env(safe-area-inset-bottom))}
+button{border:1px solid var(--line);background:var(--panel2);border-radius:12px;padding:9px 15px;cursor:pointer;font-weight:500;min-height:42px}
+button:hover{border-color:var(--mute)}
+button.primary{background:var(--acc);color:var(--acc-fg);border-color:var(--acc);font-weight:700}
+button.ghost{background:none}
+button.link{background:none;border:0;color:var(--acc);padding:4px 8px;min-height:0}
+input[type=text],input[type=password],input[type=date],input[type=time],input[type=number],input[type=search],select{
+  width:100%;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--fg);min-height:44px}
+input::placeholder{color:var(--mute)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.row>*{min-width:0}
+.between{justify-content:space-between}
+.head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap}
+.pill{display:inline-flex;gap:8px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:5px 12px;font-size:.88rem}
+.tabs{display:flex;gap:6px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:5px;width:max-content;max-width:100%}
+.tabs button{border:0;background:none;min-height:40px}
+.tabs button[aria-pressed=true]{background:var(--fg);color:var(--bg);font-weight:700}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;display:grid;gap:12px}
+
+/* poster cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:14px}
+.mc{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+.mc.paused{opacity:.55}
+.poster{aspect-ratio:2/3;background:linear-gradient(160deg,var(--panel2),var(--line));display:grid;place-items:center;font:800 2.4rem var(--display);color:var(--mute);overflow:hidden}
+.poster img{width:100%;height:100%;object-fit:cover;display:block}
+.mc .body{padding:10px 12px 12px;display:grid;gap:6px;flex:1}
+.mc .t{font-family:var(--display);font-weight:800;line-height:1.15}
+.mc .s{font-size:.8rem;color:var(--mute);line-height:1.35}
+.mc .who{font-size:.78rem;color:var(--mute)}
+.mc .act{display:flex;gap:6px;margin-top:auto;flex-wrap:wrap}
+.mc .act button{flex:1;padding:7px 8px;min-height:38px;font-size:.88rem}
+.badge{position:absolute;top:8px;left:8px;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:99px;padding:2px 9px;font-size:.72rem;font-weight:700}
+.add{border:2px dashed var(--line);background:none;display:grid;place-items:center;min-height:220px;color:var(--mute);font-weight:700;cursor:pointer;border-radius:18px}
+.add:hover{border-color:var(--acc);color:var(--acc)}
+.add span{font-size:2.2rem;line-height:1;display:block;text-align:center}
+
+/* switch */
+.sw{position:relative;display:inline-flex;align-items:center;gap:8px;cursor:pointer;font-size:.85rem;user-select:none}
+.sw input{position:absolute;opacity:0;width:0;height:0}
+.sw i{width:38px;height:22px;border-radius:99px;background:var(--line);position:relative;transition:.15s;flex:none}
+.sw i::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:var(--panel);transition:.15s}
+.sw input:checked+i{background:var(--acc)}
+.sw input:checked+i::after{left:19px;background:#fff}
+.sw input:focus-visible+i{outline:2px solid var(--acc);outline-offset:2px}
+
+/* modal */
+.veil{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:30;display:flex;align-items:flex-end;justify-content:center}
+.sheet{background:var(--bg);width:100%;max-width:720px;max-height:92dvh;overflow:auto;border-radius:22px 22px 0 0;padding:18px max(16px,env(safe-area-inset-left)) calc(24px + env(safe-area-inset-bottom));display:grid;gap:16px;align-content:start}
+@media (min-width:760px){.veil{align-items:center}.sheet{border-radius:22px}}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;display:grid;gap:10px}
+.step h3{font-size:1.02rem;display:flex;gap:10px;align-items:center}
+.step .n{width:26px;height:26px;border-radius:50%;background:var(--acc);color:var(--acc-fg);display:grid;place-items:center;font-size:.85rem;flex:none}
+.eg{color:var(--mute);font-size:.88rem;background:var(--panel2);border-radius:10px;padding:7px 10px}
+.eg b{color:var(--fg)}
+.opts{display:grid;gap:8px}
+.tog{display:flex;gap:10px;align-items:flex-start;padding:8px 2px}
+.tog input{margin-top:4px;width:18px;height:18px;accent-color:var(--acc);flex:none}
+.tog small{display:block;color:var(--mute)}
+.chip{display:inline-flex;gap:6px;align-items:center;background:var(--panel2);border:1px solid var(--line);border-radius:99px;padding:5px 12px;font-size:.9rem;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--acc);color:var(--acc-fg);border-color:var(--acc);font-weight:700}
+.chip.x button{background:none;border:0;padding:0 2px;min-height:0}
+.who-chip{display:inline-flex;gap:8px;align-items:center;padding:4px 14px 4px 4px;border-radius:99px;border:1px solid var(--line);background:var(--panel2);cursor:pointer}
+.who-chip .av{width:30px;height:30px;border-radius:50%;background:var(--line);display:grid;place-items:center;font-weight:800;font-size:.85rem}
+.who-chip[aria-pressed=true]{border-color:var(--acc);background:var(--glow)}
+.who-chip[aria-pressed=true] .av{background:var(--acc);color:var(--acc-fg)}
+
+/* picker */
+.pick{cursor:pointer;text-align:left;padding:0;border-radius:14px;overflow:hidden;background:var(--panel);border:1px solid var(--line);min-height:0;display:block;width:100%}
+.pick .p{aspect-ratio:2/3}
+.pick .nm{padding:7px 9px;font-size:.82rem;font-weight:700;line-height:1.2}
+.pick:hover{border-color:var(--acc)}
+
+/* people */
+.person{display:grid;gap:10px}
+.av2{width:44px;height:44px;border-radius:50%;background:var(--acc);color:var(--acc-fg);display:grid;place-items:center;font:800 1.1rem var(--display);flex:none}
+.linkbox{background:var(--panel2);border-radius:12px;padding:10px 12px;font-size:.85rem;word-break:break-all}
+
+/* action bar */
+#bar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--panel);border-top:1px solid var(--line);
+  padding:10px max(16px,env(safe-area-inset-left)) calc(10px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
+#bar .in{max-width:880px;margin:0 auto;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+#bar .primary{flex:1 1 180px}
+.msg{font-size:.9rem;min-height:1.2em;flex:1 1 100%}
+.msg.ok{color:var(--ok)}.msg.bad{color:var(--bad)}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--mute)}
+.dot.g{background:var(--ok)}.dot.r{background:var(--bad)}.dot.y{background:#e0a61a}
 </style>
 </head>
 <body>
 <main>
-<header><h1>🎬 VOX Alerts</h1><p class="mute">Pick movies, days and times. The bot messages you (and your friends) on Telegram when they appear.</p></header>
+  <header class="head">
+    <div><h1>🎬 VOX Alerts</h1><p class="mute">Get a Telegram or Discord message the moment your movies get showtimes.</p></div>
+    <div class="row"><span class="pill" id="status"><i class="dot"></i><span id="statusText">Connecting…</span></span><button class="link" id="forget" hidden>Disconnect</button></div>
+  </header>
 
-<section id="setup" hidden>
-  <h2>Connect</h2>
-  <p class="mute">Paste your GitHub key once on this device so the page can save your choices. It stays in this browser only.</p>
-  <input type="password" id="token" placeholder="GitHub key" autocomplete="off">
-  <div class="row"><button class="primary" id="connect">Connect</button></div>
-  <div class="msg" id="setupMsg"></div>
-</section>
+  <section class="card" id="setup" hidden>
+    <h2>Connect this device</h2>
+    <p class="mute">Paste your GitHub key once. It stays in this browser only and lets this page save your choices.</p>
+    <input type="password" id="token" placeholder="GitHub key" autocomplete="off">
+    <div class="row"><button class="primary" id="connect">Connect</button></div>
+    <p class="msg" id="setupMsg"></p>
+  </section>
 
-<div id="app" hidden>
-  <div class="row split"><div class="tabs" id="tabs">
-    <button data-tab="watches" aria-pressed="true">Movies</button>
-    <button data-tab="people" aria-pressed="false">People</button>
-    <button data-tab="settings" aria-pressed="false">Settings</button></div>
-    <button class="link" id="forget">Disconnect</button></div>
-  <section id="status"><div class="mute" id="statusText">Checking the bot…</div></section>
+  <div id="app" hidden style="display:grid;gap:18px">
+    <nav class="tabs" id="tabs">
+      <button data-tab="watches" aria-pressed="true">Movies</button>
+      <button data-tab="people" aria-pressed="false">People</button>
+      <button data-tab="settings" aria-pressed="false">Settings</button>
+    </nav>
 
-  <div id="tab-watches" class="tabpane" style="display:grid;gap:16px">
-    <div class="row split"><h2 style="margin:0">What I'm watching</h2><button class="primary" id="addWatch">+ Add a movie</button></div>
-    <div id="watchList" style="display:grid;gap:10px"></div>
-    <section id="editor" hidden></section>
+    <section id="tab-watches" class="tabpane" style="display:grid;gap:14px">
+      <div><h2>Movies I'm watching</h2><p class="mute">Each card is one watch. Flip the switch to pause it. Tap a card's Edit to choose days, times and who gets alerts.</p></div>
+      <div class="grid" id="watchList"></div>
+    </section>
+
+    <section id="tab-people" class="tabpane" style="display:none;gap:14px">
+      <div class="head"><div><h2>People &amp; channels</h2><p class="mute">Everyone who can receive alerts. Each person picks which kinds of news they want.</p></div>
+        <div class="row"><button id="addDiscord">+ Discord channel</button><button class="primary" id="addPerson">+ Add a friend</button></div></div>
+      <div class="card row" id="newPerson" hidden><input type="text" id="newName" placeholder="Friend's first name" style="max-width:260px"><button class="primary" id="newOk">Add</button></div>
+      <div id="peopleList" style="display:grid;gap:12px"></div>
+    </section>
+
+    <section id="tab-settings" class="tabpane" style="display:none;gap:14px">
+      <h2>Settings</h2>
+      <div class="step"><h3>What counts as “new”</h3>
+        <p class="eg">Example: with <b>6 hours</b>, a showing the bot first saw 2 hours ago gets 🆕. One it first saw yesterday doesn't, and the message tells you when the bot first saw it.</p>
+        <div class="row"><input type="number" id="newHours" min="1" max="168" style="max-width:120px"><span>hours</span></div></div>
+      <div class="step"><h3>Daily roundup time</h3>
+        <p class="eg">Example: <b>12:00 PM</b> means people who turned on “Daily roundup” get one summary message around noon, Cairo time.</p>
+        <input type="time" id="summaryTime" style="max-width:180px"></div>
+    </section>
   </div>
-
-  <div id="tab-people" class="tabpane" style="display:none;gap:16px">
-    <div class="row split"><h2 style="margin:0">Who gets alerts</h2><div class="row"><button id="addDiscord">+ Discord channel</button><button class="primary" id="addPerson">+ Add a friend</button></div></div>
-    <div class="card row" id="newPerson" hidden><input type="text" id="newName" placeholder="Friend's first name" style="max-width:240px"><button class="primary" id="newOk">Add</button></div>
-    <div id="peopleList" style="display:grid;gap:10px"></div>
-  </div>
-
-  <div id="tab-settings" class="tabpane" style="display:none;gap:16px">
-    <section><h2>What counts as “new”</h2>
-      <p class="mute">A showing gets 🆕 only if the bot first saw it this many hours ago or less. Older ones say when the bot first saw them.</p>
-      <div class="row"><input type="number" id="newHours" min="1" max="168" style="max-width:110px"> <span>hours</span></div></section>
-    <section><h2>Daily roundup time</h2>
-      <p class="mute">People who turned on the roundup get one message a day at this time (Cairo).</p>
-      <input type="time" id="summaryTime"></section>
-  </div>
-
-  <div id="bar">
-    <div class="row"><button class="primary" id="saveRun">Save &amp; check now</button><button id="save">Save only</button><span class="msg" id="msg"></span></div>
-  </div>
-</div>
 </main>
+
+<div id="bar" hidden><div class="in">
+  <button class="primary" id="saveRun">Save &amp; check now</button>
+  <button id="save">Save only</button>
+  <p class="msg" id="msg"></p>
+</div></div>
+
+<div class="veil" id="veil" hidden><div class="sheet" id="sheet"></div></div>
 
 <script>
 var OWNER = "OMAR6972", REPO = "vox_cinema";
 var API = "https://api.github.com/repos/" + OWNER + "/" + REPO;
 var $ = function (id) { return document.getElementById(id); };
 var WD = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-var S = { cfg: null, sha: null, movies: [], cinemas: [], exps: [], bot: null, links: {}, editing: null, dirty: false };
+var S = { cfg: null, sha: null, movies: [], cinemas: [], exps: [], bot: null, links: {}, dirty: false, ed: null };
 
 function getToken() { try { return localStorage.getItem("voxToken") || ""; } catch (e) { return ""; } }
 function setToken(t) { try { if (t) localStorage.setItem("voxToken", t); else localStorage.removeItem("voxToken"); } catch (e) {} }
@@ -95,7 +182,7 @@ function dec(s) { return decodeURIComponent(escape(atob(s.replace(/\n/g, ""))));
 function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
 function say(t, k) { var m = $("msg"); m.textContent = t; m.className = "msg" + (k ? " " + k : ""); }
 function rid() { var a = new Uint8Array(6); crypto.getRandomValues(a); return Array.prototype.map.call(a, function (b) { return ("0" + b.toString(16)).slice(-2); }).join(""); }
-function dirty() { S.dirty = true; say("Not saved yet."); }
+function dirty() { S.dirty = true; say("You have unsaved changes."); }
 
 function gh(path, opts) {
   opts = opts || {};
@@ -111,93 +198,141 @@ function pub(name) { return fetch(name + "?_=" + Date.now()).then(function (r) {
 
 function pretty(d) { var p = d.split("-"); return WD[new Date(+p[0], p[1] - 1, +p[2]).getDay()] + " " + (+p[2]) + "/" + (+p[1]); }
 function pt(t) { var p = t.split(":"), h = +p[0]; return ((h % 12) || 12) + ":" + p[1] + (h >= 12 ? " PM" : " AM"); }
-function describe(w) {
-  var b = [];
-  if (w.dates && w.dates.length) b.push(w.dates.map(pretty).join(", "));
-  if (w.weekdays && w.weekdays.length) b.push("every " + w.weekdays.map(function (d) { return WD[d]; }).join("/"));
-  if (!(w.dates && w.dates.length) && !(w.weekdays && w.weekdays.length)) b.push("any day");
-  if (w.times && w.times.length) b.push("around " + w.times.map(pt).join(" / ") + " (±" + (w.flex || 30) + " min)");
-  b.push(w.cinemas && w.cinemas.length ? w.cinemas.join(", ") : "any cinema");
-  if (w.experiences && w.experiences.length) b.push(w.experiences.join(", "));
-  return b.join(" · ");
+function movie(slug) { return S.movies.find(function (m) { return m.slug === slug; }); }
+function person(id) { return S.cfg.people.find(function (x) { return x.id === id; }); }
+function posterHtml(slug, title) {
+  var m = movie(slug), u = m && m.poster;
+  return '<div class="poster">' + (u ? '<img loading="lazy" referrerpolicy="no-referrer" alt="" src="' + esc(u) + '" onerror="this.remove()">' : "") + (u ? "" : esc((title || "?").charAt(0))) + '</div>';
 }
-function names(ids) { return ids.map(function (id) { var p = S.cfg.people.find(function (x) { return x.id === id; }); return p ? p.name : "?"; }).join(", ") || "nobody"; }
+function summary(w) {
+  var days = (w.dates && w.dates.length ? w.dates.map(pretty).join(", ") : "") + ((w.weekdays && w.weekdays.length) ? ((w.dates && w.dates.length ? ", " : "") + "every " + w.weekdays.map(function (d) { return WD[d]; }).join("/")) : "");
+  var bits = [days || "Any day", w.times && w.times.length ? "around " + w.times.map(pt).join("/") : "Any time"];
+  bits.push(w.cinemas && w.cinemas.length ? w.cinemas.join(", ").replace(/City Centre /g, "") : "Any cinema");
+  if (w.experiences && w.experiences.length) bits.push(w.experiences.join(", "));
+  return bits.join(" · ");
+}
 
+/* ---------- movies tab ---------- */
 function renderWatches() {
-  var l = S.cfg.watches;
-  $("watchList").innerHTML = l.length ? l.map(function (w, i) {
-    return '<div class="card"><div class="split"><div><div class="title">' + esc(w.title) + (w.active === false ? ' <span class="mute">(paused)</span>' : '') + '</div>' +
-      '<div class="mute">' + esc(describe(w)) + '</div><div class="mute">For: ' + esc(names(w.recipients || [])) + '</div></div>' +
-      '<div class="row"><button data-send="' + i + '">Send current times</button><button data-edit="' + i + '">Edit</button></div></div></div>';
-  }).join("") : '<div class="card mute">Nothing yet. Tap “Add a movie”.</div>';
+  var h = S.cfg.watches.map(function (w, i) {
+    var who = (w.recipients || []).map(function (id) { var p = person(id); return p ? p.name : ""; }).filter(Boolean).join(", ") || "nobody";
+    return '<div class="mc' + (w.active === false ? " paused" : "") + '">' +
+      (w.active === false ? '<span class="badge">Paused</span>' : "") + posterHtml(w.slug, w.title) +
+      '<div class="body"><div class="t">' + esc(w.title) + '</div><div class="s">' + esc(summary(w)) + '</div><div class="who">To: ' + esc(who) + '</div>' +
+      '<label class="sw"><input type="checkbox" data-act="' + i + '"' + (w.active !== false ? " checked" : "") + '><i></i><span>' + (w.active !== false ? "On" : "Paused") + '</span></label>' +
+      '<div class="act"><button data-edit="' + i + '">Edit</button><button data-send="' + i + '" title="Message everyone on this movie with what is out right now">Send now</button></div></div></div>';
+  }).join("");
+  $("watchList").innerHTML = h + '<button class="add" id="addWatch"><div><span>+</span>Add a movie</div></button>';
 }
 $("watchList").addEventListener("click", function (e) {
-  var i = e.target.getAttribute("data-edit"); if (i != null) openEditor(+i);
-  var j = e.target.getAttribute("data-send");
-  if (j != null) { S.cfg.watches[+j].introNonce = rid(); dirty(); say("Marked. Press “Save & check now” and everyone on this movie gets what’s out right now.", "ok"); }
+  var t = e.target.closest("button"); if (!t) return;
+  if (t.id === "addWatch" || t.closest("#addWatch")) return openPicker();
+  if (t.getAttribute("data-edit") != null) openEditor(+t.getAttribute("data-edit"));
+  if (t.getAttribute("data-send") != null) {
+    S.cfg.watches[+t.getAttribute("data-send")].introNonce = rid(); dirty();
+    say("Marked. Press “Save & check now” and everyone on that movie gets what's out right now.", "ok");
+  }
+});
+$("watchList").addEventListener("change", function (e) {
+  var i = e.target.getAttribute("data-act"); if (i == null) return;
+  S.cfg.watches[+i].active = e.target.checked; renderWatches(); dirty();
 });
 
-function chips(list, fmt, attr) { return list.map(function (v, i) { return '<span class="chip">' + esc(fmt(v)) + ' <button type="button" ' + attr + '="' + i + '" aria-label="remove">×</button></span>'; }).join(""); }
-
-function openEditor(i) {
-  var isNew = i == null;
-  var w = isNew ? { id: "", slug: "", title: "", recipients: ["me"], cinemas: ["City Centre Almaza"], dates: [], weekdays: [], times: [], flex: 30, experiences: [], includeSoldOut: false, mode: "all", active: true, intro: true }
-                : JSON.parse(JSON.stringify(S.cfg.watches[i]));
-  S.editing = { i: i, w: w };
-  var ed = $("editor"); ed.hidden = false;
-  var movieOpts = '<option value="">Choose a movie…</option>' + S.movies.map(function (m) { return '<option value="' + esc(m.slug) + '"' + (m.slug === w.slug ? " selected" : "") + '>' + esc(m.title) + (m.status === "soon" ? " (coming soon)" : "") + '</option>'; }).join("");
-  if (w.slug && !S.movies.some(function (m) { return m.slug === w.slug; })) movieOpts += '<option value="' + esc(w.slug) + '" selected>' + esc(w.title) + '</option>';
-  ed.innerHTML = '<h2>' + (isNew ? "Add a movie" : "Edit " + esc(w.title)) + '</h2>' +
-    '<label class="fld"><span>Movie</span><select id="e_movie"' + (isNew ? "" : " disabled") + '>' + movieOpts + '</select></label>' +
-    '<div class="fld"><span>Which days? <small class="mute">(leave empty for any day)</small></span><div class="row days" id="e_wd">' +
-      WD.map(function (n, d) { return '<button type="button" data-wd="' + d + '" aria-pressed="' + (w.weekdays.indexOf(d) >= 0) + '">' + n + '</button>'; }).join("") + '</div>' +
-      '<div class="row"><input type="date" id="e_date" style="max-width:200px"><button type="button" id="e_addDate">Add date</button></div><div class="row" id="e_dates"></div></div>' +
-    '<div class="fld"><span>Around what time? <small class="mute">(leave empty for any time)</small></span><div class="row"><input type="time" id="e_time" style="max-width:160px"><button type="button" id="e_addTime">Add time</button>' +
-      '<select id="e_flex" style="max-width:200px">' + [15, 30, 60, 90, 120].map(function (n) { return '<option value="' + n + '"' + (n === (w.flex || 30) ? " selected" : "") + '>± ' + n + ' minutes</option>'; }).join("") + '</select></div><div class="row" id="e_times"></div></div>' +
-    '<div class="fld"><span>Which cinema?</span><div class="grid" id="e_cin"></div></div>' +
-    '<div class="fld"><span>Screen type <small class="mute">(none ticked = any)</small></span><div class="grid" id="e_exp"></div></div>' +
-    '<label class="opt"><input type="checkbox" id="e_sold"' + (w.includeSoldOut ? " checked" : "") + '> Also tell me about sold-out times</label>' +
-    '<label class="opt"><input type="checkbox" id="e_mine"' + (w.mode === "mine" ? " checked" : "") + '> Only message me when one of MY days appears</label>' +
-    '<div class="fld"><span>Who should get these alerts?</span><div class="grid" id="e_rec"></div></div>' +
-    '<label class="opt"><input type="checkbox" id="e_active"' + (w.active !== false ? " checked" : "") + '> Active</label>' +
-    '<label class="opt"><input type="checkbox" id="e_intro"' + (w.intro ? " checked" : "") + '> Send a “here’s what’s out now” message first</label>' +
-    '<div class="row"><button class="primary" id="e_ok">Done</button><button id="e_cancel">Cancel</button>' + (isNew ? "" : '<button id="e_del" style="margin-left:auto">Delete</button>') + '</div>';
-  var cins = S.cinemas.slice(); w.cinemas.forEach(function (c) { if (cins.indexOf(c) < 0) cins.push(c); });
-  $("e_cin").innerHTML = cins.map(function (c) { return '<label class="opt"><input type="checkbox" data-cin="' + esc(c) + '"' + (w.cinemas.indexOf(c) >= 0 ? " checked" : "") + '> ' + esc(c) + '</label>'; }).join("");
-  var exps = S.exps.slice(); w.experiences.forEach(function (c) { if (exps.indexOf(c) < 0) exps.push(c); });
-  $("e_exp").innerHTML = exps.map(function (c) { return '<label class="opt"><input type="checkbox" data-exp="' + esc(c) + '"' + (w.experiences.indexOf(c) >= 0 ? " checked" : "") + '> ' + esc(c) + '</label>'; }).join("") || '<span class="mute">Will appear after the first bot check.</span>';
-  $("e_rec").innerHTML = S.cfg.people.map(function (p) { return '<label class="opt"><input type="checkbox" data-rec="' + esc(p.id) + '"' + (w.recipients.indexOf(p.id) >= 0 ? " checked" : "") + '> ' + esc(p.name) + '</label>'; }).join("");
-  function paint() { $("e_dates").innerHTML = chips(w.dates, pretty, "data-rd"); $("e_times").innerHTML = chips(w.times, pt, "data-rt"); }
-  paint();
-  ed.onclick = function (e) {
-    var t = e.target;
-    if (t.getAttribute("data-wd") != null) { var d = +t.getAttribute("data-wd"), k = w.weekdays.indexOf(d); if (k >= 0) w.weekdays.splice(k, 1); else w.weekdays.push(d); t.setAttribute("aria-pressed", k < 0); }
-    if (t.getAttribute("data-rd") != null) { w.dates.splice(+t.getAttribute("data-rd"), 1); paint(); }
-    if (t.getAttribute("data-rt") != null) { w.times.splice(+t.getAttribute("data-rt"), 1); paint(); }
-    if (t.id === "e_addDate" && $("e_date").value && w.dates.indexOf($("e_date").value) < 0) { w.dates.push($("e_date").value); w.dates.sort(); $("e_date").value = ""; paint(); }
-    if (t.id === "e_addTime" && $("e_time").value && w.times.indexOf($("e_time").value) < 0) { w.times.push($("e_time").value); w.times.sort(); $("e_time").value = ""; paint(); }
-    if (t.id === "e_cancel") { ed.hidden = true; S.editing = null; }
-    if (t.id === "e_del") { S.cfg.watches.splice(i, 1); ed.hidden = true; S.editing = null; renderWatches(); dirty(); }
-    if (t.id === "e_ok") {
-      var slug = isNew ? $("e_movie").value : w.slug;
-      if (!slug) { alert_("Pick a movie first."); return; }
-      if (isNew) { var m = S.movies.find(function (x) { return x.slug === slug; }); w.slug = slug; w.title = m ? m.title : slug; w.id = slug + "-" + rid().slice(0, 4); }
-      w.flex = +$("e_flex").value;
-      w.cinemas = [].map.call(document.querySelectorAll("[data-cin]:checked"), function (x) { return x.getAttribute("data-cin"); });
-      w.experiences = [].map.call(document.querySelectorAll("[data-exp]:checked"), function (x) { return x.getAttribute("data-exp"); });
-      w.recipients = [].map.call(document.querySelectorAll("[data-rec]:checked"), function (x) { return x.getAttribute("data-rec"); });
-      w.includeSoldOut = $("e_sold").checked; w.mode = $("e_mine").checked ? "mine" : "all";
-      w.active = $("e_active").checked; w.intro = $("e_intro").checked;
-      if (!w.recipients.length) { alert_("Tick at least one person to send it to."); return; }
-      if (isNew) S.cfg.watches.unshift(w); else S.cfg.watches[i] = Object.assign(S.cfg.watches[i], w);
-      ed.hidden = true; S.editing = null; renderWatches(); dirty();
-    }
-  };
-  ed.scrollIntoView({ behavior: "smooth", block: "start" });
+/* ---------- movie picker ---------- */
+function openPicker() {
+  var sheet = $("sheet");
+  sheet.innerHTML = '<div class="row between"><h2>Pick a movie</h2><button class="ghost" data-close>Close</button></div>' +
+    '<input type="search" id="pq" placeholder="Search movies…" autocomplete="off"><div class="grid" id="pgrid"></div>';
+  $("veil").hidden = false;
+  function paint() {
+    var q = $("pq").value.trim().toLowerCase();
+    var list = S.movies.filter(function (m) { return !q || m.title.toLowerCase().indexOf(q) >= 0; });
+    $("pgrid").innerHTML = list.map(function (m) {
+      return '<button class="pick" data-slug="' + esc(m.slug) + '">' + posterHtml(m.slug, m.title) + '<div class="nm">' + esc(m.title) + (m.status === "soon" ? ' <span class="mute">· soon</span>' : "") + '</div></button>';
+    }).join("") || '<p class="mute">No movie matches.</p>';
+  }
+  $("pq").addEventListener("input", paint); paint();
 }
-function alert_(t) { say(t, "bad"); }
-$("addWatch").addEventListener("click", function () { openEditor(null); });
 
+/* ---------- editor ---------- */
+function openEditor(i, slug) {
+  var isNew = i == null;
+  var w = isNew ? { id: "", slug: slug, title: (movie(slug) || {}).title || slug, recipients: S.cfg.people.filter(function (p) { return p.owner; }).map(function (p) { return p.id; }),
+    cinemas: ["City Centre Almaza"], dates: [], weekdays: [], times: [], flex: 30, experiences: [], includeSoldOut: false, mode: "all", active: true, intro: true }
+    : JSON.parse(JSON.stringify(S.cfg.watches[i]));
+  S.ed = { i: i, w: w };
+  var cins = S.cinemas.slice(); w.cinemas.forEach(function (c) { if (cins.indexOf(c) < 0) cins.push(c); });
+  var exps = S.exps.slice(); w.experiences.forEach(function (c) { if (exps.indexOf(c) < 0) exps.push(c); });
+  var sheet = $("sheet");
+  sheet.innerHTML =
+    '<div class="row between"><div class="row" style="flex-wrap:nowrap"><div style="width:54px;flex:none">' + posterHtml(w.slug, w.title) + '</div><div><h2>' + esc(w.title) + '</h2><p class="mute">' + (isNew ? "New watch" : "Editing this watch") + '</p></div></div><button class="ghost" data-close>Close</button></div>' +
+
+    '<div class="step"><h3><span class="n">1</span>Which days?</h3><p class="eg">Example: tap <b>Fri</b> and <b>Sat</b> to only hear about weekend shows. Or add one date, like <b>Fri 6 Nov</b>. Leave empty to hear about <b>any day</b>.</p>' +
+      '<div class="row" id="e_wd">' + WD.map(function (n, d) { return '<button type="button" class="chip" data-wd="' + d + '" aria-pressed="' + (w.weekdays.indexOf(d) >= 0) + '">' + n + '</button>'; }).join("") + '</div>' +
+      '<div class="row"><input type="date" id="e_date" style="max-width:200px"><button type="button" id="e_addDate">Add date</button></div><div class="row" id="e_dates"></div></div>' +
+
+    '<div class="step"><h3><span class="n">2</span>Around what time?</h3><p class="eg">Example: <b>8:00 PM</b> with <b>± 1 hour</b> means shows between 7 and 9 PM count as a match. You can add several times. Leave empty for <b>any time</b>.</p>' +
+      '<div class="row"><input type="time" id="e_time" style="max-width:160px"><button type="button" id="e_addTime">Add time</button>' +
+      '<select id="e_flex" style="max-width:180px">' + [15, 30, 60, 90, 120].map(function (n) { return '<option value="' + n + '"' + (n === (w.flex || 30) ? " selected" : "") + '>± ' + n + ' min</option>'; }).join("") + '</select></div><div class="row" id="e_times"></div></div>' +
+
+    '<div class="step"><h3><span class="n">3</span>Which cinema?</h3><p class="eg">Example: tick only <b>City Centre Almaza</b> and shows elsewhere are ignored.</p><div class="row" id="e_cin">' +
+      cins.map(function (c) { return '<button type="button" class="chip" data-cin="' + esc(c) + '" aria-pressed="' + (w.cinemas.indexOf(c) >= 0) + '">' + esc(c) + '</button>'; }).join("") + '</div></div>' +
+
+    '<div class="step"><h3><span class="n">4</span>Which screen type?</h3><p class="eg">Example: tap <b>IMAX</b> to hear only about IMAX shows. Tap nothing to hear about <b>every</b> type.</p><div class="row" id="e_exp">' +
+      (exps.map(function (c) { return '<button type="button" class="chip" data-exp="' + esc(c) + '" aria-pressed="' + (w.experiences.indexOf(c) >= 0) + '">' + esc(c) + '</button>'; }).join("") || '<span class="mute">Screen types appear after the bot’s first check.</span>') + '</div></div>' +
+
+    '<div class="step"><h3><span class="n">5</span>Who gets the alerts?</h3><p class="eg">Example: tap your friend’s name and they get a message every time something matches this movie.</p><div class="row" id="e_rec">' +
+      S.cfg.people.map(function (p) { return '<button type="button" class="who-chip" data-rec="' + esc(p.id) + '" aria-pressed="' + (w.recipients.indexOf(p.id) >= 0) + '"><span class="av">' + esc(p.name.charAt(0)) + '</span>' + esc(p.name) + '</button>'; }).join("") + '</div></div>' +
+
+    '<div class="step"><h3><span class="n">6</span>Extras</h3><div class="opts">' +
+      '<label class="tog"><input type="checkbox" id="e_sold"' + (w.includeSoldOut ? " checked" : "") + '><span>Include sold-out times<small>Example: a 7 PM show that is already full still appears, marked “(sold out)”.</small></span></label>' +
+      '<label class="tog"><input type="checkbox" id="e_mine"' + (w.mode === "mine" ? " checked" : "") + '><span>Only alert me about my days<small>Example: with “Fri” chosen, a new Tuesday show stays silent instead of sending a heads-up.</small></span></label>' +
+      (isNew ? '<label class="tog"><input type="checkbox" id="e_intro"' + (w.intro ? " checked" : "") + '><span>Show me what’s out right now<small>Example: tick it and, at the next check, you get one message listing every current showing. Untick it to only hear about future additions.</small></span></label>' : "") +
+    '</div></div>' +
+
+    '<div class="row"><button class="primary" id="e_ok" style="flex:1 1 160px">' + (isNew ? "Add movie" : "Done") + '</button>' + (isNew ? "" : '<button id="e_del">Delete</button>') + '</div><p class="msg" id="e_msg"></p>';
+  $("veil").hidden = false;
+  paintChips();
+}
+function paintChips() {
+  var w = S.ed.w;
+  $("e_dates").innerHTML = w.dates.map(function (d, k) { return '<span class="chip x">' + esc(pretty(d)) + ' <button type="button" data-rd="' + k + '" aria-label="remove">×</button></span>'; }).join("");
+  $("e_times").innerHTML = w.times.map(function (t, k) { return '<span class="chip x">' + esc(pt(t)) + ' <button type="button" data-rt="' + k + '" aria-label="remove">×</button></span>'; }).join("");
+}
+function toggleIn(arr, v) { var k = arr.indexOf(v); if (k >= 0) arr.splice(k, 1); else arr.push(v); }
+
+$("veil").addEventListener("click", function (e) {
+  var t = e.target;
+  if (t.id === "veil" || t.hasAttribute("data-close")) { $("veil").hidden = true; S.ed = null; return; }
+  var pick = t.closest("[data-slug]");
+  if (pick && pick.classList.contains("pick")) { openEditor(null, pick.getAttribute("data-slug")); return; }
+  if (!S.ed) return;
+  var w = S.ed.w, b = t.closest("button"); if (!b) return;
+  var v;
+  if ((v = b.getAttribute("data-wd")) != null) { toggleIn(w.weekdays, +v); b.setAttribute("aria-pressed", w.weekdays.indexOf(+v) >= 0); }
+  else if ((v = b.getAttribute("data-cin")) != null) { toggleIn(w.cinemas, v); b.setAttribute("aria-pressed", w.cinemas.indexOf(v) >= 0); }
+  else if ((v = b.getAttribute("data-exp")) != null) { toggleIn(w.experiences, v); b.setAttribute("aria-pressed", w.experiences.indexOf(v) >= 0); }
+  else if ((v = b.getAttribute("data-rec")) != null) { toggleIn(w.recipients, v); b.setAttribute("aria-pressed", w.recipients.indexOf(v) >= 0); }
+  else if ((v = b.getAttribute("data-rd")) != null) { w.dates.splice(+v, 1); paintChips(); }
+  else if ((v = b.getAttribute("data-rt")) != null) { w.times.splice(+v, 1); paintChips(); }
+  else if (b.id === "e_addDate") { var d = $("e_date").value; if (d && w.dates.indexOf(d) < 0) { w.dates.push(d); w.dates.sort(); $("e_date").value = ""; paintChips(); } }
+  else if (b.id === "e_addTime") { var tm = $("e_time").value; if (tm && w.times.indexOf(tm) < 0) { w.times.push(tm); w.times.sort(); $("e_time").value = ""; paintChips(); } }
+  else if (b.id === "e_del") { S.cfg.watches.splice(S.ed.i, 1); $("veil").hidden = true; S.ed = null; renderWatches(); dirty(); }
+  else if (b.id === "e_ok") {
+    if (!w.recipients.length) { $("e_msg").textContent = "Tap at least one person in step 5."; $("e_msg").className = "msg bad"; return; }
+    w.flex = +$("e_flex").value; w.includeSoldOut = $("e_sold").checked; w.mode = $("e_mine").checked ? "mine" : "all";
+    if ($("e_intro")) w.intro = $("e_intro").checked;
+    if (S.ed.i == null) { w.id = w.slug + "-" + rid().slice(0, 4); S.cfg.watches.unshift(w); }
+    else S.cfg.watches[S.ed.i] = Object.assign(S.cfg.watches[S.ed.i], w);
+    $("veil").hidden = true; S.ed = null; renderWatches(); dirty();
+  }
+});
+
+/* ---------- people tab ---------- */
+var KINDS = [["newWeek", "New dates dropped", "Example: “VOX just added Wed 16 Dec → Tue 22 Dec”."],
+  ["newMovies", "A movie opens for booking", "Example: “Booking just opened for Dune: Part Three”, even if nobody picked it."],
+  ["comingSoon", "New in Coming Soon", "Example: “The Mongoose was added to Coming Soon”, before it has showtimes."],
+  ["dailySummary", "Daily roundup", "Example: one noon summary of everything that changed in the last 24 hours."]];
 function inviteUrl(p) { return S.bot ? "https://t.me/" + S.bot + "?start=" + p.invite : ""; }
 function renderPeople() {
   $("peopleList").innerHTML = S.cfg.people.map(function (p, i) {
@@ -205,14 +340,12 @@ function renderPeople() {
     var linked = p.owner || p.discord || p.chatId || S.links[p.id];
     var link = !p.owner && !p.discord && p.invite ? inviteUrl(p) : "";
     var msg = encodeURIComponent("Hi " + p.name + "! Tap this to get VOX movie alerts on Telegram: " + link);
-    return '<div class="card"><div class="split"><div class="title">' + esc(p.name) + (p.owner ? ' <span class="mute">(you)</span>' : '') +
-      ' <span class="mute">' + (p.discord ? "💬 Discord channel · gets alerts for every movie" : linked ? "✅ connected" : "⏳ not connected yet") + '</span></div>' +
+    var state = p.discord ? "💬 Discord channel · gets every movie" : linked ? "✅ Connected" : "⏳ Waiting for them to press Start";
+    return '<div class="card person"><div class="row between"><div class="row" style="flex-wrap:nowrap"><div class="av2">' + esc(p.discord ? "#" : p.name.charAt(0)) + '</div><div><div style="font-weight:700">' + esc(p.name) + (p.owner ? ' <span class="mute">(you)</span>' : "") + '</div><div class="mute">' + state + '</div></div></div>' +
       (p.owner ? "" : '<button class="link" data-delp="' + i + '">Remove</button>') + '</div>' +
-      (link && !linked ? '<div class="mute">Send them this link, they tap it, press Start:</div><div><code>' + esc(link) + '</code></div>' +
-        '<div class="row"><button data-copy="' + esc(link) + '">Copy link</button><a href="https://wa.me/?text=' + msg + '" target="_blank" rel="noopener"><button type="button">Share on WhatsApp</button></a></div>' : '') +
-      '<div class="grid">' +
-      [["newWeek", "New dates dropped"], ["newMovies", "A movie opens for booking"], ["comingSoon", "New in Coming Soon"], ["dailySummary", "Daily roundup"]].map(function (x) {
-        return '<label class="opt"><input type="checkbox" data-pa="' + i + ":" + x[0] + '"' + (a[x[0]] ? " checked" : "") + '> ' + x[1] + '</label>';
+      (link && !linked ? '<div class="linkbox">Send them this link. They tap it and press Start:<br><b>' + esc(link) + '</b></div><div class="row"><button data-copy="' + esc(link) + '">Copy link</button><a href="https://wa.me/?text=' + msg + '" target="_blank" rel="noopener"><button type="button">Share on WhatsApp</button></a></div>' : "") +
+      '<div class="opts">' + KINDS.map(function (k) {
+        return '<label class="tog"><input type="checkbox" data-pa="' + i + ":" + k[0] + '"' + (a[k[0]] ? " checked" : "") + '><span>' + k[1] + '<small>' + k[2] + '</small></span></label>';
       }).join("") + '</div></div>';
   }).join("");
 }
@@ -221,22 +354,26 @@ $("peopleList").addEventListener("change", function (e) {
   per.alerts = Object.assign({ newWeek: true, newMovies: true, comingSoon: false, dailySummary: true }, per.alerts || {}); per.alerts[p[1]] = e.target.checked; dirty();
 });
 $("peopleList").addEventListener("click", function (e) {
-  var c = e.target.getAttribute("data-copy");
+  var b = e.target.closest("button"); if (!b) return;
+  var c = b.getAttribute("data-copy");
   if (c) { (navigator.clipboard ? navigator.clipboard.writeText(c) : Promise.reject()).then(function () { say("Link copied.", "ok"); }, function () { say("Select the link and copy it by hand.", "bad"); }); }
-  var d = e.target.getAttribute("data-delp");
+  var d = b.getAttribute("data-delp");
   if (d != null) { var p = S.cfg.people[+d]; S.cfg.people.splice(+d, 1); S.cfg.watches.forEach(function (w) { w.recipients = (w.recipients || []).filter(function (r) { return r !== p.id; }); }); renderPeople(); renderWatches(); dirty(); }
 });
 $("addPerson").addEventListener("click", function () { $("newPerson").hidden = false; $("newName").focus(); });
 $("newOk").addEventListener("click", function () {
   var n = $("newName").value.trim(); if (!n) return;
   S.cfg.people.push({ id: "p" + rid().slice(0, 6), name: n, invite: rid() + rid(), active: true, alerts: { newWeek: true, newMovies: true, comingSoon: false, dailySummary: false } });
-  $("newName").value = ""; $("newPerson").hidden = true; renderPeople(); dirty();
+  $("newName").value = ""; $("newPerson").hidden = true; renderPeople(); renderWatches(); dirty();
+  say("Added. Press “Save only” first, then send them their link.", "ok");
 });
 $("addDiscord").addEventListener("click", function () {
   if (S.cfg.people.some(function (p) { return p.discord; })) { say("You already have a Discord channel.", "bad"); return; }
   S.cfg.people.push({ id: "discord", name: "Discord channel", isGroup: true, discord: true, allWatches: true, active: true, alerts: { newWeek: true, newMovies: true, comingSoon: false, dailySummary: true } });
   renderPeople(); dirty();
 });
+
+/* ---------- settings ---------- */
 $("newHours").addEventListener("change", function () { var n = Math.max(1, Math.min(168, +$("newHours").value || 6)); S.cfg.settings.newWindowHours = n; $("newHours").value = n; dirty(); });
 $("summaryTime").addEventListener("change", function () { S.cfg.settings.summaryTime = $("summaryTime").value; dirty(); });
 
@@ -247,16 +384,18 @@ document.querySelectorAll("#tabs button").forEach(function (b) {
   });
 });
 
+/* ---------- status / load / save ---------- */
 function ago(iso) { var m = Math.round((Date.now() - Date.parse(iso)) / 60000); return m < 1 ? "just now" : m < 60 ? m + " min ago" : Math.round(m / 60) + " h ago"; }
+function setStatus(cls, text) { $("status").querySelector(".dot").className = "dot " + cls; $("statusText").textContent = text; }
 function loadStatus() {
   fetch(API + "/actions/workflows/vox-alerts.yml/runs?per_page=1&_=" + Date.now(), { headers: { Authorization: "Bearer " + getToken(), Accept: "application/vnd.github+json" } })
     .then(function (r) { return r.json(); }).then(function (d) {
       var r = (d.workflow_runs || [])[0];
-      $("statusText").textContent = !r ? "The bot hasn’t run yet." : r.status !== "completed" ? "🟡 The bot is checking VOX right now…"
-        : (r.conclusion === "success" ? "🟢 Bot is working. Last check " : "🔴 Last check had a problem, ") + ago(r.updated_at) + ".";
-    }).catch(function () { $("statusText").textContent = ""; });
+      if (!r) return setStatus("y", "Bot hasn't run yet");
+      if (r.status !== "completed") return setStatus("y", "Checking VOX now…");
+      setStatus(r.conclusion === "success" ? "g" : "r", (r.conclusion === "success" ? "Bot working · checked " : "Last check had a problem · ") + ago(r.updated_at));
+    }).catch(function () { setStatus("", ""); });
 }
-
 function load() {
   return Promise.all([readFile("config.json"), pub("movies.json"), pub("alerts-state.json")]).then(function (res) {
     S.cfg = res[0].data; S.sha = res[0].sha;
@@ -269,14 +408,15 @@ function load() {
   });
 }
 function start() {
-  if (!getToken()) { $("setup").hidden = false; $("app").hidden = true; return; }
-  $("setup").hidden = true; $("app").hidden = false;
-  load().catch(function (e) { setToken(""); $("setup").hidden = false; $("app").hidden = true; $("setupMsg").textContent = e.message; $("setupMsg").className = "msg bad"; });
+  var on = !!getToken();
+  $("setup").hidden = on; $("app").hidden = !on; $("bar").hidden = !on; $("forget").hidden = !on;
+  if (!on) { setStatus("", "Not connected"); return; }
+  setStatus("y", "Loading…");
+  load().catch(function (e) { setToken(""); start(); $("setupMsg").textContent = e.message; $("setupMsg").className = "msg bad"; });
 }
-$("connect").addEventListener("click", function () {
-  var t = $("token").value.trim(); if (!t) return; setToken(t); $("token").value = ""; start();
-});
+$("connect").addEventListener("click", function () { var t = $("token").value.trim(); if (!t) return; setToken(t); $("token").value = ""; start(); });
 $("forget").addEventListener("click", function () { setToken(""); start(); });
+
 function saveCfg() {
   return gh("/contents/config.json", { method: "PUT", body: JSON.stringify({ message: "Update alerts settings", content: enc(JSON.stringify(S.cfg, null, 2) + "\n"), sha: S.sha, branch: "main" }) })
     .then(function (r) { S.sha = r.content.sha; S.dirty = false; });
@@ -285,17 +425,17 @@ function runNow() {
   return fetch(API + "/actions/workflows/vox-alerts.yml/dispatches", { method: "POST", headers: { Authorization: "Bearer " + getToken(), Accept: "application/vnd.github+json" }, body: JSON.stringify({ ref: "main" }) })
     .then(function (r) {
       if (r.status === 204) return;
-      if (r.status === 403 || r.status === 404) throw new Error("Saved, but your GitHub key isn’t allowed to start the bot. Edit the key on GitHub and set Actions to “Read and write”.");
+      if (r.status === 403 || r.status === 404) throw new Error("Saved, but your GitHub key can't start the bot. Edit the key on GitHub and set Actions to “Read and write”.");
       throw new Error("GitHub said " + r.status);
     });
 }
 function doSave(run) {
   $("save").disabled = $("saveRun").disabled = true; say("Saving…");
   (S.dirty ? saveCfg() : Promise.resolve())
-    .then(function () { return run ? (say("Saved. Starting the bot…"), runNow()) : null; })
+    .then(function () { if (run) { say("Saved. Starting the bot…"); return runNow(); } })
     .then(function () {
-      say(run ? "Saved ✔ The bot is checking now. Give it about a minute, then people who pressed Start are connected." : "Saved ✔ The bot uses this at its next check.", "ok");
-      if (run) { setTimeout(loadStatus, 4000); setTimeout(loadStatus, 30000); setTimeout(function () { load(); }, 60000); }
+      say(run ? "Saved ✔ The bot is checking now. Give it about a minute." : "Saved ✔ The bot uses this at its next check.", "ok");
+      if (run) { setTimeout(loadStatus, 4000); setTimeout(loadStatus, 30000); setTimeout(function () { if (!S.dirty) load(); }, 60000); }
     })
     .catch(function (e) { say(e.message + (/409/.test(e.message) ? " Reload the page and try again." : ""), "bad"); })
     .then(function () { $("save").disabled = $("saveRun").disabled = false; });

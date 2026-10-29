@@ -198,3 +198,18 @@ def test_first_seen_marks_only_recent_and_labels_old():
     Engine(cfg, st, tg, vox, owner_chat_id="111", now=NOW + timedelta(hours=9), sleep=lambda s: None).run()
     msg = [t for _, t, _ in tg.sent if "I'll be watching" in t][0]
     assert "🆕" not in msg and "first seen 8 h ago" in msg and "already out when I started tracking" in msg
+
+
+def test_posters_and_single_stop_reply():
+    from alerts.vox import parse_posters
+    html_ = (Path(__file__).parent / "fixtures" / "vox_comingsoon.html").read_text(encoding="utf-8")
+    pos = parse_posters(html_)
+    assert pos["sense-and-sensibility"].startswith("https://assets.voxcinemas.com/posters/")
+    vox, tg = FakeVox(), FakeTG()
+    cfg = {"settings": {"summaryTime": "23:59"}, "people": [{"id": "me", "name": "Omar", "owner": True}],
+           "watches": [{"id": "w", "slug": "dune", "title": "Dune", "recipients": ["me"]}]}
+    st = make(cfg, vox=vox, tg=tg).run()
+    tg.sent.clear()
+    tg.queue = [{"update_id": i, "callback_query": {"id": f"q{i}", "data": "stop:w", "message": {"chat": {"id": 111}}}} for i in range(1, 5)]
+    make(cfg, st, vox, tg).run()
+    assert len([t for _, t, _ in tg.sent if "no more alerts" in t]) == 1
