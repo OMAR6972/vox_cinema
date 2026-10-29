@@ -63,9 +63,7 @@
       "title": "Clayface",
       "recipients": [
         "me",
-        "p93877b",
-        "discord",
-        "p2a27be"
+        "discord"
       ],
       "cinemas": [
         "City Centre Almaza"
@@ -122,26 +120,6 @@
       "intro": false
     },
     {
-      "id": "avengers-doomsday",
-      "slug": "avengers-doomsday",
-      "title": "Avengers: Doomsday",
-      "recipients": [
-        "me"
-      ],
-      "cinemas": [
-        "City Centre Almaza"
-      ],
-      "dates": [],
-      "weekdays": [],
-      "times": [],
-      "flex": 30,
-      "experiences": [],
-      "includeSoldOut": false,
-      "mode": "all",
-      "active": true,
-      "intro": false
-    },
-    {
       "id": "avengers-doomsday-infinity-vision",
       "slug": "avengers-doomsday-infinity-vision",
       "title": "Avengers: Doomsday (Infinity Vision)",
@@ -166,16 +144,24 @@
       "slug": "dune-part-three",
       "title": "Dune: Part Three",
       "recipients": [
-        "me"
+        "me",
+        "p2a27be",
+        "discord"
       ],
       "cinemas": [
-        "City Centre Almaza"
+        "City Centre Almaza",
+        "City Centre Alexandria"
       ],
       "dates": [],
       "weekdays": [],
       "times": [],
       "flex": 30,
-      "experiences": [],
+      "experiences": [
+        "MAX",
+        "IMAX",
+        "GOLD",
+        "Standard"
+      ],
       "includeSoldOut": false,
       "mode": "all",
       "active": true,
