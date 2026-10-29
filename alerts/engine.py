@@ -41,13 +41,14 @@ def default_state():
 
 
 class Engine:
-    def __init__(self, config, state, telegram, fetch, owner_chat_id=None, discord_url=None, now=None, sleep=time.sleep, delay=0.4):
+    def __init__(self, config, state, telegram, fetch, owner_chat_id=None, discord_url=None, force=False, now=None, sleep=time.sleep, delay=0.4):
         self.config = config
         self.state = {**default_state(), **state}
         self.tg = telegram
         self.fetch = fetch           # fetch(path) -> html
         self.owner_chat_id = owner_chat_id
         self.discord_url = discord_url
+        self.force = force
         self.now = now or datetime.now(timezone.utc)
         self.sleep = sleep
         self.delay = delay
@@ -210,6 +211,12 @@ class Engine:
         st = self.state["watches"].setdefault(w["id"], {})
         today = today_cairo(self.now)
         sessions = sessions_for_watch(self.snapshot, w, today)
+        horizon = int(w.get("horizonDays") or 0)
+        beyond = []
+        if horizon:
+            limit = add_days(today, horizon)
+            beyond = [s for s in sessions if s["date"] > limit]
+            sessions = [s for s in sessions if s["date"] <= limit]
         booked = st.setdefault("booked", [])
         first_look = "seen" not in st
         nonce = w.get("introNonce")
@@ -218,7 +225,7 @@ class Engine:
         if resend:
             st["introNonce"] = nonce
         if first_look and not intro:
-            st["seen"] = {s["id"]: s["date"] for s in sessions}
+            st["seen"] = {s["id"]: s["date"] for s in sessions + beyond}
             st["everHadSessions"] = bool(sessions)
             return None
         st.setdefault("seen", {})
@@ -233,7 +240,7 @@ class Engine:
                 buttons = None if intro else [[{"text": "✅ I booked it", "callback_data": f"booked:{w['id']}"},
                                                {"text": "🔕 Stop this one", "callback_data": f"stop:{w['id']}"}]]
                 self.deliver(p, F.render_watch_message(plan, p), buttons)
-        for s in sessions:
+        for s in sessions + beyond:  # too-far-ahead times are remembered silently
             st["seen"][s["id"]] = s["date"]
         st["seen"] = {k: v for k, v in st["seen"].items() if v >= today}
         if sessions:
@@ -288,6 +295,14 @@ class Engine:
         if p:
             self.deliver(p, F.esc(text))
 
+    def in_quiet_hours(self):
+        q = (self.config.get("settings") or {}).get("quietHours") or {}
+        a, b = q.get("start"), q.get("end")
+        if self.force or not a or not b or a == b:
+            return False
+        now = now_cairo_hhmm(self.now)
+        return (a <= now < b) if a < b else (now >= a or now < b)
+
     # ---- the run ----
     def run(self):
         st = self.state
@@ -296,6 +311,9 @@ class Engine:
             self.handle_updates()
         except Exception as e:
             log.warning("could not read Telegram replies: %s", e)
+        if self.in_quiet_hours():
+            log.info("quiet hours: not checking VOX, nothing will be sent")
+            return st
         try:
             res = self.crawl()
         except Exception as e:

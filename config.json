@@ -1,7 +1,11 @@
 {
   "settings": {
     "summaryTime": "12:00",
-    "adminPersonId": "me"
+    "adminPersonId": "me",
+    "quietHours": {
+      "start": "01:00",
+      "end": "09:00"
+    }
   },
   "people": [
     {
@@ -65,7 +69,8 @@
       "includeSoldOut": false,
       "mode": "all",
       "active": true,
-      "intro": true
+      "intro": true,
+      "horizonDays": 0
     },
     {
       "id": "resident-evil",
@@ -85,7 +90,8 @@
       "includeSoldOut": false,
       "mode": "all",
       "active": true,
-      "intro": false
+      "intro": false,
+      "horizonDays": 0
     },
     {
       "id": "heart-of-the-beast",
@@ -105,7 +111,8 @@
       "includeSoldOut": false,
       "mode": "all",
       "active": true,
-      "intro": false
+      "intro": false,
+      "horizonDays": 0
     },
     {
       "id": "avengers-endgame-encore-infinity-vision",
@@ -125,7 +132,8 @@
       "includeSoldOut": false,
       "mode": "all",
       "active": true,
-      "intro": false
+      "intro": false,
+      "horizonDays": 0
     },
     {
       "id": "avengers-doomsday",
@@ -145,7 +153,8 @@
       "includeSoldOut": false,
       "mode": "all",
       "active": true,
-      "intro": false
+      "intro": false,
+      "horizonDays": 0
     },
     {
       "id": "avengers-doomsday-infinity-vision",
@@ -165,7 +174,8 @@
       "includeSoldOut": false,
       "mode": "all",
       "active": true,
-      "intro": false
+      "intro": false,
+      "horizonDays": 0
     },
     {
       "id": "dune-part-three",
@@ -185,7 +195,8 @@
       "includeSoldOut": false,
       "mode": "all",
       "active": true,
-      "intro": false
+      "intro": false,
+      "horizonDays": 0
     },
     {
       "id": "other-mommy",
@@ -205,7 +216,8 @@
       "includeSoldOut": false,
       "mode": "all",
       "active": true,
-      "intro": false
+      "intro": false,
+      "horizonDays": 0
     },
     {
       "id": "spider-man-brand-new-day",
@@ -225,7 +237,8 @@
       "includeSoldOut": false,
       "mode": "all",
       "active": true,
-      "intro": false
+      "intro": false,
+      "horizonDays": 0
     },
     {
       "id": "street-fighter",
@@ -245,7 +258,8 @@
       "includeSoldOut": false,
       "mode": "all",
       "active": true,
-      "intro": false
+      "intro": false,
+      "horizonDays": 0
     },
     {
       "id": "verity",
@@ -265,7 +279,8 @@
       "includeSoldOut": false,
       "mode": "all",
       "active": true,
-      "intro": false
+      "intro": false,
+      "horizonDays": 0
     },
     {
       "id": "the-odyssey",
@@ -285,7 +300,8 @@
       "includeSoldOut": false,
       "mode": "all",
       "active": true,
-      "intro": false
+      "intro": false,
+      "horizonDays": 0
     }
   ]
 }

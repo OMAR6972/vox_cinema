@@ -24,7 +24,8 @@ def main() -> int:
     tg.start()
     eng = Engine(config, state, tg, lambda path: fetch_page(BASE + path, VOX_HEADERS),
                  owner_chat_id=os.environ.get("TELEGRAM_CHAT_ID"),
-                 discord_url=os.environ.get("DISCORD_WEBHOOK_URL"))
+                 discord_url=os.environ.get("DISCORD_WEBHOOK_URL"),
+                 force=bool(os.environ.get("VOX_FORCE")))
     try:
         if os.environ.get("VOX_TEST"):
             for p in eng.people:

@@ -178,3 +178,20 @@ def test_send_current_times_button_resends_once():
     n = len(tg.sent)
     make(cfg, st, vox, tg).run()
     assert len(tg.sent) == n
+
+
+def test_quiet_hours_and_horizon():
+    from datetime import timedelta
+    cfg = {"settings": {"summaryTime": "23:59", "quietHours": {"start": "01:00", "end": "09:00"}},
+           "people": [{"id": "me", "name": "Omar", "owner": True}],
+           "watches": [{"id": "w", "slug": "dune", "title": "Dune", "recipients": ["me"], "horizonDays": 7}]}
+    night = NOW.replace(hour=1)  # 03:00 Cairo
+    vox, tg = FakeVox(), FakeTG()
+    e = Engine(cfg, {}, tg, vox, owner_chat_id="111", now=night, sleep=lambda s: None)
+    st = e.run()
+    assert not st["baselineDone"] and tg.sent == []
+    assert Engine(cfg, {}, tg, vox, owner_chat_id="111", force=True, now=night, sleep=lambda s: None).run()["baselineDone"]
+    st = make(cfg, vox=vox, tg=tg).run()
+    vox.days["2026-12-20"] = [sess("far", "2026-12-20", 600, slug="dune", cinema="Almaza")]
+    make(cfg, st, vox, tg).run()
+    assert not any("times just dropped" in t for _, t, _ in tg.sent)

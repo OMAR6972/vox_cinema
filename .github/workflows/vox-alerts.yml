@@ -5,6 +5,10 @@ on:
     - cron: "3,13,23,33,43,53 * * * *"
   workflow_dispatch:
     inputs:
+      force:
+        description: "Ignore quiet hours (used by the Check now button)"
+        type: boolean
+        default: false
       test:
         description: "Send a test message to everyone instead of a normal check"
         type: boolean
@@ -33,6 +37,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          VOX_FORCE: ${{ inputs.force && '1' || '' }}
           VOX_TEST: ${{ inputs.test && '1' || '' }}
         run: python -m alerts
       - name: Save what the bot remembers

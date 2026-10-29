@@ -66,6 +66,9 @@ code{background:var(--chip);padding:1px 6px;border-radius:6px;word-break:break-a
   </div>
 
   <div id="tab-settings" class="tabpane" style="display:none;gap:16px">
+    <section><h2>Quiet hours</h2>
+      <p class="mute">Nothing is sent between these times (Cairo). Anything new shows up when quiet hours end. “Save &amp; check now” ignores quiet hours.</p>
+      <div class="row"><input type="time" id="qStart" style="max-width:150px"><span>to</span><input type="time" id="qEnd" style="max-width:150px"><button id="qOff">Turn off</button></div></section>
     <section><h2>Daily roundup time</h2>
       <p class="mute">People who turned on the roundup get one message a day at this time (Cairo).</p>
       <input type="time" id="summaryTime"></section>
@@ -153,6 +156,7 @@ function openEditor(i) {
       '<select id="e_flex" style="max-width:200px">' + [15, 30, 60, 90, 120].map(function (n) { return '<option value="' + n + '"' + (n === (w.flex || 30) ? " selected" : "") + '>± ' + n + ' minutes</option>'; }).join("") + '</select></div><div class="row" id="e_times"></div></div>' +
     '<div class="fld"><span>Which cinema?</span><div class="grid" id="e_cin"></div></div>' +
     '<div class="fld"><span>Screen type <small class="mute">(none ticked = any)</small></span><div class="grid" id="e_exp"></div></div>' +
+    '<label class="fld"><span>Ignore times further away than</span><select id="e_hor">' + [[0, "No limit"], [7, "1 week"], [14, "2 weeks"], [30, "1 month"], [60, "2 months"]].map(function (o) { return '<option value="' + o[0] + '"' + (o[0] === (w.horizonDays || 0) ? " selected" : "") + '>' + o[1] + '</option>'; }).join("") + '</select></label>' +
     '<label class="opt"><input type="checkbox" id="e_sold"' + (w.includeSoldOut ? " checked" : "") + '> Also tell me about sold-out times</label>' +
     '<label class="opt"><input type="checkbox" id="e_mine"' + (w.mode === "mine" ? " checked" : "") + '> Only message me when one of MY days appears</label>' +
     '<div class="fld"><span>Who should get these alerts?</span><div class="grid" id="e_rec"></div></div>' +
@@ -179,7 +183,7 @@ function openEditor(i) {
       var slug = isNew ? $("e_movie").value : w.slug;
       if (!slug) { alert_("Pick a movie first."); return; }
       if (isNew) { var m = S.movies.find(function (x) { return x.slug === slug; }); w.slug = slug; w.title = m ? m.title : slug; w.id = slug + "-" + rid().slice(0, 4); }
-      w.flex = +$("e_flex").value;
+      w.flex = +$("e_flex").value; w.horizonDays = +$("e_hor").value;
       w.cinemas = [].map.call(document.querySelectorAll("[data-cin]:checked"), function (x) { return x.getAttribute("data-cin"); });
       w.experiences = [].map.call(document.querySelectorAll("[data-exp]:checked"), function (x) { return x.getAttribute("data-exp"); });
       w.recipients = [].map.call(document.querySelectorAll("[data-rec]:checked"), function (x) { return x.getAttribute("data-rec"); });
@@ -234,6 +238,9 @@ $("addDiscord").addEventListener("click", function () {
   S.cfg.people.push({ id: "discord", name: "Discord channel", isGroup: true, discord: true, allWatches: true, active: true, alerts: { newWeek: true, newMovies: true, comingSoon: false, dailySummary: true } });
   renderPeople(); dirty();
 });
+function setQuiet() { var a = $("qStart").value, b = $("qEnd").value; S.cfg.settings.quietHours = a && b ? { start: a, end: b } : null; dirty(); }
+$("qStart").addEventListener("change", setQuiet); $("qEnd").addEventListener("change", setQuiet);
+$("qOff").addEventListener("click", function () { $("qStart").value = ""; $("qEnd").value = ""; setQuiet(); });
 $("summaryTime").addEventListener("change", function () { S.cfg.settings.summaryTime = $("summaryTime").value; dirty(); });
 
 document.querySelectorAll("#tabs button").forEach(function (b) {
@@ -261,6 +268,7 @@ function load() {
     if (S.cinemas.indexOf("City Centre Almaza") < 0) S.cinemas.unshift("City Centre Almaza");
     S.links = (res[2] || {}).links || {};
     $("summaryTime").value = S.cfg.settings.summaryTime || "12:00";
+    var qh = S.cfg.settings.quietHours || {}; $("qStart").value = qh.start || ""; $("qEnd").value = qh.end || "";
     renderWatches(); renderPeople(); loadStatus();
   });
 }
@@ -278,7 +286,7 @@ function saveCfg() {
     .then(function (r) { S.sha = r.content.sha; S.dirty = false; });
 }
 function runNow() {
-  return fetch(API + "/actions/workflows/vox-alerts.yml/dispatches", { method: "POST", headers: { Authorization: "Bearer " + getToken(), Accept: "application/vnd.github+json" }, body: JSON.stringify({ ref: "main" }) })
+  return fetch(API + "/actions/workflows/vox-alerts.yml/dispatches", { method: "POST", headers: { Authorization: "Bearer " + getToken(), Accept: "application/vnd.github+json" }, body: JSON.stringify({ ref: "main", inputs: { force: "true" } }) })
     .then(function (r) {
       if (r.status === 204) return;
       if (r.status === 403 || r.status === 404) throw new Error("Saved, but your GitHub key isn’t allowed to start the bot. Edit the key on GitHub and set Actions to “Read and write”.");
