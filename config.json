@@ -38,7 +38,19 @@
       "alerts": {
         "newWeek": true,
         "newMovies": true,
-        "comingSoon": false,
+        "comingSoon": true,
+        "dailySummary": true
+      }
+    },
+    {
+      "id": "p2a27be",
+      "name": "Essam",
+      "invite": "528235f7561e21e2ef8d243c",
+      "active": true,
+      "alerts": {
+        "newWeek": true,
+        "newMovies": true,
+        "comingSoon": true,
         "dailySummary": true
       }
     }
