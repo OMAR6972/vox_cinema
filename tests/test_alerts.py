@@ -191,13 +191,13 @@ def test_first_seen_marks_only_recent_and_labels_old():
     st = Engine(cfg, st, tg, vox, owner_chat_id="111", now=NOW + timedelta(hours=1), sleep=lambda s: None).run()
     assert st["firstSeen"]["b"][1] == int((NOW + timedelta(hours=1)).timestamp())
     msg = [t for _, t, _ in tg.sent if "times just dropped" in t][0]
-    assert "🆕" in msg and "9:00 PM" in msg and "7:00 PM" not in msg and "other times were already out" in msg
+    assert "🆕" in msg and "9:00 PM" in msg and "7:00 PM" not in msg and "nothing new there" in msg
     # 8 hours later, with an intro resend: nothing is "new" any more, and the ages are spelled out
     cfg["watches"][0]["introNonce"] = "x"
     tg.sent.clear()
     Engine(cfg, st, tg, vox, owner_chat_id="111", now=NOW + timedelta(hours=9), sleep=lambda s: None).run()
     msg = [t for _, t, _ in tg.sent if "I'll be watching" in t][0]
-    assert "🆕" not in msg and "first seen 8 h ago" in msg and "already out when I started tracking" in msg
+    assert "🆕" not in msg and "first seen 8 h ago" in msg and "out before I started tracking" in msg
 
 
 def test_posters_and_single_stop_reply():
@@ -237,3 +237,17 @@ def test_old_posters_are_deleted(tmp_path):
     (tmp_path / "posters/live.jpg").write_bytes(b"x")
     sync_posters(tmp_path, [{"slug": "live", "poster": "https://x/live.jpg"}], lambda u: b"", keep=["kept"])
     assert sorted(p.name for p in (tmp_path / "posters").iterdir()) == ["kept.jpg", "live.jpg"]
+
+
+def test_changing_cinema_does_not_flood_but_send_now_lists_everything():
+    vox, tg = FakeVox(), FakeTG()
+    vox.days["2026-10-28"].append(sess("x1", "2026-10-28", 20 * 60, slug="dune", cinema="Alex"))
+    cfg = {"settings": {"summaryTime": "23:59"}, "people": [{"id": "me", "name": "Omar", "owner": True}],
+           "watches": [{"id": "w", "slug": "dune", "title": "Dune", "recipients": ["me"], "cinemas": ["Almaza"]}]}
+    st = make(cfg, vox=vox, tg=tg).run()
+    cfg["watches"][0]["cinemas"] = ["Alex"]
+    make(cfg, st, vox, tg).run()
+    assert tg.sent == []
+    cfg["watches"][0]["introNonce"] = "go"
+    st2 = make(cfg, st, vox, tg).run()
+    assert any("8:00 PM" in t for _, t, _ in tg.sent)

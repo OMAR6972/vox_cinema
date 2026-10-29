@@ -248,10 +248,23 @@ class Engine:
         if resend:
             st["introNonce"] = nonce
         if first_look and not intro:
+            st["filters"] = json.dumps([sorted(w.get("cinemas") or []), sorted(w.get("experiences") or []), bool(w.get("includeSoldOut"))])
             st["seen"] = {s["id"]: s["date"] for s in sessions}
             st["everHadSessions"] = bool(sessions)
             return None
         st.setdefault("seen", {})
+        # Changing the cinema, screen types or sold-out switch changes WHICH showings count. Everything that now
+        # matches would look "new", so record it silently instead (the Send now button still lists it all).
+        fkey = json.dumps([sorted(w.get("cinemas") or []), sorted(w.get("experiences") or []), bool(w.get("includeSoldOut"))])
+        if st.get("filters") is None:
+            st["filters"] = fkey
+        elif st["filters"] != fkey:
+            st["filters"] = fkey
+            if not intro:
+                for sx in sessions:
+                    st["seen"][sx["id"]] = sx["date"]
+                st["everHadSessions"] = bool(sessions) or st.get("everHadSessions", False)
+                return None
         wv = dict(w, everHadSessions=st.get("everHadSessions", True))
         plan = evaluate(wv, sessions, seen=set(st["seen"]), intro=intro)
         if plan:

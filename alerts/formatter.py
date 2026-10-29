@@ -78,7 +78,7 @@ def _age_line(sessions, ctx):
         parts.append(f"{len(known)} first seen {ago(ctx['now'] - min(known))}")
     if base:
         since = (ctx.get("since") or "")[:10]
-        parts.append(f"{len(base)} already out when I started tracking" + (f" ({pretty_date(since)})" if since else ""))
+        parts.append(f"{len(base)} out before I started tracking" + (f" on {pretty_date(since)}" if since else "") + ", so no exact first-seen time")
     return i("🕒 " + " · ".join(parts))
 
 
@@ -148,7 +148,7 @@ def _day_block(w, block, ctx=None):
             lines.append(f"📍 {esc(cinema)}")
             lines.extend("   " + l for l in _compact_times(ss, ctx))
         if block.get("already"):
-            lines.append(i(f"+ {block['already']} other times were already out"))
+            lines.append(i(f"+ {block['already']} other time{'' if block['already'] == 1 else 's'} that day, nothing new there"))
     age = _age_line(allv, ctx)
     if age:
         lines.append(age)
