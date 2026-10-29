@@ -121,26 +121,6 @@
       "intro": false
     },
     {
-      "id": "avengers-endgame-encore-infinity-vision",
-      "slug": "avengers-endgame-encore-infinity-vision",
-      "title": "Avengers Endgame: Encore (Infinity Vision)",
-      "recipients": [
-        "me"
-      ],
-      "cinemas": [
-        "City Centre Almaza"
-      ],
-      "dates": [],
-      "weekdays": [],
-      "times": [],
-      "flex": 30,
-      "experiences": [],
-      "includeSoldOut": false,
-      "mode": "all",
-      "active": true,
-      "intro": false
-    },
-    {
       "id": "avengers-doomsday",
       "slug": "avengers-doomsday",
       "title": "Avengers: Doomsday",
@@ -184,86 +164,6 @@
       "id": "dune-part-three",
       "slug": "dune-part-three",
       "title": "Dune: Part Three",
-      "recipients": [
-        "me"
-      ],
-      "cinemas": [
-        "City Centre Almaza"
-      ],
-      "dates": [],
-      "weekdays": [],
-      "times": [],
-      "flex": 30,
-      "experiences": [],
-      "includeSoldOut": false,
-      "mode": "all",
-      "active": true,
-      "intro": false
-    },
-    {
-      "id": "other-mommy",
-      "slug": "other-mommy",
-      "title": "Other Mommy",
-      "recipients": [
-        "me"
-      ],
-      "cinemas": [
-        "City Centre Almaza"
-      ],
-      "dates": [],
-      "weekdays": [],
-      "times": [],
-      "flex": 30,
-      "experiences": [],
-      "includeSoldOut": false,
-      "mode": "all",
-      "active": true,
-      "intro": false
-    },
-    {
-      "id": "spider-man-brand-new-day",
-      "slug": "spider-man-brand-new-day",
-      "title": "Spider-Man: Brand New Day",
-      "recipients": [
-        "me"
-      ],
-      "cinemas": [
-        "City Centre Almaza"
-      ],
-      "dates": [],
-      "weekdays": [],
-      "times": [],
-      "flex": 30,
-      "experiences": [],
-      "includeSoldOut": false,
-      "mode": "all",
-      "active": true,
-      "intro": false
-    },
-    {
-      "id": "street-fighter",
-      "slug": "street-fighter",
-      "title": "Street Fighter",
-      "recipients": [
-        "me"
-      ],
-      "cinemas": [
-        "City Centre Almaza"
-      ],
-      "dates": [],
-      "weekdays": [],
-      "times": [],
-      "flex": 30,
-      "experiences": [],
-      "includeSoldOut": false,
-      "mode": "all",
-      "active": true,
-      "intro": false
-    },
-    {
-      "id": "verity",
-      "slug": "verity",
-      "title": "Verity",
       "recipients": [
         "me"
       ],
