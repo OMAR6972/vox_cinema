@@ -113,13 +113,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013636_1789645652221.jpg"
     },
     {
-      "slug": "seventeen-world-tour-new",
-      "title": "SEVENTEEN WORLD TOUR 'NEW_'",
-      "status": "now",
-      "poster": "posters/seventeen-world-tour-new.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013677_1791356215555.jpg"
-    },
-    {
       "slug": "spider-man-brand-new-day",
       "title": "Spider-Man: Brand New Day",
       "status": "now",
@@ -209,6 +202,13 @@
       "status": "now",
       "poster": "posters/hybe-cheering-party-3d.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013680_1791356103469.jpg"
+    },
+    {
+      "slug": "seventeen-world-tour-new",
+      "title": "SEVENTEEN WORLD TOUR 'NEW_'",
+      "status": "now",
+      "poster": "posters/seventeen-world-tour-new.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013677_1791356215555.jpg"
     },
     {
       "slug": "bts-world-tour-arirang-in-s-o-paulo-delayed",
