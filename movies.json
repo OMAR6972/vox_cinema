@@ -251,6 +251,13 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013542_1790335408400.png"
     },
     {
+      "slug": "bts-world-tour-arirang-in-kaohsiung-live-viewin",
+      "title": "BTS WORLD TOUR 'ARIRANG' IN KAOHSIUNG: LIVE VIEWIN",
+      "status": "soon",
+      "release": "21 November 2026",
+      "poster": "/assets/images/placeholder-poster.webp"
+    },
+    {
       "slug": "hexed",
       "title": "Hexed",
       "status": "soon",
@@ -281,6 +288,13 @@
       "release": "24 December 2026",
       "poster": "posters/jumanji-open-world.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013552_1792992941546.jpg"
+    },
+    {
+      "slug": "bts-world-tour-arirang-in-jakarta-live-viewing",
+      "title": "BTS WORLD TOUR 'ARIRANG' IN JAKARTA: LIVE VIEWING",
+      "status": "soon",
+      "release": "29 December 2026",
+      "poster": "/assets/images/placeholder-poster.webp"
     },
     {
       "slug": "children-of-blood-and-bone",
