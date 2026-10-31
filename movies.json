@@ -22,6 +22,13 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013676_1790601922411.jpg"
     },
     {
+      "slug": "bts-world-tour-arirang-in-s-o-paulo-live",
+      "title": "BTS WORLD TOUR 'ARIRANG' IN SÃO PAULO: LIVE",
+      "status": "now",
+      "poster": "posters/bts-world-tour-arirang-in-s-o-paulo-live.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013633_1789488803565.jpg"
+    },
+    {
       "slug": "clayface",
       "title": "Clayface",
       "status": "now",
@@ -202,13 +209,6 @@
       "status": "now",
       "poster": "posters/seventeen-world-tour-new.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013677_1791356215555.jpg"
-    },
-    {
-      "slug": "bts-world-tour-arirang-in-s-o-paulo-live",
-      "title": "BTS WORLD TOUR 'ARIRANG' IN SÃO PAULO: LIVE",
-      "status": "now",
-      "poster": "posters/bts-world-tour-arirang-in-s-o-paulo-live.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013633_1789488803565.jpg"
     },
     {
       "slug": "the-cat-in-the-hat",
