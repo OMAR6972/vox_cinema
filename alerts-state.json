@@ -148,6 +148,21 @@
       "release": "05 November 2026"
     },
     {
+      "slug": "a-talent-for-murder",
+      "title": "A Talent for Murder",
+      "release": "05 November 2026"
+    },
+    {
+      "slug": "idiots",
+      "title": "Idiots",
+      "release": "05 November 2026"
+    },
+    {
+      "slug": "the-cycle",
+      "title": "The Cycle",
+      "release": "05 November 2026"
+    },
+    {
       "slug": "hadoota-arabic",
       "title": "Hadoota",
       "release": "12 November 2026"
@@ -417,31 +432,6 @@
   },
   "changes": [
     {
-      "at": "2026-10-29T07:30:41+00:00",
-      "type": "coming",
-      "title": "Maserati: The Brothers"
-    },
-    {
-      "at": "2026-10-29T07:40:40+00:00",
-      "type": "movie",
-      "title": "The Smurfs Timeless Adventure Volume 2"
-    },
-    {
-      "at": "2026-10-29T07:40:40+00:00",
-      "type": "movie",
-      "title": "Moscow Cairo"
-    },
-    {
-      "at": "2026-10-29T08:16:40+00:00",
-      "type": "coming",
-      "title": "Ebenezer"
-    },
-    {
-      "at": "2026-10-29T18:10:44+00:00",
-      "type": "movie",
-      "title": "Godzilla Minus Zero - Preview Screening"
-    },
-    {
       "at": "2026-10-31T13:46:39+00:00",
       "type": "coming",
       "title": "BTS WORLD TOUR 'ARIRANG' IN KAOHSIUNG: LIVE VIEWIN"
@@ -450,6 +440,21 @@
       "at": "2026-10-31T13:46:39+00:00",
       "type": "coming",
       "title": "BTS WORLD TOUR 'ARIRANG' IN JAKARTA: LIVE VIEWING"
+    },
+    {
+      "at": "2026-11-02T16:46:45+00:00",
+      "type": "coming",
+      "title": "A Talent for Murder"
+    },
+    {
+      "at": "2026-11-02T16:46:45+00:00",
+      "type": "coming",
+      "title": "Idiots"
+    },
+    {
+      "at": "2026-11-02T16:46:45+00:00",
+      "type": "coming",
+      "title": "The Cycle"
     }
   ],
   "summary": {
@@ -5035,7 +5040,10 @@
     "moscow-cairo-arabic": "https://assets.voxcinemas.com/posters/P_HO00013799_1793184407811.jpg",
     "ebenezer": "https://assets.voxcinemas.com/posters/P_HO00013804_1793271879769.jpg",
     "bts-world-tour-arirang-in-kaohsiung-live-viewin": "/assets/images/placeholder-poster.webp",
-    "bts-world-tour-arirang-in-jakarta-live-viewing": "/assets/images/placeholder-poster.webp"
+    "bts-world-tour-arirang-in-jakarta-live-viewing": "/assets/images/placeholder-poster.webp",
+    "a-talent-for-murder": "https://assets.voxcinemas.com/posters/P_HO00013759_1792133188932.jpg",
+    "idiots": "https://assets.voxcinemas.com/posters/P_HO00013776_1792992864563.jpg",
+    "the-cycle": "https://assets.voxcinemas.com/posters/P_HO00013806_1793272008209.jpg"
   },
   "nowShowing": [
     {
