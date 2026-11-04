@@ -151,6 +151,11 @@
       "release": "05 November 2026"
     },
     {
+      "slug": "ramayana-hindi",
+      "title": "Ramayana",
+      "release": "05 November 2026"
+    },
+    {
       "slug": "ramayana-english",
       "title": "Ramayana - English",
       "release": "05 November 2026"
@@ -438,6 +443,11 @@
       "at": "2026-11-04T06:00:42+00:00",
       "type": "coming",
       "title": "Mamsous"
+    },
+    {
+      "at": "2026-11-04T12:00:46+00:00",
+      "type": "coming",
+      "title": "Ramayana"
     }
   ],
   "summary": {
