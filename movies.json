@@ -71,13 +71,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013776_1792992864563.jpg"
     },
     {
-      "slug": "mahmoud-el-tany-arabic",
-      "title": "Mahmoud El Tany",
-      "status": "now",
-      "poster": "posters/mahmoud-el-tany-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013538_1786431574055.jpg"
-    },
-    {
       "slug": "matloub-3a2eleyain-arabic",
       "title": "Matloub 3a2eleyain",
       "status": "now",
@@ -223,6 +216,13 @@
       "status": "now",
       "poster": "posters/wildwood.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013671_1793634887028.jpg"
+    },
+    {
+      "slug": "mahmoud-el-tany-arabic",
+      "title": "Mahmoud El Tany",
+      "status": "now",
+      "poster": "posters/mahmoud-el-tany-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013538_1786431574055.jpg"
     },
     {
       "slug": "ebenezer",
