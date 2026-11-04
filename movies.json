@@ -1,6 +1,13 @@
 {
   "movies": [
     {
+      "slug": "avengers-endgame-encore-infinity-vision",
+      "title": "Avengers Endgame: Encore (Infinity Vision)",
+      "status": "now",
+      "poster": "posters/avengers-endgame-encore-infinity-vision.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013622_1789359764263.jpg"
+    },
+    {
       "slug": "avengers-doomsday",
       "title": "Avengers: Doomsday",
       "status": "now",
@@ -209,13 +216,6 @@
       "status": "now",
       "poster": "posters/mahmoud-el-tany-arabic.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013538_1786431574055.jpg"
-    },
-    {
-      "slug": "avengers-endgame-encore-infinity-vision",
-      "title": "Avengers Endgame: Encore (Infinity Vision)",
-      "status": "now",
-      "poster": "posters/avengers-endgame-encore-infinity-vision.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013622_1789359764263.jpg"
     },
     {
       "slug": "the-influencer-project",
