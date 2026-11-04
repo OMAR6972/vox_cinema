@@ -71,13 +71,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013664_1791446223943.jpg"
     },
     {
-      "slug": "moscow-cairo-arabic",
-      "title": "Moscow Cairo",
-      "status": "now",
-      "poster": "posters/moscow-cairo-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013799_1793262604322.jpg"
-    },
-    {
       "slug": "naseeb-arabic",
       "title": "Naseeb",
       "status": "now",
@@ -216,6 +209,13 @@
       "status": "now",
       "poster": "posters/avengers-endgame-encore-infinity-vision.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013622_1789359764263.jpg"
+    },
+    {
+      "slug": "moscow-cairo-arabic",
+      "title": "Moscow Cairo",
+      "status": "now",
+      "poster": "posters/moscow-cairo-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013799_1793262604322.jpg"
     },
     {
       "slug": "the-influencer-project",
