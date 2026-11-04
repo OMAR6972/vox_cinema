@@ -162,13 +162,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013580_1789548138971.jpg"
     },
     {
-      "slug": "the-influencer-project",
-      "title": "The Influencer Project",
-      "status": "now",
-      "poster": "posters/the-influencer-project.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013662_1793634705236.jpg"
-    },
-    {
       "slug": "the-mongoose",
       "title": "The Mongoose",
       "status": "now",
@@ -223,6 +216,13 @@
       "status": "now",
       "poster": "posters/mahmoud-el-tany-arabic.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013538_1786431574055.jpg"
+    },
+    {
+      "slug": "the-influencer-project",
+      "title": "The Influencer Project",
+      "status": "now",
+      "poster": "posters/the-influencer-project.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013662_1793634705236.jpg"
     },
     {
       "slug": "ebenezer",
