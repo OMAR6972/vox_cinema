@@ -2,6 +2,13 @@
   "baselineDone": true,
   "dates": [
     "2026-11-04",
+    "2026-11-05",
+    "2026-11-06",
+    "2026-11-07",
+    "2026-11-08",
+    "2026-11-09",
+    "2026-11-10",
+    "2026-11-11",
     "2026-12-16",
     "2026-12-17",
     "2026-12-18",
@@ -528,6 +535,19 @@
       "at": "2026-11-04T14:06:44+00:00",
       "type": "movie",
       "title": "Hadoota"
+    },
+    {
+      "at": "2026-11-04T14:12:43+00:00",
+      "type": "dates",
+      "dates": [
+        "2026-11-05",
+        "2026-11-06",
+        "2026-11-07",
+        "2026-11-08",
+        "2026-11-09",
+        "2026-11-10",
+        "2026-11-11"
+      ]
     }
   ],
   "summary": {
@@ -6095,12 +6115,26 @@
     "the-cycle": "https://assets.voxcinemas.com/posters/P_HO00013806_1793272008209.jpg",
     "ramayana-hindi": "https://assets.voxcinemas.com/posters/P_HO00013810_1793685253216.jpg",
     "ramayana-english": "https://assets.voxcinemas.com/posters/P_HO00013814_1793685210460.jpg",
-    "mamsous-arabic": "https://assets.voxcinemas.com/posters/P_HO00013818_1793775115678.jpg"
+    "mamsous-arabic": "https://assets.voxcinemas.com/posters/P_HO00013818_1793775115678.jpg",
+    "uc-harfliler-muhur-turkish": "https://assets.voxcinemas.com/posters/P_HO00013639_1789645578328.jpg",
+    "the-cat-in-the-hat-arabic": "https://assets.voxcinemas.com/posters/P_HO00013769_1793613239809.jpg"
   },
   "nowShowing": [
     {
+      "slug": "hadoota-arabic",
+      "title": "Hadoota"
+    },
+    {
+      "slug": "godzilla-minus-zero-japanese",
+      "title": "Godzilla Minus Zero"
+    },
+    {
       "slug": "wala-kan-ala-el-bal-arabic",
       "title": "Wala Kan Ala El-Bal"
+    },
+    {
+      "slug": "the-cat-in-the-hat",
+      "title": "The Cat In The Hat"
     },
     {
       "slug": "matloub-3a2eleyain-arabic",
@@ -6171,6 +6205,10 @@
       "title": "Spider-Man: Brand New Day"
     },
     {
+      "slug": "uc-harfliler-muhur-turkish",
+      "title": "Uc Harfliler Muhur"
+    },
+    {
       "slug": "the-dino-family",
       "title": "The Dino Family"
     },
@@ -6189,6 +6227,22 @@
     {
       "slug": "wildwood",
       "title": "Wildwood"
+    },
+    {
+      "slug": "idiots",
+      "title": "Idiots"
+    },
+    {
+      "slug": "ramayana-hindi",
+      "title": "Ramayana"
+    },
+    {
+      "slug": "the-cat-in-the-hat-arabic",
+      "title": "The Cat In The Hat"
+    },
+    {
+      "slug": "the-cycle",
+      "title": "The Cycle"
     },
     {
       "slug": "avengers-doomsday",
