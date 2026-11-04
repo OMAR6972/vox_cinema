@@ -106,13 +106,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013636_1789645652221.jpg"
     },
     {
-      "slug": "spider-man-brand-new-day",
-      "title": "Spider-Man: Brand New Day",
-      "status": "now",
-      "poster": "posters/spider-man-brand-new-day.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013065_1782227665332.jpg"
-    },
-    {
       "slug": "street-fighter",
       "title": "Street Fighter",
       "status": "now",
@@ -209,6 +202,13 @@
       "status": "now",
       "poster": "posters/avengers-endgame-encore-infinity-vision.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013622_1789359764263.jpg"
+    },
+    {
+      "slug": "spider-man-brand-new-day",
+      "title": "Spider-Man: Brand New Day",
+      "status": "now",
+      "poster": "posters/spider-man-brand-new-day.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013065_1782227665332.jpg"
     },
     {
       "slug": "moscow-cairo-arabic",
