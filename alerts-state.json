@@ -216,6 +216,11 @@
       "release": "29 December 2026"
     },
     {
+      "slug": "mamsous-arabic",
+      "title": "Mamsous",
+      "release": "31 December 2026"
+    },
+    {
       "slug": "children-of-blood-and-bone",
       "title": "Children of Blood and Bone",
       "release": "14 January 2027"
@@ -405,16 +410,6 @@
   },
   "changes": [
     {
-      "at": "2026-10-31T13:46:39+00:00",
-      "type": "coming",
-      "title": "BTS WORLD TOUR 'ARIRANG' IN KAOHSIUNG: LIVE VIEWIN"
-    },
-    {
-      "at": "2026-10-31T13:46:39+00:00",
-      "type": "coming",
-      "title": "BTS WORLD TOUR 'ARIRANG' IN JAKARTA: LIVE VIEWING"
-    },
-    {
       "at": "2026-11-02T16:46:45+00:00",
       "type": "coming",
       "title": "A Talent for Murder"
@@ -438,6 +433,11 @@
       "at": "2026-11-02T17:16:44+00:00",
       "type": "coming",
       "title": "Ramayana - English"
+    },
+    {
+      "at": "2026-11-04T06:00:42+00:00",
+      "type": "coming",
+      "title": "Mamsous"
     }
   ],
   "summary": {
@@ -3300,7 +3300,8 @@
     "idiots": "https://assets.voxcinemas.com/posters/P_HO00013776_1792992864563.jpg",
     "the-cycle": "https://assets.voxcinemas.com/posters/P_HO00013806_1793272008209.jpg",
     "ramayana-hindi": "https://assets.voxcinemas.com/posters/P_HO00013810_1793685253216.jpg",
-    "ramayana-english": "https://assets.voxcinemas.com/posters/P_HO00013814_1793685210460.jpg"
+    "ramayana-english": "https://assets.voxcinemas.com/posters/P_HO00013814_1793685210460.jpg",
+    "mamsous-arabic": "/assets/images/placeholder-poster.webp"
   },
   "nowShowing": [
     {
