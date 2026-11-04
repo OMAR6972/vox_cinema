@@ -36,6 +36,20 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013132_1777639610268.jpg"
     },
     {
+      "slug": "godzilla-minus-zero-japanese",
+      "title": "Godzilla Minus Zero",
+      "status": "now",
+      "poster": "posters/godzilla-minus-zero-japanese.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013634_1789645703698.jpg"
+    },
+    {
+      "slug": "hadoota-arabic",
+      "title": "Hadoota",
+      "status": "now",
+      "poster": "posters/hadoota-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013755_1793793510180.jpg"
+    },
+    {
       "slug": "heart-of-the-beast",
       "title": "Heart of the Beast",
       "status": "now",
@@ -48,6 +62,13 @@
       "status": "now",
       "poster": "posters/hope-korean.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013775_1792992825725.jpg"
+    },
+    {
+      "slug": "idiots",
+      "title": "Idiots",
+      "status": "now",
+      "poster": "posters/idiots.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013776_1792992864563.jpg"
     },
     {
       "slug": "mahmoud-el-tany-arabic",
@@ -68,7 +89,7 @@
       "title": "Moscow Cairo",
       "status": "now",
       "poster": "posters/moscow-cairo-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013799_1793184407811.jpg"
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013799_1793262604322.jpg"
     },
     {
       "slug": "naseeb-arabic",
@@ -83,6 +104,13 @@
       "status": "now",
       "poster": "posters/other-mommy.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013661_1790166755402.jpg"
+    },
+    {
+      "slug": "ramayana-hindi",
+      "title": "Ramayana",
+      "status": "now",
+      "poster": "posters/ramayana-hindi.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013810_1793685253216.jpg"
     },
     {
       "slug": "resident-evil",
@@ -113,6 +141,26 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013107_1791888704674.jpg"
     },
     {
+      "slug": "the-cat-in-the-hat",
+      "title": "The Cat In The Hat",
+      "status": "now",
+      "poster": "posters/the-cat-in-the-hat.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00012362_1793613218305.jpg"
+    },
+    {
+      "slug": "the-cat-in-the-hat-arabic",
+      "title": "The Cat In The Hat",
+      "status": "now",
+      "poster": null
+    },
+    {
+      "slug": "the-cycle",
+      "title": "The Cycle",
+      "status": "now",
+      "poster": "posters/the-cycle.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013806_1793272008209.jpg"
+    },
+    {
       "slug": "the-dino-family",
       "title": "The Dino Family",
       "status": "now",
@@ -123,8 +171,8 @@
       "slug": "the-influencer-project",
       "title": "The Influencer Project",
       "status": "now",
-      "poster": "posters/the-influencer-project.png",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013662_1790335024160.png"
+      "poster": "posters/the-influencer-project.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013662_1793634705236.jpg"
     },
     {
       "slug": "the-magic-faraway-tree",
@@ -155,6 +203,12 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013574_1790163129866.jpg"
     },
     {
+      "slug": "uc-harfliler-muhur-turkish",
+      "title": "Uc Harfliler Muhur",
+      "status": "now",
+      "poster": null
+    },
+    {
       "slug": "verity",
       "title": "Verity",
       "status": "now",
@@ -179,77 +233,8 @@
       "slug": "wildwood",
       "title": "Wildwood",
       "status": "now",
-      "poster": "posters/wildwood.png",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013671_1790335323648.png"
-    },
-    {
-      "slug": "hybe-cheering-party-3d",
-      "title": "HYBE CHEERING PARTY 3D",
-      "status": "now",
-      "poster": "posters/hybe-cheering-party-3d.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013680_1791356103469.jpg"
-    },
-    {
-      "slug": "seventeen-world-tour-new",
-      "title": "SEVENTEEN WORLD TOUR 'NEW_'",
-      "status": "now",
-      "poster": "posters/seventeen-world-tour-new.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013677_1791356215555.jpg"
-    },
-    {
-      "slug": "bts-world-tour-arirang-in-s-o-paulo-live",
-      "title": "BTS WORLD TOUR 'ARIRANG' IN SÃO PAULO: LIVE",
-      "status": "now",
-      "poster": "posters/bts-world-tour-arirang-in-s-o-paulo-live.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013633_1789488803565.jpg"
-    },
-    {
-      "slug": "the-cat-in-the-hat",
-      "title": "The Cat In The Hat",
-      "status": "soon",
-      "release": "05 November 2026",
-      "poster": "posters/the-cat-in-the-hat.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00012362_1793613218305.jpg"
-    },
-    {
-      "slug": "godzilla-minus-zero-japanese",
-      "title": "Godzilla Minus Zero",
-      "status": "soon",
-      "release": "05 November 2026",
-      "poster": "posters/godzilla-minus-zero-japanese.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013634_1789645703698.jpg"
-    },
-    {
-      "slug": "idiots",
-      "title": "Idiots",
-      "status": "soon",
-      "release": "05 November 2026",
-      "poster": "posters/idiots.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013776_1792992864563.jpg"
-    },
-    {
-      "slug": "the-cycle",
-      "title": "The Cycle",
-      "status": "soon",
-      "release": "05 November 2026",
-      "poster": "posters/the-cycle.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013806_1793272008209.jpg"
-    },
-    {
-      "slug": "ramayana-hindi",
-      "title": "Ramayana",
-      "status": "soon",
-      "release": "05 November 2026",
-      "poster": "posters/ramayana-hindi.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013810_1793685253216.jpg"
-    },
-    {
-      "slug": "hadoota-arabic",
-      "title": "Hadoota",
-      "status": "soon",
-      "release": "12 November 2026",
-      "poster": "posters/hadoota-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013755_1793793510180.jpg"
+      "poster": "posters/wildwood.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013671_1793634887028.jpg"
     },
     {
       "slug": "ebenezer",
