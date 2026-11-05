@@ -106,13 +106,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013636_1789645652221.jpg"
     },
     {
-      "slug": "street-fighter",
-      "title": "Street Fighter",
-      "status": "now",
-      "poster": "posters/street-fighter.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013107_1791888704674.jpg"
-    },
-    {
       "slug": "the-cat-in-the-hat",
       "title": "The Cat In The Hat",
       "status": "now",
@@ -139,20 +132,6 @@
       "status": "now",
       "poster": "posters/the-dino-family.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013580_1789548138971.jpg"
-    },
-    {
-      "slug": "the-mongoose",
-      "title": "The Mongoose",
-      "status": "now",
-      "poster": "posters/the-mongoose.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013562_1786693196377.jpg"
-    },
-    {
-      "slug": "the-odyssey",
-      "title": "The Odyssey",
-      "status": "now",
-      "poster": "posters/the-odyssey.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013488_1783655908489.jpg"
     },
     {
       "slug": "uc-harfliler-muhur-turkish",
@@ -190,6 +169,20 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013671_1793634887028.jpg"
     },
     {
+      "slug": "street-fighter",
+      "title": "Street Fighter",
+      "status": "now",
+      "poster": "posters/street-fighter.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013107_1791888704674.jpg"
+    },
+    {
+      "slug": "the-odyssey",
+      "title": "The Odyssey",
+      "status": "now",
+      "poster": "posters/the-odyssey.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013488_1783655908489.jpg"
+    },
+    {
       "slug": "mahmoud-el-tany-arabic",
       "title": "Mahmoud El Tany",
       "status": "now",
@@ -223,6 +216,13 @@
       "status": "now",
       "poster": "posters/the-influencer-project.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013662_1793634705236.jpg"
+    },
+    {
+      "slug": "the-mongoose",
+      "title": "The Mongoose",
+      "status": "now",
+      "poster": "posters/the-mongoose.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013562_1786693196377.jpg"
     },
     {
       "slug": "how-to-rob-a-bank",
