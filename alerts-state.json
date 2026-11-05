@@ -181,6 +181,11 @@
       "release": "11 November 2026"
     },
     {
+      "slug": "how-to-rob-a-bank",
+      "title": "How to Rob a Bank",
+      "release": "12 November 2026"
+    },
+    {
       "slug": "ebenezer",
       "title": "Ebenezer",
       "release": "12 November 2026"
@@ -529,6 +534,11 @@
         "2026-11-17",
         "2026-11-18"
       ]
+    },
+    {
+      "at": "2026-11-05T08:16:49+00:00",
+      "type": "coming",
+      "title": "How to Rob a Bank"
     }
   ],
   "summary": {
@@ -6130,7 +6140,8 @@
     "ramayana-english": "https://assets.voxcinemas.com/posters/P_HO00013814_1793685210460.jpg",
     "mamsous-arabic": "https://assets.voxcinemas.com/posters/P_HO00013818_1793775115678.jpg",
     "uc-harfliler-muhur-turkish": "https://assets.voxcinemas.com/posters/P_HO00013639_1789645578328.jpg",
-    "the-cat-in-the-hat-arabic": "https://assets.voxcinemas.com/posters/P_HO00013769_1793613239809.jpg"
+    "the-cat-in-the-hat-arabic": "https://assets.voxcinemas.com/posters/P_HO00013769_1793613239809.jpg",
+    "how-to-rob-a-bank": "https://assets.voxcinemas.com/posters/P_HO00013184_1780638298100.jpg"
   },
   "nowShowing": [
     {
