@@ -187,6 +187,106 @@
       "release": "12 November 2026"
     },
     {
+      "slug": "ciff-2026-a-crime-in-a-quiet-neighborhood-arabic",
+      "title": "CIFF 2026:A Crime in a Quiet Neighborhood",
+      "release": "12 November 2026"
+    },
+    {
+      "slug": "ciff-2026-cairo-30-arabic",
+      "title": "CIFF 2026: Cairo 30",
+      "release": "12 November 2026"
+    },
+    {
+      "slug": "ciff-2026-a-woman-on-the-road-arabic",
+      "title": "CIFF 2026: A Woman on the Road",
+      "release": "12 November 2026"
+    },
+    {
+      "slug": "ciff-2026-the-impossible-arabic",
+      "title": "CIFF 2026: The Impossible",
+      "release": "12 November 2026"
+    },
+    {
+      "slug": "ciff-2026-khan-el-khalili-arabic",
+      "title": "CIFF 2026: Khan el khalili",
+      "release": "12 November 2026"
+    },
+    {
+      "slug": "ciff-2026-dead-dogs-dont-bite-turkish",
+      "title": "CIFF 2026: Dead Dogs Don't Bite",
+      "release": "12 November 2026"
+    },
+    {
+      "slug": "ciff-2026-my-wife-and-the-dog-arabic",
+      "title": "CIFF 2026: My Wife and the Dog",
+      "release": "12 November 2026"
+    },
+    {
+      "slug": "ciff-2026-fatma-and-the-abdelwahab-plan-arabic",
+      "title": "CIFF 2026: Fatma and the Abdelwahab Plan",
+      "release": "12 November 2026"
+    },
+    {
+      "slug": "ciff-2026-night-and-jail-bars-arabic",
+      "title": "CIFF 2026: Night and Jail Bars",
+      "release": "12 November 2026"
+    },
+    {
+      "slug": "ciff-2026-palace-of-desire-arabic",
+      "title": "CIFF 2026: Palace of Desire",
+      "release": "12 November 2026"
+    },
+    {
+      "slug": "ciff-2026-the-sin-arabic",
+      "title": "CIFF 2026: The Sin",
+      "release": "12 November 2026"
+    },
+    {
+      "slug": "ciff-2026-inherited-persian",
+      "title": "CIFF 2026: Inherited",
+      "release": "12 November 2026"
+    },
+    {
+      "slug": "ciff-2026-my-wife-general-manager-arabic",
+      "title": "CIFF 2026: My Wife, General Manager",
+      "release": "12 November 2026"
+    },
+    {
+      "slug": "ciff-2026-the-violinist-arabic-japanese",
+      "title": "CIFF 2026: The Violinist",
+      "release": "12 November 2026"
+    },
+    {
+      "slug": "ciff-2026-something-of-fear-arabic",
+      "title": "CIFF 2026: Something of Fear",
+      "release": "12 November 2026"
+    },
+    {
+      "slug": "ciff-2026-for-life-arabic",
+      "title": "CIFF 2026: For Life",
+      "release": "12 November 2026"
+    },
+    {
+      "slug": "ciff-2026-the-lamp-of-umm-hashim-arabic",
+      "title": "CIFF 2026: The Lamp of Umm Hashim",
+      "release": "12 November 2026"
+    },
+    {
+      "slug": "ciff-2026-home-bitter-home-arabic",
+      "title": "CIFF 2026: Home Bitter Home",
+      "release": "12 November 2026"
+    },
+    {
+      "slug": "ciff-2026-the-mirage-finnish",
+      "title": "CIFF 2026: The Mirage",
+      "release": "12 November 2026"
+    },
+    {
+      "slug": "ciff-2026-to-the-sun-and-beyond-tunisian-arabic",
+      "title": "CIFF 2026: To the Sun and Beyond",
+      "release": "12 November 2026"
+    },
+    {
       "slug": "the-hunger-games-sunrise-on-the-reaping",
       "title": "The Hunger Games: Sunrise on the Reaping",
       "release": "19 November 2026"
@@ -436,123 +536,104 @@
   },
   "changes": [
     {
-      "at": "2026-11-02T16:46:45+00:00",
+      "at": "2026-11-09T15:46:43+00:00",
       "type": "coming",
-      "title": "A Talent for Murder"
+      "title": "CIFF 2026:A Crime in a Quiet Neighborhood"
     },
     {
-      "at": "2026-11-02T16:46:45+00:00",
+      "at": "2026-11-09T15:46:43+00:00",
       "type": "coming",
-      "title": "Idiots"
+      "title": "CIFF 2026: Cairo 30"
     },
     {
-      "at": "2026-11-02T16:46:45+00:00",
+      "at": "2026-11-09T15:46:43+00:00",
       "type": "coming",
-      "title": "The Cycle"
+      "title": "CIFF 2026: A Woman on the Road"
     },
     {
-      "at": "2026-11-02T17:16:44+00:00",
+      "at": "2026-11-09T15:46:43+00:00",
       "type": "coming",
-      "title": "Ramayana"
+      "title": "CIFF 2026: The Impossible"
     },
     {
-      "at": "2026-11-02T17:16:44+00:00",
+      "at": "2026-11-09T15:46:43+00:00",
       "type": "coming",
-      "title": "Ramayana - English"
+      "title": "CIFF 2026: Khan el khalili"
     },
     {
-      "at": "2026-11-04T06:00:42+00:00",
+      "at": "2026-11-09T15:46:43+00:00",
       "type": "coming",
-      "title": "Mamsous"
+      "title": "CIFF 2026: Dead Dogs Don't Bite"
     },
     {
-      "at": "2026-11-04T12:00:46+00:00",
+      "at": "2026-11-09T15:46:43+00:00",
       "type": "coming",
-      "title": "Ramayana"
+      "title": "CIFF 2026: My Wife and the Dog"
     },
     {
-      "at": "2026-11-04T14:06:44+00:00",
-      "type": "dates",
-      "dates": [
-        "2026-11-05",
-        "2026-11-06",
-        "2026-11-07",
-        "2026-11-08",
-        "2026-11-09",
-        "2026-11-10",
-        "2026-11-11"
-      ]
-    },
-    {
-      "at": "2026-11-04T14:06:44+00:00",
-      "type": "movie",
-      "title": "Godzilla Minus Zero"
-    },
-    {
-      "at": "2026-11-04T14:06:44+00:00",
-      "type": "movie",
-      "title": "The Cat In The Hat"
-    },
-    {
-      "at": "2026-11-04T14:06:44+00:00",
-      "type": "movie",
-      "title": "Uc Harfliler Muhur"
-    },
-    {
-      "at": "2026-11-04T14:06:44+00:00",
-      "type": "movie",
-      "title": "Idiots"
-    },
-    {
-      "at": "2026-11-04T14:06:44+00:00",
-      "type": "movie",
-      "title": "Ramayana"
-    },
-    {
-      "at": "2026-11-04T14:06:44+00:00",
-      "type": "movie",
-      "title": "The Cat In The Hat"
-    },
-    {
-      "at": "2026-11-04T14:06:44+00:00",
-      "type": "movie",
-      "title": "The Cycle"
-    },
-    {
-      "at": "2026-11-04T14:06:44+00:00",
-      "type": "movie",
-      "title": "Hadoota"
-    },
-    {
-      "at": "2026-11-04T14:12:43+00:00",
-      "type": "dates",
-      "dates": [
-        "2026-11-05",
-        "2026-11-06",
-        "2026-11-07",
-        "2026-11-08",
-        "2026-11-09",
-        "2026-11-10",
-        "2026-11-11"
-      ]
-    },
-    {
-      "at": "2026-11-04T16:42:54+00:00",
-      "type": "dates",
-      "dates": [
-        "2026-11-12",
-        "2026-11-13",
-        "2026-11-14",
-        "2026-11-15",
-        "2026-11-16",
-        "2026-11-17",
-        "2026-11-18"
-      ]
-    },
-    {
-      "at": "2026-11-05T08:16:49+00:00",
+      "at": "2026-11-09T15:46:43+00:00",
       "type": "coming",
-      "title": "How to Rob a Bank"
+      "title": "CIFF 2026: Fatma and the Abdelwahab Plan"
+    },
+    {
+      "at": "2026-11-09T15:46:43+00:00",
+      "type": "coming",
+      "title": "CIFF 2026: Night and Jail Bars"
+    },
+    {
+      "at": "2026-11-09T15:46:43+00:00",
+      "type": "coming",
+      "title": "CIFF 2026: Palace of Desire"
+    },
+    {
+      "at": "2026-11-09T15:46:43+00:00",
+      "type": "coming",
+      "title": "CIFF 2026: The Sin"
+    },
+    {
+      "at": "2026-11-09T15:46:43+00:00",
+      "type": "coming",
+      "title": "CIFF 2026: Inherited"
+    },
+    {
+      "at": "2026-11-09T15:46:43+00:00",
+      "type": "coming",
+      "title": "CIFF 2026: My Wife, General Manager"
+    },
+    {
+      "at": "2026-11-09T15:46:43+00:00",
+      "type": "coming",
+      "title": "CIFF 2026: The Violinist"
+    },
+    {
+      "at": "2026-11-09T15:46:43+00:00",
+      "type": "coming",
+      "title": "CIFF 2026: Something of Fear"
+    },
+    {
+      "at": "2026-11-09T15:46:43+00:00",
+      "type": "coming",
+      "title": "CIFF 2026: For Life"
+    },
+    {
+      "at": "2026-11-09T15:46:43+00:00",
+      "type": "coming",
+      "title": "CIFF 2026: The Lamp of Umm Hashim"
+    },
+    {
+      "at": "2026-11-09T15:46:43+00:00",
+      "type": "coming",
+      "title": "CIFF 2026: Home Bitter Home"
+    },
+    {
+      "at": "2026-11-09T15:46:43+00:00",
+      "type": "coming",
+      "title": "CIFF 2026: The Mirage"
+    },
+    {
+      "at": "2026-11-09T15:46:43+00:00",
+      "type": "coming",
+      "title": "CIFF 2026: To the Sun and Beyond"
     }
   ],
   "summary": {
@@ -5755,7 +5836,27 @@
     "mamsous-arabic": "https://assets.voxcinemas.com/posters/P_HO00013818_1793775115678.jpg",
     "uc-harfliler-muhur-turkish": "https://assets.voxcinemas.com/posters/P_HO00013639_1789645578328.jpg",
     "the-cat-in-the-hat-arabic": "https://assets.voxcinemas.com/posters/P_HO00013769_1793613239809.jpg",
-    "how-to-rob-a-bank": "https://assets.voxcinemas.com/posters/P_HO00013184_1793870929412.jpg"
+    "how-to-rob-a-bank": "https://assets.voxcinemas.com/posters/P_HO00013184_1793870929412.jpg",
+    "ciff-2026-a-crime-in-a-quiet-neighborhood-arabic": "/assets/images/placeholder-poster.webp",
+    "ciff-2026-cairo-30-arabic": "/assets/images/placeholder-poster.webp",
+    "ciff-2026-a-woman-on-the-road-arabic": "/assets/images/placeholder-poster.webp",
+    "ciff-2026-the-impossible-arabic": "/assets/images/placeholder-poster.webp",
+    "ciff-2026-khan-el-khalili-arabic": "/assets/images/placeholder-poster.webp",
+    "ciff-2026-dead-dogs-dont-bite-turkish": "/assets/images/placeholder-poster.webp",
+    "ciff-2026-my-wife-and-the-dog-arabic": "/assets/images/placeholder-poster.webp",
+    "ciff-2026-fatma-and-the-abdelwahab-plan-arabic": "/assets/images/placeholder-poster.webp",
+    "ciff-2026-night-and-jail-bars-arabic": "/assets/images/placeholder-poster.webp",
+    "ciff-2026-palace-of-desire-arabic": "/assets/images/placeholder-poster.webp",
+    "ciff-2026-the-sin-arabic": "/assets/images/placeholder-poster.webp",
+    "ciff-2026-inherited-persian": "/assets/images/placeholder-poster.webp",
+    "ciff-2026-my-wife-general-manager-arabic": "/assets/images/placeholder-poster.webp",
+    "ciff-2026-the-violinist-arabic-japanese": "/assets/images/placeholder-poster.webp",
+    "ciff-2026-something-of-fear-arabic": "/assets/images/placeholder-poster.webp",
+    "ciff-2026-for-life-arabic": "/assets/images/placeholder-poster.webp",
+    "ciff-2026-the-lamp-of-umm-hashim-arabic": "/assets/images/placeholder-poster.webp",
+    "ciff-2026-home-bitter-home-arabic": "/assets/images/placeholder-poster.webp",
+    "ciff-2026-the-mirage-finnish": "/assets/images/placeholder-poster.webp",
+    "ciff-2026-to-the-sun-and-beyond-tunisian-arabic": "/assets/images/placeholder-poster.webp"
   },
   "nowShowing": [
     {
