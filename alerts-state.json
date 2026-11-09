@@ -202,8 +202,8 @@
       "release": "12 November 2026"
     },
     {
-      "slug": "ciff-2026-the-impossible-arabic",
-      "title": "CIFF 2026: The Impossible",
+      "slug": "ciff-2026-the-people-and-the-nile-arabic",
+      "title": "CIFF 2026: The People and The Nile",
       "release": "12 November 2026"
     },
     {
@@ -277,13 +277,38 @@
       "release": "12 November 2026"
     },
     {
-      "slug": "ciff-2026-the-mirage-finnish",
+      "slug": "ciff-2026-the-mirage-arabic",
       "title": "CIFF 2026: The Mirage",
       "release": "12 November 2026"
     },
     {
       "slug": "ciff-2026-to-the-sun-and-beyond-tunisian-arabic",
       "title": "CIFF 2026: To the Sun and Beyond",
+      "release": "12 November 2026"
+    },
+    {
+      "slug": "ciff-2026-fleak-finnish",
+      "title": "CIFF 2026: Fleak",
+      "release": "12 November 2026"
+    },
+    {
+      "slug": "ciff-2026-the-female-idol-arabic",
+      "title": "CIFF 2026: The Female Idol",
+      "release": "12 November 2026"
+    },
+    {
+      "slug": "ciff-2026-summer-meadow-french-arabic",
+      "title": "CIFF 2026: Summer Meadow",
+      "release": "12 November 2026"
+    },
+    {
+      "slug": "ciff-2026-shafika-the-copt-arabic",
+      "title": "CIFF 2026: Shafika the Copt",
+      "release": "12 November 2026"
+    },
+    {
+      "slug": "ciff-2026-the-second-wife-arabic",
+      "title": "CIFF 2026: The Second Wife",
       "release": "12 November 2026"
     },
     {
@@ -634,6 +659,41 @@
       "at": "2026-11-09T15:46:43+00:00",
       "type": "coming",
       "title": "CIFF 2026: To the Sun and Beyond"
+    },
+    {
+      "at": "2026-11-09T16:46:43+00:00",
+      "type": "coming",
+      "title": "CIFF 2026: The People and The Nile"
+    },
+    {
+      "at": "2026-11-09T16:46:43+00:00",
+      "type": "coming",
+      "title": "CIFF 2026: The Mirage"
+    },
+    {
+      "at": "2026-11-09T16:46:43+00:00",
+      "type": "coming",
+      "title": "CIFF 2026: Fleak"
+    },
+    {
+      "at": "2026-11-09T16:46:43+00:00",
+      "type": "coming",
+      "title": "CIFF 2026: The Female Idol"
+    },
+    {
+      "at": "2026-11-09T16:46:43+00:00",
+      "type": "coming",
+      "title": "CIFF 2026: Summer Meadow"
+    },
+    {
+      "at": "2026-11-09T16:46:43+00:00",
+      "type": "coming",
+      "title": "CIFF 2026: Shafika the Copt"
+    },
+    {
+      "at": "2026-11-09T16:46:43+00:00",
+      "type": "coming",
+      "title": "CIFF 2026: The Second Wife"
     }
   ],
   "summary": {
@@ -5856,7 +5916,14 @@
     "ciff-2026-the-lamp-of-umm-hashim-arabic": "/assets/images/placeholder-poster.webp",
     "ciff-2026-home-bitter-home-arabic": "/assets/images/placeholder-poster.webp",
     "ciff-2026-the-mirage-finnish": "/assets/images/placeholder-poster.webp",
-    "ciff-2026-to-the-sun-and-beyond-tunisian-arabic": "/assets/images/placeholder-poster.webp"
+    "ciff-2026-to-the-sun-and-beyond-tunisian-arabic": "/assets/images/placeholder-poster.webp",
+    "ciff-2026-the-people-and-the-nile-arabic": "/assets/images/placeholder-poster.webp",
+    "ciff-2026-the-mirage-arabic": "/assets/images/placeholder-poster.webp",
+    "ciff-2026-fleak-finnish": "/assets/images/placeholder-poster.webp",
+    "ciff-2026-the-female-idol-arabic": "/assets/images/placeholder-poster.webp",
+    "ciff-2026-summer-meadow-french-arabic": "/assets/images/placeholder-poster.webp",
+    "ciff-2026-shafika-the-copt-arabic": "/assets/images/placeholder-poster.webp",
+    "ciff-2026-the-second-wife-arabic": "/assets/images/placeholder-poster.webp"
   },
   "nowShowing": [
     {

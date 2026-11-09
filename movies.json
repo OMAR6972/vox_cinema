@@ -262,8 +262,8 @@
       "poster": "/assets/images/placeholder-poster.webp"
     },
     {
-      "slug": "ciff-2026-the-impossible-arabic",
-      "title": "CIFF 2026: The Impossible",
+      "slug": "ciff-2026-the-people-and-the-nile-arabic",
+      "title": "CIFF 2026: The People and The Nile",
       "status": "soon",
       "release": "12 November 2026",
       "poster": "/assets/images/placeholder-poster.webp"
@@ -367,7 +367,7 @@
       "poster": "/assets/images/placeholder-poster.webp"
     },
     {
-      "slug": "ciff-2026-the-mirage-finnish",
+      "slug": "ciff-2026-the-mirage-arabic",
       "title": "CIFF 2026: The Mirage",
       "status": "soon",
       "release": "12 November 2026",
@@ -376,6 +376,41 @@
     {
       "slug": "ciff-2026-to-the-sun-and-beyond-tunisian-arabic",
       "title": "CIFF 2026: To the Sun and Beyond",
+      "status": "soon",
+      "release": "12 November 2026",
+      "poster": "/assets/images/placeholder-poster.webp"
+    },
+    {
+      "slug": "ciff-2026-fleak-finnish",
+      "title": "CIFF 2026: Fleak",
+      "status": "soon",
+      "release": "12 November 2026",
+      "poster": "/assets/images/placeholder-poster.webp"
+    },
+    {
+      "slug": "ciff-2026-the-female-idol-arabic",
+      "title": "CIFF 2026: The Female Idol",
+      "status": "soon",
+      "release": "12 November 2026",
+      "poster": "/assets/images/placeholder-poster.webp"
+    },
+    {
+      "slug": "ciff-2026-summer-meadow-french-arabic",
+      "title": "CIFF 2026: Summer Meadow",
+      "status": "soon",
+      "release": "12 November 2026",
+      "poster": "/assets/images/placeholder-poster.webp"
+    },
+    {
+      "slug": "ciff-2026-shafika-the-copt-arabic",
+      "title": "CIFF 2026: Shafika the Copt",
+      "status": "soon",
+      "release": "12 November 2026",
+      "poster": "/assets/images/placeholder-poster.webp"
+    },
+    {
+      "slug": "ciff-2026-the-second-wife-arabic",
+      "title": "CIFF 2026: The Second Wife",
       "status": "soon",
       "release": "12 November 2026",
       "poster": "/assets/images/placeholder-poster.webp"
