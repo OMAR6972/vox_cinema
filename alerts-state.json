@@ -186,78 +186,8 @@
       "release": "12 November 2026"
     },
     {
-      "slug": "ciff-2026-a-crime-in-a-quiet-neighborhood-arabic",
-      "title": "CIFF 2026:A Crime in a Quiet Neighborhood",
-      "release": "12 November 2026"
-    },
-    {
-      "slug": "ciff-2026-cairo-30-arabic",
-      "title": "CIFF 2026: Cairo 30",
-      "release": "12 November 2026"
-    },
-    {
-      "slug": "ciff-2026-a-woman-on-the-road-arabic",
-      "title": "CIFF 2026: A Woman on the Road",
-      "release": "12 November 2026"
-    },
-    {
       "slug": "ciff-2026-the-people-and-the-nile-arabic",
       "title": "CIFF 2026: The People and The Nile",
-      "release": "12 November 2026"
-    },
-    {
-      "slug": "ciff-2026-khan-el-khalili-arabic",
-      "title": "CIFF 2026: Khan el khalili",
-      "release": "12 November 2026"
-    },
-    {
-      "slug": "ciff-2026-dead-dogs-dont-bite-turkish",
-      "title": "CIFF 2026: Dead Dogs Don't Bite",
-      "release": "12 November 2026"
-    },
-    {
-      "slug": "ciff-2026-my-wife-and-the-dog-arabic",
-      "title": "CIFF 2026: My Wife and the Dog",
-      "release": "12 November 2026"
-    },
-    {
-      "slug": "ciff-2026-fatma-and-the-abdelwahab-plan-arabic",
-      "title": "CIFF 2026: Fatma and the Abdelwahab Plan",
-      "release": "12 November 2026"
-    },
-    {
-      "slug": "ciff-2026-night-and-jail-bars-arabic",
-      "title": "CIFF 2026: Night and Jail Bars",
-      "release": "12 November 2026"
-    },
-    {
-      "slug": "ciff-2026-palace-of-desire-arabic",
-      "title": "CIFF 2026: Palace of Desire",
-      "release": "12 November 2026"
-    },
-    {
-      "slug": "ciff-2026-the-sin-arabic",
-      "title": "CIFF 2026: The Sin",
-      "release": "12 November 2026"
-    },
-    {
-      "slug": "ciff-2026-inherited-persian",
-      "title": "CIFF 2026: Inherited",
-      "release": "12 November 2026"
-    },
-    {
-      "slug": "ciff-2026-my-wife-general-manager-arabic",
-      "title": "CIFF 2026: My Wife, General Manager",
-      "release": "12 November 2026"
-    },
-    {
-      "slug": "ciff-2026-the-violinist-arabic-japanese",
-      "title": "CIFF 2026: The Violinist",
-      "release": "12 November 2026"
-    },
-    {
-      "slug": "ciff-2026-something-of-fear-arabic",
-      "title": "CIFF 2026: Something of Fear",
       "release": "12 November 2026"
     },
     {
@@ -311,9 +241,79 @@
       "release": "12 November 2026"
     },
     {
+      "slug": "ciff-2026-a-crime-in-a-quiet-neighborhood-arabic",
+      "title": "CIFF 2026:A Crime in a Quiet Neighborhood",
+      "release": "13 November 2026"
+    },
+    {
+      "slug": "ciff-2026-cairo-30-arabic",
+      "title": "CIFF 2026: Cairo 30",
+      "release": "13 November 2026"
+    },
+    {
+      "slug": "ciff-2026-a-woman-on-the-road-arabic",
+      "title": "CIFF 2026: A Woman on the Road",
+      "release": "13 November 2026"
+    },
+    {
       "slug": "ciff-2026-the-impossible-arabic",
       "title": "CIFF 2026: The Impossible",
-      "release": "12 November 2026"
+      "release": "13 November 2026"
+    },
+    {
+      "slug": "ciff-2026-khan-el-khalili-arabic",
+      "title": "CIFF 2026: Khan el khalili",
+      "release": "14 November 2026"
+    },
+    {
+      "slug": "ciff-2026-dead-dogs-dont-bite-turkish",
+      "title": "CIFF 2026: Dead Dogs Don't Bite",
+      "release": "14 November 2026"
+    },
+    {
+      "slug": "ciff-2026-my-wife-and-the-dog-arabic",
+      "title": "CIFF 2026: My Wife and the Dog",
+      "release": "14 November 2026"
+    },
+    {
+      "slug": "ciff-2026-fatma-and-the-abdelwahab-plan-arabic",
+      "title": "CIFF 2026: Fatma and the Abdelwahab Plan",
+      "release": "14 November 2026"
+    },
+    {
+      "slug": "ciff-2026-night-and-jail-bars-arabic",
+      "title": "CIFF 2026: Night and Jail Bars",
+      "release": "14 November 2026"
+    },
+    {
+      "slug": "ciff-2026-palace-of-desire-arabic",
+      "title": "CIFF 2026: Palace of Desire",
+      "release": "14 November 2026"
+    },
+    {
+      "slug": "ciff-2026-the-sin-arabic",
+      "title": "CIFF 2026: The Sin",
+      "release": "15 November 2026"
+    },
+    {
+      "slug": "ciff-2026-inherited-persian",
+      "title": "CIFF 2026: Inherited",
+      "release": "15 November 2026"
+    },
+    {
+      "slug": "ciff-2026-my-wife-general-manager-arabic",
+      "title": "CIFF 2026: My Wife, General Manager",
+      "release": "15 November 2026"
+    },
+    {
+      "slug": "ciff-2026-the-violinist-english-japanese",
+      "title": "CIFF 2026: The Violinist",
+      "release": "15 November 2026"
+    },
+    {
+      "slug": "ciff-2026-something-of-fear-arabic",
+      "title": "CIFF 2026: Something of Fear",
+      "release": "16 November 2026"
     },
     {
       "slug": "the-hunger-games-sunrise-on-the-reaping",
@@ -697,6 +697,11 @@
       "at": "2026-11-10T11:16:41+00:00",
       "type": "coming",
       "title": "CIFF 2026: The Impossible"
+    },
+    {
+      "at": "2026-11-10T13:46:45+00:00",
+      "type": "coming",
+      "title": "CIFF 2026: The Violinist"
     }
   ],
   "summary": {
@@ -5122,7 +5127,8 @@
     "ciff-2026-the-female-idol-arabic": "https://assets.voxcinemas.com/posters/P_HO00013862_1794305284715.jpg",
     "ciff-2026-summer-meadow-french-arabic": "/assets/images/placeholder-poster.webp",
     "ciff-2026-shafika-the-copt-arabic": "https://assets.voxcinemas.com/posters/P_HO00013864_1794305370094.jpg",
-    "ciff-2026-the-second-wife-arabic": "https://assets.voxcinemas.com/posters/P_HO00013865_1794305425050.jpg"
+    "ciff-2026-the-second-wife-arabic": "https://assets.voxcinemas.com/posters/P_HO00013865_1794305425050.jpg",
+    "ciff-2026-the-violinist-english-japanese": "https://assets.voxcinemas.com/posters/P_HO00013854_1794303814366.jpg"
   },
   "nowShowing": [
     {
