@@ -36,6 +36,13 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013858_1794305127052.jpg"
     },
     {
+      "slug": "ciff-2026-the-people-and-the-nile-arabic",
+      "title": "CIFF 2026: The People and The Nile",
+      "status": "now",
+      "poster": "posters/ciff-2026-the-people-and-the-nile-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013844_1794305247972.jpg"
+    },
+    {
       "slug": "clayface",
       "title": "Clayface",
       "status": "now",
@@ -410,14 +417,6 @@
       "release": "17 November 2026",
       "poster": "posters/ciff-2026-to-the-sun-and-beyond-tunisian-arabic.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013860_1794305214088.jpg"
-    },
-    {
-      "slug": "ciff-2026-the-people-and-the-nile-arabic",
-      "title": "CIFF 2026: The People and The Nile",
-      "status": "soon",
-      "release": "18 November 2026",
-      "poster": "posters/ciff-2026-the-people-and-the-nile-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013844_1794305247972.jpg"
     },
     {
       "slug": "ciff-2026-the-female-idol-arabic",
