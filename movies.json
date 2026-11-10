@@ -388,7 +388,8 @@
       "title": "CIFF 2026: The Mirage",
       "status": "soon",
       "release": "12 November 2026",
-      "poster": "/assets/images/placeholder-poster.webp"
+      "poster": "posters/ciff-2026-the-mirage-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013859_1794305461180.jpg"
     },
     {
       "slug": "ciff-2026-to-the-sun-and-beyond-tunisian-arabic",
