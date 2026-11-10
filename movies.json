@@ -276,7 +276,8 @@
       "title": "CIFF 2026: Khan el khalili",
       "status": "soon",
       "release": "12 November 2026",
-      "poster": "/assets/images/placeholder-poster.webp"
+      "poster": "posters/ciff-2026-khan-el-khalili-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013845_1794304581135.jpg"
     },
     {
       "slug": "ciff-2026-dead-dogs-dont-bite-turkish",
