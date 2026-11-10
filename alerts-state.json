@@ -311,6 +311,11 @@
       "release": "12 November 2026"
     },
     {
+      "slug": "ciff-2026-the-impossible-arabic",
+      "title": "CIFF 2026: The Impossible",
+      "release": "12 November 2026"
+    },
+    {
       "slug": "the-hunger-games-sunrise-on-the-reaping",
       "title": "The Hunger Games: Sunrise on the Reaping",
       "release": "19 November 2026"
@@ -687,6 +692,11 @@
       "at": "2026-11-09T16:46:43+00:00",
       "type": "coming",
       "title": "CIFF 2026: The Second Wife"
+    },
+    {
+      "at": "2026-11-10T11:16:41+00:00",
+      "type": "coming",
+      "title": "CIFF 2026: The Impossible"
     }
   ],
   "summary": {
