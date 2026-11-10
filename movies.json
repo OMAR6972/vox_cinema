@@ -426,14 +426,16 @@
       "title": "CIFF 2026: Shafika the Copt",
       "status": "soon",
       "release": "12 November 2026",
-      "poster": "/assets/images/placeholder-poster.webp"
+      "poster": "posters/ciff-2026-shafika-the-copt-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013864_1794305370094.jpg"
     },
     {
       "slug": "ciff-2026-the-second-wife-arabic",
       "title": "CIFF 2026: The Second Wife",
       "status": "soon",
       "release": "12 November 2026",
-      "poster": "/assets/images/placeholder-poster.webp"
+      "poster": "posters/ciff-2026-the-second-wife-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013865_1794305425050.jpg"
     },
     {
       "slug": "the-hunger-games-sunrise-on-the-reaping",
