@@ -241,92 +241,12 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013804_1793271879769.jpg"
     },
     {
-      "slug": "ciff-2026-the-people-and-the-nile-arabic",
-      "title": "CIFF 2026: The People and The Nile",
-      "status": "soon",
-      "release": "12 November 2026",
-      "poster": "posters/ciff-2026-the-people-and-the-nile-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013844_1794305247972.jpg"
-    },
-    {
       "slug": "ciff-2026-for-life-arabic",
       "title": "CIFF 2026: For Life",
       "status": "soon",
       "release": "12 November 2026",
       "poster": "posters/ciff-2026-for-life-arabic.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013856_1794303866486.jpg"
-    },
-    {
-      "slug": "ciff-2026-the-lamp-of-umm-hashim-arabic",
-      "title": "CIFF 2026: The Lamp of Umm Hashim",
-      "status": "soon",
-      "release": "12 November 2026",
-      "poster": "posters/ciff-2026-the-lamp-of-umm-hashim-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013857_1794305083306.jpg"
-    },
-    {
-      "slug": "ciff-2026-home-bitter-home-arabic",
-      "title": "CIFF 2026: Home Bitter Home",
-      "status": "soon",
-      "release": "12 November 2026",
-      "poster": "posters/ciff-2026-home-bitter-home-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013858_1794305127052.jpg"
-    },
-    {
-      "slug": "ciff-2026-the-mirage-arabic",
-      "title": "CIFF 2026: The Mirage",
-      "status": "soon",
-      "release": "12 November 2026",
-      "poster": "posters/ciff-2026-the-mirage-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013859_1794305461180.jpg"
-    },
-    {
-      "slug": "ciff-2026-to-the-sun-and-beyond-tunisian-arabic",
-      "title": "CIFF 2026: To the Sun and Beyond",
-      "status": "soon",
-      "release": "12 November 2026",
-      "poster": "posters/ciff-2026-to-the-sun-and-beyond-tunisian-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013860_1794305214088.jpg"
-    },
-    {
-      "slug": "ciff-2026-fleak-finnish",
-      "title": "CIFF 2026: Fleak",
-      "status": "soon",
-      "release": "12 November 2026",
-      "poster": "posters/ciff-2026-fleak-finnish.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013861_1794303989541.jpg"
-    },
-    {
-      "slug": "ciff-2026-the-female-idol-arabic",
-      "title": "CIFF 2026: The Female Idol",
-      "status": "soon",
-      "release": "12 November 2026",
-      "poster": "posters/ciff-2026-the-female-idol-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013862_1794305284715.jpg"
-    },
-    {
-      "slug": "ciff-2026-summer-meadow-french-arabic",
-      "title": "CIFF 2026: Summer Meadow",
-      "status": "soon",
-      "release": "12 November 2026",
-      "poster": "posters/ciff-2026-summer-meadow-french-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013863_1794318918859.jpg"
-    },
-    {
-      "slug": "ciff-2026-shafika-the-copt-arabic",
-      "title": "CIFF 2026: Shafika the Copt",
-      "status": "soon",
-      "release": "12 November 2026",
-      "poster": "posters/ciff-2026-shafika-the-copt-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013864_1794305370094.jpg"
-    },
-    {
-      "slug": "ciff-2026-the-second-wife-arabic",
-      "title": "CIFF 2026: The Second Wife",
-      "status": "soon",
-      "release": "12 November 2026",
-      "poster": "posters/ciff-2026-the-second-wife-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013865_1794305425050.jpg"
     },
     {
       "slug": "ciff-2026-a-crime-in-a-quiet-neighborhood-arabic",
@@ -449,12 +369,92 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013855_1794305005697.jpg"
     },
     {
+      "slug": "ciff-2026-the-lamp-of-umm-hashim-arabic",
+      "title": "CIFF 2026: The Lamp of Umm Hashim",
+      "status": "soon",
+      "release": "16 November 2026",
+      "poster": "posters/ciff-2026-the-lamp-of-umm-hashim-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013857_1794305083306.jpg"
+    },
+    {
+      "slug": "ciff-2026-home-bitter-home-arabic",
+      "title": "CIFF 2026: Home Bitter Home",
+      "status": "soon",
+      "release": "17 November 2026",
+      "poster": "posters/ciff-2026-home-bitter-home-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013858_1794305127052.jpg"
+    },
+    {
+      "slug": "ciff-2026-the-mirage-arabic",
+      "title": "CIFF 2026: The Mirage",
+      "status": "soon",
+      "release": "17 November 2026",
+      "poster": "posters/ciff-2026-the-mirage-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013859_1794305461180.jpg"
+    },
+    {
+      "slug": "ciff-2026-to-the-sun-and-beyond-tunisian-arabic",
+      "title": "CIFF 2026: To the Sun and Beyond",
+      "status": "soon",
+      "release": "17 November 2026",
+      "poster": "posters/ciff-2026-to-the-sun-and-beyond-tunisian-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013860_1794305214088.jpg"
+    },
+    {
+      "slug": "ciff-2026-fleak-finnish",
+      "title": "CIFF 2026: Fleak",
+      "status": "soon",
+      "release": "17 November 2026",
+      "poster": "posters/ciff-2026-fleak-finnish.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013861_1794303989541.jpg"
+    },
+    {
+      "slug": "ciff-2026-the-people-and-the-nile-arabic",
+      "title": "CIFF 2026: The People and The Nile",
+      "status": "soon",
+      "release": "18 November 2026",
+      "poster": "posters/ciff-2026-the-people-and-the-nile-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013844_1794305247972.jpg"
+    },
+    {
+      "slug": "ciff-2026-the-female-idol-arabic",
+      "title": "CIFF 2026: The Female Idol",
+      "status": "soon",
+      "release": "18 November 2026",
+      "poster": "posters/ciff-2026-the-female-idol-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013862_1794305284715.jpg"
+    },
+    {
+      "slug": "ciff-2026-summer-meadow-french-arabic",
+      "title": "CIFF 2026: Summer Meadow",
+      "status": "soon",
+      "release": "18 November 2026",
+      "poster": "posters/ciff-2026-summer-meadow-french-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013863_1794318918859.jpg"
+    },
+    {
       "slug": "the-hunger-games-sunrise-on-the-reaping",
       "title": "The Hunger Games: Sunrise on the Reaping",
       "status": "soon",
       "release": "19 November 2026",
       "poster": "posters/the-hunger-games-sunrise-on-the-reaping.png",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013542_1790335408400.png"
+    },
+    {
+      "slug": "ciff-2026-shafika-the-copt-arabic",
+      "title": "CIFF 2026: Shafika the Copt",
+      "status": "soon",
+      "release": "19 November 2026",
+      "poster": "posters/ciff-2026-shafika-the-copt-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013864_1794305370094.jpg"
+    },
+    {
+      "slug": "ciff-2026-the-second-wife-arabic",
+      "title": "CIFF 2026: The Second Wife",
+      "status": "soon",
+      "release": "19 November 2026",
+      "poster": "posters/ciff-2026-the-second-wife-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013865_1794305425050.jpg"
     },
     {
       "slug": "bts-world-tour-arirang-in-kaohsiung-live-viewin",
