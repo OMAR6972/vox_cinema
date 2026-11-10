@@ -245,14 +245,16 @@
       "title": "CIFF 2026:A Crime in a Quiet Neighborhood",
       "status": "soon",
       "release": "12 November 2026",
-      "poster": "/assets/images/placeholder-poster.webp"
+      "poster": "posters/ciff-2026-a-crime-in-a-quiet-neighborhood-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013841_1794304159711.jpg"
     },
     {
       "slug": "ciff-2026-cairo-30-arabic",
       "title": "CIFF 2026: Cairo 30",
       "status": "soon",
       "release": "12 November 2026",
-      "poster": "/assets/images/placeholder-poster.webp"
+      "poster": "posters/ciff-2026-cairo-30-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013842_1794304211606.jpg"
     },
     {
       "slug": "ciff-2026-a-woman-on-the-road-arabic",
