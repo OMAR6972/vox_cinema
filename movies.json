@@ -15,6 +15,27 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013676_1790601922411.jpg"
     },
     {
+      "slug": "best-pancakes-in-the-county",
+      "title": "Best Pancakes in the County",
+      "status": "now",
+      "poster": "posters/best-pancakes-in-the-county.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013834_1794302408405.jpg"
+    },
+    {
+      "slug": "ciff-2026-fleak-finnish",
+      "title": "CIFF 2026: Fleak",
+      "status": "now",
+      "poster": "posters/ciff-2026-fleak-finnish.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013861_1794303989541.jpg"
+    },
+    {
+      "slug": "ciff-2026-home-bitter-home-arabic",
+      "title": "CIFF 2026: Home Bitter Home",
+      "status": "now",
+      "poster": "posters/ciff-2026-home-bitter-home-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013858_1794305127052.jpg"
+    },
+    {
       "slug": "clayface",
       "title": "Clayface",
       "status": "now",
@@ -27,6 +48,13 @@
       "status": "now",
       "poster": "posters/dune-part-three.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013132_1777639610268.jpg"
+    },
+    {
+      "slug": "ebenezer",
+      "title": "Ebenezer",
+      "status": "now",
+      "poster": "posters/ebenezer.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013804_1793271879769.jpg"
     },
     {
       "slug": "godzilla-minus-zero-japanese",
@@ -55,6 +83,13 @@
       "status": "now",
       "poster": "posters/hope-korean.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013775_1792992825725.jpg"
+    },
+    {
+      "slug": "how-to-rob-a-bank",
+      "title": "How to Rob a Bank",
+      "status": "now",
+      "poster": "posters/how-to-rob-a-bank.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013184_1793870929412.jpg"
     },
     {
       "slug": "idiots",
@@ -225,30 +260,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013662_1793634705236.jpg"
     },
     {
-      "slug": "how-to-rob-a-bank",
-      "title": "How to Rob a Bank",
-      "status": "soon",
-      "release": "12 November 2026",
-      "poster": "posters/how-to-rob-a-bank.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013184_1793870929412.jpg"
-    },
-    {
-      "slug": "ebenezer",
-      "title": "Ebenezer",
-      "status": "soon",
-      "release": "12 November 2026",
-      "poster": "posters/ebenezer.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013804_1793271879769.jpg"
-    },
-    {
-      "slug": "best-pancakes-in-the-county",
-      "title": "Best Pancakes in the County",
-      "status": "soon",
-      "release": "12 November 2026",
-      "poster": "posters/best-pancakes-in-the-county.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013834_1794302408405.jpg"
-    },
-    {
       "slug": "ciff-2026-a-crime-in-a-quiet-neighborhood-arabic",
       "title": "CIFF 2026:A Crime in a Quiet Neighborhood",
       "status": "soon",
@@ -385,14 +396,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013857_1794305083306.jpg"
     },
     {
-      "slug": "ciff-2026-home-bitter-home-arabic",
-      "title": "CIFF 2026: Home Bitter Home",
-      "status": "soon",
-      "release": "17 November 2026",
-      "poster": "posters/ciff-2026-home-bitter-home-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013858_1794305127052.jpg"
-    },
-    {
       "slug": "ciff-2026-the-mirage-arabic",
       "title": "CIFF 2026: The Mirage",
       "status": "soon",
@@ -407,14 +410,6 @@
       "release": "17 November 2026",
       "poster": "posters/ciff-2026-to-the-sun-and-beyond-tunisian-arabic.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013860_1794305214088.jpg"
-    },
-    {
-      "slug": "ciff-2026-fleak-finnish",
-      "title": "CIFF 2026: Fleak",
-      "status": "soon",
-      "release": "17 November 2026",
-      "poster": "posters/ciff-2026-fleak-finnish.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013861_1794303989541.jpg"
     },
     {
       "slug": "ciff-2026-the-people-and-the-nile-arabic",
