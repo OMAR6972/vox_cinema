@@ -336,7 +336,8 @@
       "title": "CIFF 2026: The Violinist",
       "status": "soon",
       "release": "12 November 2026",
-      "poster": "/assets/images/placeholder-poster.webp"
+      "poster": "posters/ciff-2026-the-violinist-arabic-japanese.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013854_1794303814366.jpg"
     },
     {
       "slug": "ciff-2026-something-of-fear-arabic",
@@ -350,7 +351,8 @@
       "title": "CIFF 2026: For Life",
       "status": "soon",
       "release": "12 November 2026",
-      "poster": "/assets/images/placeholder-poster.webp"
+      "poster": "posters/ciff-2026-for-life-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013856_1794303866486.jpg"
     },
     {
       "slug": "ciff-2026-the-lamp-of-umm-hashim-arabic",
