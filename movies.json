@@ -22,6 +22,20 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013834_1794302408405.jpg"
     },
     {
+      "slug": "ciff-2026-cairo-30-arabic",
+      "title": "CIFF 2026: Cairo 30",
+      "status": "now",
+      "poster": "posters/ciff-2026-cairo-30-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013842_1794304211606.jpg"
+    },
+    {
+      "slug": "ciff-2026-dead-dogs-dont-bite-turkish",
+      "title": "CIFF 2026: Dead Dogs Don't Bite",
+      "status": "now",
+      "poster": "posters/ciff-2026-dead-dogs-dont-bite-turkish.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013846_1794304023079.jpg"
+    },
+    {
       "slug": "ciff-2026-fleak-finnish",
       "title": "CIFF 2026: Fleak",
       "status": "now",
@@ -36,11 +50,46 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013858_1794305127052.jpg"
     },
     {
+      "slug": "ciff-2026-inherited-persian",
+      "title": "CIFF 2026: Inherited",
+      "status": "now",
+      "poster": "posters/ciff-2026-inherited-persian.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013852_1794318952221.jpg"
+    },
+    {
+      "slug": "ciff-2026-khan-el-khalili-arabic",
+      "title": "CIFF 2026: Khan el khalili",
+      "status": "now",
+      "poster": "posters/ciff-2026-khan-el-khalili-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013845_1794304581135.jpg"
+    },
+    {
+      "slug": "ciff-2026-night-and-jail-bars-arabic",
+      "title": "CIFF 2026: Night and Jail Bars",
+      "status": "now",
+      "poster": "posters/ciff-2026-night-and-jail-bars-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013849_1794304723366.jpg"
+    },
+    {
       "slug": "ciff-2026-the-people-and-the-nile-arabic",
       "title": "CIFF 2026: The People and The Nile",
       "status": "now",
       "poster": "posters/ciff-2026-the-people-and-the-nile-arabic.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013844_1794305247972.jpg"
+    },
+    {
+      "slug": "ciff-2026-the-sin-arabic",
+      "title": "CIFF 2026: The Sin",
+      "status": "now",
+      "poster": "posters/ciff-2026-the-sin-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013851_1794304886434.jpg"
+    },
+    {
+      "slug": "ciff-2026-a-crime-in-a-quiet-neighborhood-arabic",
+      "title": "CIFF 2026:A Crime in a Quiet Neighborhood",
+      "status": "now",
+      "poster": "posters/ciff-2026-a-crime-in-a-quiet-neighborhood-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013841_1794304159711.jpg"
     },
     {
       "slug": "clayface",
@@ -267,22 +316,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013662_1793634705236.jpg"
     },
     {
-      "slug": "ciff-2026-a-crime-in-a-quiet-neighborhood-arabic",
-      "title": "CIFF 2026:A Crime in a Quiet Neighborhood",
-      "status": "soon",
-      "release": "13 November 2026",
-      "poster": "posters/ciff-2026-a-crime-in-a-quiet-neighborhood-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013841_1794304159711.jpg"
-    },
-    {
-      "slug": "ciff-2026-cairo-30-arabic",
-      "title": "CIFF 2026: Cairo 30",
-      "status": "soon",
-      "release": "13 November 2026",
-      "poster": "posters/ciff-2026-cairo-30-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013842_1794304211606.jpg"
-    },
-    {
       "slug": "ciff-2026-a-woman-on-the-road-arabic",
       "title": "CIFF 2026: A Woman on the Road",
       "status": "soon",
@@ -297,22 +330,6 @@
       "release": "13 November 2026",
       "poster": "posters/ciff-2026-the-impossible-arabic.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013867_1794313095687.jpg"
-    },
-    {
-      "slug": "ciff-2026-khan-el-khalili-arabic",
-      "title": "CIFF 2026: Khan el khalili",
-      "status": "soon",
-      "release": "14 November 2026",
-      "poster": "posters/ciff-2026-khan-el-khalili-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013845_1794304581135.jpg"
-    },
-    {
-      "slug": "ciff-2026-dead-dogs-dont-bite-turkish",
-      "title": "CIFF 2026: Dead Dogs Don't Bite",
-      "status": "soon",
-      "release": "14 November 2026",
-      "poster": "posters/ciff-2026-dead-dogs-dont-bite-turkish.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013846_1794304023079.jpg"
     },
     {
       "slug": "ciff-2026-my-wife-and-the-dog-arabic",
@@ -331,36 +348,12 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013848_1794304674153.jpg"
     },
     {
-      "slug": "ciff-2026-night-and-jail-bars-arabic",
-      "title": "CIFF 2026: Night and Jail Bars",
-      "status": "soon",
-      "release": "14 November 2026",
-      "poster": "posters/ciff-2026-night-and-jail-bars-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013849_1794304723366.jpg"
-    },
-    {
       "slug": "ciff-2026-palace-of-desire-arabic",
       "title": "CIFF 2026: Palace of Desire",
       "status": "soon",
       "release": "14 November 2026",
       "poster": "posters/ciff-2026-palace-of-desire-arabic.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013850_1794304851114.jpg"
-    },
-    {
-      "slug": "ciff-2026-the-sin-arabic",
-      "title": "CIFF 2026: The Sin",
-      "status": "soon",
-      "release": "15 November 2026",
-      "poster": "posters/ciff-2026-the-sin-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013851_1794304886434.jpg"
-    },
-    {
-      "slug": "ciff-2026-inherited-persian",
-      "title": "CIFF 2026: Inherited",
-      "status": "soon",
-      "release": "15 November 2026",
-      "poster": "posters/ciff-2026-inherited-persian.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013852_1794318952221.jpg"
     },
     {
       "slug": "ciff-2026-my-wife-general-manager-arabic",
