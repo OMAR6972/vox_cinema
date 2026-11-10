@@ -186,8 +186,8 @@
       "release": "12 November 2026"
     },
     {
-      "slug": "ciff-2026-for-life-arabic",
-      "title": "CIFF 2026: For Life",
+      "slug": "best-pancakes-in-the-county",
+      "title": "Best Pancakes in the County",
       "release": "12 November 2026"
     },
     {
@@ -263,6 +263,11 @@
     {
       "slug": "ciff-2026-something-of-fear-arabic",
       "title": "CIFF 2026: Something of Fear",
+      "release": "16 November 2026"
+    },
+    {
+      "slug": "ciff-2026-for-life-arabic",
+      "title": "CIFF 2026: For Life",
       "release": "16 November 2026"
     },
     {
@@ -702,6 +707,11 @@
       "at": "2026-11-10T13:46:45+00:00",
       "type": "coming",
       "title": "CIFF 2026: The Violinist"
+    },
+    {
+      "at": "2026-11-10T15:46:44+00:00",
+      "type": "coming",
+      "title": "Best Pancakes in the County"
     }
   ],
   "summary": {
@@ -5128,7 +5138,8 @@
     "ciff-2026-summer-meadow-french-arabic": "https://assets.voxcinemas.com/posters/P_HO00013863_1794318918859.jpg",
     "ciff-2026-shafika-the-copt-arabic": "https://assets.voxcinemas.com/posters/P_HO00013864_1794305370094.jpg",
     "ciff-2026-the-second-wife-arabic": "https://assets.voxcinemas.com/posters/P_HO00013865_1794305425050.jpg",
-    "ciff-2026-the-violinist-english-japanese": "https://assets.voxcinemas.com/posters/P_HO00013854_1794303814366.jpg"
+    "ciff-2026-the-violinist-english-japanese": "https://assets.voxcinemas.com/posters/P_HO00013854_1794303814366.jpg",
+    "best-pancakes-in-the-county": "https://assets.voxcinemas.com/posters/P_HO00013834_1794302408405.jpg"
   },
   "nowShowing": [
     {
