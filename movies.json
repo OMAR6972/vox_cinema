@@ -355,7 +355,8 @@
       "title": "CIFF 2026: Something of Fear",
       "status": "soon",
       "release": "12 November 2026",
-      "poster": "/assets/images/placeholder-poster.webp"
+      "poster": "posters/ciff-2026-something-of-fear-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013855_1794305005697.jpg"
     },
     {
       "slug": "ciff-2026-for-life-arabic",
@@ -370,7 +371,8 @@
       "title": "CIFF 2026: The Lamp of Umm Hashim",
       "status": "soon",
       "release": "12 November 2026",
-      "poster": "/assets/images/placeholder-poster.webp"
+      "poster": "posters/ciff-2026-the-lamp-of-umm-hashim-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013857_1794305083306.jpg"
     },
     {
       "slug": "ciff-2026-home-bitter-home-arabic",
