@@ -36,11 +36,25 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013858_1794305127052.jpg"
     },
     {
+      "slug": "ciff-2026-inherited-persian",
+      "title": "CIFF 2026: Inherited",
+      "status": "now",
+      "poster": "posters/ciff-2026-inherited-persian.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013852_1794318952221.jpg"
+    },
+    {
       "slug": "ciff-2026-the-people-and-the-nile-arabic",
       "title": "CIFF 2026: The People and The Nile",
       "status": "now",
       "poster": "posters/ciff-2026-the-people-and-the-nile-arabic.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013844_1794305247972.jpg"
+    },
+    {
+      "slug": "ciff-2026-the-sin-arabic",
+      "title": "CIFF 2026: The Sin",
+      "status": "now",
+      "poster": "posters/ciff-2026-the-sin-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013851_1794304886434.jpg"
     },
     {
       "slug": "clayface",
@@ -345,22 +359,6 @@
       "release": "14 November 2026",
       "poster": "posters/ciff-2026-palace-of-desire-arabic.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013850_1794304851114.jpg"
-    },
-    {
-      "slug": "ciff-2026-the-sin-arabic",
-      "title": "CIFF 2026: The Sin",
-      "status": "soon",
-      "release": "15 November 2026",
-      "poster": "posters/ciff-2026-the-sin-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013851_1794304886434.jpg"
-    },
-    {
-      "slug": "ciff-2026-inherited-persian",
-      "title": "CIFF 2026: Inherited",
-      "status": "soon",
-      "release": "15 November 2026",
-      "poster": "posters/ciff-2026-inherited-persian.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013852_1794318952221.jpg"
     },
     {
       "slug": "ciff-2026-my-wife-general-manager-arabic",
