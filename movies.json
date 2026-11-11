@@ -197,13 +197,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013755_1793793510180.jpg"
     },
     {
-      "slug": "heart-of-the-beast",
-      "title": "Heart of the Beast",
-      "status": "now",
-      "poster": "posters/heart-of-the-beast.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013349_1782370147754.jpg"
-    },
-    {
       "slug": "how-to-rob-a-bank",
       "title": "How to Rob a Bank",
       "status": "now",
@@ -328,6 +321,13 @@
       "status": "now",
       "poster": "posters/verity.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013148_1779080275617.jpg"
+    },
+    {
+      "slug": "heart-of-the-beast",
+      "title": "Heart of the Beast",
+      "status": "now",
+      "poster": "posters/heart-of-the-beast.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013349_1782370147754.jpg"
     },
     {
       "slug": "mahmoud-el-tany-arabic",
