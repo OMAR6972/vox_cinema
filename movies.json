@@ -295,6 +295,13 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013488_1783655908489.jpg"
     },
     {
+      "slug": "verity",
+      "title": "Verity",
+      "status": "now",
+      "poster": "posters/verity.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013148_1779080275617.jpg"
+    },
+    {
       "slug": "wala-kan-ala-el-bal-arabic",
       "title": "Wala Kan Ala El-Bal",
       "status": "now",
@@ -321,13 +328,6 @@
       "status": "now",
       "poster": "posters/hope-korean.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013775_1792992825725.jpg"
-    },
-    {
-      "slug": "verity",
-      "title": "Verity",
-      "status": "now",
-      "poster": "posters/verity.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013148_1779080275617.jpg"
     },
     {
       "slug": "mahmoud-el-tany-arabic",
