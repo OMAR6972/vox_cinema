@@ -246,6 +246,18 @@
     "ciff-2026-summer-meadow-french-arabic": {
       "firstSeen": "2026-11-11T15:08:41+00:00",
       "title": "CIFF 2026: Summer Meadow"
+    },
+    "ciff-2026-my-wife-general-manager-arabic": {
+      "firstSeen": "2026-11-11T15:10:42+00:00",
+      "title": "CIFF 2026: My Wife, General Manager"
+    },
+    "ciff-2026-the-mirage-arabic": {
+      "firstSeen": "2026-11-11T15:10:42+00:00",
+      "title": "CIFF 2026: The Mirage"
+    },
+    "ciff-2026-to-the-sun-and-beyond-tunisian-arabic": {
+      "firstSeen": "2026-11-11T15:10:42+00:00",
+      "title": "CIFF 2026: To the Sun and Beyond"
     }
   },
   "comingSoon": [
@@ -902,6 +914,21 @@
       "at": "2026-11-11T15:08:41+00:00",
       "type": "movie",
       "title": "CIFF 2026: Summer Meadow"
+    },
+    {
+      "at": "2026-11-11T15:10:42+00:00",
+      "type": "movie",
+      "title": "CIFF 2026: My Wife, General Manager"
+    },
+    {
+      "at": "2026-11-11T15:10:42+00:00",
+      "type": "movie",
+      "title": "CIFF 2026: The Mirage"
+    },
+    {
+      "at": "2026-11-11T15:10:42+00:00",
+      "type": "movie",
+      "title": "CIFF 2026: To the Sun and Beyond"
     }
   ],
   "summary": {
@@ -8191,6 +8218,18 @@
     "0047-278383": [
       "2026-11-18",
       1794409721
+    ],
+    "0047-278376": [
+      "2026-11-15",
+      1794409842
+    ],
+    "0047-278380": [
+      "2026-11-17",
+      1794409842
+    ],
+    "0047-278381": [
+      "2026-11-17",
+      1794409842
     ]
   },
   "trackingSince": "2026-10-29T02:23:15+00:00",
