@@ -226,6 +226,22 @@
     "ciff-2026-the-impossible-arabic": {
       "firstSeen": "2026-11-11T14:18:44+00:00",
       "title": "CIFF 2026: The Impossible"
+    },
+    "ciff-2026-fatma-and-the-abdelwahab-plan-arabic": {
+      "firstSeen": "2026-11-11T15:06:53+00:00",
+      "title": "CIFF 2026: Fatma and the Abdelwahab Plan"
+    },
+    "ciff-2026-my-wife-and-the-dog-arabic": {
+      "firstSeen": "2026-11-11T15:06:53+00:00",
+      "title": "CIFF 2026: My Wife and the Dog"
+    },
+    "ciff-2026-palace-of-desire-arabic": {
+      "firstSeen": "2026-11-11T15:06:53+00:00",
+      "title": "CIFF 2026: Palace of Desire"
+    },
+    "ciff-2026-the-lamp-of-umm-hashim-arabic": {
+      "firstSeen": "2026-11-11T15:06:53+00:00",
+      "title": "CIFF 2026: The Lamp of Umm Hashim"
     }
   },
   "comingSoon": [
@@ -857,6 +873,26 @@
       "at": "2026-11-11T14:18:44+00:00",
       "type": "movie",
       "title": "CIFF 2026: The Impossible"
+    },
+    {
+      "at": "2026-11-11T15:06:53+00:00",
+      "type": "movie",
+      "title": "CIFF 2026: Fatma and the Abdelwahab Plan"
+    },
+    {
+      "at": "2026-11-11T15:06:53+00:00",
+      "type": "movie",
+      "title": "CIFF 2026: My Wife and the Dog"
+    },
+    {
+      "at": "2026-11-11T15:06:53+00:00",
+      "type": "movie",
+      "title": "CIFF 2026: Palace of Desire"
+    },
+    {
+      "at": "2026-11-11T15:06:53+00:00",
+      "type": "movie",
+      "title": "CIFF 2026: The Lamp of Umm Hashim"
     }
   ],
   "summary": {
@@ -8126,6 +8162,22 @@
     "0047-278175": [
       "2026-11-18",
       1794406724
+    ],
+    "0047-278375": [
+      "2026-11-14",
+      1794409613
+    ],
+    "0047-278373": [
+      "2026-11-14",
+      1794409613
+    ],
+    "0047-278374": [
+      "2026-11-14",
+      1794409613
+    ],
+    "0047-278379": [
+      "2026-11-16",
+      1794409613
     ]
   },
   "trackingSince": "2026-10-29T02:23:15+00:00",
