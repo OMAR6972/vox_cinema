@@ -246,6 +246,13 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013488_1783655908489.jpg"
     },
     {
+      "slug": "uc-harfliler-muhur-turkish",
+      "title": "Uc Harfliler Muhur",
+      "status": "now",
+      "poster": "posters/uc-harfliler-muhur-turkish.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013639_1789645578328.jpg"
+    },
+    {
       "slug": "verity",
       "title": "Verity",
       "status": "now",
@@ -293,13 +300,6 @@
       "status": "now",
       "poster": "posters/spider-man-brand-new-day.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013065_1782227665332.jpg"
-    },
-    {
-      "slug": "uc-harfliler-muhur-turkish",
-      "title": "Uc Harfliler Muhur",
-      "status": "now",
-      "poster": "posters/uc-harfliler-muhur-turkish.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013639_1789645578328.jpg"
     },
     {
       "slug": "moscow-cairo-arabic",
