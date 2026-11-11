@@ -267,6 +267,13 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013580_1789548138971.jpg"
     },
     {
+      "slug": "the-odyssey",
+      "title": "The Odyssey",
+      "status": "now",
+      "poster": "posters/the-odyssey.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013488_1783655908489.jpg"
+    },
+    {
       "slug": "wala-kan-ala-el-bal-arabic",
       "title": "Wala Kan Ala El-Bal",
       "status": "now",
@@ -307,13 +314,6 @@
       "status": "now",
       "poster": "posters/street-fighter.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013107_1791888704674.jpg"
-    },
-    {
-      "slug": "the-odyssey",
-      "title": "The Odyssey",
-      "status": "now",
-      "poster": "posters/the-odyssey.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013488_1783655908489.jpg"
     },
     {
       "slug": "mahmoud-el-tany-arabic",
