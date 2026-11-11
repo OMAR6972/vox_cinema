@@ -99,6 +99,13 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013850_1794304851114.jpg"
     },
     {
+      "slug": "ciff-2026-summer-meadow-french-arabic",
+      "title": "CIFF 2026: Summer Meadow",
+      "status": "now",
+      "poster": "posters/ciff-2026-summer-meadow-french-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013863_1794318918859.jpg"
+    },
+    {
       "slug": "ciff-2026-the-impossible-arabic",
       "title": "CIFF 2026: The Impossible",
       "status": "now",
@@ -412,14 +419,6 @@
       "release": "18 November 2026",
       "poster": "posters/ciff-2026-the-female-idol-arabic.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013862_1794305284715.jpg"
-    },
-    {
-      "slug": "ciff-2026-summer-meadow-french-arabic",
-      "title": "CIFF 2026: Summer Meadow",
-      "status": "soon",
-      "release": "18 November 2026",
-      "poster": "posters/ciff-2026-summer-meadow-french-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013863_1794318918859.jpg"
     },
     {
       "slug": "the-hunger-games-sunrise-on-the-reaping",
