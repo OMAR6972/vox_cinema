@@ -225,13 +225,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013806_1793272008209.jpg"
     },
     {
-      "slug": "the-dino-family",
-      "title": "The Dino Family",
-      "status": "now",
-      "poster": "posters/the-dino-family.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013580_1789548138971.jpg"
-    },
-    {
       "slug": "the-mongoose",
       "title": "The Mongoose",
       "status": "now",
@@ -300,6 +293,13 @@
       "status": "now",
       "poster": "posters/spider-man-brand-new-day.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013065_1782227665332.jpg"
+    },
+    {
+      "slug": "the-dino-family",
+      "title": "The Dino Family",
+      "status": "now",
+      "poster": "posters/the-dino-family.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013580_1789548138971.jpg"
     },
     {
       "slug": "moscow-cairo-arabic",
