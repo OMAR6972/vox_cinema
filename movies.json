@@ -22,6 +22,13 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013834_1794302408405.jpg"
     },
     {
+      "slug": "ciff-2026-a-woman-on-the-road-arabic",
+      "title": "CIFF 2026: A Woman on the Road",
+      "status": "now",
+      "poster": "posters/ciff-2026-a-woman-on-the-road-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013843_1794304061331.jpg"
+    },
+    {
       "slug": "ciff-2026-cairo-30-arabic",
       "title": "CIFF 2026: Cairo 30",
       "status": "now",
@@ -69,6 +76,13 @@
       "status": "now",
       "poster": "posters/ciff-2026-night-and-jail-bars-arabic.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013849_1794304723366.jpg"
+    },
+    {
+      "slug": "ciff-2026-the-impossible-arabic",
+      "title": "CIFF 2026: The Impossible",
+      "status": "now",
+      "poster": "posters/ciff-2026-the-impossible-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013867_1794313095687.jpg"
     },
     {
       "slug": "ciff-2026-the-people-and-the-nile-arabic",
@@ -314,22 +328,6 @@
       "status": "now",
       "poster": "posters/the-influencer-project.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013662_1793634705236.jpg"
-    },
-    {
-      "slug": "ciff-2026-a-woman-on-the-road-arabic",
-      "title": "CIFF 2026: A Woman on the Road",
-      "status": "soon",
-      "release": "13 November 2026",
-      "poster": "posters/ciff-2026-a-woman-on-the-road-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013843_1794304061331.jpg"
-    },
-    {
-      "slug": "ciff-2026-the-impossible-arabic",
-      "title": "CIFF 2026: The Impossible",
-      "status": "soon",
-      "release": "13 November 2026",
-      "poster": "posters/ciff-2026-the-impossible-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013867_1794313095687.jpg"
     },
     {
       "slug": "ciff-2026-my-wife-and-the-dog-arabic",
