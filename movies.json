@@ -204,13 +204,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013184_1793870929412.jpg"
     },
     {
-      "slug": "idiots",
-      "title": "Idiots",
-      "status": "now",
-      "poster": "posters/idiots.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013776_1792992864563.jpg"
-    },
-    {
       "slug": "matloub-3a2eleyain-arabic",
       "title": "Matloub 3a2eleyain",
       "status": "now",
@@ -370,6 +363,13 @@
       "status": "now",
       "poster": "posters/wildwood.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013671_1793634887028.jpg"
+    },
+    {
+      "slug": "idiots",
+      "title": "Idiots",
+      "status": "now",
+      "poster": "posters/idiots.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013776_1792992864563.jpg"
     },
     {
       "slug": "ramayana-hindi",
