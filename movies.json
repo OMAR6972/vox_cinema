@@ -253,13 +253,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013769_1793613239809.jpg"
     },
     {
-      "slug": "the-dino-family",
-      "title": "The Dino Family",
-      "status": "now",
-      "poster": "posters/the-dino-family.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013580_1789548138971.jpg"
-    },
-    {
       "slug": "the-odyssey",
       "title": "The Odyssey",
       "status": "now",
@@ -335,6 +328,13 @@
       "status": "now",
       "poster": "posters/uc-harfliler-muhur-turkish.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013639_1789645578328.jpg"
+    },
+    {
+      "slug": "the-dino-family",
+      "title": "The Dino Family",
+      "status": "now",
+      "poster": "posters/the-dino-family.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013580_1789548138971.jpg"
     },
     {
       "slug": "moscow-cairo-arabic",
