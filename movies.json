@@ -71,6 +71,13 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013863_1794318918859.jpg"
     },
     {
+      "slug": "ciff-2026-the-impossible-arabic",
+      "title": "CIFF 2026: The Impossible",
+      "status": "now",
+      "poster": "posters/ciff-2026-the-impossible-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013867_1794313095687.jpg"
+    },
+    {
       "slug": "ciff-2026-the-lamp-of-umm-hashim-arabic",
       "title": "CIFF 2026: The Lamp of Umm Hashim",
       "status": "now",
@@ -337,14 +344,6 @@
       "release": "13 November 2026",
       "poster": "posters/ciff-2026-cairo-30-arabic.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013842_1794304211606.jpg"
-    },
-    {
-      "slug": "ciff-2026-the-impossible-arabic",
-      "title": "CIFF 2026: The Impossible",
-      "status": "soon",
-      "release": "13 November 2026",
-      "poster": "posters/ciff-2026-the-impossible-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013867_1794313095687.jpg"
     },
     {
       "slug": "ciff-2026-khan-el-khalili-arabic",
