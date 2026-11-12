@@ -445,6 +445,11 @@
       "release": "24 December 2026"
     },
     {
+      "slug": "the-angry-birds-movie-3",
+      "title": "The Angry Birds Movie 3",
+      "release": "24 December 2026"
+    },
+    {
       "slug": "bts-world-tour-arirang-in-jakarta-live-viewing",
       "title": "BTS WORLD TOUR 'ARIRANG' IN JAKARTA: LIVE VIEWING",
       "release": "29 December 2026"
@@ -926,6 +931,11 @@
       "at": "2026-11-12T10:52:46+00:00",
       "type": "movie",
       "title": "CIFF 2026: The Female Idol"
+    },
+    {
+      "at": "2026-11-12T12:46:45+00:00",
+      "type": "coming",
+      "title": "The Angry Birds Movie 3"
     }
   ],
   "summary": {
@@ -8391,6 +8401,18 @@
     "0047-278028": [
       "2026-11-18",
       1794485201
+    ],
+    "0047-278477": [
+      "2026-11-12",
+      1794487605
+    ],
+    "0047-277997": [
+      "2026-11-12",
+      1794487605
+    ],
+    "0047-277998": [
+      "2026-11-12",
+      1794487605
     ]
   },
   "trackingSince": "2026-10-29T02:23:15+00:00",
@@ -8478,7 +8500,8 @@
     "ciff-2026-the-second-wife-arabic": "https://assets.voxcinemas.com/posters/P_HO00013865_1794305425050.jpg",
     "ciff-2026-the-violinist-english-japanese": "https://assets.voxcinemas.com/posters/P_HO00013854_1794303814366.jpg",
     "best-pancakes-in-the-county": "https://assets.voxcinemas.com/posters/P_HO00013834_1794302408405.jpg",
-    "ciff-2026-the-soft-hands-arabic": "https://assets.voxcinemas.com/posters/P_HO00013869_1794481610194.jpg"
+    "ciff-2026-the-soft-hands-arabic": "https://assets.voxcinemas.com/posters/P_HO00013869_1794481610194.jpg",
+    "the-angry-birds-movie-3": "/assets/images/placeholder-poster.webp"
   },
   "nowShowing": [
     {
