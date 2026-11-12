@@ -43,6 +43,13 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013861_1794303989541.jpg"
     },
     {
+      "slug": "ciff-2026-home-bitter-home-arabic",
+      "title": "CIFF 2026: Home Bitter Home",
+      "status": "now",
+      "poster": "posters/ciff-2026-home-bitter-home-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013858_1794305127052.jpg"
+    },
+    {
       "slug": "ciff-2026-my-wife-and-the-dog-arabic",
       "title": "CIFF 2026: My Wife and the Dog",
       "status": "now",
@@ -408,14 +415,6 @@
       "release": "16 November 2026",
       "poster": "posters/ciff-2026-for-life-arabic.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013856_1794303866486.jpg"
-    },
-    {
-      "slug": "ciff-2026-home-bitter-home-arabic",
-      "title": "CIFF 2026: Home Bitter Home",
-      "status": "soon",
-      "release": "17 November 2026",
-      "poster": "posters/ciff-2026-home-bitter-home-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013858_1794305127052.jpg"
     },
     {
       "slug": "ciff-2026-the-female-idol-arabic",
