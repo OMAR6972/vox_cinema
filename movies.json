@@ -106,13 +106,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013844_1794305247972.jpg"
     },
     {
-      "slug": "ciff-2026-the-sin-arabic",
-      "title": "CIFF 2026: The Sin",
-      "status": "now",
-      "poster": "posters/ciff-2026-the-sin-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013851_1794304886434.jpg"
-    },
-    {
       "slug": "ciff-2026-to-the-sun-and-beyond-tunisian-arabic",
       "title": "CIFF 2026: To the Sun and Beyond",
       "status": "now",
@@ -373,6 +366,14 @@
       "release": "15 November 2026",
       "poster": "posters/ciff-2026-palace-of-desire-arabic.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013850_1794304851114.jpg"
+    },
+    {
+      "slug": "ciff-2026-the-sin-arabic",
+      "title": "CIFF 2026: The Sin",
+      "status": "soon",
+      "release": "15 November 2026",
+      "poster": "posters/ciff-2026-the-sin-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013851_1794304886434.jpg"
     },
     {
       "slug": "ciff-2026-inherited-persian",
