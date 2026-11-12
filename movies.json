@@ -57,25 +57,11 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013853_1794304960950.jpg"
     },
     {
-      "slug": "ciff-2026-palace-of-desire-arabic",
-      "title": "CIFF 2026: Palace of Desire",
-      "status": "now",
-      "poster": "posters/ciff-2026-palace-of-desire-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013850_1794304851114.jpg"
-    },
-    {
       "slug": "ciff-2026-summer-meadow-french-arabic",
       "title": "CIFF 2026: Summer Meadow",
       "status": "now",
       "poster": "posters/ciff-2026-summer-meadow-french-arabic.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013863_1794318918859.jpg"
-    },
-    {
-      "slug": "ciff-2026-the-impossible-arabic",
-      "title": "CIFF 2026: The Impossible",
-      "status": "now",
-      "poster": "posters/ciff-2026-the-impossible-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013867_1794313095687.jpg"
     },
     {
       "slug": "ciff-2026-the-lamp-of-umm-hashim-arabic",
@@ -346,6 +332,14 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013842_1794304211606.jpg"
     },
     {
+      "slug": "ciff-2026-the-impossible-arabic",
+      "title": "CIFF 2026: The Impossible",
+      "status": "soon",
+      "release": "13 November 2026",
+      "poster": "posters/ciff-2026-the-impossible-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013867_1794313095687.jpg"
+    },
+    {
       "slug": "ciff-2026-khan-el-khalili-arabic",
       "title": "CIFF 2026: Khan el khalili",
       "status": "soon",
@@ -368,6 +362,14 @@
       "release": "14 November 2026",
       "poster": "posters/ciff-2026-night-and-jail-bars-arabic.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013849_1794304723366.jpg"
+    },
+    {
+      "slug": "ciff-2026-palace-of-desire-arabic",
+      "title": "CIFF 2026: Palace of Desire",
+      "status": "soon",
+      "release": "14 November 2026",
+      "poster": "posters/ciff-2026-palace-of-desire-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013850_1794304851114.jpg"
     },
     {
       "slug": "ciff-2026-the-sin-arabic",
