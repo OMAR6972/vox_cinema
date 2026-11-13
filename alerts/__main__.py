@@ -33,6 +33,8 @@ def main() -> int:
             return 0
         eng.run()
     finally:
+        if eng.config_dirty:  # a friend tapped Stop / Track / "turn off roundup": the panel must show it
+            write_json(ROOT / "config.json", eng.config)
         eng.state.pop("lastRun", None)
         eng.state.pop("lastCheck", None)  # would change every run and flood the repo with commits
         write_json(ROOT / "alerts-state.json", eng.state)

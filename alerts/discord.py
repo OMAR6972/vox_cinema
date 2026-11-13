@@ -12,14 +12,17 @@ def to_discord(html: str) -> str:
     t = re.sub(r"<a href=\"([^\"]+)\">(.*?)</a>", r"[\2](<\1>)", html, flags=re.S)
     t = re.sub(r"</?b>", "**", t)
     t = re.sub(r"</?i>", "_", t)
+    t = re.sub(r"</?s>", "~~", t)
     t = t.replace("&lt;", "<").replace("&gt;", ">").replace("&quot;", '"').replace("&amp;", "&")
     if len(t) > 1900:
         t = t[:1890].rsplit("\n", 1)[0] + "\n…"
     return t
 
 
-def send(webhook_url: str, html: str, http=requests, sleep=time.sleep):
+def send(webhook_url: str, html: str, http=requests, sleep=time.sleep, image=None):
     body = {"content": to_discord(html), "allowed_mentions": {"parse": []}}
+    if image:
+        body["embeds"] = [{"image": {"url": image}}]
     for _ in range(3):
         r = http.post(webhook_url, json=body, timeout=20)
         if r.status_code == 429:

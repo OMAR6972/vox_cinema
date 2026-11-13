@@ -32,15 +32,35 @@ class Telegram:
         except RuntimeError:
             pass
 
-    def send(self, chat_id, html, buttons=None):
+    def send(self, chat_id, html, buttons=None, silent=False):
         text = html
         if len(text) > 4000:
             text = re.sub(r"<[^>]*$", "", text[:3990]) + "…"
         body = {"chat_id": chat_id, "text": text, "parse_mode": "HTML",
                 "link_preview_options": {"is_disabled": True}}
+        if silent:
+            body["disable_notification"] = True
         if buttons:
             body["reply_markup"] = {"inline_keyboard": buttons}
         return self.api("sendMessage", body)
+
+    def send_photo(self, chat_id, path, caption_html=None, silent=True):
+        """Send a poster from a file in the repo. Silent, so the details message that follows is the one that pings."""
+        data = {"chat_id": chat_id, "parse_mode": "HTML"}
+        if caption_html:
+            data["caption"] = caption_html[:1000]
+        if silent:
+            data["disable_notification"] = "true"
+        with open(path, "rb") as f:
+            r = self.http.post(f"https://api.telegram.org/bot{self.token}/sendPhoto", data=data,
+                               files={"photo": f}, timeout=60)
+        try:
+            j = r.json()
+        except ValueError:
+            j = {}
+        if not j.get("ok"):
+            raise RuntimeError(f"Telegram sendPhoto: {j.get('description') or r.status_code}")
+        return j["result"]
 
     def updates(self, offset):
         return self.api("getUpdates", {"offset": offset, "timeout": 0,

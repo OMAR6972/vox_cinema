@@ -1,8 +1,7 @@
 {
   "settings": {
-    "summaryTime": "12:00",
-    "adminPersonId": "me",
-    "newWindowHours": 6
+    "summaryTime": "18:00",
+    "adminPersonId": "me"
   },
   "people": [
     {
@@ -11,10 +10,7 @@
       "owner": true,
       "active": true,
       "alerts": {
-        "newWeek": true,
-        "newMovies": true,
-        "comingSoon": true,
-        "dailySummary": false
+        "dailySummary": true
       }
     },
     {
@@ -23,10 +19,7 @@
       "invite": "58f7ea1a4c412bf6d14c8306",
       "active": true,
       "alerts": {
-        "newWeek": false,
-        "newMovies": true,
-        "comingSoon": false,
-        "dailySummary": false
+        "dailySummary": true
       }
     },
     {
@@ -37,9 +30,6 @@
       "allWatches": true,
       "active": true,
       "alerts": {
-        "newWeek": true,
-        "newMovies": true,
-        "comingSoon": true,
         "dailySummary": true
       }
     },
@@ -49,10 +39,7 @@
       "invite": "528235f7561e21e2ef8d243c",
       "active": true,
       "alerts": {
-        "newWeek": false,
-        "newMovies": true,
-        "comingSoon": false,
-        "dailySummary": false
+        "dailySummary": true
       }
     }
   ],
@@ -74,7 +61,6 @@
       "flex": 30,
       "experiences": [],
       "includeSoldOut": false,
-      "mode": "all",
       "active": true,
       "intro": true,
       "introNonce": "bfd7ccd119da"
@@ -95,7 +81,6 @@
       "flex": 30,
       "experiences": [],
       "includeSoldOut": false,
-      "mode": "all",
       "active": true,
       "intro": false
     },
@@ -115,7 +100,6 @@
       "flex": 30,
       "experiences": [],
       "includeSoldOut": false,
-      "mode": "all",
       "active": true,
       "intro": false
     },
@@ -135,7 +119,6 @@
       "flex": 30,
       "experiences": [],
       "includeSoldOut": false,
-      "mode": "all",
       "active": true,
       "intro": false
     },
@@ -163,7 +146,6 @@
         "Standard"
       ],
       "includeSoldOut": false,
-      "mode": "all",
       "active": true,
       "intro": false
     }

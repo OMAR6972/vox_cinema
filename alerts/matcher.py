@@ -1,9 +1,10 @@
-"""Decides what a watch should say, given current showtimes.
+"""Decides what a tracked movie should say, given the showtimes VOX has right now.
 
-The ladder:
-  1. your day + your time exist         -> exact match (+ other times that day)
-  2. your day exists, your time doesn't -> every time that day, closest first
-  3. your day isn't out yet             -> every day that IS out
+The rules (see the design notes in VOX-ALERTS-GUIDE.md):
+  * Nothing happens unless something is NEW to this watch (not in its "seen" notebook).
+  * The movie's very first showtimes always send a message ("opening"), even if the chosen day is not out.
+  * If days were chosen, new showtimes on other days stay silent until a chosen day gets some.
+  * A message only ever shows what is new, never relists older times.
 """
 from __future__ import annotations
 
@@ -68,16 +69,13 @@ def _group_by_date(lst):
     return m
 
 
-def day_block(w, date, lst, seen, intro=False):
+def day_block(w, date, lst):
+    """How one day's times are laid out. `lst` holds only the times that should be shown."""
     prefs = _prefs(w)
     flex = float(w.get("flex", 30) if w.get("flex") is not None else 30)
-    sessions = [dict(s, dist=distance(w, s), isNew=s["id"] not in seen) for s in lst]
+    sessions = [dict(s, dist=distance(w, s)) for s in lst]
     if not prefs:
-        ordered = sorted(sessions, key=lambda s: s["min"])
-        fresh = [s for s in ordered if s["isNew"]]
-        if not intro and fresh and len(fresh) < len(ordered):
-            return {"date": date, "mode": "all", "sessions": fresh, "already": len(ordered) - len(fresh)}
-        return {"date": date, "mode": "all", "sessions": ordered}
+        return {"date": date, "mode": "all", "sessions": sorted(sessions, key=lambda s: s["min"])}
     matches = sorted((s for s in sessions if s["dist"] <= flex), key=lambda s: (s["dist"], s["min"]))
     if matches:
         others = sorted((s for s in sessions if s["dist"] > flex), key=lambda s: s["min"])
@@ -86,34 +84,46 @@ def day_block(w, date, lst, seen, intro=False):
             "sessions": sorted(sessions, key=lambda s: (s["dist"], s["min"]))}
 
 
-def evaluate(w, sessions, seen=frozenset(), intro=False):
-    """Returns None when there's nothing to say, else a plan for the formatter."""
-    fresh = [s for s in sessions if s["id"] not in seen]
-    if not intro and not fresh:
-        return None
+def evaluate(w, sessions, seen=frozenset(), intro=False, opening=False):
+    """Returns None when there is nothing to say, else a plan for the formatter.
+
+    kinds: waiting / intro (start of tracking), opening (first showtimes ever),
+           new (new showtimes), added (a few more showtimes on days that already had some).
+    """
     by_date = _group_by_date(sessions)
     all_dates = sorted(by_date)
-    fresh_dates = sorted({s["date"] for s in fresh})
-    opening = w.get("everHadSessions") is False and len(sessions) > 0 and not intro
-    base = {"watch": w, "opening": opening, "intro": intro}
+    pref = has_day_pref(w)
+    base = {"watch": w, "intro": intro, "opening": opening, "dayPref": pref}
 
-    if not sessions:
-        return dict(base, kind="waiting") if intro else None
+    if intro:
+        if not sessions:
+            return dict(base, kind="waiting")
+        dates = [d for d in all_dates if day_wanted(w, d)]
+        return dict(base, kind="intro", yourDayOut=bool(dates),
+                    days=[day_block(w, d, by_date[d]) for d in dates])
 
-    if has_day_pref(w):
-        wanted_fresh = [d for d in fresh_dates if day_wanted(w, d)]
-        wanted_all = [d for d in all_dates if day_wanted(w, d)]
-        to_show = wanted_all if intro else wanted_fresh
-        if to_show:
-            days = [day_block(w, d, by_date[d], seen, intro) for d in to_show]
-            update = (not intro) and all(any(s["id"] in seen for s in by_date[d]) for d in to_show)
-            other = [d for d in (all_dates if intro else fresh_dates) if not day_wanted(w, d)]
-            return dict(base, kind="update" if update else "yourday", days=days, otherDays=other)
-        if intro or w.get("mode") != "mine":
-            return dict(base, kind="notyet",
-                        days=[{"date": d, "sessions": by_date[d], "isNew": d in fresh_dates} for d in all_dates],
-                        freshDates=fresh_dates)
-        return dict(base, kind="silent")
+    fresh = [s for s in sessions if s["id"] not in seen]
+    if not fresh:
+        return None
+    fresh_by = _group_by_date(fresh)
+    fresh_dates = sorted(fresh_by)
 
-    show = all_dates if intro else fresh_dates
-    return dict(base, kind="schedule", days=[day_block(w, d, by_date[d], seen, intro) for d in show])
+    if opening:
+        wanted = [d for d in all_dates if day_wanted(w, d)] if pref else []
+        others = [d for d in all_dates if d not in wanted]
+        return dict(base, kind="opening",
+                    yourDay=[day_block(w, d, by_date[d]) for d in wanted],
+                    days=[day_block(w, d, by_date[d]) for d in others])
+
+    wanted_fresh = [d for d in fresh_dates if day_wanted(w, d)]
+    if not wanted_fresh:
+        return None  # a day was chosen and none of the new times are on it: stay silent
+    seen_dates = {s["date"] for s in sessions if s["id"] in seen}
+    added = all(d in seen_dates for d in wanted_fresh)
+    new_exps = []
+    if added:
+        had = {s["exp"] for s in sessions if s["id"] in seen and s["date"] in wanted_fresh}
+        new_exps = sorted({s["exp"] for s in fresh if s["date"] in wanted_fresh} - had)
+    return dict(base, kind="added" if added else "new", newExps=new_exps, freshDates=wanted_fresh,
+                weekRelease=len(wanted_fresh) >= 4,
+                days=[day_block(w, d, fresh_by[d]) for d in wanted_fresh])

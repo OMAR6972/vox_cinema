@@ -153,11 +153,8 @@ body{background:linear-gradient(180deg,var(--bg),var(--bg))}
 
     <section id="tab-settings" class="tabpane" style="display:none;gap:14px">
       <h2>Settings</h2>
-      <div class="step"><h3>What counts as “new”</h3>
-        <p class="eg">Example: with <b>6 hours</b>, a showing the bot first saw 2 hours ago gets 🆕. One it first saw yesterday doesn't, and the message tells you when the bot first saw it.</p>
-        <div class="row"><input type="number" id="newHours" min="1" max="168" style="max-width:120px"><span>hours</span></div></div>
       <div class="step"><h3>Daily roundup time</h3>
-        <p class="eg">Example: <b>12:00 PM</b> means people who turned on “Daily roundup” get one summary message around noon, Cairo time.</p>
+        <p class="eg">Example: <b>6:00 PM</b> means people who turned on “Daily roundup” get one message around 6 in the evening, Cairo time, listing the new week, new movies and new Coming Soon titles.</p>
         <input type="time" id="summaryTime" style="max-width:180px"></div>
     </section>
   </div>
@@ -261,7 +258,7 @@ function openPicker() {
 function openEditor(i, slug) {
   var isNew = i == null;
   var w = isNew ? { id: "", slug: slug, title: (movie(slug) || {}).title || slug, recipients: S.cfg.people.filter(function (p) { return p.owner; }).map(function (p) { return p.id; }),
-    cinemas: ["City Centre Almaza"], dates: [], weekdays: [], times: [], flex: 30, experiences: [], includeSoldOut: false, mode: "all", active: true, intro: true }
+    cinemas: ["City Centre Almaza"], dates: [], weekdays: [], times: [], flex: 30, experiences: [], includeSoldOut: false, active: true, intro: true }
     : JSON.parse(JSON.stringify(S.cfg.watches[i]));
   S.ed = { i: i, w: w };
   var cins = S.cinemas.slice(); w.cinemas.forEach(function (c) { if (cins.indexOf(c) < 0) cins.push(c); });
@@ -288,8 +285,7 @@ function openEditor(i, slug) {
       S.cfg.people.map(function (p) { return '<button type="button" class="who-chip" data-rec="' + esc(p.id) + '" aria-pressed="' + (w.recipients.indexOf(p.id) >= 0) + '"><span class="av">' + esc(p.name.charAt(0)) + '</span>' + esc(p.name) + '</button>'; }).join("") + '</div></div>' +
 
     '<div class="step"><h3><span class="n">6</span>Extras</h3><div class="opts">' +
-      '<label class="tog"><input type="checkbox" id="e_sold"' + (w.includeSoldOut ? " checked" : "") + '><span>Include sold-out times<small>Example: a 7 PM show that is already full still appears, marked “(sold out)”.</small></span></label>' +
-      '<label class="tog"><input type="checkbox" id="e_mine"' + (w.mode === "mine" ? " checked" : "") + '><span>Only alert me about my days<small>Example: with “Fri” chosen, a new Tuesday show stays silent instead of sending a heads-up.</small></span></label>' +
+      '<label class="tog"><input type="checkbox" id="e_sold"' + (w.includeSoldOut ? " checked" : "") + '><span>Include sold-out times<small>Example: a 7 PM show that is already full still appears in the message, with the time <s>struck through</s> and no link.</small></span></label>' +
       (isNew ? '<label class="tog"><input type="checkbox" id="e_intro"' + (w.intro ? " checked" : "") + '><span>Show me what’s out right now<small>Example: tick it and, at the next check, you get one message listing every current showing. Untick it to only hear about future additions.</small></span></label>' : "") +
     '</div></div>' +
 
@@ -323,7 +319,7 @@ $("veil").addEventListener("click", function (e) {
   else if (b.id === "e_del") { S.cfg.watches.splice(S.ed.i, 1); $("veil").hidden = true; S.ed = null; renderWatches(); dirty(); }
   else if (b.id === "e_ok") {
     if (!w.recipients.length) { $("e_msg").textContent = "Tap at least one person in step 5."; $("e_msg").className = "msg bad"; return; }
-    w.flex = +$("e_flex").value; w.includeSoldOut = $("e_sold").checked; w.mode = $("e_mine").checked ? "mine" : "all";
+    w.flex = +$("e_flex").value; w.includeSoldOut = $("e_sold").checked;
     if ($("e_intro")) w.intro = $("e_intro").checked;
     if (S.ed.i == null) { w.id = w.slug + "-" + rid().slice(0, 4); S.cfg.watches.unshift(w); }
     else S.cfg.watches[S.ed.i] = Object.assign(S.cfg.watches[S.ed.i], w);
@@ -332,40 +328,35 @@ $("veil").addEventListener("click", function (e) {
 });
 
 /* ---------- people tab ---------- */
-var KINDS = [["newWeek", "New dates dropped", "Example: “VOX just added Wed 16 Dec → Tue 22 Dec”."],
-  ["newMovies", "A movie opens for booking", "Example: “Booking just opened for Dune: Part Three”, even if nobody picked it."],
-  ["comingSoon", "New in Coming Soon", "Example: “The Mongoose was added to Coming Soon”, before it has showtimes."],
-  ["dailySummary", "Daily roundup", "Example: one noon summary of everything that changed in the last 24 hours."]];
+var ALERT_DEF = { dailySummary: true };
+function roundupOn(p) { var a = p.alerts || {}; return a.dailySummary !== undefined ? !!a.dailySummary : !!(a.newWeek || a.newMovies || a.comingSoon); }
 function inviteUrl(p) { return S.bot ? "https://t.me/" + S.bot + "?start=" + p.invite : ""; }
 function pstate(p) { return p.discord ? "💬 Discord channel" : (p.owner || p.chatId || S.links[p.id]) ? "✅ Connected" : "⏳ Waiting for Start"; }
 function renderPeople() {
   $("peopleList").innerHTML = S.cfg.people.map(function (p, i) {
-    var a = Object.assign({ newWeek: true, newMovies: true, comingSoon: false, dailySummary: true }, p.alerts || {});
-    var on = KINDS.filter(function (k) { return a[k[0]]; }).length;
     var n = p.discord ? S.cfg.watches.length : S.cfg.watches.filter(function (w) { return (w.recipients || []).indexOf(p.id) >= 0; }).length;
     var pending = !p.owner && !p.discord && !(p.chatId || S.links[p.id]);
     return '<div class="mc pc"><div class="pa"><div class="av2">' + esc(p.discord ? "#" : p.name.charAt(0)) + '</div></div>' +
       '<div class="body"><div class="t">' + esc(p.name) + (p.owner ? ' <span class="mute">(you)</span>' : "") + '</div><div class="s">' + pstate(p) + '</div>' +
-      '<div class="who">' + n + ' movie' + (n === 1 ? "" : "s") + ' · ' + on + ' of 4 news types on</div>' +
+      '<div class="who">' + n + ' movie' + (n === 1 ? "" : "s") + ' · daily roundup ' + (roundupOn(p) ? 'on' : 'off') + '</div>' +
       '<div class="act"><button data-pedit="' + i + '">' + (pending ? "Invite link" : "Edit") + '</button>' + (p.owner ? "" : '<button data-delp="' + i + '">Remove</button>') + '</div></div></div>';
   }).join("");
 }
 function openPerson(i) {
-  var p = S.cfg.people[i], a = Object.assign({ newWeek: true, newMovies: true, comingSoon: false, dailySummary: true }, p.alerts || {});
+  var p = S.cfg.people[i], on = roundupOn(p);
   var link = !p.owner && !p.discord && p.invite ? inviteUrl(p) : "";
   var linked = p.owner || p.discord || p.chatId || S.links[p.id];
   var msg = encodeURIComponent("Hi " + p.name + "! Tap this to get VOX movie alerts on Telegram: " + link);
   S.pi = i;
   $("sheet").innerHTML = '<div class="row between"><div class="row" style="flex-wrap:nowrap"><div class="av2">' + esc(p.discord ? "#" : p.name.charAt(0)) + '</div><div><h2>' + esc(p.name) + '</h2><p class="mute">' + pstate(p) + '</p></div></div><button class="ghost" data-close>Close</button></div>' +
     (link && !linked ? '<div class="step"><h3><span class="n">1</span>Send them their link</h3><p class="eg">Example: paste it in WhatsApp. They tap it, Telegram opens, they press <b>Start</b>. Then press <b>Save &amp; check now</b> here and they are connected.</p><div class="linkbox"><b>' + esc(link) + '</b></div><div class="row"><button data-copy="' + esc(link) + '">Copy link</button><a href="https://wa.me/?text=' + msg + '" target="_blank" rel="noopener"><button type="button">Share on WhatsApp</button></a></div></div>' : "") +
-    '<div class="step"><h3>What news does ' + esc(p.discord ? "the channel" : p.name) + ' want?</h3><div class="opts">' + KINDS.map(function (k) {
-      return '<label class="tog"><input type="checkbox" data-pa="' + k[0] + '"' + (a[k[0]] ? " checked" : "") + '><span>' + k[1] + '<small>' + k[2] + '</small></span></label>'; }).join("") + '</div></div>' +
+    '<div class="step"><h3>Daily roundup</h3><div class="opts"><label class="tog"><input type="checkbox" data-pa="dailySummary"' + (on ? " checked" : "") + '><span>Send ' + esc(p.discord ? "the channel" : p.name) + ' the daily roundup<small>Example: one message a day listing the new week, brand-new movies and new Coming Soon titles, with See times and Track buttons. Movies tracked are messaged separately, whatever this says.</small></span></label></div></div>' +
     '<button class="primary" data-close>Done</button>';
   $("veil").hidden = false;
 }
 $("sheet").addEventListener("change", function (e) {
   var k = e.target.getAttribute("data-pa"); if (!k || S.pi == null) return; var per = S.cfg.people[S.pi];
-  per.alerts = Object.assign({ newWeek: true, newMovies: true, comingSoon: false, dailySummary: true }, per.alerts || {}); per.alerts[k] = e.target.checked; renderPeople(); dirty();
+  per.alerts = { dailySummary: e.target.checked }; renderPeople(); dirty();
 });
 $("sheet").addEventListener("click", function (e) {
   var c = e.target.getAttribute("data-copy");
@@ -380,18 +371,17 @@ $("peopleList").addEventListener("click", function (e) {
 $("addPerson").addEventListener("click", function () { $("newPerson").hidden = false; $("newName").focus(); });
 $("newOk").addEventListener("click", function () {
   var n = $("newName").value.trim(); if (!n) return;
-  S.cfg.people.push({ id: "p" + rid().slice(0, 6), name: n, invite: rid() + rid(), active: true, alerts: { newWeek: true, newMovies: true, comingSoon: false, dailySummary: false } });
+  S.cfg.people.push({ id: "p" + rid().slice(0, 6), name: n, invite: rid() + rid(), active: true, alerts: { dailySummary: false } });
   $("newName").value = ""; $("newPerson").hidden = true; renderPeople(); renderWatches(); dirty();
   say("Added. Press “Save only” first, then send them their link.", "ok"); openPerson(S.cfg.people.length - 1);
 });
 $("addDiscord").addEventListener("click", function () {
   if (S.cfg.people.some(function (p) { return p.discord; })) { say("You already have a Discord channel.", "bad"); return; }
-  S.cfg.people.push({ id: "discord", name: "Discord channel", isGroup: true, discord: true, allWatches: true, active: true, alerts: { newWeek: true, newMovies: true, comingSoon: false, dailySummary: true } });
+  S.cfg.people.push({ id: "discord", name: "Discord channel", isGroup: true, discord: true, allWatches: true, active: true, alerts: { dailySummary: true } });
   renderPeople(); dirty();
 });
 
 /* ---------- settings ---------- */
-$("newHours").addEventListener("change", function () { var n = Math.max(1, Math.min(168, +$("newHours").value || 6)); S.cfg.settings.newWindowHours = n; $("newHours").value = n; dirty(); });
 $("summaryTime").addEventListener("change", function () { S.cfg.settings.summaryTime = $("summaryTime").value; dirty(); });
 
 document.querySelectorAll("#tabs button").forEach(function (b) {
@@ -420,7 +410,7 @@ function load() {
     var m = res[1] || {}; S.movies = m.movies || []; S.cinemas = m.cinemas || []; S.exps = m.experiences || []; S.bot = m.bot || null;
     if (S.cinemas.indexOf("City Centre Almaza") < 0) S.cinemas.unshift("City Centre Almaza");
     S.links = (res[2] || {}).links || {};
-    $("summaryTime").value = S.cfg.settings.summaryTime || "12:00"; $("newHours").value = S.cfg.settings.newWindowHours || 6;
+    $("summaryTime").value = S.cfg.settings.summaryTime || "18:00";
     renderWatches(); renderPeople(); loadStatus();
   });
 }
