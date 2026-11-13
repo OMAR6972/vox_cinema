@@ -71,7 +71,8 @@
       "experiences": [],
       "includeSoldOut": false,
       "active": true,
-      "intro": true
+      "intro": true,
+      "introNonce": "a182dd2fd985"
     },
     {
       "id": "the-hunger-games-sunrise-on-the-reaping-9db4",
