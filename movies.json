@@ -5,6 +5,14 @@
       "title": "Avengers: Doomsday",
       "status": "now",
       "poster": "posters/avengers-doomsday.jpg",
+      "sources": [
+        "vox",
+        "scene"
+      ],
+      "sceneCinemas": [
+        "Scene CFC",
+        "Scene District 5"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013527_1784878779866.jpg"
     },
     {
@@ -12,6 +20,9 @@
       "title": "Avengers: Doomsday (Infinity Vision)",
       "status": "now",
       "poster": "posters/avengers-doomsday-infinity-vision.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013676_1790601922411.jpg"
     },
     {
@@ -19,6 +30,13 @@
       "title": "Best Pancakes in the County",
       "status": "now",
       "poster": "posters/best-pancakes-in-the-county.jpg",
+      "sources": [
+        "vox",
+        "scene"
+      ],
+      "sceneCinemas": [
+        "Scene CFC"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013834_1794302408405.jpg"
     },
     {
@@ -26,6 +44,9 @@
       "title": "CIFF 2026: Dead Dogs Don't Bite",
       "status": "now",
       "poster": "posters/ciff-2026-dead-dogs-dont-bite-turkish.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013846_1794304023079.jpg"
     },
     {
@@ -33,6 +54,9 @@
       "title": "CIFF 2026: Fatma and the Abdelwahab Plan",
       "status": "now",
       "poster": "posters/ciff-2026-fatma-and-the-abdelwahab-plan-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013848_1794304674153.jpg"
     },
     {
@@ -40,6 +64,9 @@
       "title": "CIFF 2026: Fleak",
       "status": "now",
       "poster": "posters/ciff-2026-fleak-finnish.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013861_1794303989541.jpg"
     },
     {
@@ -47,6 +74,9 @@
       "title": "CIFF 2026: Home Bitter Home",
       "status": "now",
       "poster": "posters/ciff-2026-home-bitter-home-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013858_1794305127052.jpg"
     },
     {
@@ -54,6 +84,9 @@
       "title": "CIFF 2026: Inherited",
       "status": "now",
       "poster": "posters/ciff-2026-inherited-persian.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013852_1794318952221.jpg"
     },
     {
@@ -61,6 +94,9 @@
       "title": "CIFF 2026: Khan El Khalili",
       "status": "now",
       "poster": "posters/ciff-2026-khan-el-khalili-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013845_1794304581135.jpg"
     },
     {
@@ -68,6 +104,9 @@
       "title": "CIFF 2026: My Wife and the Dog",
       "status": "now",
       "poster": "posters/ciff-2026-my-wife-and-the-dog-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013847_1794304631652.jpg"
     },
     {
@@ -75,6 +114,9 @@
       "title": "CIFF 2026: My Wife, General Manager",
       "status": "now",
       "poster": "posters/ciff-2026-my-wife-general-manager-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013853_1794304960950.jpg"
     },
     {
@@ -82,6 +124,9 @@
       "title": "CIFF 2026: Night and Jail Bars",
       "status": "now",
       "poster": "posters/ciff-2026-night-and-jail-bars-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013849_1794304723366.jpg"
     },
     {
@@ -89,6 +134,9 @@
       "title": "CIFF 2026: Palace of Desire",
       "status": "now",
       "poster": "posters/ciff-2026-palace-of-desire-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013850_1794304851114.jpg"
     },
     {
@@ -96,6 +144,9 @@
       "title": "CIFF 2026: Summer Meadow",
       "status": "now",
       "poster": "posters/ciff-2026-summer-meadow-french-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013863_1794318918859.jpg"
     },
     {
@@ -103,6 +154,9 @@
       "title": "CIFF 2026: The Female Idol",
       "status": "now",
       "poster": "posters/ciff-2026-the-female-idol-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013862_1794305284715.jpg"
     },
     {
@@ -110,6 +164,9 @@
       "title": "CIFF 2026: The Impossible",
       "status": "now",
       "poster": "posters/ciff-2026-the-impossible-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013867_1794313095687.jpg"
     },
     {
@@ -117,6 +174,9 @@
       "title": "CIFF 2026: The Lamp of Umm Hashim",
       "status": "now",
       "poster": "posters/ciff-2026-the-lamp-of-umm-hashim-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013857_1794305083306.jpg"
     },
     {
@@ -124,6 +184,9 @@
       "title": "CIFF 2026: The Mirage",
       "status": "now",
       "poster": "posters/ciff-2026-the-mirage-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013859_1794305461180.jpg"
     },
     {
@@ -131,6 +194,9 @@
       "title": "CIFF 2026: The People and The Nile",
       "status": "now",
       "poster": "posters/ciff-2026-the-people-and-the-nile-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013844_1794305247972.jpg"
     },
     {
@@ -138,6 +204,9 @@
       "title": "CIFF 2026: The Sin",
       "status": "now",
       "poster": "posters/ciff-2026-the-sin-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013851_1794304886434.jpg"
     },
     {
@@ -145,6 +214,9 @@
       "title": "CIFF 2026: To the Sun and Beyond",
       "status": "now",
       "poster": "posters/ciff-2026-to-the-sun-and-beyond-tunisian-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013860_1794305214088.jpg"
     },
     {
@@ -152,6 +224,14 @@
       "title": "Clayface",
       "status": "now",
       "poster": "posters/clayface.jpg",
+      "sources": [
+        "vox",
+        "scene"
+      ],
+      "sceneCinemas": [
+        "Scene CFC",
+        "Scene District 5"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013587_1792992609492.jpg"
     },
     {
@@ -159,6 +239,14 @@
       "title": "Dune: Part Three",
       "status": "now",
       "poster": "posters/dune-part-three.jpg",
+      "sources": [
+        "vox",
+        "scene"
+      ],
+      "sceneCinemas": [
+        "Scene CFC",
+        "Scene District 5"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013132_1777639610268.jpg"
     },
     {
@@ -166,6 +254,14 @@
       "title": "Ebenezer",
       "status": "now",
       "poster": "posters/ebenezer.jpg",
+      "sources": [
+        "vox",
+        "scene"
+      ],
+      "sceneCinemas": [
+        "Scene CFC",
+        "Scene District 5"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013804_1793271879769.jpg"
     },
     {
@@ -173,6 +269,14 @@
       "title": "Godzilla Minus Zero",
       "status": "now",
       "poster": "posters/godzilla-minus-zero-japanese.jpg",
+      "sources": [
+        "vox",
+        "scene"
+      ],
+      "sceneCinemas": [
+        "Scene CFC",
+        "Scene District 5"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013634_1789645703698.jpg"
     },
     {
@@ -180,6 +284,14 @@
       "title": "Hadoota",
       "status": "now",
       "poster": "posters/hadoota-arabic.jpg",
+      "sources": [
+        "vox",
+        "scene"
+      ],
+      "sceneCinemas": [
+        "Scene CFC",
+        "Scene District 5"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013755_1793793510180.jpg"
     },
     {
@@ -187,6 +299,14 @@
       "title": "How to Rob a Bank",
       "status": "now",
       "poster": "posters/how-to-rob-a-bank.jpg",
+      "sources": [
+        "vox",
+        "scene"
+      ],
+      "sceneCinemas": [
+        "Scene CFC",
+        "Scene District 5"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013184_1793870929412.jpg"
     },
     {
@@ -194,6 +314,9 @@
       "title": "Matloub 3a2eleyain",
       "status": "now",
       "poster": "posters/matloub-3a2eleyain-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013664_1791446223943.jpg"
     },
     {
@@ -201,6 +324,13 @@
       "title": "Naseeb",
       "status": "now",
       "poster": "posters/naseeb-arabic.jpg",
+      "sources": [
+        "vox",
+        "scene"
+      ],
+      "sceneCinemas": [
+        "Scene CFC"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013764_1792133076768.jpg"
     },
     {
@@ -208,6 +338,13 @@
       "title": "Other Mommy",
       "status": "now",
       "poster": "posters/other-mommy.jpg",
+      "sources": [
+        "vox",
+        "scene"
+      ],
+      "sceneCinemas": [
+        "Scene CFC"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013661_1790166755402.jpg"
     },
     {
@@ -215,6 +352,13 @@
       "title": "Resident Evil",
       "status": "now",
       "poster": "posters/resident-evil.jpg",
+      "sources": [
+        "vox",
+        "scene"
+      ],
+      "sceneCinemas": [
+        "Scene CFC"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013591_1787744773009.jpg"
     },
     {
@@ -222,6 +366,9 @@
       "title": "Sense and Sensibility",
       "status": "now",
       "poster": "posters/sense-and-sensibility.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013636_1789645652221.jpg"
     },
     {
@@ -229,6 +376,14 @@
       "title": "The Cat In The Hat",
       "status": "now",
       "poster": "posters/the-cat-in-the-hat.jpg",
+      "sources": [
+        "vox",
+        "scene"
+      ],
+      "sceneCinemas": [
+        "Scene CFC",
+        "Scene District 5"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00012362_1793613218305.jpg"
     },
     {
@@ -236,6 +391,13 @@
       "title": "The Cat In The Hat",
       "status": "now",
       "poster": "posters/the-cat-in-the-hat-arabic.jpg",
+      "sources": [
+        "vox",
+        "scene"
+      ],
+      "sceneCinemas": [
+        "Scene CFC"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013769_1793613239809.jpg"
     },
     {
@@ -243,6 +405,9 @@
       "title": "The Odyssey",
       "status": "now",
       "poster": "posters/the-odyssey.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013488_1783655908489.jpg"
     },
     {
@@ -250,6 +415,9 @@
       "title": "Wala Kan Ala El-Bal",
       "status": "now",
       "poster": "posters/wala-kan-ala-el-bal-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013648_1792992542800.jpg"
     },
     {
@@ -257,6 +425,14 @@
       "title": "Whalefall",
       "status": "now",
       "poster": "posters/whalefall.jpg",
+      "sources": [
+        "vox",
+        "scene"
+      ],
+      "sceneCinemas": [
+        "Scene CFC",
+        "Scene District 5"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013581_1787744273942.jpg"
     },
     {
@@ -264,6 +440,9 @@
       "title": "Hope",
       "status": "now",
       "poster": "posters/hope-korean.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013775_1792992825725.jpg"
     },
     {
@@ -271,6 +450,13 @@
       "title": "Verity",
       "status": "now",
       "poster": "posters/verity.jpg",
+      "sources": [
+        "vox",
+        "scene"
+      ],
+      "sceneCinemas": [
+        "Scene CFC"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013148_1779080275617.jpg"
     },
     {
@@ -278,6 +464,14 @@
       "title": "Heart of the Beast",
       "status": "now",
       "poster": "posters/heart-of-the-beast.jpg",
+      "sources": [
+        "vox",
+        "scene"
+      ],
+      "sceneCinemas": [
+        "Scene CFC",
+        "Scene District 5"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013349_1782370147754.jpg"
     },
     {
@@ -285,6 +479,9 @@
       "title": "Street Fighter",
       "status": "now",
       "poster": "posters/street-fighter.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013107_1791888704674.jpg"
     },
     {
@@ -292,6 +489,9 @@
       "title": "Mahmoud El Tany",
       "status": "now",
       "poster": "posters/mahmoud-el-tany-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013538_1786431574055.jpg"
     },
     {
@@ -299,6 +499,9 @@
       "title": "Avengers Endgame: Encore (Infinity Vision)",
       "status": "now",
       "poster": "posters/avengers-endgame-encore-infinity-vision.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013622_1789359764263.jpg"
     },
     {
@@ -306,6 +509,9 @@
       "title": "Spider-Man: Brand New Day",
       "status": "now",
       "poster": "posters/spider-man-brand-new-day.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013065_1782227665332.jpg"
     },
     {
@@ -313,6 +519,9 @@
       "title": "Uc Harfliler Muhur",
       "status": "now",
       "poster": "posters/uc-harfliler-muhur-turkish.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013639_1789645578328.jpg"
     },
     {
@@ -320,6 +529,9 @@
       "title": "The Dino Family",
       "status": "now",
       "poster": "posters/the-dino-family.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013580_1789548138971.jpg"
     },
     {
@@ -327,6 +539,9 @@
       "title": "Moscow Cairo",
       "status": "now",
       "poster": "posters/moscow-cairo-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013799_1793262604322.jpg"
     },
     {
@@ -334,6 +549,9 @@
       "title": "The Influencer Project",
       "status": "now",
       "poster": "posters/the-influencer-project.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013662_1793634705236.jpg"
     },
     {
@@ -341,6 +559,9 @@
       "title": "The Mongoose",
       "status": "now",
       "poster": "posters/the-mongoose.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013562_1786693196377.jpg"
     },
     {
@@ -348,6 +569,13 @@
       "title": "Wildwood",
       "status": "now",
       "poster": "posters/wildwood.jpg",
+      "sources": [
+        "vox",
+        "scene"
+      ],
+      "sceneCinemas": [
+        "Scene CFC"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013671_1793634887028.jpg"
     },
     {
@@ -355,6 +583,9 @@
       "title": "Idiots",
       "status": "now",
       "poster": "posters/idiots.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013776_1792992864563.jpg"
     },
     {
@@ -362,6 +593,9 @@
       "title": "Ramayana",
       "status": "now",
       "poster": "posters/ramayana-hindi.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013810_1793685253216.jpg"
     },
     {
@@ -369,156 +603,241 @@
       "title": "The Cycle",
       "status": "now",
       "poster": "posters/the-cycle.jpg",
+      "sources": [
+        "vox"
+      ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013806_1793272008209.jpg"
     },
     {
       "slug": "ciff-2026-something-of-fear-arabic",
       "title": "CIFF 2026: Something of Fear",
       "status": "soon",
-      "release": "16 November 2026",
       "poster": "posters/ciff-2026-something-of-fear-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
+      "release": "16 November 2026",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013855_1794305005697.jpg"
     },
     {
       "slug": "ciff-2026-for-life-arabic",
       "title": "CIFF 2026: For Life",
       "status": "soon",
-      "release": "16 November 2026",
       "poster": "posters/ciff-2026-for-life-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
+      "release": "16 November 2026",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013856_1794303866486.jpg"
     },
     {
       "slug": "ciff-2026-the-violinist-english-japanese",
       "title": "CIFF 2026: The Violinist",
       "status": "soon",
-      "release": "18 November 2026",
       "poster": "posters/ciff-2026-the-violinist-english-japanese.jpg",
+      "sources": [
+        "vox"
+      ],
+      "release": "18 November 2026",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013854_1794303814366.jpg"
     },
     {
       "slug": "the-hunger-games-sunrise-on-the-reaping",
       "title": "The Hunger Games: Sunrise on the Reaping",
       "status": "soon",
-      "release": "19 November 2026",
       "poster": "posters/the-hunger-games-sunrise-on-the-reaping.png",
+      "sources": [
+        "vox"
+      ],
+      "release": "19 November 2026",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013542_1790335408400.png"
     },
     {
       "slug": "ciff-2026-shafika-the-copt-arabic",
       "title": "CIFF 2026: Shafika the Copt",
       "status": "soon",
-      "release": "19 November 2026",
       "poster": "posters/ciff-2026-shafika-the-copt-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
+      "release": "19 November 2026",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013864_1794305370094.jpg"
     },
     {
       "slug": "ciff-2026-the-second-wife-arabic",
       "title": "CIFF 2026: The Second Wife",
       "status": "soon",
-      "release": "19 November 2026",
       "poster": "posters/ciff-2026-the-second-wife-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
+      "release": "19 November 2026",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013865_1794305425050.jpg"
     },
     {
       "slug": "ciff-2026-the-soft-hands-arabic",
       "title": "CIFF 2026: The Soft Hands",
       "status": "soon",
-      "release": "19 November 2026",
       "poster": "posters/ciff-2026-the-soft-hands-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
+      "release": "19 November 2026",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013869_1794481610194.jpg"
     },
     {
       "slug": "bts-world-tour-arirang-in-kaohsiung-live-viewin",
       "title": "BTS WORLD TOUR 'ARIRANG' IN KAOHSIUNG: LIVE VIEWIN",
       "status": "soon",
-      "release": "21 November 2026",
       "poster": "posters/bts-world-tour-arirang-in-kaohsiung-live-viewin.jpg",
+      "sources": [
+        "vox"
+      ],
+      "release": "21 November 2026",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013815_1793880331436.jpg"
     },
     {
       "slug": "hexed",
       "title": "Hexed",
       "status": "soon",
-      "release": "26 November 2026",
       "poster": "posters/hexed.jpg",
+      "sources": [
+        "vox"
+      ],
+      "release": "26 November 2026",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013335_1782228087065.jpg"
     },
     {
       "slug": "maserati-the-brothers",
       "title": "Maserati: The Brothers",
       "status": "soon",
-      "release": "03 December 2026",
       "poster": "posters/maserati-the-brothers.jpg",
+      "sources": [
+        "vox"
+      ],
+      "release": "03 December 2026",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013800_1793271925355.jpg"
     },
     {
       "slug": "violent-night-2",
       "title": "Violent Night 2",
       "status": "soon",
-      "release": "04 December 2026",
       "poster": "posters/violent-night-2.jpg",
+      "sources": [
+        "vox"
+      ],
+      "release": "04 December 2026",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013590_1787744179734.jpg"
     },
     {
       "slug": "jumanji-open-world",
       "title": "Jumanji: Open World",
       "status": "soon",
-      "release": "24 December 2026",
       "poster": "posters/jumanji-open-world.jpg",
+      "sources": [
+        "vox"
+      ],
+      "release": "24 December 2026",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013552_1792992941546.jpg"
     },
     {
       "slug": "the-angry-birds-movie-3",
       "title": "The Angry Birds Movie 3",
       "status": "soon",
-      "release": "24 December 2026",
-      "poster": "/assets/images/placeholder-poster.webp"
+      "poster": "/assets/images/placeholder-poster.webp",
+      "sources": [
+        "vox"
+      ],
+      "release": "24 December 2026"
     },
     {
       "slug": "bts-world-tour-arirang-in-jakarta-live-viewing",
       "title": "BTS WORLD TOUR 'ARIRANG' IN JAKARTA: LIVE VIEWING",
       "status": "soon",
-      "release": "29 December 2026",
       "poster": "posters/bts-world-tour-arirang-in-jakarta-live-viewing.jpg",
+      "sources": [
+        "vox"
+      ],
+      "release": "29 December 2026",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013816_1793880287431.jpg"
     },
     {
       "slug": "mamsous-arabic",
       "title": "Mamsous",
       "status": "soon",
-      "release": "31 December 2026",
       "poster": "posters/mamsous-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
+      "release": "31 December 2026",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013818_1793775115678.jpg"
     },
     {
       "slug": "children-of-blood-and-bone",
       "title": "Children of Blood and Bone",
       "status": "soon",
-      "release": "14 January 2027",
       "poster": "posters/children-of-blood-and-bone.jpg",
+      "sources": [
+        "vox"
+      ],
+      "release": "14 January 2027",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013577_1787744001464.jpg"
     },
     {
       "slug": "narnia-the-magicians-nephew",
       "title": "Narnia: The Magician's Nephew",
       "status": "soon",
-      "release": "11 February 2027",
       "poster": "posters/narnia-the-magicians-nephew.jpg",
+      "sources": [
+        "vox"
+      ],
+      "release": "11 February 2027",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013747_1792133293834.jpg"
     },
     {
       "slug": "day-drinker",
       "title": "Day Drinker",
       "status": "soon",
-      "release": "01 April 2027",
       "poster": "posters/day-drinker.jpg",
+      "sources": [
+        "vox"
+      ],
+      "release": "01 April 2027",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013689_1790927489815.jpg"
+    },
+    {
+      "slug": "matloub-aelyan",
+      "title": "Matloub Aelyan",
+      "status": "now",
+      "poster": null,
+      "sources": [
+        "scene"
+      ],
+      "sceneCinemas": [
+        "Scene CFC",
+        "Scene District 5"
+      ]
+    },
+    {
+      "slug": "wala-kan-ala-albal",
+      "title": "Wala Kan Ala Albal",
+      "status": "now",
+      "poster": null,
+      "sources": [
+        "scene"
+      ],
+      "sceneCinemas": [
+        "Scene CFC",
+        "Scene District 5"
+      ]
     }
   ],
   "cinemas": [
     "City Centre Alexandria",
     "City Centre Almaza",
-    "Mall of Egypt"
+    "Mall of Egypt",
+    "Scene CFC",
+    "Scene District 5"
   ],
   "experiences": [
     "4DX",

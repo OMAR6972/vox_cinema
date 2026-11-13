@@ -484,19 +484,31 @@
       },
       "everHadSessions": true,
       "introNonce": "bfd7ccd119da",
-      "filters": "[[\"City Centre Almaza\"], [], false]"
+      "filters": "[[\"City Centre Almaza\"], [], false]",
+      "sceneSeeded": [
+        "cfc",
+        "district5"
+      ]
     },
     "resident-evil": {
       "booked": [],
       "seen": {},
       "everHadSessions": true,
-      "filters": "[[\"City Centre Almaza\"], [], false]"
+      "filters": "[[\"City Centre Almaza\"], [], false]",
+      "sceneSeeded": [
+        "cfc",
+        "district5"
+      ]
     },
     "heart-of-the-beast": {
       "booked": [],
       "seen": {},
       "everHadSessions": true,
-      "filters": "[[\"City Centre Almaza\"], [], false]"
+      "filters": "[[\"City Centre Almaza\"], [], false]",
+      "sceneSeeded": [
+        "cfc",
+        "district5"
+      ]
     },
     "avengers-doomsday-infinity-vision": {
       "booked": [],
@@ -567,7 +579,11 @@
         "0047-276870": "2026-12-17"
       },
       "everHadSessions": true,
-      "filters": "[[\"City Centre Almaza\"], [], false]"
+      "filters": "[[\"City Centre Almaza\"], [], false]",
+      "sceneSeeded": [
+        "cfc",
+        "district5"
+      ]
     },
     "dune-part-three": {
       "booked": [],
@@ -630,7 +646,11 @@
         "0032-169661": "2026-12-23"
       },
       "everHadSessions": true,
-      "filters": "[[\"City Centre Alexandria\", \"City Centre Almaza\"], [\"GOLD\", \"IMAX\", \"MAX\", \"Standard\"], false]"
+      "filters": "[[\"City Centre Alexandria\", \"City Centre Almaza\"], [\"GOLD\", \"IMAX\", \"MAX\", \"Standard\"], false]",
+      "sceneSeeded": [
+        "cfc",
+        "district5"
+      ]
     }
   },
   "links": {
@@ -867,5 +887,157 @@
       "slug": "avengers-doomsday",
       "title": "Avengers: Doomsday"
     }
-  ]
+  ],
+  "scene": {
+    "baseline": true,
+    "known": [
+      "avengers-doomsday",
+      "best-pancakes-in-the-county",
+      "clayface",
+      "dune-part-three",
+      "ebenezer",
+      "godzilla-minus-zero-japanese",
+      "hadoota-arabic",
+      "heart-of-the-beast",
+      "how-to-rob-a-bank",
+      "matloub-aelyan",
+      "naseeb-arabic",
+      "other-mommy",
+      "resident-evil",
+      "the-cat-in-the-hat",
+      "the-cat-in-the-hat-arabic",
+      "verity",
+      "wala-kan-ala-albal",
+      "whalefall",
+      "wildwood"
+    ],
+    "listing": {
+      "avengers-doomsday": {
+        "title": "Avengers: Doomsday",
+        "raws": {
+          "cfc": "avengers-doomsday-infinity-vision-sx-4dx",
+          "district5": "avengers-doomsday-infinity-vision-sx-4dx"
+        }
+      },
+      "hadoota-arabic": {
+        "title": "Hadoota",
+        "raws": {
+          "cfc": "hadoota-arabic",
+          "district5": "hadoota-arabic"
+        }
+      },
+      "dune-part-three": {
+        "title": "Dune: Part Three",
+        "raws": {
+          "cfc": "dune-part-three",
+          "district5": "dune-part-three"
+        }
+      },
+      "ebenezer": {
+        "title": "Ebenezer",
+        "raws": {
+          "cfc": "ebenezer",
+          "district5": "ebenezer"
+        }
+      },
+      "wala-kan-ala-albal": {
+        "title": "Wala Kan Ala Albal",
+        "raws": {
+          "cfc": "wala-kan-ala-albal",
+          "district5": "wala-kan-ala-albal"
+        }
+      },
+      "clayface": {
+        "title": "Clayface",
+        "raws": {
+          "cfc": "clayface",
+          "district5": "clayface"
+        }
+      },
+      "how-to-rob-a-bank": {
+        "title": "How to Rob a Bank",
+        "raws": {
+          "cfc": "how-to-rob-a-bank",
+          "district5": "how_to_rob_a_bank"
+        }
+      },
+      "the-cat-in-the-hat": {
+        "title": "The Cat In The Hat",
+        "raws": {
+          "cfc": "the-cat-in-the-hat",
+          "district5": "the-cat-in-the-hat"
+        }
+      },
+      "matloub-aelyan": {
+        "title": "Matloub Aelyan",
+        "raws": {
+          "cfc": "matloub-aelyan",
+          "district5": "matloub-aelyan"
+        }
+      },
+      "godzilla-minus-zero-japanese": {
+        "title": "Godzilla Minus Zero",
+        "raws": {
+          "cfc": "godzilla-minus-zero",
+          "district5": "godzilla-minus-zero"
+        }
+      },
+      "best-pancakes-in-the-county": {
+        "title": "Best Pancakes in the County",
+        "raws": {
+          "cfc": "best-pancakes-in-the-county"
+        }
+      },
+      "the-cat-in-the-hat-arabic": {
+        "title": "The Cat In The Hat -Arabic DUB",
+        "raws": {
+          "cfc": "the-cat-in-the-hat-arabic"
+        }
+      },
+      "wildwood": {
+        "title": "Wildwood",
+        "raws": {
+          "cfc": "wildwood"
+        }
+      },
+      "naseeb-arabic": {
+        "title": "Naseeb",
+        "raws": {
+          "cfc": "naseeb-arabic"
+        }
+      },
+      "whalefall": {
+        "title": "Whalefall",
+        "raws": {
+          "cfc": "whalefall",
+          "district5": "whalefall"
+        }
+      },
+      "other-mommy": {
+        "title": "Other Mommy",
+        "raws": {
+          "cfc": "other-mommy"
+        }
+      },
+      "verity": {
+        "title": "Verity",
+        "raws": {
+          "cfc": "verity"
+        }
+      },
+      "heart-of-the-beast": {
+        "title": "Heart of the Beast",
+        "raws": {
+          "cfc": "heart-of-the-beast",
+          "district5": "heart-of-the-beast"
+        }
+      },
+      "resident-evil": {
+        "title": "Resident Evil",
+        "raws": {
+          "cfc": "resident_evil"
+        }
+      }
+    }
+  }
 }
