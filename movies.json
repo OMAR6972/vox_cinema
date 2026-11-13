@@ -43,20 +43,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013861_1794303989541.jpg"
     },
     {
-      "slug": "ciff-2026-home-bitter-home-arabic",
-      "title": "CIFF 2026: Home Bitter Home",
-      "status": "now",
-      "poster": "posters/ciff-2026-home-bitter-home-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013858_1794305127052.jpg"
-    },
-    {
-      "slug": "ciff-2026-inherited-persian",
-      "title": "CIFF 2026: Inherited",
-      "status": "now",
-      "poster": "posters/ciff-2026-inherited-persian.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013852_1794318952221.jpg"
-    },
-    {
       "slug": "ciff-2026-khan-el-khalili-arabic",
       "title": "CIFF 2026: Khan El Khalili",
       "status": "now",
@@ -132,13 +118,6 @@
       "status": "now",
       "poster": "posters/ciff-2026-the-people-and-the-nile-arabic.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013844_1794305247972.jpg"
-    },
-    {
-      "slug": "ciff-2026-the-sin-arabic",
-      "title": "CIFF 2026: The Sin",
-      "status": "now",
-      "poster": "posters/ciff-2026-the-sin-arabic.jpg",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013851_1794304886434.jpg"
     },
     {
       "slug": "ciff-2026-to-the-sun-and-beyond-tunisian-arabic",
@@ -372,6 +351,22 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013806_1793272008209.jpg"
     },
     {
+      "slug": "ciff-2026-the-sin-arabic",
+      "title": "CIFF 2026: The Sin",
+      "status": "soon",
+      "release": "15 November 2026",
+      "poster": "posters/ciff-2026-the-sin-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013851_1794304886434.jpg"
+    },
+    {
+      "slug": "ciff-2026-inherited-persian",
+      "title": "CIFF 2026: Inherited",
+      "status": "soon",
+      "release": "15 November 2026",
+      "poster": "posters/ciff-2026-inherited-persian.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013852_1794318952221.jpg"
+    },
+    {
       "slug": "ciff-2026-something-of-fear-arabic",
       "title": "CIFF 2026: Something of Fear",
       "status": "soon",
@@ -386,6 +381,14 @@
       "release": "16 November 2026",
       "poster": "posters/ciff-2026-for-life-arabic.jpg",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013856_1794303866486.jpg"
+    },
+    {
+      "slug": "ciff-2026-home-bitter-home-arabic",
+      "title": "CIFF 2026: Home Bitter Home",
+      "status": "soon",
+      "release": "17 November 2026",
+      "poster": "posters/ciff-2026-home-bitter-home-arabic.jpg",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013858_1794305127052.jpg"
     },
     {
       "slug": "ciff-2026-the-violinist-english-japanese",
