@@ -74,8 +74,31 @@ class FakeVox:
 
 
 
-def make(cfg, state=None, vox=None, tg=None):
-    return Engine(cfg, state or {}, tg or FakeTG(), vox or FakeVox(), owner_chat_id="111", now=NOW, sleep=lambda s: None)
+def make(cfg, state=None, vox=None, tg=None, scene=None):
+    return Engine(cfg, state or {}, tg or FakeTG(), vox or FakeVox(), owner_chat_id="111", now=NOW, sleep=lambda s: None,
+                  scene_fetch=scene)
+
+
+class FakeScene:
+    """Serves the saved Scene CFC pages. Tests can add a time or a movie to what 'the site' shows."""
+    def __init__(self):
+        self.home = html("scene_home_cfc.html")
+        self.page = html("scene_movie_cfc.html")
+        self.days = {"27-10-2026": html("scene_movie_cfc_27-10-2026.html"), "28-10-2026": html("scene_movie_cfc_28-10-2026.html")}
+        self.down = False
+
+    def add_time(self, label="11:45 PM", day="28-10-2026"):
+        self.days[day] = self.days[day].replace("</ul>", f'<li><a href="https://cfc.scenecinemas.com/showtime-new1">{label} </a></li></ul>', 1)
+
+    def add_movie(self, slug, title):
+        self.home += f'<a href="/movie-details/{slug}.html" title="{title}">{title}</a>'
+
+    def __call__(self, url, xhr=False):
+        if self.down:
+            raise RuntimeError("Scene is down")
+        if "business_day=" in url:
+            return self.days[url.split("business_day=")[1][:10]]
+        return self.page if "/movie-details/" in url else self.home
 
 
 def CFG():
@@ -332,3 +355,75 @@ def test_old_posters_are_deleted(tmp_path):
     assert sorted(p.name for p in (tmp_path / "posters").iterdir()) == ["kept.jpg", "live.jpg"]
 
 
+
+
+def SCFG():
+    return {"settings": {"summaryTime": "23:59"}, "people": [{"id": "me", "name": "Omar", "owner": True}],
+            "watches": [{"id": "re", "slug": "resident-evil", "title": "Resident Evil", "recipients": ["me"]}]}
+
+
+def test_scene_reader():
+    from alerts import scene
+    assert scene.norm("resident_evil") == scene.norm("Resident-Evil") == "resident-evil"
+    ss = scene.parse_fragment(html("scene_movie_cfc_28-10-2026.html"), "2026-10-28", "resident-evil", "Resident Evil", "resident_evil")
+    assert len(ss) == 7 and ss[0]["cinema"] == "Scene CFC" and ss[0]["time"] == "10:30 AM" and ss[-1]["time"] == "12:30 AM"
+    assert all(s["id"].startswith("scene:2026-10-28:") for s in ss) and len({s["id"] for s in ss}) == 7
+    assert scene.parse_fragment("   ", "2026-10-28", "x", "X", "x") == []
+    sold = scene.parse_fragment(html("scene_movie_district5_soldout.html"), "2026-10-28", "x", "X", "x")
+    assert [s["available"] for s in sold] == [False, False, True]
+
+
+def test_scene_first_run_silent_then_new_time_alerts_with_scene_wording():
+    sc, tg = FakeScene(), FakeTG()
+    cfg = SCFG()
+    st = make(cfg, tg=tg, scene=sc).run()
+    assert tg.sent == []
+    sc.add_time("11:45 PM")
+    make(cfg, st, tg=tg, scene=sc).run()
+    msg = "\n".join(t for _, t, _ in tg.sent)
+    assert "11:45 PM" in msg and "Scene CFC" in msg and "Scene just" in msg and "VOX just" not in msg
+    assert "10:30 AM" not in msg  # older times are not repeated
+    assert "times on Scene CFC" in msg and "cfc.scenecinemas.com/movie-details/resident_evil.html" in msg
+
+
+def test_scene_added_later_is_recorded_silently_once():
+    sc, tg = FakeScene(), FakeTG()
+    cfg = SCFG()
+    st = make(cfg, tg=tg).run()                      # the bot ran before Scene existed
+    st = make(cfg, st, tg=tg, scene=sc).run()        # Scene switched on: its existing times are not news
+    assert tg.sent == []
+    sc.add_time("11:00 PM")
+    make(cfg, st, tg=tg, scene=sc).run()
+    assert any("11:00 PM" in t for _, t, _ in tg.sent)
+
+
+def test_scene_down_does_not_break_vox_alerts():
+    sc, vox, tg = FakeScene(), FakeVox(), FakeTG()
+    sc.down = True
+    cfg = CFG()
+    st = make(cfg, vox=vox, tg=tg, scene=sc).run()
+    vox.days["2026-10-28"].append(sess("b", "2026-10-28", 21 * 60, slug="dune", cinema="Almaza"))
+    tg.sent.clear()
+    e = make(cfg, st, vox, tg, scene=sc)
+    e.run()
+    assert any("9:00 PM" in t for _, t, _ in tg.sent) and "sceneError" in e.state and e.state["failures"] == 0
+
+
+def test_scene_new_movie_in_roundup_and_panel_sources():
+    sc, vox, tg = FakeScene(), FakeVox(), FakeTG()
+    cfg = {"settings": {"summaryTime": "23:59"}, "people": [{"id": "me", "name": "Omar", "owner": True, "alerts": {"dailySummary": True}}],
+           "watches": [{"id": "w", "slug": "dune", "title": "Dune", "recipients": ["me"]}]}
+    st = {"knownMovies": {"clayface": {"title": "Clayface", "firstSeen": "2026-10-01T00:00:00"}}}
+    st = make(cfg, st, vox, tg, scene=sc).run()
+    sc.add_movie("brand_new_film", "Brand New Film")
+    cfg["settings"]["summaryTime"] = "12:00"      # it is 12:00 in Cairo, so the roundup is due
+    e = make(cfg, st, vox, tg, scene=sc)
+    e.run()
+    mine = "\n".join(t for _, t, _ in tg.sent)
+    assert "NEW MOVIES" in mine and "Brand New Film" in mine and "Found at Scene CFC" in mine
+    assert "NEW WEEK" not in mine          # the new week is VOX only
+    doc = {m["slug"]: m for m in e.movies_doc()["movies"]}
+    assert doc["brand-new-film"]["sources"] == ["scene"] and "goneFrom" not in doc["brand-new-film"]
+    assert doc["clayface"]["sources"] == ["scene"] and doc["clayface"]["goneFrom"] == ["vox"]
+    assert doc["dune"]["sources"] == ["vox"]
+    assert "Scene CFC" in e.movies_doc()["cinemas"]

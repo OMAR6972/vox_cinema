@@ -4,7 +4,18 @@ from __future__ import annotations
 import re
 from html import escape
 
-from .vox import BASE, movie_url
+from .vox import BASE, movie_url as _vox_url
+
+# Movies VOX does not list (only another cinema has them): slug -> (site name, page link). Set by the engine each run.
+OFF_VOX = {}
+
+
+def movie_url(slug, iso=None):
+    return OFF_VOX[slug][1] if slug in OFF_VOX else _vox_url(slug, iso)
+
+
+def site_of(slug):
+    return OFF_VOX[slug][0] if slug in OFF_VOX else "VOX"
 from .vtime import WEEKDAY_NAMES, add_days, parse_hhmm, pretty_date, pretty_date_long, pretty_time
 
 MAX_DAYS = 8
@@ -48,7 +59,7 @@ def describe_watch(w) -> str:
         bits.append("every " + " / ".join(WEEKDAY_NAMES[d] for d in w["weekdays"]))
     if w.get("times"):
         bits.append("around " + " / ".join(pretty_time(parse_hhmm(t)) for t in w["times"]))
-    bits.append(", ".join(w["cinemas"]) if w.get("cinemas") else "any VOX cinema")
+    bits.append(", ".join(w["cinemas"]) if w.get("cinemas") else "any cinema")
     if w.get("experiences"):
         bits.append(", ".join(w["experiences"]))
     return " · ".join(bits)
@@ -135,10 +146,20 @@ def day_block(w, block, everything=False):
     return "\n".join(lines)
 
 
+def _who(plan):
+    """Which site(s) the showtimes in this message came from, so the wording is right for Scene too."""
+    names = set()
+    for blk in (plan.get("days") or []) + (plan.get("yourDay") or []):
+        for key in ("sessions", "matches", "others"):
+            for s in blk.get(key) or []:
+                names.add("Scene" if str(s.get("id", "")).startswith("scene:") else "VOX")
+    return " and ".join(sorted(names, reverse=True)) or "VOX"
+
+
 def _blocks(w, blocks, everything=False):
     out = [day_block(w, blk, everything) for blk in blocks[:MAX_DAYS]]
     if len(blocks) > MAX_DAYS:
-        out.append(i(f"…plus {len(blocks) - MAX_DAYS} more days on the VOX site"))
+        out.append(i(f"…plus {len(blocks) - MAX_DAYS} more days on the cinema site"))
     return out
 
 
@@ -171,7 +192,7 @@ def render_watch_message(plan) -> str:
     elif kind == "opening":
         out += [f"🚨 {b('FIRST SHOWTIMES ARE OUT')}", b(title), ""]
         filt = " (matching your cinema and screen settings)" if (w.get("cinemas") or w.get("experiences")) else ""
-        out.append(f"VOX just put the first showtimes up for this movie{filt}.")
+        out.append(f"{_who(plan)} just put the first showtimes up for this movie{filt}.")
         if plan["dayPref"]:
             out += ["", f"📌 {b('YOUR DAY')}"]
             if plan["yourDay"]:
@@ -186,7 +207,7 @@ def render_watch_message(plan) -> str:
             for blk in _blocks(w, plan["days"], True):
                 out += ["", blk]
         link_date = (plan["yourDay"] or plan["days"])[0]["date"]
-        out += ["", link(f"All {title} times on VOX", movie_url(w["slug"], link_date))]
+        out += ["", link(f"All {title} times on {site_of(w['slug'])}", movie_url(w["slug"], link_date))]
         why = f"you're tracking {title}, and a movie's first showtimes always notify you"
         if plan["dayPref"]:
             why += f", even if your day isn't out yet. After this I'll stay silent until {wanted_text(w)} has showtimes."
@@ -200,23 +221,23 @@ def render_watch_message(plan) -> str:
         if kind == "added":
             out += [f"➕ {b('NEW SHOWTIMES ADDED')}", b(title) + (f" · {esc(span)}" if len(dates) == 1 else ""), ""]
             what = (" & ".join(plan["newExps"]) + " showtimes") if plan["newExps"] else "more showtimes"
-            out.append(f"VOX just added {esc(what)}. These are the only changes. I'm not repeating times you already know.")
+            out.append(f"{_who(plan)} just added {esc(what)}. These are the only changes. I'm not repeating times you already know.")
         elif plan["dayPref"]:
             out += [f"🎯 {b('NEW SHOWTIMES ON YOUR DAY')}", b(title) + f" · {esc(span)}", ""]
             if plan["weekRelease"]:
-                out.append(f"VOX just released its new week. Everything below is new.")
+                out.append(f"{_who(plan)} just released its new week. Everything below is new.")
             else:
-                out.append("VOX just released showtimes for your day. Everything below is new.")
+                out.append(f"{_who(plan)} just released showtimes for your day. Everything below is new.")
             if w.get("times"):
                 wanted = " / ".join(pretty_time(parse_hhmm(t)) for t in w["times"])
                 out.append(f"You asked for around {esc(wanted)}.")
         else:
             head = f"NEW WEEK FOR {title.upper()}" if plan["weekRelease"] else f"NEW SHOWTIMES FOR {title.upper()}"
             out += [f"🎬 {b(head)}", esc(span), ""]
-            out.append("VOX just released " + ("its new week" if plan["weekRelease"] else "new showtimes") + ". Everything below is new.")
+            out.append(_who(plan) + " just released " + ("its new week" if plan["weekRelease"] else "new showtimes") + ". Everything below is new.")
         for blk in _blocks(w, plan["days"]):
             out += ["", blk]
-        out += ["", link(f"All {title} times on VOX", movie_url(w["slug"], dates[0]))]
+        out += ["", link(f"All {title} times on {site_of(w['slug'])}", movie_url(w["slug"], dates[0]))]
         if plan["dayPref"]:
             why = f"you're tracking {title} for {describe_watch(w)}, and "
             why += "this addition is on your day." if kind == "added" else "its showtimes for that day just came out."
@@ -278,12 +299,15 @@ def render_roundup(rd, person, tracked, today, through, links=False):
     for chunk_no, chunk in enumerate(pages(new_movies)):
         lines = []
         if chunk_no == 0:
-            lines += [f"━━ 🎬 {b('NEW MOVIES (first showtimes)')} ━━", "Movies that just got their first showtimes. You don't track these.", ""]
+            lines += [f"━━ 🎬 {b('NEW MOVIES')} ━━", "Movies that just got their first showtimes at VOX or Scene. You don't track these.", ""]
         btn = []
         for k, m in enumerate(chunk, chunk_no * PAGE + 1):
             exps = f" · {', '.join(m['experiences'])}" if m.get("experiences") else ""
             lines.append(_numbered(k, name(m["slug"], m["title"])))
-            lines.append(f"   From {esc(pretty_date_long(m['firstDate']))}{esc(exps)}")
+            if m.get("source"):
+                lines.append(f"   Found at {esc(m['source'])}, showtimes not read yet")
+            else:
+                lines.append(f"   From {esc(pretty_date_long(m['firstDate']))}{esc(exps)}")
             btn.append([{"text": f"🎟 {m['title']} times", "url": movie_url(m["slug"])},
                         {"text": f"➕ Track {m['title']}", "callback_data": f"track:{m['slug']}"}])
         blocks.append({"html": "\n".join(lines), "buttons": None if links else btn})
