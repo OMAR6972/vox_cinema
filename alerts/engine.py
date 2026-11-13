@@ -11,6 +11,7 @@ from pathlib import Path
 
 from . import discord as D
 from . import formatter as F
+from . import scene
 from .matcher import evaluate, sessions_for_watch
 from .vox import (parse_coming_soon, parse_filters, parse_listing_titles, parse_posters, parse_showtimes_page,
                   showtimes_path)
@@ -73,12 +74,14 @@ def default_state():
 
 class Engine:
     def __init__(self, config, state, telegram, fetch, owner_chat_id=None, discord_url=None, now=None,
-                 sleep=time.sleep, delay=0.4, root=None):
+                 sleep=time.sleep, delay=0.4, root=None, scene_fetch=None):
         self.config = config
         self.config_dirty = migrate_config(config)  # True when the bot must save config.json
         self.state = {**default_state(), **state}
         self.tg = telegram
         self.fetch = fetch           # fetch(path) -> html
+        self.scene_fetch = scene_fetch   # fetch(url, xhr=False) -> html; None switches Scene off
+        self.scene_done = None       # slugs whose Scene showtimes were read this run (None = Scene not read at all)
         self.owner_chat_id = owner_chat_id
         self.discord_url = discord_url
         self.now = now or datetime.now(timezone.utc)
@@ -178,6 +181,9 @@ class Engine:
         for m in self.state.get("comingSoon", []) + self.state.get("nowShowing", []):
             if m["slug"] == slug:
                 return m["title"]
+        sc = (self.state.get("scene", {}).get("listing") or {}).get(slug)
+        if sc and sc.get("title"):
+            return sc["title"]
         return (self.state["knownMovies"].get(slug) or {}).get("title") or slug.replace("-", " ").title()
 
     def handle_update(self, u):
@@ -331,13 +337,14 @@ class Engine:
         st["baselineDone"] = True
         st["lastCheck"] = self.now.isoformat(timespec="seconds")
         st["lastError"] = None
+        new_scene = self.crawl_scene(sessions, first_run, today)
         self.snapshot = {"sessions": sessions, "movies": movies}
 
         # what the next daily roundup will say (only after the very first run, which just learns what is out)
         if first_run:
             return
         rd = st.setdefault("roundup", empty_roundup())
-        allv = [s for lst in sessions.values() for s in lst]
+        allv = [s for lst in sessions.values() for s in lst if not s["id"].startswith("scene:")]  # the new week is VOX only
         if new_dates:
             rd["dates"] = sorted(set(rd["dates"]) | set(new_dates))
             have = {m["slug"] for m in rd["weekMovies"]}
@@ -353,10 +360,124 @@ class Engine:
             ss = sorted((s for s in allv if s["slug"] == slug), key=lambda s: (s["date"], s["min"]))
             rd["newMovies"].append({"slug": slug, "title": ss[0]["title"], "firstDate": ss[0]["date"],
                                     "experiences": list(dict.fromkeys(s["exp"] for s in ss))})
+        for m in new_scene:
+            if m["slug"] not in have:
+                rd["newMovies"].append(m)
+                have.add(m["slug"])
         have = {m["slug"] for m in rd["coming"]}
         for m in new_coming:
             if m["slug"] not in have:
                 rd["coming"].append({"slug": m["slug"], "title": m["title"], "release": m.get("release")})
+
+    # ---- Scene Cinemas (Cairo Festival City, District 5) ----
+    def crawl_scene(self, sessions, first_run, today):
+        """Reads each Scene branch's movie list, plus showtimes for the movies somebody tracks. Adds them to `sessions`.
+        Returns the Scene movies that are brand new (for the daily roundup). Never raises: if a branch is down,
+        VOX alerts still go out and nothing from that branch is marked as read."""
+        self.scene_ok, self.scene_done = set(), set()
+        F.OFF_VOX.clear()
+        if not self.scene_fetch:
+            return []
+        st = self.state
+        sc = st.setdefault("scene", {"baseline": False, "known": [], "listing": {}})
+        raw_lists, errors = {}, []
+        for br in scene.BRANCHES:
+            try:
+                lst = scene.parse_listing(self.scene_fetch(scene.home_url(br), False))
+                if not lst:
+                    raise RuntimeError("its home page lists no movies. The page layout may have changed.")
+                raw_lists[br] = lst
+                self.scene_ok.add(br)
+            except Exception as e:
+                log.warning("Scene %s skipped: %s", br, e)
+                errors.append(f"{br}: {e}")
+        if errors:
+            st["sceneError"] = f"{self.now.isoformat(timespec='seconds')} - " + "; ".join(errors)
+        else:
+            st.pop("sceneError", None)
+        if not raw_lists:
+            self._keep_scene_listing()
+            return []
+        by_norm, by_title = {}, {}
+        for lst in sessions.values():
+            for s in lst:
+                by_norm[scene.norm(s["slug"])] = s["slug"]
+                by_title[scene.norm(s["title"])] = s["slug"]
+        for slug, m in list(st["knownMovies"].items()) + [(m["slug"], m) for m in st["comingSoon"] + st.get("nowShowing", [])]:
+            by_norm.setdefault(scene.norm(slug), slug)
+            if (m or {}).get("title"):
+                by_title.setdefault(scene.norm(m["title"]), slug)
+        canon = {}
+        for br, lst in raw_lists.items():
+            for raw, title in lst:
+                slug = by_norm.get(scene.norm(raw)) or by_title.get(scene.norm(title)) or scene.norm(raw)
+                c = canon.setdefault(slug, {"title": title, "raws": {}})
+                c["raws"].setdefault(br, raw)
+        for br in scene.BRANCHES:       # a branch we could not read keeps what we knew about it
+            if br not in raw_lists:
+                for slug, m in (sc.get("listing") or {}).items():
+                    if br in (m.get("raws") or {}):
+                        c = canon.setdefault(slug, {"title": m["title"], "raws": {}})
+                        c["raws"].setdefault(br, m["raws"][br])
+        sc["listing"] = canon
+        self._set_off_vox(sessions)
+        # showtimes only for the movies somebody tracks
+        wanted = {w["slug"] for w in self.config.get("watches", []) if w.get("active", True)}
+        for slug in wanted & set(canon):
+            for br, raw in canon[slug]["raws"].items():
+                if br not in self.scene_ok:
+                    continue
+                try:
+                    self.sleep(self.delay)
+                    title, dates = scene.parse_movie_page(self.scene_fetch(scene.public_movie_url(br, raw), False), raw)
+                    for d in dates:
+                        if d < today:
+                            continue
+                        self.sleep(self.delay)
+                        sessions.setdefault(d, []).extend(scene.parse_fragment(
+                            self.scene_fetch(scene.movie_url(br, raw, d), True), d, slug, canon[slug]["title"] or title, raw, br))
+                    self.scene_done.add((slug, br))
+                except Exception as e:
+                    log.warning("Scene %s showtimes for %s skipped: %s", br, slug, e)
+        # brand-new movies for the roundup (a movie is new when no site we read had it before)
+        known = set(sc["known"])
+        fresh = []
+        if sc["baseline"] and not first_run:
+            for slug, m in canon.items():
+                if slug in known or slug in st["knownMovies"] or slug in {x["slug"] for x in st["comingSoon"]}:
+                    continue
+                fresh.append({"slug": slug, "title": m["title"], "firstDate": None, "experiences": [],
+                              "source": " & ".join(scene.BRANCHES[b]["name"] for b in scene.BRANCHES if b in m["raws"])})
+        for m in fresh:
+            st["knownMovies"].setdefault(m["slug"], {"firstSeen": self.now.isoformat(timespec="seconds"),
+                                                     "title": m["title"], "source": "scene"})
+        sc["known"] = sorted(known | set(canon))
+        sc["baseline"] = True
+        return fresh
+
+    def _set_off_vox(self, sessions=None):
+        """Movies VOX does not list get a Scene page link and site name in messages."""
+        if sessions is not None:
+            vox_now = {s["slug"] for lst in sessions.values() for s in lst if not s["id"].startswith("scene:")}
+        else:
+            vox_now = set()
+        vox_now |= {m["slug"] for m in self.state.get("nowShowing", []) + self.state["comingSoon"]}
+        for slug, m in (self.state.get("scene", {}).get("listing") or {}).items():
+            if slug not in vox_now and m.get("raws"):
+                br = next(iter(m["raws"]))
+                names = " & ".join(scene.BRANCHES[b]["name"] for b in m["raws"])
+                F.OFF_VOX[slug] = (names, scene.public_movie_url(br, m["raws"][br]))
+
+    def _keep_scene_listing(self):
+        """No Scene branch could be read: keep showing its movies as they were last time."""
+        self._set_off_vox()
+
+    def scene_ready(self, slug, branch):
+        """True when this run read everything branch `branch` has for the movie (or the branch doesn't have it)."""
+        if branch not in self.scene_ok:
+            return False
+        m = (self.state.get("scene", {}).get("listing") or {}).get(slug)
+        return (slug, branch) in self.scene_done or not m or branch not in m["raws"]
 
     # ---- tracked movies ----
     def process_watch(self, w):
@@ -373,12 +494,24 @@ class Engine:
         if resend:
             st["introNonce"] = nonce
         fkey = json.dumps([sorted(w.get("cinemas") or []), sorted(w.get("experiences") or []), bool(w.get("includeSoldOut"))])
+        seeded = st.get("sceneSeeded")
+        seeded = ["cfc"] if seeded is True else list(seeded or [])
+        ready = [br for br in scene.BRANCHES if self.scene_ready(w["slug"], br)]
         if first_look and not intro:
             st["filters"] = fkey
             st["seen"] = {s["id"]: s["date"] for s in sessions}
             st["everHadSessions"] = bool(sessions)
+            st["sceneSeeded"] = ready
             return None
         st.setdefault("seen", {})
+        fresh_branches = [br for br in ready if br not in seeded]
+        if fresh_branches:
+            # a Scene branch is new for this watch: what it already shows is not "new", record it silently once
+            st["sceneSeeded"] = sorted(set(seeded) | set(fresh_branches))
+            if not first_look:
+                for sx in sessions:
+                    if any(sx["id"].startswith(f"scene:{br}:") for br in fresh_branches):
+                        st["seen"][sx["id"]] = sx["date"]
         # Changing the cinema, screen types or sold-out switch changes WHICH showings count. Everything that now
         # matches would look "new", so record it silently instead (the Send now button still lists it all).
         if st.get("filters") is None:
@@ -405,6 +538,8 @@ class Engine:
                 self.deliver(p, text, buttons, photo=(w["slug"], w["title"]))
         for s in sessions:
             st["seen"][s["id"]] = s["date"]
+        if first_look:
+            st["sceneSeeded"] = ready
         st["seen"] = {k: v for k, v in st["seen"].items() if v >= today}
         if sessions:
             st["everHadSessions"] = True
@@ -476,27 +611,47 @@ class Engine:
         return st
 
     def movies_doc(self):
-        """What the control panel shows: every movie VOX lists now or soon."""
+        """What the control panel shows: every movie VOX or Scene lists now or soon, and where each one was found."""
         out, seen = [], set()
         sess = self.snapshot["sessions"]
         showing = {}
         for lst in sess.values():
             for s in lst:
+                if s["id"].startswith("scene:"):
+                    continue
                 showing.setdefault(s["slug"], {"title": s["title"], "cinemas": set(), "exps": set()})
                 showing[s["slug"]]["cinemas"].add(s["cinema"])
                 showing[s["slug"]]["exps"].add(s["exp"])
         posters = self.state.get("posters", {})
+        listing = (self.state.get("scene", {}).get("listing") or {})
+        on_vox = set(showing) | {m["slug"] for m in self.state.get("nowShowing", [])} | {m["slug"] for m in self.state["comingSoon"]}
+        known = self.state["knownMovies"]
+
+        def entry(slug, title, status, **extra):
+            sources = (["vox"] if slug in on_vox else []) + (["scene"] if slug in listing else [])
+            e = {"slug": slug, "title": title, "status": status, "poster": posters.get(slug), "sources": sources}
+            if slug in listing:
+                e["sceneCinemas"] = [scene.BRANCHES[b]["name"] for b in listing[slug]["raws"]]
+            if slug not in on_vox and (known.get(slug) or {}).get("source", "vox") == "vox" and slug in known:
+                e["goneFrom"] = ["vox"]   # VOX used to list it and no longer does
+            e.update(extra)
+            return e
+
         for slug, v in sorted(showing.items(), key=lambda kv: kv[1]["title"].lower()):
-            out.append({"slug": slug, "title": v["title"], "status": "now", "poster": posters.get(slug)})
+            out.append(entry(slug, v["title"], "now"))
             seen.add(slug)
         for m in self.state.get("nowShowing", []):
             if m["slug"] not in seen:
-                out.append({"slug": m["slug"], "title": m["title"], "status": "now", "poster": posters.get(m["slug"])})
+                out.append(entry(m["slug"], m["title"], "now"))
                 seen.add(m["slug"])
         for m in self.state["comingSoon"]:
             if m["slug"] not in seen:
-                out.append({"slug": m["slug"], "title": m["title"], "status": "soon", "release": m.get("release"),
-                            "poster": posters.get(m["slug"])})
-        cinemas = sorted({c for v in showing.values() for c in v["cinemas"] if c})
+                out.append(entry(m["slug"], m["title"], "soon", release=m.get("release")))
+                seen.add(m["slug"])
+        for slug, m in sorted(listing.items(), key=lambda kv: kv[1]["title"].lower()):
+            if slug not in seen:
+                out.append(entry(slug, m["title"], "now"))
+                seen.add(slug)
+        cinemas = sorted({c for v in showing.values() for c in v["cinemas"] if c} | ({scene.BRANCHES[b]["name"] for m in listing.values() for b in m["raws"]}))
         exps = sorted({e for v in showing.values() for e in v["exps"] if e})
         return {"movies": out, "cinemas": cinemas, "experiences": exps}

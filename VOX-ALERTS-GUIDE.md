@@ -185,3 +185,18 @@ This is the rule behind the 🆕 marker. *Current limitation:* the messages don'
 - People: you, Osama, Essam, and the Discord channel.
 - Active watches: Clayface, Resident Evil, Heart of the Beast, Avengers: Doomsday (Infinity Vision), Dune: Part Three.
 - Latest code on `main`: commit `09ecf48`.
+
+## 13. Scene Cinemas (Cairo Festival City and District 5)
+
+- The bot also reads `cfc.scenecinemas.com` and `district5.scenecinemas.com` (code: `alerts/scene.py`). It reads the cinema's movie list every run, and the
+  showtimes only for movies somebody tracks (one movie page plus one small request per date).
+- A Scene movie is matched to a VOX movie by comparing slugs/titles ignoring `-`/`_` (`resident_evil` = `resident-evil`). A movie
+  only Scene has gets its own slug in the panel.
+- In watches the cinemas are called **Scene CFC** and **Scene District 5**. Leave Cinema empty to hear about any cinema, VOX or Scene.
+- Scene times have no stable id, so a showtime's identity is date + time + screen type. When Scene is first switched on for a
+  watch, what Scene already shows is recorded silently once; after that, new Scene times alert like VOX ones (wording says "Scene").
+- The daily roundup: new week and Coming Soon are VOX only; "New movies" also lists movies that appear at Scene.
+- If Scene can't be read, VOX alerts continue and `sceneError` is kept in `alerts-state.json`; nothing is marked as read.
+- The panel card shows only the cinemas that list the movie and says **No longer at VOX** when VOX dropped it
+  (`sources` / `goneFrom` in `movies.json`).
+- Not built: Scene posters for Scene-only movies, seat counts.
