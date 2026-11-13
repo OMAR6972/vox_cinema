@@ -369,28 +369,35 @@ class Engine:
             if m["slug"] not in have:
                 rd["coming"].append({"slug": m["slug"], "title": m["title"], "release": m.get("release")})
 
-    # ---- Scene Cinemas (Cairo Festival City) ----
+    # ---- Scene Cinemas (Cairo Festival City, District 5) ----
     def crawl_scene(self, sessions, first_run, today):
-        """Reads Scene's movie list, plus showtimes for the movies somebody tracks. Adds them to `sessions`.
-        Returns the Scene movies that are brand new (for the daily roundup). Never raises: if Scene is down,
-        VOX alerts still go out and nothing from Scene is marked as read."""
-        self.scene_done = None
-        off = {}
+        """Reads each Scene branch's movie list, plus showtimes for the movies somebody tracks. Adds them to `sessions`.
+        Returns the Scene movies that are brand new (for the daily roundup). Never raises: if a branch is down,
+        VOX alerts still go out and nothing from that branch is marked as read."""
+        self.scene_ok, self.scene_done = set(), set()
         F.OFF_VOX.clear()
         if not self.scene_fetch:
             return []
         st = self.state
         sc = st.setdefault("scene", {"baseline": False, "known": [], "listing": {}})
-        try:
-            listing = scene.parse_listing(self.scene_fetch(scene.home_url(), False))
-            if not listing:
-                raise RuntimeError("Scene's home page lists no movies. The page layout may have changed.")
-        except Exception as e:
-            log.warning("Scene skipped: %s", e)
-            st["sceneError"] = f"{self.now.isoformat(timespec='seconds')} - {e}"
-            self._keep_scene_listing(off)
+        raw_lists, errors = {}, []
+        for br in scene.BRANCHES:
+            try:
+                lst = scene.parse_listing(self.scene_fetch(scene.home_url(br), False))
+                if not lst:
+                    raise RuntimeError("its home page lists no movies. The page layout may have changed.")
+                raw_lists[br] = lst
+                self.scene_ok.add(br)
+            except Exception as e:
+                log.warning("Scene %s skipped: %s", br, e)
+                errors.append(f"{br}: {e}")
+        if errors:
+            st["sceneError"] = f"{self.now.isoformat(timespec='seconds')} - " + "; ".join(errors)
+        else:
+            st.pop("sceneError", None)
+        if not raw_lists:
+            self._keep_scene_listing()
             return []
-        st.pop("sceneError", None)
         by_norm, by_title = {}, {}
         for lst in sessions.values():
             for s in lst:
@@ -401,40 +408,46 @@ class Engine:
             if (m or {}).get("title"):
                 by_title.setdefault(scene.norm(m["title"]), slug)
         canon = {}
-        for raw, title in listing:
-            slug = by_norm.get(scene.norm(raw)) or by_title.get(scene.norm(title)) or scene.norm(raw)
-            canon.setdefault(slug, {"raw": raw, "title": title})
+        for br, lst in raw_lists.items():
+            for raw, title in lst:
+                slug = by_norm.get(scene.norm(raw)) or by_title.get(scene.norm(title)) or scene.norm(raw)
+                c = canon.setdefault(slug, {"title": title, "raws": {}})
+                c["raws"].setdefault(br, raw)
+        for br in scene.BRANCHES:       # a branch we could not read keeps what we knew about it
+            if br not in raw_lists:
+                for slug, m in (sc.get("listing") or {}).items():
+                    if br in (m.get("raws") or {}):
+                        c = canon.setdefault(slug, {"title": m["title"], "raws": {}})
+                        c["raws"].setdefault(br, m["raws"][br])
         sc["listing"] = canon
-        vox_now = {s["slug"] for lst in sessions.values() for s in lst} | {m["slug"] for m in st.get("nowShowing", []) + st["comingSoon"]}
-        for slug, m in canon.items():
-            if slug not in vox_now:
-                off[slug] = ("Scene CFC", scene.public_movie_url(m["raw"]))
-        F.OFF_VOX.update(off)
+        self._set_off_vox(sessions)
         # showtimes only for the movies somebody tracks
         wanted = {w["slug"] for w in self.config.get("watches", []) if w.get("active", True)}
-        self.scene_done = set()
         for slug in wanted & set(canon):
-            m = canon[slug]
-            try:
-                self.sleep(self.delay)
-                title, dates = scene.parse_movie_page(self.scene_fetch(scene.public_movie_url(m["raw"]), False), m["raw"])
-                for d in dates:
-                    if d < today:
-                        continue
+            for br, raw in canon[slug]["raws"].items():
+                if br not in self.scene_ok:
+                    continue
+                try:
                     self.sleep(self.delay)
-                    got = scene.parse_fragment(self.scene_fetch(scene.movie_url(m["raw"], d), True), d, slug, m["title"] or title, m["raw"])
-                    sessions.setdefault(d, []).extend(got)
-                self.scene_done.add(slug)
-            except Exception as e:
-                log.warning("Scene showtimes for %s skipped: %s", slug, e)
-        # brand-new movies for the roundup
+                    title, dates = scene.parse_movie_page(self.scene_fetch(scene.public_movie_url(br, raw), False), raw)
+                    for d in dates:
+                        if d < today:
+                            continue
+                        self.sleep(self.delay)
+                        sessions.setdefault(d, []).extend(scene.parse_fragment(
+                            self.scene_fetch(scene.movie_url(br, raw, d), True), d, slug, canon[slug]["title"] or title, raw, br))
+                    self.scene_done.add((slug, br))
+                except Exception as e:
+                    log.warning("Scene %s showtimes for %s skipped: %s", br, slug, e)
+        # brand-new movies for the roundup (a movie is new when no site we read had it before)
         known = set(sc["known"])
         fresh = []
         if sc["baseline"] and not first_run:
             for slug, m in canon.items():
                 if slug in known or slug in st["knownMovies"] or slug in {x["slug"] for x in st["comingSoon"]}:
                     continue
-                fresh.append({"slug": slug, "title": m["title"], "firstDate": None, "experiences": [], "source": "Scene CFC"})
+                fresh.append({"slug": slug, "title": m["title"], "firstDate": None, "experiences": [],
+                              "source": " & ".join(scene.BRANCHES[b]["name"] for b in scene.BRANCHES if b in m["raws"])})
         for m in fresh:
             st["knownMovies"].setdefault(m["slug"], {"firstSeen": self.now.isoformat(timespec="seconds"),
                                                      "title": m["title"], "source": "scene"})
@@ -442,19 +455,29 @@ class Engine:
         sc["baseline"] = True
         return fresh
 
-    def _keep_scene_listing(self, off):
-        """Scene could not be read: keep showing its movies as they were last time."""
-        vox_now = {m["slug"] for m in self.state.get("nowShowing", []) + self.state["comingSoon"]}
+    def _set_off_vox(self, sessions=None):
+        """Movies VOX does not list get a Scene page link and site name in messages."""
+        if sessions is not None:
+            vox_now = {s["slug"] for lst in sessions.values() for s in lst if not s["id"].startswith("scene:")}
+        else:
+            vox_now = set()
+        vox_now |= {m["slug"] for m in self.state.get("nowShowing", []) + self.state["comingSoon"]}
         for slug, m in (self.state.get("scene", {}).get("listing") or {}).items():
-            if slug not in vox_now:
-                off[slug] = ("Scene CFC", scene.public_movie_url(m["raw"]))
-        F.OFF_VOX.update(off)
+            if slug not in vox_now and m.get("raws"):
+                br = next(iter(m["raws"]))
+                names = " & ".join(scene.BRANCHES[b]["name"] for b in m["raws"])
+                F.OFF_VOX[slug] = (names, scene.public_movie_url(br, m["raws"][br]))
 
-    def scene_ready(self, slug):
-        """True when this run read everything Scene has for the movie (or Scene doesn't have it)."""
-        if self.scene_done is None:
+    def _keep_scene_listing(self):
+        """No Scene branch could be read: keep showing its movies as they were last time."""
+        self._set_off_vox()
+
+    def scene_ready(self, slug, branch):
+        """True when this run read everything branch `branch` has for the movie (or the branch doesn't have it)."""
+        if branch not in self.scene_ok:
             return False
-        return slug in self.scene_done or slug not in (self.state.get("scene", {}).get("listing") or {})
+        m = (self.state.get("scene", {}).get("listing") or {}).get(slug)
+        return (slug, branch) in self.scene_done or not m or branch not in m["raws"]
 
     # ---- tracked movies ----
     def process_watch(self, w):
@@ -471,7 +494,9 @@ class Engine:
         if resend:
             st["introNonce"] = nonce
         fkey = json.dumps([sorted(w.get("cinemas") or []), sorted(w.get("experiences") or []), bool(w.get("includeSoldOut"))])
-        ready = self.scene_ready(w["slug"])
+        seeded = st.get("sceneSeeded")
+        seeded = ["cfc"] if seeded is True else list(seeded or [])
+        ready = [br for br in scene.BRANCHES if self.scene_ready(w["slug"], br)]
         if first_look and not intro:
             st["filters"] = fkey
             st["seen"] = {s["id"]: s["date"] for s in sessions}
@@ -479,12 +504,13 @@ class Engine:
             st["sceneSeeded"] = ready
             return None
         st.setdefault("seen", {})
-        if ready and not st.get("sceneSeeded"):
-            # Scene is new for this watch: what Scene already has is not "new", record it silently once
-            st["sceneSeeded"] = True
+        fresh_branches = [br for br in ready if br not in seeded]
+        if fresh_branches:
+            # a Scene branch is new for this watch: what it already shows is not "new", record it silently once
+            st["sceneSeeded"] = sorted(set(seeded) | set(fresh_branches))
             if not first_look:
                 for sx in sessions:
-                    if sx["id"].startswith("scene:"):
+                    if any(sx["id"].startswith(f"scene:{br}:") for br in fresh_branches):
                         st["seen"][sx["id"]] = sx["date"]
         # Changing the cinema, screen types or sold-out switch changes WHICH showings count. Everything that now
         # matches would look "new", so record it silently instead (the Send now button still lists it all).
@@ -604,6 +630,8 @@ class Engine:
         def entry(slug, title, status, **extra):
             sources = (["vox"] if slug in on_vox else []) + (["scene"] if slug in listing else [])
             e = {"slug": slug, "title": title, "status": status, "poster": posters.get(slug), "sources": sources}
+            if slug in listing:
+                e["sceneCinemas"] = [scene.BRANCHES[b]["name"] for b in listing[slug]["raws"]]
             if slug not in on_vox and (known.get(slug) or {}).get("source", "vox") == "vox" and slug in known:
                 e["goneFrom"] = ["vox"]   # VOX used to list it and no longer does
             e.update(extra)
@@ -624,6 +652,6 @@ class Engine:
             if slug not in seen:
                 out.append(entry(slug, m["title"], "now"))
                 seen.add(slug)
-        cinemas = sorted({c for v in showing.values() for c in v["cinemas"] if c} | ({scene.CINEMA} if listing else set()))
+        cinemas = sorted({c for v in showing.values() for c in v["cinemas"] if c} | ({scene.BRANCHES[b]["name"] for m in listing.values() for b in m["raws"]}))
         exps = sorted({e for v in showing.values() for e in v["exps"] if e})
         return {"movies": out, "cinemas": cinemas, "experiences": exps}

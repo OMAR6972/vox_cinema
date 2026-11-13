@@ -80,25 +80,27 @@ def make(cfg, state=None, vox=None, tg=None, scene=None):
 
 
 class FakeScene:
-    """Serves the saved Scene CFC pages. Tests can add a time or a movie to what 'the site' shows."""
+    """Serves the saved Scene pages for both branches. Tests can add a time or a movie to what 'the site' shows."""
     def __init__(self):
-        self.home = html("scene_home_cfc.html")
-        self.page = html("scene_movie_cfc.html")
-        self.days = {"27-10-2026": html("scene_movie_cfc_27-10-2026.html"), "28-10-2026": html("scene_movie_cfc_28-10-2026.html")}
-        self.down = False
+        self.b = {k: {"home": html(f"scene_home_{n}.html"), "page": html(f"scene_movie_{n}.html"),
+                      "days": {"27-10-2026": html(f"scene_movie_{n}_27-10-2026.html"), "28-10-2026": html(f"scene_movie_{n}_28-10-2026.html")}}
+                  for k, n in (("cfc", "cfc"), ("district5", "district5"))}
+        self.down = set()
 
-    def add_time(self, label="11:45 PM", day="28-10-2026"):
-        self.days[day] = self.days[day].replace("</ul>", f'<li><a href="https://cfc.scenecinemas.com/showtime-new1">{label} </a></li></ul>', 1)
+    def add_time(self, label="11:45 PM", day="28-10-2026", branch="cfc"):
+        d = self.b[branch]["days"]
+        d[day] = d[day].replace("</ul>", f'<li><a href="https://x/showtime-new1">{label} </a></li></ul>', 1)
 
-    def add_movie(self, slug, title):
-        self.home += f'<a href="/movie-details/{slug}.html" title="{title}">{title}</a>'
+    def add_movie(self, slug, title, branch="cfc"):
+        self.b[branch]["home"] += f'<a href="/movie-details/{slug}.html" title="{title}">{title}</a>'
 
     def __call__(self, url, xhr=False):
-        if self.down:
+        br = "district5" if "district5." in url else "cfc"
+        if br in self.down or "all" in self.down:
             raise RuntimeError("Scene is down")
         if "business_day=" in url:
-            return self.days[url.split("business_day=")[1][:10]]
-        return self.page if "/movie-details/" in url else self.home
+            return self.b[br]["days"][url.split("business_day=")[1][:10]]
+        return self.b[br]["page"] if "/movie-details/" in url else self.b[br]["home"]
 
 
 def CFG():
@@ -367,7 +369,7 @@ def test_scene_reader():
     assert scene.norm("resident_evil") == scene.norm("Resident-Evil") == "resident-evil"
     ss = scene.parse_fragment(html("scene_movie_cfc_28-10-2026.html"), "2026-10-28", "resident-evil", "Resident Evil", "resident_evil")
     assert len(ss) == 7 and ss[0]["cinema"] == "Scene CFC" and ss[0]["time"] == "10:30 AM" and ss[-1]["time"] == "12:30 AM"
-    assert all(s["id"].startswith("scene:2026-10-28:") for s in ss) and len({s["id"] for s in ss}) == 7
+    assert all(s["id"].startswith("scene:cfc:2026-10-28:") for s in ss) and len({s["id"] for s in ss}) == 7
     assert scene.parse_fragment("   ", "2026-10-28", "x", "X", "x") == []
     sold = scene.parse_fragment(html("scene_movie_district5_soldout.html"), "2026-10-28", "x", "X", "x")
     assert [s["available"] for s in sold] == [False, False, True]
@@ -399,7 +401,7 @@ def test_scene_added_later_is_recorded_silently_once():
 
 def test_scene_down_does_not_break_vox_alerts():
     sc, vox, tg = FakeScene(), FakeVox(), FakeTG()
-    sc.down = True
+    sc.down = {"all"}
     cfg = CFG()
     st = make(cfg, vox=vox, tg=tg, scene=sc).run()
     vox.days["2026-10-28"].append(sess("b", "2026-10-28", 21 * 60, slug="dune", cinema="Almaza"))
@@ -427,3 +429,41 @@ def test_scene_new_movie_in_roundup_and_panel_sources():
     assert doc["clayface"]["sources"] == ["scene"] and doc["clayface"]["goneFrom"] == ["vox"]
     assert doc["dune"]["sources"] == ["vox"]
     assert "Scene CFC" in e.movies_doc()["cinemas"]
+
+
+def test_scene_district5_second_branch_alerts_and_is_seeded_silently():
+    sc, tg = FakeScene(), FakeTG()
+    cfg = SCFG()
+    sc.down = {"district5"}                          # only CFC readable at first
+    st = make(cfg, tg=tg, scene=sc).run()
+    sc.down = set()                                  # District 5 comes up: its existing times are not news
+    st = make(cfg, st, tg=tg, scene=sc).run()
+    assert tg.sent == []
+    sc.add_time("11:30 PM", branch="district5")
+    make(cfg, st, tg=tg, scene=sc).run()
+    msg = "\n".join(t for _, t, _ in tg.sent)
+    assert "11:30 PM" in msg and "Scene District 5" in msg and "Scene CFC" not in msg.split("11:30 PM")[0].split("📍")[-1]
+
+
+def test_scene_cinema_filter_picks_one_branch():
+    sc, tg = FakeScene(), FakeTG()
+    cfg = SCFG()
+    cfg["watches"][0]["cinemas"] = ["Scene District 5"]
+    st = make(cfg, tg=tg, scene=sc).run()
+    sc.add_time("11:45 PM", branch="cfc")
+    st = make(cfg, st, tg=tg, scene=sc).run()
+    assert tg.sent == []                              # a CFC time is ignored
+    sc.add_time("11:50 PM", branch="district5")
+    make(cfg, st, tg=tg, scene=sc).run()
+    assert any("11:50 PM" in t for _, t, _ in tg.sent)
+
+
+def test_panel_data_lists_both_scene_branches():
+    sc, vox = FakeScene(), FakeVox()
+    e = make(SCFG(), vox=vox, scene=sc)
+    e.run()
+    doc = e.movies_doc()
+    assert "Scene CFC" in doc["cinemas"] and "Scene District 5" in doc["cinemas"]
+    mv = {m["slug"]: m for m in doc["movies"]}
+    assert mv["the-magic-faraway-tree"]["sceneCinemas"] == ["Scene District 5"]
+    assert mv["resident-evil"]["sceneCinemas"] == ["Scene CFC", "Scene District 5"]

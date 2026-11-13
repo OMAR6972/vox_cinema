@@ -12,8 +12,12 @@ from bs4 import BeautifulSoup
 
 from .vtime import parse_vox_time, pretty_time
 
-BASE = "https://cfc.scenecinemas.com"
-CINEMA = "Scene CFC"          # the name shown in messages and offered in the panel
+# Scene has two branches, each with its own site. The name is what messages and the panel call the cinema.
+BRANCHES = {
+    "cfc": {"base": "https://cfc.scenecinemas.com", "name": "Scene CFC"},
+    "district5": {"base": "https://district5.scenecinemas.com", "name": "Scene District 5"},
+}
+CINEMAS = [b["name"] for b in BRANCHES.values()]
 SOURCE = "scene"
 
 
@@ -22,17 +26,17 @@ def norm(slug: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", str(slug).lower()).strip("-")
 
 
-def home_url() -> str:
-    return BASE + "/"
+def home_url(branch: str) -> str:
+    return BRANCHES[branch]["base"] + "/"
 
 
-def movie_url(raw_slug: str, iso: str | None = None) -> str:
-    base = f"{BASE}/movie-details/{raw_slug}.html"
+def movie_url(branch: str, raw_slug: str, iso: str | None = None) -> str:
+    base = f"{BRANCHES[branch]['base']}/movie-details/{raw_slug}.html"
     return base + (f"?business_day={iso[8:10]}-{iso[5:7]}-{iso[0:4]}&ajax=1" if iso else "")
 
 
-def public_movie_url(raw_slug: str) -> str:
-    return f"{BASE}/movie-details/{raw_slug}.html"
+def public_movie_url(branch: str, raw_slug: str) -> str:
+    return f"{BRANCHES[branch]['base']}/movie-details/{raw_slug}.html"
 
 
 def parse_listing(html: str) -> list:
@@ -64,7 +68,7 @@ def parse_movie_page(html: str, raw_slug: str):
     return title, sorted(dates)
 
 
-def parse_fragment(html: str, iso: str, slug: str, title: str, raw_slug: str) -> list:
+def parse_fragment(html: str, iso: str, slug: str, title: str, raw_slug: str, branch: str = "cfc") -> list:
     """Sessions in one date's XHR fragment. An empty body means nothing is scheduled (yet)."""
     if not html.strip():
         return []
@@ -86,10 +90,10 @@ def parse_fragment(html: str, iso: str, slug: str, title: str, raw_slug: str) ->
             sold = "showtime_soldout" in (a.get("class") or []) or href.lower().startswith("javascript:")
             out.append({
                 # Scene gives showtimes no stable id, so the identity is where, when and which screen type
-                "id": f"scene:{iso}:{mins}:{norm(exp)}:{slug}",
-                "slug": slug, "title": title, "date": iso, "cinema": CINEMA, "exp": exp,
+                "id": f"scene:{branch}:{iso}:{mins}:{norm(exp)}:{slug}",
+                "slug": slug, "title": title, "date": iso, "cinema": BRANCHES[branch]["name"], "exp": exp,
                 "min": mins, "time": pretty_time(mins),
                 "available": not sold,
-                "url": public_movie_url(raw_slug) if (sold or not href.startswith("http")) else href,
+                "url": public_movie_url(branch, raw_slug) if (sold or not href.startswith("http")) else href,
             })
     return out
