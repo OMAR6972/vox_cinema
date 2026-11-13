@@ -645,7 +645,8 @@
         "district5"
       ],
       "filters": "[[\"City Centre Almaza\"], [], false]",
-      "everHadSessions": true
+      "everHadSessions": true,
+      "introNonce": "a182dd2fd985"
     }
   },
   "links": {
@@ -662,7 +663,7 @@
   "summary": {
     "lastSentDate": "2026-11-13"
   },
-  "offset": 601723940,
+  "offset": 601723941,
   "failures": 0,
   "warned": false,
   "lastError": null,
