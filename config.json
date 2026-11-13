@@ -45,9 +45,9 @@
   ],
   "watches": [
     {
-      "id": "clayface",
-      "slug": "clayface",
-      "title": "Clayface",
+      "id": "the-hunger-games-sunrise-on-the-reaping-9db4",
+      "slug": "the-hunger-games-sunrise-on-the-reaping",
+      "title": "The Hunger Games: Sunrise on the Reaping",
       "recipients": [
         "me",
         "discord"
@@ -62,15 +62,15 @@
       "experiences": [],
       "includeSoldOut": false,
       "active": true,
-      "intro": true,
-      "introNonce": "bfd7ccd119da"
+      "intro": true
     },
     {
-      "id": "resident-evil",
-      "slug": "resident-evil",
-      "title": "Resident Evil",
+      "id": "jumanji-open-world-94a1",
+      "slug": "jumanji-open-world",
+      "title": "Jumanji: Open World",
       "recipients": [
-        "me"
+        "me",
+        "discord"
       ],
       "cinemas": [
         "City Centre Almaza"
@@ -82,26 +82,7 @@
       "experiences": [],
       "includeSoldOut": false,
       "active": true,
-      "intro": false
-    },
-    {
-      "id": "heart-of-the-beast",
-      "slug": "heart-of-the-beast",
-      "title": "Heart of the Beast",
-      "recipients": [
-        "me"
-      ],
-      "cinemas": [
-        "City Centre Almaza"
-      ],
-      "dates": [],
-      "weekdays": [],
-      "times": [],
-      "flex": 30,
-      "experiences": [],
-      "includeSoldOut": false,
-      "active": true,
-      "intro": false
+      "intro": true
     },
     {
       "id": "avengers-doomsday-infinity-vision",
