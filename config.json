@@ -54,6 +54,26 @@
   ],
   "watches": [
     {
+      "id": "clayface-f5dd",
+      "slug": "clayface",
+      "title": "Clayface",
+      "recipients": [
+        "me",
+        "p261fa5"
+      ],
+      "cinemas": [
+        "City Centre Almaza"
+      ],
+      "dates": [],
+      "weekdays": [],
+      "times": [],
+      "flex": 30,
+      "experiences": [],
+      "includeSoldOut": false,
+      "active": true,
+      "intro": true
+    },
+    {
       "id": "the-hunger-games-sunrise-on-the-reaping-9db4",
       "slug": "the-hunger-games-sunrise-on-the-reaping",
       "title": "The Hunger Games: Sunrise on the Reaping",
@@ -99,7 +119,8 @@
       "title": "Avengers: Doomsday (Infinity Vision)",
       "recipients": [
         "me",
-        "discord"
+        "discord",
+        "p261fa5"
       ],
       "cinemas": [
         "City Centre Almaza"
@@ -120,7 +141,8 @@
       "recipients": [
         "me",
         "p2a27be",
-        "discord"
+        "discord",
+        "p261fa5"
       ],
       "cinemas": [
         "City Centre Almaza",
