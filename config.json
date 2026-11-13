@@ -41,6 +41,15 @@
       "alerts": {
         "dailySummary": true
       }
+    },
+    {
+      "id": "p261fa5",
+      "name": "Jomana",
+      "invite": "3c3fd62623b52723f5d1134e",
+      "active": true,
+      "alerts": {
+        "dailySummary": true
+      }
     }
   ],
   "watches": [
