@@ -460,56 +460,6 @@
     }
   ],
   "watches": {
-    "clayface": {
-      "booked": [],
-      "seen": {
-        "0047-278146": "2026-11-13",
-        "0047-278148": "2026-11-13",
-        "0047-278150": "2026-11-13",
-        "0047-278151": "2026-11-14",
-        "0047-278152": "2026-11-14",
-        "0047-278154": "2026-11-14",
-        "0047-278156": "2026-11-15",
-        "0047-278158": "2026-11-15",
-        "0047-278160": "2026-11-15",
-        "0047-278161": "2026-11-16",
-        "0047-278162": "2026-11-16",
-        "0047-278164": "2026-11-16",
-        "0047-278166": "2026-11-17",
-        "0047-278168": "2026-11-17",
-        "0047-278170": "2026-11-17",
-        "0047-278171": "2026-11-18",
-        "0047-278172": "2026-11-18",
-        "0047-278174": "2026-11-18"
-      },
-      "everHadSessions": true,
-      "introNonce": "bfd7ccd119da",
-      "filters": "[[\"City Centre Almaza\"], [], false]",
-      "sceneSeeded": [
-        "cfc",
-        "district5"
-      ]
-    },
-    "resident-evil": {
-      "booked": [],
-      "seen": {},
-      "everHadSessions": true,
-      "filters": "[[\"City Centre Almaza\"], [], false]",
-      "sceneSeeded": [
-        "cfc",
-        "district5"
-      ]
-    },
-    "heart-of-the-beast": {
-      "booked": [],
-      "seen": {},
-      "everHadSessions": true,
-      "filters": "[[\"City Centre Almaza\"], [], false]",
-      "sceneSeeded": [
-        "cfc",
-        "district5"
-      ]
-    },
     "avengers-doomsday-infinity-vision": {
       "booked": [],
       "seen": {
@@ -651,6 +601,24 @@
         "cfc",
         "district5"
       ]
+    },
+    "the-hunger-games-sunrise-on-the-reaping-9db4": {
+      "booked": [],
+      "seen": {},
+      "sceneSeeded": [
+        "cfc",
+        "district5"
+      ],
+      "filters": "[[\"City Centre Almaza\"], [], false]"
+    },
+    "jumanji-open-world-94a1": {
+      "booked": [],
+      "seen": {},
+      "sceneSeeded": [
+        "cfc",
+        "district5"
+      ],
+      "filters": "[[\"City Centre Almaza\"], [], false]"
     }
   },
   "links": {
