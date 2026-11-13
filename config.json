@@ -54,27 +54,6 @@
   ],
   "watches": [
     {
-      "id": "clayface-f5dd",
-      "slug": "clayface",
-      "title": "Clayface",
-      "recipients": [
-        "me",
-        "p261fa5"
-      ],
-      "cinemas": [
-        "City Centre Almaza"
-      ],
-      "dates": [],
-      "weekdays": [],
-      "times": [],
-      "flex": 30,
-      "experiences": [],
-      "includeSoldOut": false,
-      "active": true,
-      "intro": true,
-      "introNonce": "a182dd2fd985"
-    },
-    {
       "id": "the-hunger-games-sunrise-on-the-reaping-9db4",
       "slug": "the-hunger-games-sunrise-on-the-reaping",
       "title": "The Hunger Games: Sunrise on the Reaping",
