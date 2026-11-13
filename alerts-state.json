@@ -942,7 +942,8 @@
       "naseeb-arabic": {
         "title": "Naseeb",
         "raws": {
-          "cfc": "naseeb-arabic"
+          "cfc": "naseeb-arabic",
+          "district5": "naseeb-arabic"
         }
       },
       "whalefall": {
