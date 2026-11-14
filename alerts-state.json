@@ -853,85 +853,78 @@
       "avengers-doomsday": {
         "title": "Avengers: Doomsday",
         "raws": {
-          "district5": "avengers-doomsday-infinity-vision-sx-4dx",
-          "cfc": "avengers-doomsday-infinity-vision-sx-4dx"
+          "cfc": "avengers-doomsday-infinity-vision-sx-4dx",
+          "district5": "avengers-doomsday-infinity-vision-sx-4dx"
         }
       },
       "hadoota-arabic": {
         "title": "Hadoota",
         "raws": {
-          "district5": "hadoota-arabic",
-          "cfc": "hadoota-arabic"
-        }
-      },
-      "ebenezer": {
-        "title": "Ebenezer",
-        "raws": {
-          "district5": "ebenezer",
-          "cfc": "ebenezer"
+          "cfc": "hadoota-arabic",
+          "district5": "hadoota-arabic"
         }
       },
       "dune-part-three": {
         "title": "Dune: Part Three",
         "raws": {
-          "district5": "dune-part-three",
-          "cfc": "dune-part-three"
+          "cfc": "dune-part-three",
+          "district5": "dune-part-three"
         }
       },
-      "godzilla-minus-zero-japanese": {
-        "title": "Godzilla Minus Zero",
+      "ebenezer": {
+        "title": "Ebenezer",
         "raws": {
-          "district5": "godzilla-minus-zero",
-          "cfc": "godzilla-minus-zero"
+          "cfc": "ebenezer",
+          "district5": "ebenezer"
         }
       },
       "wala-kan-ala-albal": {
         "title": "Wala Kan Ala Albal",
         "raws": {
-          "district5": "wala-kan-ala-albal",
-          "cfc": "wala-kan-ala-albal"
-        }
-      },
-      "matloub-aelyan": {
-        "title": "Matloub Aelyan",
-        "raws": {
-          "district5": "matloub-aelyan",
-          "cfc": "matloub-aelyan"
+          "cfc": "wala-kan-ala-albal",
+          "district5": "wala-kan-ala-albal"
         }
       },
       "the-cat-in-the-hat": {
         "title": "The Cat In The Hat",
         "raws": {
-          "district5": "the-cat-in-the-hat",
-          "cfc": "the-cat-in-the-hat"
+          "cfc": "the-cat-in-the-hat",
+          "district5": "the-cat-in-the-hat"
         }
       },
       "clayface": {
         "title": "Clayface",
         "raws": {
-          "district5": "clayface",
-          "cfc": "clayface"
+          "cfc": "clayface",
+          "district5": "clayface"
         }
       },
       "whalefall": {
         "title": "Whalefall",
         "raws": {
-          "district5": "whalefall",
-          "cfc": "whalefall"
+          "cfc": "whalefall",
+          "district5": "whalefall"
         }
       },
-      "heart-of-the-beast": {
-        "title": "Heart of the Beast",
+      "matloub-aelyan": {
+        "title": "Matloub Aelyan",
         "raws": {
-          "district5": "heart-of-the-beast",
-          "cfc": "heart-of-the-beast"
+          "cfc": "matloub-aelyan",
+          "district5": "matloub-aelyan"
+        }
+      },
+      "godzilla-minus-zero-japanese": {
+        "title": "Godzilla Minus Zero",
+        "raws": {
+          "cfc": "godzilla-minus-zero",
+          "district5": "godzilla-minus-zero"
         }
       },
       "how-to-rob-a-bank": {
         "title": "How to Rob a Bank",
         "raws": {
-          "district5": "how_to_rob_a_bank",
-          "cfc": "how-to-rob-a-bank"
+          "cfc": "how-to-rob-a-bank",
+          "district5": "how_to_rob_a_bank"
         }
       },
       "the-cat-in-the-hat-arabic": {
@@ -964,6 +957,13 @@
           "cfc": "verity"
         }
       },
+      "heart-of-the-beast": {
+        "title": "Heart of the Beast",
+        "raws": {
+          "cfc": "heart-of-the-beast",
+          "district5": "heart-of-the-beast"
+        }
+      },
       "resident-evil": {
         "title": "Resident Evil",
         "raws": {
@@ -971,6 +971,5 @@
         }
       }
     }
-  },
-  "sceneError": "2026-11-14T05:45:44+00:00 - cfc: failed to fetch https://cfc.scenecinemas.com/ after 3 attempts: Failed to perform, curl: (28) Operation timed out after 20000 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+  }
 }
