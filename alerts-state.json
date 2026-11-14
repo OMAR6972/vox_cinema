@@ -977,5 +977,6 @@
         }
       }
     }
-  }
+  },
+  "sceneError": "2026-11-14T13:16:41+00:00 - cfc: failed to fetch https://cfc.scenecinemas.com/ after 3 attempts: HTTP 403; district5: failed to fetch https://district5.scenecinemas.com/ after 3 attempts: HTTP 403"
 }
