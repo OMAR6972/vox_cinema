@@ -885,6 +885,13 @@
           "district5": "wala-kan-ala-albal"
         }
       },
+      "the-cat-in-the-hat": {
+        "title": "The Cat In The Hat",
+        "raws": {
+          "cfc": "the-cat-in-the-hat",
+          "district5": "the-cat-in-the-hat"
+        }
+      },
       "clayface": {
         "title": "Clayface",
         "raws": {
@@ -892,18 +899,11 @@
           "district5": "clayface"
         }
       },
-      "how-to-rob-a-bank": {
-        "title": "How to Rob a Bank",
+      "whalefall": {
+        "title": "Whalefall",
         "raws": {
-          "cfc": "how-to-rob-a-bank",
-          "district5": "how_to_rob_a_bank"
-        }
-      },
-      "the-cat-in-the-hat": {
-        "title": "The Cat In The Hat",
-        "raws": {
-          "cfc": "the-cat-in-the-hat",
-          "district5": "the-cat-in-the-hat"
+          "cfc": "whalefall",
+          "district5": "whalefall"
         }
       },
       "matloub-aelyan": {
@@ -920,10 +920,11 @@
           "district5": "godzilla-minus-zero"
         }
       },
-      "best-pancakes-in-the-county": {
-        "title": "Best Pancakes in the County",
+      "how-to-rob-a-bank": {
+        "title": "How to Rob a Bank",
         "raws": {
-          "cfc": "best-pancakes-in-the-county"
+          "cfc": "how-to-rob-a-bank",
+          "district5": "how_to_rob_a_bank"
         }
       },
       "the-cat-in-the-hat-arabic": {
@@ -943,13 +944,6 @@
         "raws": {
           "cfc": "naseeb-arabic",
           "district5": "naseeb-arabic"
-        }
-      },
-      "whalefall": {
-        "title": "Whalefall",
-        "raws": {
-          "cfc": "whalefall",
-          "district5": "whalefall"
         }
       },
       "other-mommy": {
