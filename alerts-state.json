@@ -927,6 +927,12 @@
           "district5": "how_to_rob_a_bank"
         }
       },
+      "best-pancakes-in-the-county": {
+        "title": "Best Pancakes in the County",
+        "raws": {
+          "cfc": "best-pancakes-in-the-county"
+        }
+      },
       "the-cat-in-the-hat-arabic": {
         "title": "The Cat In The Hat -Arabic DUB",
         "raws": {
