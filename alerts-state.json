@@ -258,6 +258,14 @@
     "ciff-2026-the-female-idol-arabic": {
       "firstSeen": "2026-11-12T10:52:46+00:00",
       "title": "CIFF 2026: The Female Idol"
+    },
+    "ciff-2026-for-life-arabic": {
+      "firstSeen": "2026-11-15T16:30:17+00:00",
+      "title": "CIFF 2026: For Life"
+    },
+    "ciff-2026-something-of-fear-arabic": {
+      "firstSeen": "2026-11-15T16:30:17+00:00",
+      "title": "CIFF 2026: Something of Fear"
     }
   },
   "comingSoon": [
@@ -577,7 +585,24 @@
   "roundup": {
     "dates": [],
     "weekMovies": [],
-    "newMovies": [],
+    "newMovies": [
+      {
+        "slug": "ciff-2026-for-life-arabic",
+        "title": "CIFF 2026: For Life",
+        "firstDate": "2026-11-16",
+        "experiences": [
+          "Standard"
+        ]
+      },
+      {
+        "slug": "ciff-2026-something-of-fear-arabic",
+        "title": "CIFF 2026: Something of Fear",
+        "firstDate": "2026-11-16",
+        "experiences": [
+          "Standard"
+        ]
+      }
+    ],
     "coming": []
   },
   "summary": {

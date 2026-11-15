@@ -50,6 +50,16 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013861_1794303989541.jpg"
     },
     {
+      "slug": "ciff-2026-for-life-arabic",
+      "title": "CIFF 2026: For Life",
+      "status": "now",
+      "poster": "posters/ciff-2026-for-life-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013856_1794303866486.jpg"
+    },
+    {
       "slug": "ciff-2026-home-bitter-home-arabic",
       "title": "CIFF 2026: Home Bitter Home",
       "status": "now",
@@ -60,26 +70,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013858_1794305127052.jpg"
     },
     {
-      "slug": "ciff-2026-inherited-persian",
-      "title": "CIFF 2026: Inherited",
-      "status": "now",
-      "poster": "posters/ciff-2026-inherited-persian.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013852_1794318952221.jpg"
-    },
-    {
-      "slug": "ciff-2026-my-wife-general-manager-arabic",
-      "title": "CIFF 2026: My Wife, General Manager",
-      "status": "now",
-      "poster": "posters/ciff-2026-my-wife-general-manager-arabic.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013853_1794304960950.jpg"
-    },
-    {
       "slug": "ciff-2026-palace-of-desire-arabic",
       "title": "CIFF 2026: Palace of Desire",
       "status": "now",
@@ -88,6 +78,16 @@
         "vox"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013850_1794304851114.jpg"
+    },
+    {
+      "slug": "ciff-2026-something-of-fear-arabic",
+      "title": "CIFF 2026: Something of Fear",
+      "status": "now",
+      "poster": "posters/ciff-2026-something-of-fear-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013855_1794305005697.jpg"
     },
     {
       "slug": "ciff-2026-summer-meadow-french-arabic",
@@ -138,16 +138,6 @@
         "vox"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013844_1794305247972.jpg"
-    },
-    {
-      "slug": "ciff-2026-the-sin-arabic",
-      "title": "CIFF 2026: The Sin",
-      "status": "now",
-      "poster": "posters/ciff-2026-the-sin-arabic.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013851_1794304886434.jpg"
     },
     {
       "slug": "ciff-2026-to-the-sun-and-beyond-tunisian-arabic",
@@ -548,28 +538,6 @@
         "vox"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013806_1793272008209.jpg"
-    },
-    {
-      "slug": "ciff-2026-something-of-fear-arabic",
-      "title": "CIFF 2026: Something of Fear",
-      "status": "soon",
-      "poster": "posters/ciff-2026-something-of-fear-arabic.jpg",
-      "sources": [
-        "vox"
-      ],
-      "release": "16 November 2026",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013855_1794305005697.jpg"
-    },
-    {
-      "slug": "ciff-2026-for-life-arabic",
-      "title": "CIFF 2026: For Life",
-      "status": "soon",
-      "poster": "posters/ciff-2026-for-life-arabic.jpg",
-      "sources": [
-        "vox"
-      ],
-      "release": "16 November 2026",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013856_1794303866486.jpg"
     },
     {
       "slug": "ciff-2026-the-violinist-english-japanese",
