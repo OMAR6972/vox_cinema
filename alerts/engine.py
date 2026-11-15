@@ -160,12 +160,19 @@ class Engine:
 
     # ---- telegram replies ----
     def handle_updates(self):
-        for u in self.tg.updates(self.state["offset"]):
-            self.state["offset"] = u["update_id"] + 1
-            try:
-                self.handle_update(u)
-            except Exception as e:
-                log.warning("update failed: %s", e)
+        # Telegram only forgets an update once getUpdates is called again with a higher offset. So keep asking
+        # until nothing is left: that both picks up taps that arrive meanwhile and tells Telegram we're done,
+        # otherwise the Cloudflare timer keeps seeing them as "waiting" and starts extra checks.
+        for _ in range(5):
+            batch = self.tg.updates(self.state["offset"])
+            if not batch:
+                break
+            for u in batch:
+                self.state["offset"] = u["update_id"] + 1
+                try:
+                    self.handle_update(u)
+                except Exception as e:
+                    log.warning("update failed: %s", e)
 
     def _by_chat(self, chat_id):
         for p in self.people:
