@@ -902,6 +902,12 @@
           "district5": "whalefall"
         }
       },
+      "other-mommy": {
+        "title": "Other Mommy",
+        "raws": {
+          "cfc": "other-mommy"
+        }
+      },
       "matloub-aelyan": {
         "title": "Matloub Aelyan",
         "raws": {
@@ -939,12 +945,6 @@
         "raws": {
           "cfc": "naseeb-arabic",
           "district5": "naseeb-arabic"
-        }
-      },
-      "other-mommy": {
-        "title": "Other Mommy",
-        "raws": {
-          "cfc": "other-mommy"
         }
       },
       "verity": {
