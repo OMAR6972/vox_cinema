@@ -423,7 +423,7 @@ def test_scene_new_movie_in_roundup_and_panel_sources():
     e.run()
     mine = "\n".join(t for _, t, _ in tg.sent)
     assert "NEW MOVIES" in mine and "Brand New Film" in mine and "Found at Scene CFC" in mine
-    assert "No new week from VOX today" in mine   # the new week is VOX only; Scene doesn't create one
+    assert "NEW WEEK" not in mine          # the new week is VOX only
     doc = {m["slug"]: m for m in e.movies_doc()["movies"]}
     assert doc["brand-new-film"]["sources"] == ["scene"] and "goneFrom" not in doc["brand-new-film"]
     assert doc["clayface"]["sources"] == ["scene"] and doc["clayface"]["goneFrom"] == ["vox"]
@@ -467,14 +467,3 @@ def test_panel_data_lists_both_scene_branches():
     mv = {m["slug"]: m for m in doc["movies"]}
     assert mv["the-magic-faraway-tree"]["sceneCinemas"] == ["Scene District 5"]
     assert mv["resident-evil"]["sceneCinemas"] == ["Scene CFC", "Scene District 5"]
-
-
-def test_roundup_is_sent_every_day_even_when_nothing_is_new():
-    from alerts import formatter as F
-    empty = {"dates": [], "weekMovies": [], "newMovies": [], "coming": []}
-    blocks = F.render_roundup(empty, {"id": "me", "name": "Omar"}, set(), "2026-11-15", "2026-12-23")
-    text = "\n".join(x["html"] for x in blocks)
-    assert "VOX DAILY ROUNDUP" in text and "No new week from VOX today" in text
-    assert "No new movies got their first showtimes today" in text and "Nothing new was added" in text
-    assert "out through" in text
-    assert any(x.get("callback_data") == "roundup:off" for x in blocks[-1]["buttons"][-1])

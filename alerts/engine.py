@@ -553,6 +553,8 @@ class Engine:
             return
         s["lastSentDate"] = today
         rd, self.state["roundup"] = self.state.get("roundup") or empty_roundup(), empty_roundup()
+        if not (rd["dates"] or rd["newMovies"] or rd["coming"]):
+            return
         dates = set(self.state["dates"])
         through, d = None, today
         while d in dates:
