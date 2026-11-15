@@ -873,6 +873,13 @@
           "district5": "wala-kan-ala-albal"
         }
       },
+      "clayface": {
+        "title": "Clayface",
+        "raws": {
+          "cfc": "clayface",
+          "district5": "clayface"
+        }
+      },
       "how-to-rob-a-bank": {
         "title": "How to Rob a Bank",
         "raws": {
@@ -885,13 +892,6 @@
         "raws": {
           "cfc": "the-cat-in-the-hat",
           "district5": "the-cat-in-the-hat"
-        }
-      },
-      "clayface": {
-        "title": "Clayface",
-        "raws": {
-          "cfc": "clayface",
-          "district5": "clayface"
         }
       },
       "whalefall": {
