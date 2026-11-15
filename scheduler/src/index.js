@@ -20,10 +20,12 @@
 
 const WORKFLOW_FILE = "vox-alerts.yml";
 const EVERY_MINUTES = 10;
+const REPO = (env) => env.GITHUB_REPO || "OMAR6972/vox_cinema";
+const REF = (env) => env.GITHUB_REF || "main";
 const ACK_TEXT = "⏳ Got it! Give me about a minute, I'm on it.";
 
 function gh(env, path, init = {}) {
-  return fetch(`https://api.github.com/repos/${env.GITHUB_REPO}/actions/${path}`, {
+  return fetch(`https://api.github.com/repos/${REPO(env)}/actions/${path}`, {
     ...init,
     headers: {
       Authorization: `Bearer ${env.GITHUB_TOKEN}`,
@@ -60,7 +62,7 @@ async function busy(env) {
 async function dispatch(env, why) {
   const r = await gh(env, `workflows/${WORKFLOW_FILE}/dispatches`, {
     method: "POST",
-    body: JSON.stringify({ ref: env.GITHUB_REF }),
+    body: JSON.stringify({ ref: REF(env) }),
   });
   if (r.status !== 204) throw new Error(`dispatch failed: ${r.status} ${await r.text()}`);
   console.log(`dispatched ${WORKFLOW_FILE} (${why})`);
@@ -95,6 +97,7 @@ async function acknowledge(env, updates, nowSec) {
 
 export default {
   async scheduled(event, env) {
+    if (!env.GITHUB_TOKEN) throw new Error("GITHUB_TOKEN secret is missing in the Worker settings");
     const now = new Date(event.scheduledTime);
     const updates = await waitingUpdates(env);
     await acknowledge(env, updates, Math.floor(now.getTime() / 1000));
