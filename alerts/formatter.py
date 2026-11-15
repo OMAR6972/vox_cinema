@@ -293,9 +293,18 @@ def render_roundup(rd, person, tracked, today, through, links=False):
                     row.append({"text": f"➕ Track {m['title']}", "callback_data": f"track:{m['slug']}"})
                 btn.append(row)
             blocks.append({"html": "\n".join(lines), "buttons": None if links else btn})
+    else:
+        lines = [f"━━ 🗓 {b('NEW WEEK')} ━━", "No new week from VOX today."]
+        if through:
+            lines.append(f"Showtimes are out through {b(pretty_date_long(through))}.")
+        blocks.append({"html": "\n".join(lines), "buttons": None})
 
     # --- new movies (first showtimes) that this person does not track
     new_movies = [m for m in (rd.get("newMovies") or []) if m["slug"] not in tracked]
+    if not new_movies:
+        why = ("Only movies you already track got first showtimes, I sent you those separately."
+               if rd.get("newMovies") else "No new movies got their first showtimes today.")
+        blocks.append({"html": f"━━ 🎬 {b('NEW MOVIES')} ━━\n{why}", "buttons": None})
     for chunk_no, chunk in enumerate(pages(new_movies)):
         lines = []
         if chunk_no == 0:
@@ -314,6 +323,10 @@ def render_roundup(rd, person, tracked, today, through, links=False):
 
     # --- coming soon
     coming = [m for m in (rd.get("coming") or []) if m["slug"] not in tracked]
+    if not coming:
+        why = ("Only movies you already track were added." if rd.get("coming")
+               else "Nothing new was added to VOX's Coming Soon page today.")
+        blocks.append({"html": f"━━ 🎞 {b('ADDED TO COMING SOON')} ━━\n{why}", "buttons": None})
     for chunk_no, chunk in enumerate(pages(coming)):
         lines = []
         if chunk_no == 0:
@@ -331,7 +344,7 @@ def render_roundup(rd, person, tracked, today, through, links=False):
     if not blocks:
         return []
     top = (f"☀️ {b('VOX DAILY ROUNDUP')} · {esc(pretty_date(today))}\n\n"
-           + _why("this is your daily summary of what's new on VOX. Sections with nothing new are left out."))
+           + _why("this is your daily summary of what's new on VOX. It comes every day, even when nothing changed."))
     blocks[0]["html"] = top + "\n\n" + blocks[0]["html"]
     if not links:
         last = blocks[-1]
