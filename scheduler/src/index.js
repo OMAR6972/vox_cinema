@@ -54,7 +54,8 @@ async function busy(env) {
     const r = await gh(env, `workflows/${WORKFLOW_FILE}/runs?status=${status}&per_page=1`);
     if (r.status !== 200) return false; // can't tell: better to start one than to stay silent
     const j = await r.json();
-    if (j.total_count > 0) return true;
+    // Look at the runs themselves: GitHub's total_count for these filters can be wrong (it said 56 with none listed).
+    if ((j.workflow_runs || []).some((run) => run.status === status)) return true;
   }
   return false;
 }
