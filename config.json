@@ -1,7 +1,8 @@
 {
   "settings": {
     "summaryTime": "18:00",
-    "adminPersonId": "me"
+    "adminPersonId": "me",
+    "announce": "movies-v1"
   },
   "people": [
     {
