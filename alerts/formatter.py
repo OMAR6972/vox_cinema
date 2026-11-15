@@ -349,4 +349,67 @@ def booked_text(title):
     return f"🎉 Enjoy the movie! I won't ping you about {title} again."
 
 
+WAIT_NOTE = ("When you send me a command or tap a button, give me about a minute or two: "
+             "I answer at my next check of the cinemas.")
+
+
+def welcome_text(name):
+    return (f"✅ Hi {esc(name)}, you're connected!\n\n"
+            "I watch VOX and Scene Cinemas and message you here the moment the movies you track get showtimes. "
+            "When something new comes out, you also get a roundup.\n\n"
+            "🎬 /movies - see every movie on now and coming soon, and pick what to track\n"
+            "👀 /status - what I'm tracking for you\n\n"
+            "⏳ " + esc(WAIT_NOTE))
+
+
+def announce_text(name):
+    return (f"👋 Hey {esc(name)}! Something new in VOX Alerts:\n\n"
+            "🎬 /movies - see every movie on now at VOX and Scene Cinemas, plus what's coming soon. "
+            "Tap ➕ Track on any movie and I'll message you when it gets showtimes, or 🔕 Stop on one you track.\n"
+            "👀 /status - what I'm tracking for you\n\n"
+            "☀️ The roundup now comes only when something new is out (a new week, new movies, Coming Soon additions).\n\n"
+            "⏳ " + esc(WAIT_NOTE))
+
+
+def _short(t, n=28):
+    return t if len(t) <= n else t[:n - 1].rstrip() + "…"
+
+
+def render_movies(movies, tracked, name):
+    """The /movies answer: on now, then coming soon. One Track / Stop button per movie.
+    `tracked` maps slug -> watch id for movies this person already tracks."""
+    def where(m):
+        bits = (["VOX"] if "vox" in (m.get("sources") or []) else []) + list(m.get("sceneCinemas") or [])
+        return " · ".join(bits)
+
+    def button(m):
+        if m["slug"] in tracked:
+            return [{"text": f"🔕 Stop {_short(m['title'])}", "callback_data": f"stop:{tracked[m['slug']]}"[:64]}]
+        return [{"text": f"➕ Track {_short(m['title'])}", "callback_data": f"track:{m['slug']}"[:64]}]
+
+    now = [m for m in movies if m.get("status") != "soon"]
+    soon = [m for m in movies if m.get("status") == "soon"]
+    now.sort(key=lambda m: (m["slug"] not in tracked, m["title"].lower()))
+    soon.sort(key=lambda m: (m["slug"] not in tracked, m["title"].lower()))
+    blocks = []
+    for label, items, intro in (
+            ("🎬 ON NOW", now, "Showing now at VOX or Scene Cinemas. ⭐ = you track it. Tap a name for its times."),
+            ("🎞 COMING SOON", soon, "Not showing yet. Track one and I'll tell you the moment it gets showtimes.")):
+        for k in range(0, len(items), PAGE):
+            lines = [f"━━ {b(label)} ━━", intro, ""] if k == 0 else []
+            for n, m in enumerate(items[k:k + PAGE], k + 1):
+                star = " ⭐" if m["slug"] in tracked else ""
+                extra = f" · out {m['release']}" if m.get("release") else ""
+                lines.append(_numbered(n, link(m["title"], movie_url(m["slug"])) + esc(star)))
+                if where(m) or extra:
+                    lines.append(f"   {esc(where(m) + extra).lstrip(' ·')}")
+            blocks.append({"html": "\n".join(lines), "buttons": [button(m) for m in items[k:k + PAGE]]})
+    if not blocks:
+        return [{"html": "I couldn't read the cinemas' movie list yet. Try /movies again in a few minutes.", "buttons": None}]
+    blocks[0]["html"] = (f"🍿 {b('Movies for you, ' + name)}\n" + i("Tap ➕ Track to get alerts for a movie, or 🔕 Stop to drop one.")
+                         + "\n\n" + blocks[0]["html"])
+    blocks[-1]["html"] += "\n\n⏳ " + i(WAIT_NOTE)
+    return blocks
+
+
 ROUNDUP_OFF_TEXT = "🔕 Daily roundup turned off. You won't get it anymore. Ask Omar if you want it back."

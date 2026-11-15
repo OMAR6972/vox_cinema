@@ -20,9 +20,11 @@ from .vtime import add_days, now_cairo_hhmm, today_cairo
 log = logging.getLogger("vox_alerts")
 ROOT = Path(__file__).resolve().parent.parent
 
-HELP = ("🎬 <b>VOX Alerts</b>\nI watch VOX Cinemas Egypt and message you the moment the movies you track "
-        "get showtimes, plus one daily roundup of what's new on VOX.\n\n/status - what I'm tracking for you\n"
-        "Use the buttons under a message to say you booked, to stop tracking a movie, or to track a new one.")
+HELP = ("🎬 <b>VOX Alerts</b>\nI watch VOX Cinemas Egypt and Scene Cinemas (CFC and District 5) and message you the "
+        "moment the movies you track get showtimes, plus a roundup whenever something new comes out.\n\n"
+        "/movies - every movie showing now and coming soon, with Track / Stop buttons\n"
+        "/status - what I'm tracking for you\n\n"
+        "⏳ " + F.WAIT_NOTE)
 LEGACY_NEWS = ("newWeek", "newMovies", "comingSoon")
 
 
@@ -91,6 +93,7 @@ class Engine:
         self.sent = 0
         for stale in ("firstSeen", "changes"):  # old "is it 🆕" memory, no longer used
             self.state.pop(stale, None)
+        self.pending_movies = []     # chats that asked for /movies: answered after the crawl, with fresh data
         self._notified = set()       # (person, movie) already messaged in this run
 
     # ---- people ----
@@ -198,7 +201,7 @@ class Engine:
                 if p:
                     self.state["links"][p["id"]] = chat["id"]
                     name = F.first_name(p)
-                    self.tg.send(chat["id"], f"✅ Hi {F.esc(name)}, you're connected! I'll message you here when the movies you track drop.\n\n/status to see what I'm tracking.")
+                    self.tg.send(chat["id"], F.welcome_text(name))
                 elif self._by_chat(chat["id"]):
                     self.tg.send(chat["id"], HELP)
                 else:
@@ -206,6 +209,12 @@ class Engine:
             elif cmd == "/status":
                 p = self._by_chat(chat["id"])
                 self.tg.send(chat["id"], self.status_text(p) if p else "I don't know you yet. Ask for your invite link.")
+            elif cmd == "/movies":
+                p = self._by_chat(chat["id"])
+                if p:
+                    self.pending_movies.append((p, chat["id"]))
+                else:
+                    self.tg.send(chat["id"], "I don't know you yet. Ask for your invite link.")
             elif cmd.startswith("/"):
                 self.tg.send(chat["id"], HELP)
         q = u.get("callback_query")
@@ -273,6 +282,49 @@ class Engine:
         self.tg.answer_callback(qid, "Done")
         if was_on:
             self.tg.send(chat_id, F.esc(F.ROUNDUP_OFF_TEXT))
+
+    def tracked_by(self, p):
+        """slug -> watch id, for the movies this person gets alerts for (so /movies can offer Stop)."""
+        out = {}
+        for w in self.config.get("watches", []):
+            ws = self.state["watches"].get(w["id"], {})
+            if w.get("active", True) and p["id"] in (w.get("recipients") or []) \
+                    and p["id"] not in ws.get("booked", []) and p["id"] not in ws.get("stopped", []):
+                out.setdefault(w["slug"], w["id"])
+        return out
+
+    def answer_movies(self):
+        if not self.pending_movies:
+            return
+        doc = self.movies_doc() if hasattr(self, "snapshot") else read_json(self.root / "movies.json", {"movies": []})
+        done = set()
+        for p, cid in self.pending_movies:
+            if cid in done:   # sent /movies twice while waiting: one list is enough
+                continue
+            done.add(cid)
+            blocks = F.render_movies(doc.get("movies") or [], self.tracked_by(p), F.first_name(p))
+            for n, blk in enumerate(blocks):
+                try:
+                    self.tg.send(cid, blk["html"], blk["buttons"], **({"silent": True} if n else {}))
+                except Exception as e:
+                    log.warning("could not send /movies to %s: %s", p.get("name"), e)
+        self.pending_movies = []
+
+    def maybe_announce(self):
+        """A one-time "here's what's new in the bot" message to everyone already connected on Telegram.
+        Omar arms it by setting settings.announce; each value is sent once."""
+        tag = (self.config.get("settings") or {}).get("announce")
+        if not tag or self.state.get("announced") == tag:
+            return
+        self.state["announced"] = tag
+        for p in self.people:
+            cid = self.chat_id(p)
+            if p.get("active") is False or not cid:
+                continue
+            try:
+                self.tg.send(cid, F.announce_text(F.first_name(p)))
+            except Exception as e:
+                log.warning("could not send the update note to %s: %s", p.get("name"), e)
 
     def status_text(self, p):
         mine = [w for w in self.config.get("watches", []) if w.get("active", True) and p["id"] in w.get("recipients", [])
@@ -589,6 +641,7 @@ class Engine:
             st["failures"] += 1
             st["lastError"] = f"{self.now.isoformat(timespec='seconds')} - {e}"
             log.error("VOX check failed: %s", e)
+            self.answer_movies()   # still answer from the last saved list
             if st["failures"] >= 5 and not st["warned"]:
                 st["warned"] = True
                 self.warn_admin(f"⚠️ The VOX checker has failed {st['failures']} times in a row.\nLast error: {e}\nI'll keep trying and tell you when it's back.")
@@ -596,6 +649,8 @@ class Engine:
         if st["failures"] >= 5 and st["warned"]:
             self.warn_admin("✅ VOX checks are working again.")
         st["failures"], st["warned"] = 0, False
+        self.answer_movies()
+        self.maybe_announce()
 
         today = today_cairo(self.now)
         configured = {w["id"] for w in self.config.get("watches", [])}

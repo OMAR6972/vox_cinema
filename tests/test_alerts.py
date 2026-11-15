@@ -467,3 +467,42 @@ def test_panel_data_lists_both_scene_branches():
     mv = {m["slug"]: m for m in doc["movies"]}
     assert mv["the-magic-faraway-tree"]["sceneCinemas"] == ["Scene District 5"]
     assert mv["resident-evil"]["sceneCinemas"] == ["Scene CFC", "Scene District 5"]
+
+
+def test_movies_command_lists_vox_and_scene_with_track_and_stop_and_announce_once():
+    vox, tg = FakeVox(), FakeTG()
+    cfg = CFG()
+    st = make(cfg, vox=vox, tg=tg).run()
+    vox.days["2026-10-30"] = [sess("n1", "2026-10-30", 600, slug="odyssey", cinema="Almaza")]
+    st = make(cfg, st, vox, tg).run()
+    tg.sent.clear()
+    st["links"]["f"] = 222
+    tg.queue = [{"update_id": 20, "message": {"chat": {"id": 222}, "text": "/movies"}},
+                {"update_id": 21, "message": {"chat": {"id": 222}, "text": "/movies"}}]
+    eng = Engine(cfg, st, tg, vox, owner_chat_id="111", now=NOW, sleep=lambda s: None)
+    eng.run()
+    mine = [(t, b) for c, t, b in tg.sent if str(c) == "222"]
+    text = "\n".join(t for t, _ in mine)
+    assert "ON NOW" in text and text.count("Movies for you") == 1   # asked twice, answered once
+    btns = [x["callback_data"] for _, b in mine if b for row in b for x in row]
+    assert "track:odyssey" in btns
+    assert "about a minute" in text
+    # the one-time update note goes to every connected person, once
+    tg.sent.clear()
+    eng.config["settings"]["announce"] = "movies-v1"
+    st = Engine(eng.config, eng.state, tg, vox, owner_chat_id="111", now=NOW, sleep=lambda s: None).run()
+    notes = [c for c, t, _ in tg.sent if "Something new in VOX Alerts" in t]
+    assert sorted(map(str, notes)) == ["111", "222"]
+    tg.sent.clear()
+    Engine(eng.config, st, tg, vox, owner_chat_id="111", now=NOW, sleep=lambda s: None).run()
+    assert not any("Something new in VOX Alerts" in t for _, t, _ in tg.sent)
+
+
+def test_render_movies_marks_tracked_and_offers_stop():
+    movies = [{"slug": "dune", "title": "Dune", "status": "now", "sources": ["vox", "scene"], "sceneCinemas": ["Scene CFC"]},
+              {"slug": "x", "title": "X", "status": "soon", "sources": ["vox"], "release": "3 December 2026"}]
+    blocks = F.render_movies(movies, {"dune": "dune-w"}, "Sara")
+    text = "\n".join(b["html"] for b in blocks)
+    assert "⭐" in text and "VOX · Scene CFC" in text and "COMING SOON" in text and "out 3 December 2026" in text
+    cbs = [x["callback_data"] for b in blocks for row in b["buttons"] for x in row]
+    assert cbs == ["stop:dune-w", "track:x"]

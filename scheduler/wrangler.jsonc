@@ -9,13 +9,13 @@
   // you happen to be running `wrangler tail`.
   "observability": { "enabled": true },
 
-  // Every 10 minutes. 144 firings/day, against a free-plan budget of 100,000.
-  "triggers": { "crons": ["*/10 * * * *"] },
+  // Every minute: answers Telegram fast; the regular check still runs every 10th minute.
+  "triggers": { "crons": ["* * * * *"] },
 
   "vars": {
     "GITHUB_REPO": "OMAR6972/vox_cinema",
     "GITHUB_REF": "main"
   }
 
-  // GITHUB_TOKEN is a secret, not a var: `wrangler secret put GITHUB_TOKEN`.
+  // Secrets, not vars: `wrangler secret put GITHUB_TOKEN` and `wrangler secret put TELEGRAM_BOT_TOKEN`.
 }

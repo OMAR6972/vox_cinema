@@ -26,7 +26,8 @@ class Telegram:
         self.username = self.api("getMe")["username"]
         try:
             self.api("setMyCommands", {"commands": [
-                {"command": "status", "description": "What am I watching for you?"},
+                {"command": "movies", "description": "Movies on now and coming soon: track or stop"},
+                {"command": "status", "description": "What am I tracking for you?"},
                 {"command": "help", "description": "How this works"},
             ]})
         except RuntimeError:
