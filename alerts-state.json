@@ -577,55 +577,13 @@
     "p261fa5": 5982355887
   },
   "roundup": {
-    "dates": [
-      "2026-11-21",
-      "2026-12-29"
-    ],
-    "weekMovies": [
-      {
-        "slug": "bts-world-tour-arirang-in-jakarta-live-viewing",
-        "title": "BTS WORLD TOUR 'ARIRANG' IN JAKARTA: LIVE VIEWING"
-      }
-    ],
-    "newMovies": [
-      {
-        "slug": "ciff-2026-for-life-arabic",
-        "title": "CIFF 2026: For Life",
-        "firstDate": "2026-11-16",
-        "experiences": [
-          "Standard"
-        ]
-      },
-      {
-        "slug": "ciff-2026-something-of-fear-arabic",
-        "title": "CIFF 2026: Something of Fear",
-        "firstDate": "2026-11-16",
-        "experiences": [
-          "Standard"
-        ]
-      },
-      {
-        "slug": "bts-world-tour-arirang-in-kaohsiung-live-viewin",
-        "title": "BTS WORLD TOUR 'ARIRANG' IN KAOHSIUNG: LIVE VIEWIN",
-        "firstDate": "2026-11-21",
-        "experiences": [
-          "MAX",
-          "Standard"
-        ]
-      },
-      {
-        "slug": "bts-world-tour-arirang-in-jakarta-live-viewing",
-        "title": "BTS WORLD TOUR 'ARIRANG' IN JAKARTA: LIVE VIEWING",
-        "firstDate": "2026-12-29",
-        "experiences": [
-          "Standard"
-        ]
-      }
-    ],
+    "dates": [],
+    "weekMovies": [],
+    "newMovies": [],
     "coming": []
   },
   "summary": {
-    "lastSentDate": "2026-11-15"
+    "lastSentDate": "2026-11-16"
   },
   "offset": 601723947,
   "failures": 0,
