@@ -31,11 +31,7 @@
       "status": "now",
       "poster": "posters/best-pancakes-in-the-county.jpg",
       "sources": [
-        "vox",
-        "scene"
-      ],
-      "sceneCinemas": [
-        "Scene CFC"
+        "vox"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013834_1794302408405.jpg"
     },
