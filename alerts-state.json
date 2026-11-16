@@ -275,6 +275,10 @@
     "bts-world-tour-arirang-in-jakarta-live-viewing": {
       "firstSeen": "2026-11-16T11:00:31+00:00",
       "title": "BTS WORLD TOUR 'ARIRANG' IN JAKARTA: LIVE VIEWING"
+    },
+    "ciff-2026-the-violinist-english-japanese": {
+      "firstSeen": "2026-11-16T16:50:25+00:00",
+      "title": "CIFF 2026: The Violinist"
     }
   },
   "comingSoon": [
@@ -579,7 +583,16 @@
   "roundup": {
     "dates": [],
     "weekMovies": [],
-    "newMovies": [],
+    "newMovies": [
+      {
+        "slug": "ciff-2026-the-violinist-english-japanese",
+        "title": "CIFF 2026: The Violinist",
+        "firstDate": "2026-11-18",
+        "experiences": [
+          "Standard"
+        ]
+      }
+    ],
     "coming": []
   },
   "summary": {

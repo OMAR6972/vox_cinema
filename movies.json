@@ -120,6 +120,16 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013844_1794305247972.jpg"
     },
     {
+      "slug": "ciff-2026-the-violinist-english-japanese",
+      "title": "CIFF 2026: The Violinist",
+      "status": "now",
+      "poster": "posters/ciff-2026-the-violinist-english-japanese.jpg",
+      "sources": [
+        "vox"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013854_1794303814366.jpg"
+    },
+    {
       "slug": "ciff-2026-to-the-sun-and-beyond-tunisian-arabic",
       "title": "CIFF 2026: To the Sun and Beyond",
       "status": "now",
@@ -518,17 +528,6 @@
         "vox"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013806_1793272008209.jpg"
-    },
-    {
-      "slug": "ciff-2026-the-violinist-english-japanese",
-      "title": "CIFF 2026: The Violinist",
-      "status": "soon",
-      "poster": "posters/ciff-2026-the-violinist-english-japanese.jpg",
-      "sources": [
-        "vox"
-      ],
-      "release": "18 November 2026",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013854_1794303814366.jpg"
     },
     {
       "slug": "the-hunger-games-sunrise-on-the-reaping",
