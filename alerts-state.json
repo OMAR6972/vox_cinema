@@ -266,6 +266,10 @@
     "ciff-2026-something-of-fear-arabic": {
       "firstSeen": "2026-11-15T16:30:17+00:00",
       "title": "CIFF 2026: Something of Fear"
+    },
+    "bts-world-tour-arirang-in-kaohsiung-live-viewin": {
+      "firstSeen": "2026-11-16T09:27:26+00:00",
+      "title": "BTS WORLD TOUR 'ARIRANG' IN KAOHSIUNG: LIVE VIEWIN"
     }
   },
   "comingSoon": [
@@ -586,6 +590,15 @@
         "title": "CIFF 2026: Something of Fear",
         "firstDate": "2026-11-16",
         "experiences": [
+          "Standard"
+        ]
+      },
+      {
+        "slug": "bts-world-tour-arirang-in-kaohsiung-live-viewin",
+        "title": "BTS WORLD TOUR 'ARIRANG' IN KAOHSIUNG: LIVE VIEWIN",
+        "firstDate": "2026-11-21",
+        "experiences": [
+          "MAX",
           "Standard"
         ]
       }

@@ -40,6 +40,16 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013834_1794302408405.jpg"
     },
     {
+      "slug": "bts-world-tour-arirang-in-kaohsiung-live-viewin",
+      "title": "BTS WORLD TOUR 'ARIRANG' IN KAOHSIUNG: LIVE VIEWIN",
+      "status": "now",
+      "poster": "posters/bts-world-tour-arirang-in-kaohsiung-live-viewin.jpg",
+      "sources": [
+        "vox"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013815_1793880331436.jpg"
+    },
+    {
       "slug": "ciff-2026-fleak-finnish",
       "title": "CIFF 2026: Fleak",
       "status": "now",
@@ -583,17 +593,6 @@
       ],
       "release": "19 November 2026",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013869_1794481610194.jpg"
-    },
-    {
-      "slug": "bts-world-tour-arirang-in-kaohsiung-live-viewin",
-      "title": "BTS WORLD TOUR 'ARIRANG' IN KAOHSIUNG: LIVE VIEWIN",
-      "status": "soon",
-      "poster": "posters/bts-world-tour-arirang-in-kaohsiung-live-viewin.jpg",
-      "sources": [
-        "vox"
-      ],
-      "release": "21 November 2026",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013815_1793880331436.jpg"
     },
     {
       "slug": "hexed",
