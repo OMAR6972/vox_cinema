@@ -3,6 +3,7 @@
   "dates": [
     "2026-11-17",
     "2026-11-18",
+    "2026-11-20",
     "2026-11-21",
     "2026-12-16",
     "2026-12-17",
@@ -570,8 +571,23 @@
     "p261fa5": 5982355887
   },
   "roundup": {
-    "dates": [],
-    "weekMovies": [],
+    "dates": [
+      "2026-11-20"
+    ],
+    "weekMovies": [
+      {
+        "slug": "hadoota-arabic",
+        "title": "Hadoota"
+      },
+      {
+        "slug": "matloub-3a2eleyain-arabic",
+        "title": "Matloub 3a2eleyain"
+      },
+      {
+        "slug": "wala-kan-ala-el-bal-arabic",
+        "title": "Wala Kan Ala El-Bal"
+      }
+    ],
     "newMovies": [
       {
         "slug": "ciff-2026-the-violinist-english-japanese",
