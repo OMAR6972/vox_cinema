@@ -646,7 +646,7 @@
   "summary": {
     "lastSentDate": "2026-11-17"
   },
-  "offset": 601723947,
+  "offset": 601723948,
   "failures": 0,
   "warned": false,
   "lastError": null,
@@ -970,6 +970,12 @@
           "district5": "whalefall"
         }
       },
+      "other-mommy": {
+        "title": "Other Mommy",
+        "raws": {
+          "cfc": "other-mommy"
+        }
+      },
       "matloub-aelyan": {
         "title": "Matloub Aelyan",
         "raws": {
@@ -1007,12 +1013,6 @@
         "raws": {
           "cfc": "naseeb-arabic",
           "district5": "naseeb-arabic"
-        }
-      },
-      "other-mommy": {
-        "title": "Other Mommy",
-        "raws": {
-          "cfc": "other-mommy"
         }
       },
       "verity": {
