@@ -1,7 +1,6 @@
 {
   "baselineDone": true,
   "dates": [
-    "2026-11-17",
     "2026-11-18",
     "2026-11-19",
     "2026-11-20",
@@ -599,12 +598,6 @@
     "clayface-pbda93": {
       "booked": [],
       "seen": {
-        "scene:district5:2026-11-17:1320:standard-deluxe:clayface": "2026-11-17",
-        "scene:cfc:2026-11-17:1335:standard:clayface": "2026-11-17",
-        "0047-278170": "2026-11-17",
-        "0028-570377": "2026-11-17",
-        "scene:cfc:2026-11-17:1470:standard:clayface": "2026-11-17",
-        "scene:district5:2026-11-17:1470:standard-deluxe:clayface": "2026-11-17",
         "scene:cfc:2026-11-18:630:screenx:clayface": "2026-11-18",
         "scene:district5:2026-11-18:630:standard-deluxe:clayface": "2026-11-18",
         "0047-278171": "2026-11-18",
