@@ -1081,6 +1081,13 @@
           "district5": "wala-kan-ala-albal"
         }
       },
+      "how-to-rob-a-bank": {
+        "title": "How to Rob a Bank",
+        "raws": {
+          "cfc": "how-to-rob-a-bank",
+          "district5": "how_to_rob_a_bank"
+        }
+      },
       "the-cat-in-the-hat": {
         "title": "The Cat In The Hat",
         "raws": {
@@ -1107,13 +1114,6 @@
         "raws": {
           "cfc": "godzilla-minus-zero",
           "district5": "godzilla-minus-zero"
-        }
-      },
-      "how-to-rob-a-bank": {
-        "title": "How to Rob a Bank",
-        "raws": {
-          "cfc": "how-to-rob-a-bank",
-          "district5": "how_to_rob_a_bank"
         }
       },
       "best-pancakes-in-the-county": {
