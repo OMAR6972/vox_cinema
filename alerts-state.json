@@ -865,26 +865,6 @@
           "district5": "the-cat-in-the-hat"
         }
       },
-      "clayface": {
-        "title": "Clayface",
-        "raws": {
-          "cfc": "clayface",
-          "district5": "clayface"
-        }
-      },
-      "whalefall": {
-        "title": "Whalefall",
-        "raws": {
-          "cfc": "whalefall",
-          "district5": "whalefall"
-        }
-      },
-      "other-mommy": {
-        "title": "Other Mommy",
-        "raws": {
-          "cfc": "other-mommy"
-        }
-      },
       "matloub-aelyan": {
         "title": "Matloub Aelyan",
         "raws": {
@@ -929,6 +909,26 @@
         "raws": {
           "cfc": "naseeb-arabic",
           "district5": "naseeb-arabic"
+        }
+      },
+      "clayface": {
+        "title": "Clayface",
+        "raws": {
+          "cfc": "clayface",
+          "district5": "clayface"
+        }
+      },
+      "whalefall": {
+        "title": "Whalefall",
+        "raws": {
+          "cfc": "whalefall",
+          "district5": "whalefall"
+        }
+      },
+      "other-mommy": {
+        "title": "Other Mommy",
+        "raws": {
+          "cfc": "other-mommy"
         }
       },
       "verity": {
