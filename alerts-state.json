@@ -671,6 +671,24 @@
       ],
       "filters": "[[], [], false]",
       "everHadSessions": true
+    },
+    "dune-part-two-re-release-a410": {
+      "booked": [],
+      "seen": {},
+      "sceneSeeded": [
+        "cfc",
+        "district5"
+      ],
+      "filters": "[[\"City Centre Almaza\"], [\"IMAX\", \"Standard\"], false]"
+    },
+    "dune-part-one-re-release-d0e7": {
+      "booked": [],
+      "seen": {},
+      "sceneSeeded": [
+        "cfc",
+        "district5"
+      ],
+      "filters": "[[\"City Centre Almaza\"], [\"IMAX\", \"MAX\", \"Standard\"], false]"
     }
   },
   "links": {
