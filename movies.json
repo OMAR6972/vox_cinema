@@ -60,26 +60,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013815_1793880331436.jpg"
     },
     {
-      "slug": "ciff-2026-fleak-finnish",
-      "title": "CIFF 2026: Fleak",
-      "status": "now",
-      "poster": "posters/ciff-2026-fleak-finnish.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013861_1794303989541.jpg"
-    },
-    {
-      "slug": "ciff-2026-home-bitter-home-arabic",
-      "title": "CIFF 2026: Home Bitter Home",
-      "status": "now",
-      "poster": "posters/ciff-2026-home-bitter-home-arabic.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013858_1794305127052.jpg"
-    },
-    {
       "slug": "ciff-2026-summer-meadow-french-arabic",
       "title": "CIFF 2026: Summer Meadow",
       "status": "now",
