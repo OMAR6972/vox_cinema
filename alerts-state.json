@@ -3,6 +3,7 @@
   "dates": [
     "2026-11-17",
     "2026-11-18",
+    "2026-11-19",
     "2026-11-20",
     "2026-11-21",
     "2026-12-16",
@@ -279,6 +280,34 @@
     "ciff-2026-the-violinist-english-japanese": {
       "firstSeen": "2026-11-16T16:50:25+00:00",
       "title": "CIFF 2026: The Violinist"
+    },
+    "belkis-turkish": {
+      "firstSeen": "2026-11-17T10:50:17+00:00",
+      "title": "Belkis"
+    },
+    "ciff-2026-the-second-wife-arabic": {
+      "firstSeen": "2026-11-17T10:50:17+00:00",
+      "title": "CIFF 2026: The Second Wife"
+    },
+    "ciff-2026-the-soft-hands-arabic": {
+      "firstSeen": "2026-11-17T10:50:17+00:00",
+      "title": "CIFF 2026: The Soft Hands"
+    },
+    "crypto-arabic": {
+      "firstSeen": "2026-11-17T10:50:17+00:00",
+      "title": "Crypto"
+    },
+    "i-play-rocky": {
+      "firstSeen": "2026-11-17T10:50:17+00:00",
+      "title": "I Play Rocky"
+    },
+    "les-mis-rables": {
+      "firstSeen": "2026-11-17T10:50:17+00:00",
+      "title": "Les Misérables"
+    },
+    "the-hunger-games-sunrise-on-the-reaping": {
+      "firstSeen": "2026-11-17T10:50:17+00:00",
+      "title": "The Hunger Games: Sunrise on the Reaping"
     }
   },
   "comingSoon": [
@@ -572,20 +601,77 @@
   },
   "roundup": {
     "dates": [
+      "2026-11-19",
       "2026-11-20"
     ],
     "weekMovies": [
       {
+        "slug": "belkis-turkish",
+        "title": "Belkis"
+      },
+      {
+        "slug": "ciff-2026-the-second-wife-arabic",
+        "title": "CIFF 2026: The Second Wife"
+      },
+      {
+        "slug": "ciff-2026-the-soft-hands-arabic",
+        "title": "CIFF 2026: The Soft Hands"
+      },
+      {
+        "slug": "clayface",
+        "title": "Clayface"
+      },
+      {
+        "slug": "crypto-arabic",
+        "title": "Crypto"
+      },
+      {
+        "slug": "ebenezer",
+        "title": "Ebenezer"
+      },
+      {
+        "slug": "godzilla-minus-zero-japanese",
+        "title": "Godzilla Minus Zero"
+      },
+      {
         "slug": "hadoota-arabic",
         "title": "Hadoota"
+      },
+      {
+        "slug": "how-to-rob-a-bank",
+        "title": "How to Rob a Bank"
+      },
+      {
+        "slug": "i-play-rocky",
+        "title": "I Play Rocky"
+      },
+      {
+        "slug": "les-mis-rables",
+        "title": "Les Misérables"
       },
       {
         "slug": "matloub-3a2eleyain-arabic",
         "title": "Matloub 3a2eleyain"
       },
       {
+        "slug": "the-cat-in-the-hat",
+        "title": "The Cat In The Hat"
+      },
+      {
+        "slug": "the-cat-in-the-hat-arabic",
+        "title": "The Cat In The Hat"
+      },
+      {
+        "slug": "the-hunger-games-sunrise-on-the-reaping",
+        "title": "The Hunger Games: Sunrise on the Reaping"
+      },
+      {
         "slug": "wala-kan-ala-el-bal-arabic",
         "title": "Wala Kan Ala El-Bal"
+      },
+      {
+        "slug": "whalefall",
+        "title": "Whalefall"
       }
     ],
     "newMovies": [
@@ -594,6 +680,64 @@
         "title": "CIFF 2026: The Violinist",
         "firstDate": "2026-11-18",
         "experiences": [
+          "Standard"
+        ]
+      },
+      {
+        "slug": "belkis-turkish",
+        "title": "Belkis",
+        "firstDate": "2026-11-19",
+        "experiences": [
+          "Standard"
+        ]
+      },
+      {
+        "slug": "ciff-2026-the-second-wife-arabic",
+        "title": "CIFF 2026: The Second Wife",
+        "firstDate": "2026-11-19",
+        "experiences": [
+          "Standard"
+        ]
+      },
+      {
+        "slug": "ciff-2026-the-soft-hands-arabic",
+        "title": "CIFF 2026: The Soft Hands",
+        "firstDate": "2026-11-19",
+        "experiences": [
+          "Standard"
+        ]
+      },
+      {
+        "slug": "crypto-arabic",
+        "title": "Crypto",
+        "firstDate": "2026-11-19",
+        "experiences": [
+          "Standard"
+        ]
+      },
+      {
+        "slug": "i-play-rocky",
+        "title": "I Play Rocky",
+        "firstDate": "2026-11-19",
+        "experiences": [
+          "Standard",
+          "GOLD"
+        ]
+      },
+      {
+        "slug": "les-mis-rables",
+        "title": "Les Misérables",
+        "firstDate": "2026-11-19",
+        "experiences": [
+          "Standard"
+        ]
+      },
+      {
+        "slug": "the-hunger-games-sunrise-on-the-reaping",
+        "title": "The Hunger Games: Sunrise on the Reaping",
+        "firstDate": "2026-11-19",
+        "experiences": [
+          "GOLD",
           "Standard"
         ]
       }
@@ -714,20 +858,28 @@
       "title": "Hadoota"
     },
     {
-      "slug": "godzilla-minus-zero-japanese",
-      "title": "Godzilla Minus Zero"
-    },
-    {
       "slug": "wala-kan-ala-el-bal-arabic",
       "title": "Wala Kan Ala El-Bal"
     },
     {
-      "slug": "the-cat-in-the-hat",
-      "title": "The Cat In The Hat"
-    },
-    {
       "slug": "matloub-3a2eleyain-arabic",
       "title": "Matloub 3a2eleyain"
+    },
+    {
+      "slug": "godzilla-minus-zero-japanese",
+      "title": "Godzilla Minus Zero"
+    },
+    {
+      "slug": "how-to-rob-a-bank",
+      "title": "How to Rob a Bank"
+    },
+    {
+      "slug": "ebenezer",
+      "title": "Ebenezer"
+    },
+    {
+      "slug": "the-cat-in-the-hat",
+      "title": "The Cat In The Hat"
     },
     {
       "slug": "clayface",
@@ -750,8 +902,8 @@
       "title": "Avengers: Doomsday (Infinity Vision)"
     },
     {
-      "slug": "hope-korean",
-      "title": "Hope"
+      "slug": "avengers-doomsday",
+      "title": "Avengers: Doomsday"
     },
     {
       "slug": "sense-and-sensibility",
@@ -762,18 +914,6 @@
       "title": "Other Mommy"
     },
     {
-      "slug": "verity",
-      "title": "Verity"
-    },
-    {
-      "slug": "heart-of-the-beast",
-      "title": "Heart of the Beast"
-    },
-    {
-      "slug": "street-fighter",
-      "title": "Street Fighter"
-    },
-    {
       "slug": "resident-evil",
       "title": "Resident Evil"
     },
@@ -782,60 +922,52 @@
       "title": "The Odyssey"
     },
     {
-      "slug": "mahmoud-el-tany-arabic",
-      "title": "Mahmoud El Tany"
-    },
-    {
-      "slug": "avengers-endgame-encore-infinity-vision",
-      "title": "Avengers Endgame: Encore (Infinity Vision)"
-    },
-    {
-      "slug": "spider-man-brand-new-day",
-      "title": "Spider-Man: Brand New Day"
-    },
-    {
-      "slug": "uc-harfliler-muhur-turkish",
-      "title": "Uc Harfliler Muhur"
-    },
-    {
-      "slug": "the-dino-family",
-      "title": "The Dino Family"
-    },
-    {
-      "slug": "moscow-cairo-arabic",
-      "title": "Moscow Cairo"
-    },
-    {
-      "slug": "the-influencer-project",
-      "title": "The Influencer Project"
-    },
-    {
-      "slug": "the-mongoose",
-      "title": "The Mongoose"
-    },
-    {
-      "slug": "wildwood",
-      "title": "Wildwood"
-    },
-    {
-      "slug": "idiots",
-      "title": "Idiots"
-    },
-    {
-      "slug": "ramayana-hindi",
-      "title": "Ramayana"
-    },
-    {
       "slug": "the-cat-in-the-hat-arabic",
       "title": "The Cat In The Hat"
     },
     {
-      "slug": "the-cycle",
-      "title": "The Cycle"
+      "slug": "best-pancakes-in-the-county",
+      "title": "Best Pancakes in the County"
     },
     {
-      "slug": "avengers-doomsday",
-      "title": "Avengers: Doomsday"
+      "slug": "ciff-2026-the-mirage-arabic",
+      "title": "CIFF 2026: The Mirage"
+    },
+    {
+      "slug": "ciff-2026-to-the-sun-and-beyond-tunisian-arabic",
+      "title": "CIFF 2026: To the Sun and Beyond"
+    },
+    {
+      "slug": "ciff-2026-summer-meadow-french-arabic",
+      "title": "CIFF 2026: Summer Meadow"
+    },
+    {
+      "slug": "ciff-2026-the-female-idol-arabic",
+      "title": "CIFF 2026: The Female Idol"
+    },
+    {
+      "slug": "ciff-2026-the-people-and-the-nile-arabic",
+      "title": "CIFF 2026: The People and The Nile"
+    },
+    {
+      "slug": "ciff-2026-the-violinist-english-japanese",
+      "title": "CIFF 2026: The Violinist"
+    },
+    {
+      "slug": "ciff-2026-the-second-wife-arabic",
+      "title": "CIFF 2026: The Second Wife"
+    },
+    {
+      "slug": "ciff-2026-the-soft-hands-arabic",
+      "title": "CIFF 2026: The Soft Hands"
+    },
+    {
+      "slug": "bts-world-tour-arirang-in-kaohsiung-live-viewin",
+      "title": "BTS WORLD TOUR 'ARIRANG' IN KAOHSIUNG: LIVE VIEWIN"
+    },
+    {
+      "slug": "bts-world-tour-arirang-in-jakarta-live-viewing",
+      "title": "BTS WORLD TOUR 'ARIRANG' IN JAKARTA: LIVE VIEWING"
     }
   ],
   "scene": {

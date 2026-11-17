@@ -26,6 +26,15 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013676_1790601922411.jpg"
     },
     {
+      "slug": "belkis-turkish",
+      "title": "Belkis",
+      "status": "now",
+      "poster": null,
+      "sources": [
+        "vox"
+      ]
+    },
+    {
       "slug": "best-pancakes-in-the-county",
       "title": "Best Pancakes in the County",
       "status": "now",
@@ -100,6 +109,26 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013844_1794305247972.jpg"
     },
     {
+      "slug": "ciff-2026-the-second-wife-arabic",
+      "title": "CIFF 2026: The Second Wife",
+      "status": "now",
+      "poster": "posters/ciff-2026-the-second-wife-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013865_1794305425050.jpg"
+    },
+    {
+      "slug": "ciff-2026-the-soft-hands-arabic",
+      "title": "CIFF 2026: The Soft Hands",
+      "status": "now",
+      "poster": "posters/ciff-2026-the-soft-hands-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013869_1794481610194.jpg"
+    },
+    {
       "slug": "ciff-2026-the-violinist-english-japanese",
       "title": "CIFF 2026: The Violinist",
       "status": "now",
@@ -133,6 +162,16 @@
         "Scene District 5"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013587_1792992609492.jpg"
+    },
+    {
+      "slug": "crypto-arabic",
+      "title": "Crypto",
+      "status": "now",
+      "poster": "posters/crypto-arabic.jpeg",
+      "sources": [
+        "vox"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013669_1792926618450.jpeg"
     },
     {
       "slug": "dune-part-three",
@@ -208,6 +247,25 @@
         "Scene District 5"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013184_1793870929412.jpg"
+    },
+    {
+      "slug": "i-play-rocky",
+      "title": "I Play Rocky",
+      "status": "now",
+      "poster": "posters/i-play-rocky.jpg",
+      "sources": [
+        "vox"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013824_1793870958335.jpg"
+    },
+    {
+      "slug": "les-mis-rables",
+      "title": "Les Misérables",
+      "status": "now",
+      "poster": null,
+      "sources": [
+        "vox"
+      ]
     },
     {
       "slug": "matloub-3a2eleyain-arabic",
@@ -302,6 +360,16 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013769_1793613239809.jpg"
     },
     {
+      "slug": "the-hunger-games-sunrise-on-the-reaping",
+      "title": "The Hunger Games: Sunrise on the Reaping",
+      "status": "now",
+      "poster": "posters/the-hunger-games-sunrise-on-the-reaping.png",
+      "sources": [
+        "vox"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013542_1790335408400.png"
+    },
+    {
       "slug": "the-odyssey",
       "title": "The Odyssey",
       "status": "now",
@@ -337,212 +405,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013581_1787744273942.jpg"
     },
     {
-      "slug": "hope-korean",
-      "title": "Hope",
-      "status": "now",
-      "poster": "posters/hope-korean.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013775_1792992825725.jpg"
-    },
-    {
-      "slug": "verity",
-      "title": "Verity",
-      "status": "now",
-      "poster": "posters/verity.jpg",
-      "sources": [
-        "vox",
-        "scene"
-      ],
-      "sceneCinemas": [
-        "Scene CFC"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013148_1779080275617.jpg"
-    },
-    {
-      "slug": "heart-of-the-beast",
-      "title": "Heart of the Beast",
-      "status": "now",
-      "poster": "posters/heart-of-the-beast.jpg",
-      "sources": [
-        "vox",
-        "scene"
-      ],
-      "sceneCinemas": [
-        "Scene CFC",
-        "Scene District 5"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013349_1782370147754.jpg"
-    },
-    {
-      "slug": "street-fighter",
-      "title": "Street Fighter",
-      "status": "now",
-      "poster": "posters/street-fighter.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013107_1791888704674.jpg"
-    },
-    {
-      "slug": "mahmoud-el-tany-arabic",
-      "title": "Mahmoud El Tany",
-      "status": "now",
-      "poster": "posters/mahmoud-el-tany-arabic.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013538_1786431574055.jpg"
-    },
-    {
-      "slug": "avengers-endgame-encore-infinity-vision",
-      "title": "Avengers Endgame: Encore (Infinity Vision)",
-      "status": "now",
-      "poster": "posters/avengers-endgame-encore-infinity-vision.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013622_1789359764263.jpg"
-    },
-    {
-      "slug": "spider-man-brand-new-day",
-      "title": "Spider-Man: Brand New Day",
-      "status": "now",
-      "poster": "posters/spider-man-brand-new-day.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013065_1782227665332.jpg"
-    },
-    {
-      "slug": "uc-harfliler-muhur-turkish",
-      "title": "Uc Harfliler Muhur",
-      "status": "now",
-      "poster": "posters/uc-harfliler-muhur-turkish.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013639_1789645578328.jpg"
-    },
-    {
-      "slug": "the-dino-family",
-      "title": "The Dino Family",
-      "status": "now",
-      "poster": "posters/the-dino-family.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013580_1789548138971.jpg"
-    },
-    {
-      "slug": "moscow-cairo-arabic",
-      "title": "Moscow Cairo",
-      "status": "now",
-      "poster": "posters/moscow-cairo-arabic.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013799_1793262604322.jpg"
-    },
-    {
-      "slug": "the-influencer-project",
-      "title": "The Influencer Project",
-      "status": "now",
-      "poster": "posters/the-influencer-project.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013662_1793634705236.jpg"
-    },
-    {
-      "slug": "the-mongoose",
-      "title": "The Mongoose",
-      "status": "now",
-      "poster": "posters/the-mongoose.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013562_1786693196377.jpg"
-    },
-    {
-      "slug": "wildwood",
-      "title": "Wildwood",
-      "status": "now",
-      "poster": "posters/wildwood.jpg",
-      "sources": [
-        "vox",
-        "scene"
-      ],
-      "sceneCinemas": [
-        "Scene CFC"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013671_1793634887028.jpg"
-    },
-    {
-      "slug": "idiots",
-      "title": "Idiots",
-      "status": "now",
-      "poster": "posters/idiots.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013776_1792992864563.jpg"
-    },
-    {
-      "slug": "ramayana-hindi",
-      "title": "Ramayana",
-      "status": "now",
-      "poster": "posters/ramayana-hindi.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013810_1793685253216.jpg"
-    },
-    {
-      "slug": "the-cycle",
-      "title": "The Cycle",
-      "status": "now",
-      "poster": "posters/the-cycle.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013806_1793272008209.jpg"
-    },
-    {
-      "slug": "the-hunger-games-sunrise-on-the-reaping",
-      "title": "The Hunger Games: Sunrise on the Reaping",
-      "status": "soon",
-      "poster": "posters/the-hunger-games-sunrise-on-the-reaping.png",
-      "sources": [
-        "vox"
-      ],
-      "release": "19 November 2026",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013542_1790335408400.png"
-    },
-    {
-      "slug": "crypto-arabic",
-      "title": "Crypto",
-      "status": "soon",
-      "poster": "posters/crypto-arabic.jpeg",
-      "sources": [
-        "vox"
-      ],
-      "release": "19 November 2026",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013669_1792926618450.jpeg"
-    },
-    {
-      "slug": "i-play-rocky",
-      "title": "I Play Rocky",
-      "status": "soon",
-      "poster": "posters/i-play-rocky.jpg",
-      "sources": [
-        "vox"
-      ],
-      "release": "19 November 2026",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013824_1793870958335.jpg"
-    },
-    {
       "slug": "ciff-2026-shafika-the-copt-arabic",
       "title": "CIFF 2026: Shafika the Copt",
       "status": "soon",
@@ -552,28 +414,6 @@
       ],
       "release": "19 November 2026",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013864_1794305370094.jpg"
-    },
-    {
-      "slug": "ciff-2026-the-second-wife-arabic",
-      "title": "CIFF 2026: The Second Wife",
-      "status": "soon",
-      "poster": "posters/ciff-2026-the-second-wife-arabic.jpg",
-      "sources": [
-        "vox"
-      ],
-      "release": "19 November 2026",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013865_1794305425050.jpg"
-    },
-    {
-      "slug": "ciff-2026-the-soft-hands-arabic",
-      "title": "CIFF 2026: The Soft Hands",
-      "status": "soon",
-      "poster": "posters/ciff-2026-the-soft-hands-arabic.jpg",
-      "sources": [
-        "vox"
-      ],
-      "release": "19 November 2026",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013869_1794481610194.jpg"
     },
     {
       "slug": "hexed",
@@ -674,6 +514,23 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013689_1790927489815.jpg"
     },
     {
+      "slug": "heart-of-the-beast",
+      "title": "Heart of the Beast",
+      "status": "now",
+      "poster": "posters/heart-of-the-beast.jpg",
+      "sources": [
+        "scene"
+      ],
+      "sceneCinemas": [
+        "Scene CFC",
+        "Scene District 5"
+      ],
+      "goneFrom": [
+        "vox"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013349_1782370147754.jpg"
+    },
+    {
       "slug": "matloub-aelyan",
       "title": "Matloub Aelyan",
       "status": "now",
@@ -687,6 +544,22 @@
       ]
     },
     {
+      "slug": "verity",
+      "title": "Verity",
+      "status": "now",
+      "poster": "posters/verity.jpg",
+      "sources": [
+        "scene"
+      ],
+      "sceneCinemas": [
+        "Scene CFC"
+      ],
+      "goneFrom": [
+        "vox"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013148_1779080275617.jpg"
+    },
+    {
       "slug": "wala-kan-ala-albal",
       "title": "Wala Kan Ala Albal",
       "status": "now",
@@ -698,6 +571,22 @@
         "Scene CFC",
         "Scene District 5"
       ]
+    },
+    {
+      "slug": "wildwood",
+      "title": "Wildwood",
+      "status": "now",
+      "poster": "posters/wildwood.jpg",
+      "sources": [
+        "scene"
+      ],
+      "sceneCinemas": [
+        "Scene CFC"
+      ],
+      "goneFrom": [
+        "vox"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013671_1793634887028.jpg"
     }
   ],
   "cinemas": [
