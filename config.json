@@ -151,6 +151,23 @@
       "includeSoldOut": false,
       "active": true,
       "intro": false
+    },
+    {
+      "id": "clayface-pbda93",
+      "slug": "clayface",
+      "title": "Clayface",
+      "recipients": [
+        "pbda933"
+      ],
+      "cinemas": [],
+      "dates": [],
+      "weekdays": [],
+      "times": [],
+      "flex": 30,
+      "experiences": [],
+      "includeSoldOut": false,
+      "active": true,
+      "intro": true
     }
   ]
 }
