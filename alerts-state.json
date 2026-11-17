@@ -312,6 +312,10 @@
     "the-hunger-games-sunrise-on-the-reaping": {
       "firstSeen": "2026-11-17T10:50:17+00:00",
       "title": "The Hunger Games: Sunrise on the Reaping"
+    },
+    "forgotten-island": {
+      "firstSeen": "2026-11-17T17:20:16+00:00",
+      "title": "Forgotten Island"
     }
   },
   "comingSoon": [
@@ -343,6 +347,11 @@
     {
       "slug": "crypto-arabic",
       "title": "Crypto",
+      "release": "19 November 2026"
+    },
+    {
+      "slug": "forgotten-island",
+      "title": "Forgotten Island",
       "release": "19 November 2026"
     },
     {
@@ -616,8 +625,23 @@
   "roundup": {
     "dates": [],
     "weekMovies": [],
-    "newMovies": [],
-    "coming": []
+    "newMovies": [
+      {
+        "slug": "forgotten-island",
+        "title": "Forgotten Island",
+        "firstDate": "2026-11-19",
+        "experiences": [
+          "Kids"
+        ]
+      }
+    ],
+    "coming": [
+      {
+        "slug": "forgotten-island",
+        "title": "Forgotten Island",
+        "release": "19 November 2026"
+      }
+    ]
   },
   "summary": {
     "lastSentDate": "2026-11-17"
@@ -718,7 +742,8 @@
     "belkis-turkish": "https://assets.voxcinemas.com/posters/P_HO00013780_1792992991396.jpg",
     "les-mis-rables": "https://assets.voxcinemas.com/posters/P_HO00013495_1783655778696.jpg",
     "dune-part-one-re-release": "/assets/images/placeholder-poster.webp",
-    "dune-part-two-re-release": "/assets/images/placeholder-poster.webp"
+    "dune-part-two-re-release": "/assets/images/placeholder-poster.webp",
+    "forgotten-island": "https://assets.voxcinemas.com/posters/P_HO00013698_1791356496360.jpg"
   },
   "nowShowing": [
     {

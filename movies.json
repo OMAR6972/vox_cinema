@@ -185,6 +185,16 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013804_1793271879769.jpg"
     },
     {
+      "slug": "forgotten-island",
+      "title": "Forgotten Island",
+      "status": "now",
+      "poster": "posters/forgotten-island.jpg",
+      "sources": [
+        "vox"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013698_1791356496360.jpg"
+    },
+    {
       "slug": "godzilla-minus-zero-japanese",
       "title": "Godzilla Minus Zero",
       "status": "now",
