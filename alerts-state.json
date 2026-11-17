@@ -376,6 +376,16 @@
       "release": "26 November 2026"
     },
     {
+      "slug": "dune-part-one-re-release",
+      "title": "Dune: Part One",
+      "release": "02 December 2026"
+    },
+    {
+      "slug": "dune-part-two-re-release",
+      "title": "Dune: Part Two",
+      "release": "02 December 2026"
+    },
+    {
       "slug": "maserati-the-brothers",
       "title": "Maserati: The Brothers",
       "release": "03 December 2026"
@@ -760,6 +770,16 @@
         "slug": "i-play-rocky",
         "title": "I Play Rocky",
         "release": "19 November 2026"
+      },
+      {
+        "slug": "dune-part-one-re-release",
+        "title": "Dune: Part One",
+        "release": "02 December 2026"
+      },
+      {
+        "slug": "dune-part-two-re-release",
+        "title": "Dune: Part Two",
+        "release": "02 December 2026"
       }
     ]
   },
@@ -860,7 +880,9 @@
     "crypto-arabic": "https://assets.voxcinemas.com/posters/P_HO00013669_1792926618450.jpeg",
     "i-play-rocky": "https://assets.voxcinemas.com/posters/P_HO00013824_1793870958335.jpg",
     "belkis-turkish": "https://assets.voxcinemas.com/posters/P_HO00013780_1792992991396.jpg",
-    "les-mis-rables": "https://assets.voxcinemas.com/posters/P_HO00013495_1783655778696.jpg"
+    "les-mis-rables": "https://assets.voxcinemas.com/posters/P_HO00013495_1783655778696.jpg",
+    "dune-part-one-re-release": "/assets/images/placeholder-poster.webp",
+    "dune-part-two-re-release": "/assets/images/placeholder-poster.webp"
   },
   "nowShowing": [
     {
