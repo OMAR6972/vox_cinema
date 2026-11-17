@@ -51,6 +51,15 @@
       "alerts": {
         "dailySummary": true
       }
+    },
+    {
+      "id": "pbda933",
+      "name": "El bet El Senya",
+      "invite": "a5067167f9bbf7d52b8118cf",
+      "active": true,
+      "alerts": {
+        "dailySummary": true
+      }
     }
   ],
   "watches": [
