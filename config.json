@@ -64,6 +64,55 @@
   ],
   "watches": [
     {
+      "id": "dune-part-two-re-release-a410",
+      "slug": "dune-part-two-re-release",
+      "title": "Dune: Part Two",
+      "recipients": [
+        "me",
+        "discord",
+        "p93877b"
+      ],
+      "cinemas": [
+        "City Centre Almaza"
+      ],
+      "dates": [],
+      "weekdays": [],
+      "times": [],
+      "flex": 30,
+      "experiences": [
+        "Standard",
+        "IMAX"
+      ],
+      "includeSoldOut": false,
+      "active": true,
+      "intro": true
+    },
+    {
+      "id": "dune-part-one-re-release-d0e7",
+      "slug": "dune-part-one-re-release",
+      "title": "Dune: Part One",
+      "recipients": [
+        "me",
+        "p93877b",
+        "discord"
+      ],
+      "cinemas": [
+        "City Centre Almaza"
+      ],
+      "dates": [],
+      "weekdays": [],
+      "times": [],
+      "flex": 30,
+      "experiences": [
+        "IMAX",
+        "Standard",
+        "MAX"
+      ],
+      "includeSoldOut": false,
+      "active": true,
+      "intro": true
+    },
+    {
       "id": "the-hunger-games-sunrise-on-the-reaping-9db4",
       "slug": "the-hunger-games-sunrise-on-the-reaping",
       "title": "The Hunger Games: Sunrise on the Reaping",
