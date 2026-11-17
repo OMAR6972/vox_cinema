@@ -620,7 +620,8 @@
   "links": {
     "p93877b": 873090130,
     "p2a27be": 8989948590,
-    "p261fa5": 5982355887
+    "p261fa5": 5982355887,
+    "pbda933": 1207666700
   },
   "roundup": {
     "dates": [],
@@ -646,7 +647,7 @@
   "summary": {
     "lastSentDate": "2026-11-17"
   },
-  "offset": 601723948,
+  "offset": 601723950,
   "failures": 0,
   "warned": false,
   "lastError": null,
