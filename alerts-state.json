@@ -938,6 +938,13 @@
           "district5": "clayface"
         }
       },
+      "whalefall": {
+        "title": "Whalefall",
+        "raws": {
+          "cfc": "whalefall",
+          "district5": "whalefall"
+        }
+      },
       "matloub-aelyan": {
         "title": "Matloub Aelyan",
         "raws": {
@@ -975,13 +982,6 @@
         "raws": {
           "cfc": "naseeb-arabic",
           "district5": "naseeb-arabic"
-        }
-      },
-      "whalefall": {
-        "title": "Whalefall",
-        "raws": {
-          "cfc": "whalefall",
-          "district5": "whalefall"
         }
       },
       "other-mommy": {
