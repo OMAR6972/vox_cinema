@@ -588,8 +588,8 @@ class Engine:
             text = F.render_watch_message(plan)
             stop = {"text": f"🔕 Stop tracking {w['title']}", "callback_data": f"stop:{w['id']}"}
             buttons = [[stop]] if intro else [[{"text": "✅ I booked it", "callback_data": f"booked:{w['id']}"}, stop]]
-            everyone = [x["id"] for x in self.people if x.get("allWatches")]
-            for pid in list(dict.fromkeys(list(w.get("recipients", [])) + everyone)):
+            # only the people ticked on this watch get it (the Discord channel too: it must be ticked like anyone else)
+            for pid in list(dict.fromkeys(w.get("recipients", []))):
                 p = self.person(pid)
                 if not p or (pid in booked and not intro) or (pid, w["slug"]) in self._notified:
                     continue
@@ -622,7 +622,7 @@ class Engine:
             if p.get("active") is False or not roundup_on(p):
                 continue
             tracked = {w["slug"] for w in self.config.get("watches", []) if w.get("active", True)
-                       and (p["id"] in (w.get("recipients") or []) or p.get("allWatches"))}
+                       and p["id"] in (w.get("recipients") or [])}
             tg_blocks = F.render_roundup(rd, p, tracked, today, through)
             dc_blocks = F.render_roundup(rd, p, tracked, today, through, links=True)
             for n, (blk, dc) in enumerate(zip(tg_blocks, dc_blocks)):

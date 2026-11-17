@@ -263,8 +263,8 @@ def test_roundup_sections_buttons_and_track_button():
 def test_discord_gets_text_and_poster_link():
     vox, tg = FakeVox(), FakeTG()
     cfg = {"settings": {"summaryTime": "23:59"}, "people": [{"id": "me", "name": "Omar", "owner": True},
-           {"id": "d", "name": "Chan", "discord": True, "isGroup": True, "allWatches": True}],
-           "watches": [{"id": "w", "slug": "dune", "title": "Dune", "recipients": ["me"]}]}
+           {"id": "d", "name": "Chan", "discord": True, "isGroup": True}],
+           "watches": [{"id": "w", "slug": "dune", "title": "Dune", "recipients": ["me", "d"]}]}
     st = make(cfg, vox=vox, tg=tg).run()
     st.setdefault("posters", {})["dune"] = "https://img/dune.jpg"
     vox.days["2026-10-28"].append(sess("b", "2026-10-28", 21 * 60, slug="dune", cinema="Almaza"))
@@ -506,3 +506,15 @@ def test_render_movies_marks_tracked_and_offers_stop():
     assert "⭐" in text and "VOX · Scene CFC" in text and "COMING SOON" in text and "out 3 December 2026" in text
     cbs = [x["callback_data"] for b in blocks for row in b["buttons"] for x in row]
     assert cbs == ["stop:dune-w", "track:x"]
+
+
+def test_discord_only_gets_watches_it_is_ticked_on():
+    vox, tg = FakeVox(), FakeTG()
+    cfg = {"settings": {"summaryTime": "23:59"}, "people": [{"id": "me", "name": "Omar", "owner": True},
+           {"id": "d", "name": "Chan", "discord": True, "isGroup": True, "allWatches": True}],
+           "watches": [{"id": "w", "slug": "dune", "title": "Dune", "recipients": ["me"], "intro": True}]}
+    got = []
+    import alerts.engine as eng
+    eng.D.send = lambda url, html, **k: got.append(html)
+    Engine(cfg, {}, tg, vox, owner_chat_id="111", discord_url="https://hook", now=NOW, sleep=lambda s: None).run()
+    assert got == []

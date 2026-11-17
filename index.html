@@ -396,7 +396,7 @@ $("newOk").addEventListener("click", function () {
 });
 $("addDiscord").addEventListener("click", function () {
   if (S.cfg.people.some(function (p) { return p.discord; })) { say("You already have a Discord channel.", "bad"); return; }
-  S.cfg.people.push({ id: "discord", name: "Discord channel", isGroup: true, discord: true, allWatches: true, active: true, alerts: { dailySummary: true } });
+  S.cfg.people.push({ id: "discord", name: "Discord channel", isGroup: true, discord: true, active: true, alerts: { dailySummary: true } });
   renderPeople(); dirty();
 });
 
