@@ -541,6 +541,28 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013542_1790335408400.png"
     },
     {
+      "slug": "crypto-arabic",
+      "title": "Crypto",
+      "status": "soon",
+      "poster": "posters/crypto-arabic.jpeg",
+      "sources": [
+        "vox"
+      ],
+      "release": "19 November 2026",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013669_1792926618450.jpeg"
+    },
+    {
+      "slug": "i-play-rocky",
+      "title": "I Play Rocky",
+      "status": "soon",
+      "poster": "posters/i-play-rocky.jpg",
+      "sources": [
+        "vox"
+      ],
+      "release": "19 November 2026",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013824_1793870958335.jpg"
+    },
+    {
       "slug": "ciff-2026-shafika-the-copt-arabic",
       "title": "CIFF 2026: Shafika the Copt",
       "status": "soon",
