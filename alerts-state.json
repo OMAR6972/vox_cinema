@@ -8,6 +8,7 @@
     "2026-11-22",
     "2026-11-23",
     "2026-11-24",
+    "2026-11-25",
     "2026-12-16",
     "2026-12-17",
     "2026-12-18",
@@ -746,8 +747,43 @@
     "pbda933": 1207666700
   },
   "roundup": {
-    "dates": [],
-    "weekMovies": [],
+    "dates": [
+      "2026-11-25"
+    ],
+    "weekMovies": [
+      {
+        "slug": "ebenezer",
+        "title": "Ebenezer"
+      },
+      {
+        "slug": "forgotten-island",
+        "title": "Forgotten Island"
+      },
+      {
+        "slug": "hadoota-arabic",
+        "title": "Hadoota"
+      },
+      {
+        "slug": "how-to-rob-a-bank",
+        "title": "How to Rob a Bank"
+      },
+      {
+        "slug": "i-play-rocky",
+        "title": "I Play Rocky"
+      },
+      {
+        "slug": "matloub-3a2eleyain-arabic",
+        "title": "Matloub 3a2eleyain"
+      },
+      {
+        "slug": "the-cat-in-the-hat",
+        "title": "The Cat In The Hat"
+      },
+      {
+        "slug": "the-odyssey",
+        "title": "The Odyssey"
+      }
+    ],
     "newMovies": [
       {
         "slug": "forgotten-island",
