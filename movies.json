@@ -36,20 +36,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013780_1792992991396.jpg"
     },
     {
-      "slug": "best-pancakes-in-the-county",
-      "title": "Best Pancakes in the County",
-      "status": "now",
-      "poster": "posters/best-pancakes-in-the-county.jpg",
-      "sources": [
-        "vox",
-        "scene"
-      ],
-      "sceneCinemas": [
-        "Scene CFC"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013834_1794302408405.jpg"
-    },
-    {
       "slug": "bts-world-tour-arirang-in-jakarta-live-viewing",
       "title": "BTS WORLD TOUR 'ARIRANG' IN JAKARTA: LIVE VIEWING",
       "status": "now",
@@ -355,6 +341,20 @@
         "Scene CFC"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013591_1787744773009.jpg"
+    },
+    {
+      "slug": "best-pancakes-in-the-county",
+      "title": "Best Pancakes in the County",
+      "status": "now",
+      "poster": "posters/best-pancakes-in-the-county.jpg",
+      "sources": [
+        "vox",
+        "scene"
+      ],
+      "sceneCinemas": [
+        "Scene CFC"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013834_1794302408405.jpg"
     },
     {
       "slug": "ciff-2026-the-mirage-arabic",
