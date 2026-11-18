@@ -471,7 +471,9 @@
       "filters": "[[\"City Centre Almaza\"], [], false]",
       "sceneSeeded": [
         "cfc",
-        "district5"
+        "district5",
+        "elc-city-stars",
+        "elc-sun-city"
       ]
     },
     "dune-part-three": {
@@ -538,7 +540,9 @@
       "filters": "[[\"City Centre Alexandria\", \"City Centre Almaza\"], [\"GOLD\", \"IMAX\", \"MAX\", \"Standard\"], false]",
       "sceneSeeded": [
         "cfc",
-        "district5"
+        "district5",
+        "elc-city-stars",
+        "elc-sun-city"
       ]
     },
     "the-hunger-games-sunrise-on-the-reaping-9db4": {
@@ -568,7 +572,9 @@
       },
       "sceneSeeded": [
         "cfc",
-        "district5"
+        "district5",
+        "elc-city-stars",
+        "elc-sun-city"
       ],
       "filters": "[[\"City Centre Almaza\"], [], false]",
       "everHadSessions": true
@@ -578,7 +584,9 @@
       "seen": {},
       "sceneSeeded": [
         "cfc",
-        "district5"
+        "district5",
+        "elc-city-stars",
+        "elc-sun-city"
       ],
       "filters": "[[\"City Centre Almaza\"], [], false]"
     },
@@ -679,11 +687,85 @@
         "scene:cfc:2026-11-25:1320:standard:clayface": "2026-11-25",
         "scene:cfc:2026-11-25:1470:standard:clayface": "2026-11-25",
         "0032-170544": "2026-11-19",
-        "0032-170548": "2026-11-20"
+        "0032-170548": "2026-11-20",
+        "elc:sun-city:2026-11-19:615:standard:clayface": "2026-11-19",
+        "elc:city-stars:2026-11-19:615:standard:clayface": "2026-11-19",
+        "elc:sun-city:2026-11-19:780:standard:clayface": "2026-11-19",
+        "elc:city-stars:2026-11-19:795:standard:clayface": "2026-11-19",
+        "elc:sun-city:2026-11-19:945:standard:clayface": "2026-11-19",
+        "elc:city-stars:2026-11-19:960:standard:clayface": "2026-11-19",
+        "elc:city-stars:2026-11-19:1095:standard:clayface": "2026-11-19",
+        "elc:sun-city:2026-11-19:1125:standard:clayface": "2026-11-19",
+        "elc:city-stars:2026-11-19:1215:standard:clayface": "2026-11-19",
+        "elc:sun-city:2026-11-19:1305:standard:clayface": "2026-11-19",
+        "elc:city-stars:2026-11-19:1335:standard:clayface": "2026-11-19",
+        "elc:city-stars:2026-11-19:1455:standard:clayface": "2026-11-19",
+        "elc:sun-city:2026-11-20:615:standard:clayface": "2026-11-20",
+        "elc:city-stars:2026-11-20:615:standard:clayface": "2026-11-20",
+        "elc:sun-city:2026-11-20:780:standard:clayface": "2026-11-20",
+        "elc:city-stars:2026-11-20:795:standard:clayface": "2026-11-20",
+        "elc:sun-city:2026-11-20:945:standard:clayface": "2026-11-20",
+        "elc:city-stars:2026-11-20:960:standard:clayface": "2026-11-20",
+        "elc:city-stars:2026-11-20:1095:standard:clayface": "2026-11-20",
+        "elc:sun-city:2026-11-20:1125:standard:clayface": "2026-11-20",
+        "elc:city-stars:2026-11-20:1215:standard:clayface": "2026-11-20",
+        "elc:sun-city:2026-11-20:1305:standard:clayface": "2026-11-20",
+        "elc:city-stars:2026-11-20:1335:standard:clayface": "2026-11-20",
+        "elc:city-stars:2026-11-20:1455:standard:clayface": "2026-11-20",
+        "elc:sun-city:2026-11-21:615:standard:clayface": "2026-11-21",
+        "elc:city-stars:2026-11-21:615:standard:clayface": "2026-11-21",
+        "elc:sun-city:2026-11-21:780:standard:clayface": "2026-11-21",
+        "elc:city-stars:2026-11-21:795:standard:clayface": "2026-11-21",
+        "elc:sun-city:2026-11-21:945:standard:clayface": "2026-11-21",
+        "elc:city-stars:2026-11-21:960:standard:clayface": "2026-11-21",
+        "elc:city-stars:2026-11-21:1095:standard:clayface": "2026-11-21",
+        "elc:sun-city:2026-11-21:1125:standard:clayface": "2026-11-21",
+        "elc:city-stars:2026-11-21:1215:standard:clayface": "2026-11-21",
+        "elc:sun-city:2026-11-21:1305:standard:clayface": "2026-11-21",
+        "elc:city-stars:2026-11-21:1335:standard:clayface": "2026-11-21",
+        "elc:city-stars:2026-11-21:1455:standard:clayface": "2026-11-21",
+        "elc:sun-city:2026-11-22:615:standard:clayface": "2026-11-22",
+        "elc:city-stars:2026-11-22:615:standard:clayface": "2026-11-22",
+        "elc:sun-city:2026-11-22:780:standard:clayface": "2026-11-22",
+        "elc:city-stars:2026-11-22:795:standard:clayface": "2026-11-22",
+        "elc:sun-city:2026-11-22:945:standard:clayface": "2026-11-22",
+        "elc:city-stars:2026-11-22:960:standard:clayface": "2026-11-22",
+        "elc:city-stars:2026-11-22:1095:standard:clayface": "2026-11-22",
+        "elc:sun-city:2026-11-22:1125:standard:clayface": "2026-11-22",
+        "elc:city-stars:2026-11-22:1215:standard:clayface": "2026-11-22",
+        "elc:sun-city:2026-11-22:1305:standard:clayface": "2026-11-22",
+        "elc:city-stars:2026-11-22:1335:standard:clayface": "2026-11-22",
+        "elc:city-stars:2026-11-22:1455:standard:clayface": "2026-11-22",
+        "elc:sun-city:2026-11-23:615:standard:clayface": "2026-11-23",
+        "elc:city-stars:2026-11-23:615:standard:clayface": "2026-11-23",
+        "elc:sun-city:2026-11-23:780:standard:clayface": "2026-11-23",
+        "elc:city-stars:2026-11-23:795:standard:clayface": "2026-11-23",
+        "elc:sun-city:2026-11-23:945:standard:clayface": "2026-11-23",
+        "elc:city-stars:2026-11-23:960:standard:clayface": "2026-11-23",
+        "elc:city-stars:2026-11-23:1095:standard:clayface": "2026-11-23",
+        "elc:sun-city:2026-11-23:1125:standard:clayface": "2026-11-23",
+        "elc:city-stars:2026-11-23:1215:standard:clayface": "2026-11-23",
+        "elc:sun-city:2026-11-23:1305:standard:clayface": "2026-11-23",
+        "elc:city-stars:2026-11-23:1335:standard:clayface": "2026-11-23",
+        "elc:city-stars:2026-11-23:1455:standard:clayface": "2026-11-23",
+        "elc:sun-city:2026-11-24:615:standard:clayface": "2026-11-24",
+        "elc:city-stars:2026-11-24:615:standard:clayface": "2026-11-24",
+        "elc:sun-city:2026-11-24:780:standard:clayface": "2026-11-24",
+        "elc:city-stars:2026-11-24:795:standard:clayface": "2026-11-24",
+        "elc:sun-city:2026-11-24:945:standard:clayface": "2026-11-24",
+        "elc:city-stars:2026-11-24:960:standard:clayface": "2026-11-24",
+        "elc:city-stars:2026-11-24:1095:standard:clayface": "2026-11-24",
+        "elc:sun-city:2026-11-24:1125:standard:clayface": "2026-11-24",
+        "elc:city-stars:2026-11-24:1215:standard:clayface": "2026-11-24",
+        "elc:sun-city:2026-11-24:1305:standard:clayface": "2026-11-24",
+        "elc:city-stars:2026-11-24:1335:standard:clayface": "2026-11-24",
+        "elc:city-stars:2026-11-24:1455:standard:clayface": "2026-11-24"
       },
       "sceneSeeded": [
         "cfc",
-        "district5"
+        "district5",
+        "elc-city-stars",
+        "elc-sun-city"
       ],
       "filters": "[[], [], false]",
       "everHadSessions": true
@@ -693,7 +775,9 @@
       "seen": {},
       "sceneSeeded": [
         "cfc",
-        "district5"
+        "district5",
+        "elc-city-stars",
+        "elc-sun-city"
       ],
       "filters": "[[\"City Centre Almaza\"], [\"IMAX\", \"Standard\"], false]"
     },
@@ -702,7 +786,9 @@
       "seen": {},
       "sceneSeeded": [
         "cfc",
-        "district5"
+        "district5",
+        "elc-city-stars",
+        "elc-sun-city"
       ],
       "filters": "[[\"City Centre Almaza\"], [\"IMAX\", \"MAX\", \"Standard\"], false]"
     }
@@ -1112,5 +1198,173 @@
       }
     }
   },
-  "announced": "movies-v1"
+  "announced": "movies-v1",
+  "elc": {
+    "baseline": true,
+    "listing": {
+      "the-cat-in-the-hat": {
+        "title": "The Cat in the Hat",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
+      "how-to-rob-a-bank": {
+        "title": "How to Rob a Bank",
+        "theaters": [
+          "sun-city"
+        ]
+      },
+      "whalefall": {
+        "title": "Whalefall",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
+      "wala-kan-ala-el-bal-arabic": {
+        "title": "Wala Kan Ala El-Bal",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
+      "matloub-aaeleyan": {
+        "title": "Matloub Aaeleyan",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
+      "hadoota-arabic": {
+        "title": "Hadoota",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
+      "resident-evil": {
+        "title": "Resident Evil",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
+      "into-the-wonderwoods": {
+        "title": "Into the Wonderwoods",
+        "theaters": [
+          "sun-city"
+        ]
+      },
+      "other-mommy": {
+        "title": "Other Mommy",
+        "theaters": [
+          "sun-city"
+        ]
+      },
+      "ebenezer": {
+        "title": "Ebenezer",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
+      "clayface": {
+        "title": "Clayface",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
+      "godzilla-minus-zero-japanese": {
+        "title": "Godzilla Minus Zero",
+        "theaters": [
+          "sun-city"
+        ]
+      },
+      "mahmoud-el-tany-arabic": {
+        "title": "Mahmoud El Tany",
+        "theaters": [
+          "sun-city"
+        ]
+      },
+      "best-pancakes-in-the-county": {
+        "title": "Best Pancakes in the County",
+        "theaters": [
+          "sun-city"
+        ]
+      },
+      "saqr-w-kanarya": {
+        "title": "Saqr w Kanarya",
+        "theaters": [
+          "city-stars"
+        ]
+      },
+      "forgotten-island": {
+        "title": "Forgotten Island",
+        "theaters": [
+          "city-stars"
+        ]
+      },
+      "the-hunger-games-sunrise-on-the-reaping": {
+        "title": "The Hunger Games: Sunrise on the Reaping",
+        "theaters": [
+          "city-stars"
+        ]
+      },
+      "crypto-arabic": {
+        "title": "Crypto",
+        "theaters": [
+          "city-stars"
+        ]
+      },
+      "i-play-rocky": {
+        "title": "I Play Rocky",
+        "theaters": [
+          "city-stars"
+        ]
+      },
+      "les-miserables": {
+        "title": "Les Miserables",
+        "theaters": [
+          "city-stars"
+        ]
+      }
+    },
+    "buttons": {
+      "sun-city|the-cat-in-the-hat": false,
+      "sun-city|how-to-rob-a-bank": false,
+      "sun-city|whalefall": false,
+      "sun-city|wala-kan-ala-el-bal-arabic": true,
+      "sun-city|matloub-aaeleyan": true,
+      "sun-city|hadoota-arabic": true,
+      "sun-city|resident-evil": false,
+      "sun-city|into-the-wonderwoods": false,
+      "sun-city|other-mommy": false,
+      "sun-city|ebenezer": false,
+      "sun-city|clayface": true,
+      "sun-city|godzilla-minus-zero-japanese": false,
+      "sun-city|mahmoud-el-tany-arabic": false,
+      "sun-city|best-pancakes-in-the-county": false,
+      "city-stars|ebenezer": false,
+      "city-stars|the-cat-in-the-hat": false,
+      "city-stars|whalefall": false,
+      "city-stars|wala-kan-ala-el-bal-arabic": false,
+      "city-stars|saqr-w-kanarya": false,
+      "city-stars|clayface": false,
+      "city-stars|hadoota-arabic": false,
+      "city-stars|resident-evil": false,
+      "city-stars|forgotten-island": false,
+      "city-stars|matloub-aaeleyan": false,
+      "city-stars|the-hunger-games-sunrise-on-the-reaping": false,
+      "city-stars|crypto-arabic": false,
+      "city-stars|i-play-rocky": false,
+      "city-stars|les-miserables": false
+    },
+    "online": {
+      "sun-city": true,
+      "city-stars": false
+    },
+    "lastRead": "2026-11-18T23:20:19+00:00"
+  }
 }
