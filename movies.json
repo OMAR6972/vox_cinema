@@ -245,16 +245,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013764_1792133076768.jpg"
     },
     {
-      "slug": "sense-and-sensibility",
-      "title": "Sense and Sensibility",
-      "status": "now",
-      "poster": "posters/sense-and-sensibility.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013636_1789645652221.jpg"
-    },
-    {
       "slug": "the-cat-in-the-hat",
       "title": "The Cat In The Hat",
       "status": "now",
@@ -327,6 +317,16 @@
         "Scene District 5"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013581_1787744273942.jpg"
+    },
+    {
+      "slug": "sense-and-sensibility",
+      "title": "Sense and Sensibility",
+      "status": "now",
+      "poster": "posters/sense-and-sensibility.jpg",
+      "sources": [
+        "vox"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013636_1789645652221.jpg"
     },
     {
       "slug": "other-mommy",

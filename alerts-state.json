@@ -544,12 +544,23 @@
     },
     "the-hunger-games-sunrise-on-the-reaping-9db4": {
       "booked": [],
-      "seen": {},
+      "seen": {
+        "0047-278482": "2026-11-19",
+        "0047-278483": "2026-11-19",
+        "0047-278484": "2026-11-19",
+        "0047-278486": "2026-11-20",
+        "0047-278487": "2026-11-20",
+        "0047-278488": "2026-11-20",
+        "0047-278498": "2026-11-23",
+        "0047-278499": "2026-11-23",
+        "0047-278500": "2026-11-23"
+      },
       "sceneSeeded": [
         "cfc",
         "district5"
       ],
-      "filters": "[[\"City Centre Almaza\"], [], false]"
+      "filters": "[[\"City Centre Almaza\"], [], false]",
+      "everHadSessions": true
     },
     "jumanji-open-world-94a1": {
       "booked": [],
