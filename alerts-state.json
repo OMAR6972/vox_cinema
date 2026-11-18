@@ -707,7 +707,9 @@
         "scene:cfc:2026-11-25:960:standard:clayface": "2026-11-25",
         "scene:cfc:2026-11-25:1140:standard:clayface": "2026-11-25",
         "scene:cfc:2026-11-25:1320:standard:clayface": "2026-11-25",
-        "scene:cfc:2026-11-25:1470:standard:clayface": "2026-11-25"
+        "scene:cfc:2026-11-25:1470:standard:clayface": "2026-11-25",
+        "scene:cfc:2026-11-18:1335:standard:clayface": "2026-11-18",
+        "scene:cfc:2026-11-18:1470:standard:clayface": "2026-11-18"
       },
       "sceneSeeded": [
         "cfc",
@@ -1068,6 +1070,13 @@
           "district5": "the-cat-in-the-hat"
         }
       },
+      "clayface": {
+        "title": "Clayface",
+        "raws": {
+          "cfc": "clayface",
+          "district5": "clayface"
+        }
+      },
       "matloub-aelyan": {
         "title": "Matloub Aelyan",
         "raws": {
@@ -1112,13 +1121,6 @@
         "raws": {
           "cfc": "naseeb-arabic",
           "district5": "naseeb-arabic"
-        }
-      },
-      "clayface": {
-        "title": "Clayface",
-        "raws": {
-          "cfc": "clayface",
-          "district5": "clayface"
         }
       },
       "whalefall": {
