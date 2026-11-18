@@ -1044,6 +1044,13 @@
           "district5": "matloub-aelyan"
         }
       },
+      "godzilla-minus-zero-japanese": {
+        "title": "Godzilla Minus Zero",
+        "raws": {
+          "cfc": "godzilla-minus-zero",
+          "district5": "godzilla-minus-zero"
+        }
+      },
       "how-to-rob-a-bank": {
         "title": "How to Rob a Bank",
         "raws": {
@@ -1099,12 +1106,6 @@
         "title": "Resident Evil",
         "raws": {
           "cfc": "resident_evil"
-        }
-      },
-      "godzilla-minus-zero-japanese": {
-        "title": "Godzilla Minus Zero",
-        "raws": {
-          "district5": "godzilla-minus-zero"
         }
       }
     }
