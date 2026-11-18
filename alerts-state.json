@@ -1,7 +1,6 @@
 {
   "baselineDone": true,
   "dates": [
-    "2026-11-18",
     "2026-11-19",
     "2026-11-20",
     "2026-11-21",
@@ -586,24 +585,6 @@
     "clayface-pbda93": {
       "booked": [],
       "seen": {
-        "scene:cfc:2026-11-18:630:screenx:clayface": "2026-11-18",
-        "scene:district5:2026-11-18:630:standard-deluxe:clayface": "2026-11-18",
-        "0047-278171": "2026-11-18",
-        "0028-570657": "2026-11-18",
-        "0028-570378": "2026-11-18",
-        "scene:cfc:2026-11-18:795:screenx:clayface": "2026-11-18",
-        "scene:district5:2026-11-18:795:standard-deluxe:clayface": "2026-11-18",
-        "0047-278172": "2026-11-18",
-        "0028-570379": "2026-11-18",
-        "scene:cfc:2026-11-18:960:screenx:clayface": "2026-11-18",
-        "scene:district5:2026-11-18:960:standard-deluxe:clayface": "2026-11-18",
-        "scene:district5:2026-11-18:1140:standard-deluxe:clayface": "2026-11-18",
-        "0047-278174": "2026-11-18",
-        "0028-570381": "2026-11-18",
-        "0032-170311": "2026-11-18",
-        "scene:district5:2026-11-18:1320:standard-deluxe:clayface": "2026-11-18",
-        "0028-570655": "2026-11-18",
-        "scene:district5:2026-11-18:1470:standard-deluxe:clayface": "2026-11-18",
         "0028-570858": "2026-11-19",
         "0028-570860": "2026-11-19",
         "0028-570862": "2026-11-19",
@@ -697,8 +678,6 @@
         "scene:cfc:2026-11-25:1140:standard:clayface": "2026-11-25",
         "scene:cfc:2026-11-25:1320:standard:clayface": "2026-11-25",
         "scene:cfc:2026-11-25:1470:standard:clayface": "2026-11-25",
-        "scene:cfc:2026-11-18:1335:standard:clayface": "2026-11-18",
-        "scene:cfc:2026-11-18:1470:standard:clayface": "2026-11-18",
         "0032-170544": "2026-11-19",
         "0032-170548": "2026-11-20"
       },
