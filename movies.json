@@ -70,36 +70,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013815_1793880331436.jpg"
     },
     {
-      "slug": "ciff-2026-summer-meadow-french-arabic",
-      "title": "CIFF 2026: Summer Meadow",
-      "status": "now",
-      "poster": "posters/ciff-2026-summer-meadow-french-arabic.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013863_1794318918859.jpg"
-    },
-    {
-      "slug": "ciff-2026-the-female-idol-arabic",
-      "title": "CIFF 2026: The Female Idol",
-      "status": "now",
-      "poster": "posters/ciff-2026-the-female-idol-arabic.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013862_1794305284715.jpg"
-    },
-    {
-      "slug": "ciff-2026-the-people-and-the-nile-arabic",
-      "title": "CIFF 2026: The People and The Nile",
-      "status": "now",
-      "poster": "posters/ciff-2026-the-people-and-the-nile-arabic.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013844_1794305247972.jpg"
-    },
-    {
       "slug": "ciff-2026-the-second-wife-arabic",
       "title": "CIFF 2026: The Second Wife",
       "status": "now",
@@ -118,16 +88,6 @@
         "vox"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013869_1794481610194.jpg"
-    },
-    {
-      "slug": "ciff-2026-the-violinist-english-japanese",
-      "title": "CIFF 2026: The Violinist",
-      "status": "now",
-      "poster": "posters/ciff-2026-the-violinist-english-japanese.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013854_1794303814366.jpg"
     },
     {
       "slug": "clayface",
@@ -415,6 +375,46 @@
         "vox"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013860_1794305214088.jpg"
+    },
+    {
+      "slug": "ciff-2026-summer-meadow-french-arabic",
+      "title": "CIFF 2026: Summer Meadow",
+      "status": "now",
+      "poster": "posters/ciff-2026-summer-meadow-french-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013863_1794318918859.jpg"
+    },
+    {
+      "slug": "ciff-2026-the-female-idol-arabic",
+      "title": "CIFF 2026: The Female Idol",
+      "status": "now",
+      "poster": "posters/ciff-2026-the-female-idol-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013862_1794305284715.jpg"
+    },
+    {
+      "slug": "ciff-2026-the-people-and-the-nile-arabic",
+      "title": "CIFF 2026: The People and The Nile",
+      "status": "now",
+      "poster": "posters/ciff-2026-the-people-and-the-nile-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013844_1794305247972.jpg"
+    },
+    {
+      "slug": "ciff-2026-the-violinist-english-japanese",
+      "title": "CIFF 2026: The Violinist",
+      "status": "now",
+      "poster": "posters/ciff-2026-the-violinist-english-japanese.jpg",
+      "sources": [
+        "vox"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013854_1794303814366.jpg"
     },
     {
       "slug": "ciff-2026-shafika-the-copt-arabic",
