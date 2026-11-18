@@ -319,41 +319,6 @@
   },
   "comingSoon": [
     {
-      "slug": "the-hunger-games-sunrise-on-the-reaping",
-      "title": "The Hunger Games: Sunrise on the Reaping",
-      "release": "19 November 2026"
-    },
-    {
-      "slug": "crypto-arabic",
-      "title": "Crypto",
-      "release": "19 November 2026"
-    },
-    {
-      "slug": "forgotten-island",
-      "title": "Forgotten Island",
-      "release": "19 November 2026"
-    },
-    {
-      "slug": "i-play-rocky",
-      "title": "I Play Rocky",
-      "release": "19 November 2026"
-    },
-    {
-      "slug": "ciff-2026-shafika-the-copt-arabic",
-      "title": "CIFF 2026: Shafika the Copt",
-      "release": "19 November 2026"
-    },
-    {
-      "slug": "ciff-2026-the-second-wife-arabic",
-      "title": "CIFF 2026: The Second Wife",
-      "release": "19 November 2026"
-    },
-    {
-      "slug": "ciff-2026-the-soft-hands-arabic",
-      "title": "CIFF 2026: The Soft Hands",
-      "release": "19 November 2026"
-    },
-    {
       "slug": "bts-world-tour-arirang-in-kaohsiung-live-viewin",
       "title": "BTS WORLD TOUR 'ARIRANG' IN KAOHSIUNG: LIVE VIEWIN",
       "release": "21 November 2026"
@@ -1079,13 +1044,6 @@
           "district5": "matloub-aelyan"
         }
       },
-      "godzilla-minus-zero-japanese": {
-        "title": "Godzilla Minus Zero",
-        "raws": {
-          "cfc": "godzilla-minus-zero",
-          "district5": "godzilla-minus-zero"
-        }
-      },
       "how-to-rob-a-bank": {
         "title": "How to Rob a Bank",
         "raws": {
@@ -1141,6 +1099,12 @@
         "title": "Resident Evil",
         "raws": {
           "cfc": "resident_evil"
+        }
+      },
+      "godzilla-minus-zero-japanese": {
+        "title": "Godzilla Minus Zero",
+        "raws": {
+          "district5": "godzilla-minus-zero"
         }
       }
     }
