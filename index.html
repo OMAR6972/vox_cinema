@@ -200,22 +200,27 @@ function pretty(d) { var p = d.split("-"); return WD[new Date(+p[0], p[1] - 1, +
 function pt(t) { var p = t.split(":"), h = +p[0]; return ((h % 12) || 12) + ":" + p[1] + (h >= 12 ? " PM" : " AM"); }
 function movie(slug) { return S.movies.find(function (m) { return m.slug === slug; }); }
 function isScene(c) { return /^Scene /.test(c); }
+function isElc(c) { return /^(Sun City|City Stars) Cinema$/.test(c); }
 /* Where a movie can be watched: the bot records which cinema chains list it. Old data without that note counts as VOX. */
 function srcOf(m) { return m && m.sources && m.sources.length ? m.sources : ["vox"]; }
 function cinemasFor(m, w) {
   var src = srcOf(m), out = [];
   S.cinemas.forEach(function (c) {
     if (isScene(c)) { if (src.indexOf("scene") >= 0 && (!m.sceneCinemas || m.sceneCinemas.indexOf(c) >= 0)) out.push(c); }
+    else if (isElc(c)) { if (src.indexOf("elc") >= 0 && (!m.elcCinemas || m.elcCinemas.indexOf(c) >= 0)) out.push(c); }
     else if (src.indexOf("vox") >= 0) out.push(c);
   });
   (w.cinemas || []).forEach(function (c) { if (out.indexOf(c) < 0) out.push(c); }); /* keep ticked ones so they can be unticked */
   return out;
 }
+function otherNames(m) { return (m.sceneCinemas || []).concat(m.elcCinemas || []); }
 function sourceNote(m) {
   if (!m) return "";
   var src = srcOf(m), gone = (m.goneFrom || []).indexOf("vox") >= 0;
-  if (gone) return '<p class="eg" style="color:#b45309">⚠️ <b>No longer at VOX.</b> ' + (src.indexOf("scene") >= 0 ? "It is only at " + (m.sceneCinemas || ["Scene"]).join(" and ") + " now." : "") + '</p>';
-  if (src.length === 1 && src[0] === "scene") return '<p class="eg">Only at <b>' + esc((m.sceneCinemas || ["Scene"]).join(" and ")) + '</b> (VOX does not list this movie).</p>';
+  if (gone) return '<p class="eg" style="color:#b45309">⚠️ <b>No longer at VOX.</b> ' + (src.length ? "It is only at " + otherNames(m).join(" and ") + " now." : "") + '</p>';
+  if (src.indexOf("vox") < 0) return '<p class="eg">Only at <b>' + esc(otherNames(m).join(" and ")) + '</b> (VOX does not list this movie).</p>';
+  var noBtn = (m.elcCinemas || []).length ? '<p class="eg">🎟️ <b>Sun City / City Stars</b> show times from elcinema. Some movies have no Buy tickets button there yet; the bot tells you when one appears.</p>' : "";
+  if (noBtn) return noBtn;
   return "";
 }
 function person(id) { return S.cfg.people.find(function (x) { return x.id === id; }); }
@@ -277,7 +282,7 @@ function openPicker() {
 function openEditor(i, slug) {
   var isNew = i == null;
   var w = isNew ? { id: "", slug: slug, title: (movie(slug) || {}).title || slug, recipients: S.cfg.people.filter(function (p) { return p.owner; }).map(function (p) { return p.id; }),
-    cinemas: [srcOf(movie(slug)).indexOf("vox") >= 0 ? "City Centre Almaza" : (((movie(slug) || {}).sceneCinemas || ["Scene CFC"])[0])], dates: [], weekdays: [], times: [], flex: 30, experiences: [], includeSoldOut: false, active: true, intro: true }
+    cinemas: [srcOf(movie(slug)).indexOf("vox") >= 0 ? "City Centre Almaza" : ((otherNames(movie(slug) || {})[0]) || "Scene CFC")], dates: [], weekdays: [], times: [], flex: 30, experiences: [], includeSoldOut: false, active: true, intro: true }
     : JSON.parse(JSON.stringify(S.cfg.watches[i]));
   S.ed = { i: i, w: w };
   var mv = movie(w.slug), cins = cinemasFor(mv, w);

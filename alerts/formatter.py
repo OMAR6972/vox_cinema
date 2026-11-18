@@ -93,7 +93,10 @@ def _group(lst, key):
 
 
 def _time_cell(s):
-    """A bookable time is a link. A time that cannot be booked is struck through, with no link and nothing added."""
+    """A bookable time is a link. A time that cannot be booked is struck through, with no link and nothing added.
+    A time at a cinema with no Buy tickets button on elcinema is plain text (there is nothing to link to)."""
+    if s.get("nobook"):
+        return esc(s["time"])
     return link(s["time"], s["url"]) if s["available"] else strike(s["time"])
 
 
@@ -108,7 +111,7 @@ def _match_line(s, multi, reason=""):
     where = f" · {s['cinema']}" if multi else ""
     t = b(s["time"]) if s["available"] else strike(s["time"])
     main = f"{t} {esc(s['exp'])}{esc(where)}"
-    tail = f" → {link('Book', s['url'])}" if s["available"] else ""
+    tail = f" → {link('Book', s['url'])}" if s["available"] and not s.get("nobook") else ""
     return f"{main}{' ' + i(reason) if reason else ''}{tail}"
 
 
@@ -152,7 +155,8 @@ def _who(plan):
     for blk in (plan.get("days") or []) + (plan.get("yourDay") or []):
         for key in ("sessions", "matches", "others"):
             for s in blk.get(key) or []:
-                names.add("Scene" if str(s.get("id", "")).startswith("scene:") else "VOX")
+                sid = str(s.get("id", ""))
+                names.add(s["cinema"] if sid.startswith("elc:") else "Scene" if sid.startswith("scene:") else "VOX")
     return " and ".join(sorted(names, reverse=True)) or "VOX"
 
 
@@ -167,7 +171,45 @@ def _why(text):
     return "ℹ️ " + i("Why you got this: " + text)
 
 
+def _booking_notes(plan):
+    """One line per cinema whose times have no Buy tickets button on elcinema, so nobody hunts for a link."""
+    no_online, no_button = {}, {}
+    for blk in (plan.get("days") or []) + (plan.get("yourDay") or []):
+        for key in ("sessions", "matches", "others"):
+            for s in blk.get(key) or []:
+                if s.get("noOnline"):
+                    no_online[s["cinema"]] = 1
+                elif s.get("nobook"):
+                    no_button[s["cinema"]] = 1
+    lines = [f"🎟️ {esc(c)} doesn't sell tickets online on elcinema, so these times have no booking link. Book at the cinema." for c in no_online]
+    lines += [f"🎟️ {esc(c)} has no Buy tickets button for this movie on elcinema yet. {b('I will message you the moment it appears.')}" for c in no_button]
+    return lines
+
+
 def render_watch_message(plan) -> str:
+    """The message for one tracked movie (plus a note when some times cannot be booked from elcinema)."""
+    text = _render_watch_message(plan)
+    notes = _booking_notes(plan)
+    if not notes:
+        return text
+    marker = "ℹ️ <i>Why you got this"
+    cut = text.rfind(marker)
+    block = "\n".join(notes)
+    return text + "\n\n" + block if cut < 0 else text[:cut] + block + "\n\n" + text[cut:]
+
+
+def render_button_message(w, ev) -> str:
+    """A Buy tickets button just appeared on elcinema for a movie that had none at this cinema."""
+    title = w["title"]
+    return "\n".join([
+        f"🎟️ {b('BOOKING IS NOW OPEN')}", b(title), "",
+        f"{esc(ev['cinema'])} just put a {b('Buy tickets')} button up for this movie on elcinema.",
+        "", link(f"Book {title} at {ev['cinema']}", ev["url"]), "",
+        _why(f"you're tracking {title} at {ev['cinema']}, and it had no booking button before."),
+    ])
+
+
+def _render_watch_message(plan) -> str:
     """The message for one tracked movie."""
     w = plan["watch"]
     title = w["title"]
@@ -379,7 +421,7 @@ def render_movies(movies, tracked, name):
     """The /movies answer: on now, then coming soon. One Track / Stop button per movie.
     `tracked` maps slug -> watch id for movies this person already tracks."""
     def where(m):
-        bits = (["VOX"] if "vox" in (m.get("sources") or []) else []) + list(m.get("sceneCinemas") or [])
+        bits = (["VOX"] if "vox" in (m.get("sources") or []) else []) + list(m.get("sceneCinemas") or []) + list(m.get("elcCinemas") or [])
         return " · ".join(bits)
 
     def button(m):

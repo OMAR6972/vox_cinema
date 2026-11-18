@@ -7,6 +7,7 @@ import sys
 
 from check_showtimes import SCENE_HEADERS, VOX_HEADERS, fetch_page
 
+from .elcinema import Client as ElcinemaClient
 from .engine import ROOT, Engine, read_json, write_json
 from .posters import cffi_download, sync_posters
 from .tg import Telegram
@@ -26,7 +27,8 @@ def main() -> int:
     eng = Engine(config, state, tg, lambda path: fetch_page(BASE + path, VOX_HEADERS),
                  owner_chat_id=os.environ.get("TELEGRAM_CHAT_ID"),
                  discord_url=os.environ.get("DISCORD_WEBHOOK_URL"),
-                 scene_fetch=lambda url, xhr=False: fetch_page(url, SCENE_HEADERS if xhr else VOX_HEADERS))
+                 scene_fetch=lambda url, xhr=False: fetch_page(url, SCENE_HEADERS if xhr else VOX_HEADERS),
+                 elc=ElcinemaClient())
     try:
         if os.environ.get("VOX_TEST"):
             for p in eng.people:

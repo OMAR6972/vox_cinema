@@ -11,8 +11,8 @@ from pathlib import Path
 
 from . import discord as D
 from . import formatter as F
-from . import scene
-from .matcher import evaluate, sessions_for_watch
+from . import elcinema, scene
+from .matcher import day_wanted, evaluate, has_day_pref, sessions_for_watch
 from .vox import (parse_coming_soon, parse_filters, parse_listing_titles, parse_posters, parse_showtimes_page,
                   showtimes_path)
 from .vtime import add_days, now_cairo_hhmm, today_cairo
@@ -74,15 +74,28 @@ def default_state():
             "failures": 0, "warned": False, "lastCheck": None, "lastError": None, "lastRun": None}
 
 
+def is_vox(s) -> bool:
+    """True for a VOX showing (Scene and elcinema ids carry their own prefix)."""
+    return not str(s["id"]).startswith(("scene:", "elc:"))
+
+
+def source_prefix(key) -> str:
+    """The id prefix of the showings a source key stands for: a Scene branch ('cfc') or 'elc-sun-city'."""
+    return f"elc:{key[4:]}:" if key.startswith("elc-") else f"scene:{key}:"
+
+
 class Engine:
     def __init__(self, config, state, telegram, fetch, owner_chat_id=None, discord_url=None, now=None,
-                 sleep=time.sleep, delay=0.4, root=None, scene_fetch=None):
+                 sleep=time.sleep, delay=0.4, root=None, scene_fetch=None, elc=None):
         self.config = config
         self.config_dirty = migrate_config(config)  # True when the bot must save config.json
         self.state = {**default_state(), **state}
         self.tg = telegram
         self.fetch = fetch           # fetch(path) -> html
         self.scene_fetch = scene_fetch   # fetch(url, xhr=False) -> html; None switches Scene off
+        self.elc = elc               # elcinema reader (.theater(id), .day(id, iso)); None switches Sun City / City Stars off
+        self.elc_ok = set()          # elcinema cinemas read completely in this run
+        self.elc_events = []         # "a Buy tickets button just appeared" events found in this run
         self.scene_done = None       # slugs whose Scene showtimes were read this run (None = Scene not read at all)
         self.owner_chat_id = owner_chat_id
         self.discord_url = discord_url
@@ -191,7 +204,7 @@ class Engine:
         for m in self.state.get("comingSoon", []) + self.state.get("nowShowing", []):
             if m["slug"] == slug:
                 return m["title"]
-        sc = (self.state.get("scene", {}).get("listing") or {}).get(slug)
+        sc = (self.state.get("scene", {}).get("listing") or {}).get(slug) or (self.state.get("elc", {}).get("listing") or {}).get(slug)
         if sc and sc.get("title"):
             return sc["title"]
         return (self.state["knownMovies"].get(slug) or {}).get("title") or slug.replace("-", " ").title()
@@ -397,13 +410,14 @@ class Engine:
         st["lastCheck"] = self.now.isoformat(timespec="seconds")
         st["lastError"] = None
         new_scene = self.crawl_scene(sessions, first_run, today)
+        self.crawl_elcinema(sessions, first_run, today)
         self.snapshot = {"sessions": sessions, "movies": movies}
 
         # what the next daily roundup will say (only after the very first run, which just learns what is out)
         if first_run:
             return
         rd = st.setdefault("roundup", empty_roundup())
-        allv = [s for lst in sessions.values() for s in lst if not s["id"].startswith("scene:")]  # the new week is VOX only
+        allv = [s for lst in sessions.values() for s in lst if is_vox(s)]  # the new week is VOX only
         if new_dates:
             rd["dates"] = sorted(set(rd["dates"]) | set(new_dates))
             have = {m["slug"] for m in rd["weekMovies"]}
@@ -457,15 +471,7 @@ class Engine:
         if not raw_lists:
             self._keep_scene_listing()
             return []
-        by_norm, by_title = {}, {}
-        for lst in sessions.values():
-            for s in lst:
-                by_norm[scene.norm(s["slug"])] = s["slug"]
-                by_title[scene.norm(s["title"])] = s["slug"]
-        for slug, m in list(st["knownMovies"].items()) + [(m["slug"], m) for m in st["comingSoon"] + st.get("nowShowing", [])]:
-            by_norm.setdefault(scene.norm(slug), slug)
-            if (m or {}).get("title"):
-                by_title.setdefault(scene.norm(m["title"]), slug)
+        by_norm, by_title = self._slug_maps(sessions)
         canon = {}
         for br, lst in raw_lists.items():
             for raw, title in lst:
@@ -514,10 +520,132 @@ class Engine:
         sc["baseline"] = True
         return fresh
 
+    def _slug_maps(self, sessions):
+        """How to recognise a movie across cinema chains: by slug and by title, ignoring punctuation."""
+        by_norm, by_title = {}, {}
+        for lst in sessions.values():
+            for s in lst:
+                if not is_vox(s):
+                    continue
+                by_norm[scene.norm(s["slug"])] = s["slug"]
+                by_title[scene.norm(s["title"])] = s["slug"]
+        st = self.state
+        for slug, m in list(st["knownMovies"].items()) + [(m["slug"], m) for m in st["comingSoon"] + st.get("nowShowing", [])]:
+            by_norm.setdefault(scene.norm(slug), slug)
+            if (m or {}).get("title"):
+                by_title.setdefault(scene.norm(m["title"]), slug)
+        return by_norm, by_title
+
+    # ---- elcinema (Sun City, City Stars) ----
+    def crawl_elcinema(self, sessions, first_run, today):
+        """Reads every movie at Sun City and City Stars for every day elcinema offers, and adds the showtimes to
+        `sessions`. Also remembers, per cinema and movie, whether elcinema shows a Buy tickets button, and notes
+        when one appears. Never raises: if elcinema is down (or blocks us) VOX and Scene alerts still go out."""
+        self.elc_ok, self.elc_events = set(), []
+        if not self.elc:
+            return
+        st = self.state
+        ec = st.setdefault("elc", {"baseline": False, "listing": {}, "buttons": {}, "online": {}})
+        minutes = (self.config.get("settings") or {}).get("elcMinutes", 5)   # be gentle: not every minute
+        last = ec.get("lastRead")
+        if minutes and last:
+            try:
+                age = (self.now - datetime.fromisoformat(last)).total_seconds()
+            except ValueError:
+                age = minutes * 60
+            if age < minutes * 60:
+                self._set_off_vox(sessions)
+                return
+        by_norm, by_title = self._slug_maps(sessions)
+        for slug, m in (st.get("scene", {}).get("listing") or {}).items():
+            by_norm.setdefault(scene.norm(slug), slug)
+            by_title.setdefault(scene.norm(m.get("title", "")), slug)
+        read, errors = {}, []
+        for key, th in elcinema.THEATERS.items():
+            try:
+                info = elcinema.parse_theater_page(self.elc.theater(th["id"]))
+                if not info["dates"]:
+                    raise RuntimeError("its page lists no dates. The page layout may have changed.")
+                days = {}
+                for iso in info["dates"]:
+                    if iso >= today:
+                        self.sleep(self.delay)
+                        days[iso] = elcinema.parse_day(self.elc.day(th["id"], iso))
+                if not any(days.values()):
+                    raise RuntimeError("it lists no movies on any day. The page layout may have changed.")
+                read[key] = (info, days)
+                self.elc_ok.add(key)
+            except Exception as e:
+                log.warning("elcinema %s skipped: %s", key, e)
+                errors.append(f"{key}: {e}")
+        if errors:
+            st["elcError"] = f"{self.now.isoformat(timespec='seconds')} - " + "; ".join(errors)
+        else:
+            st.pop("elcError", None)
+        prev_listing = ec.get("listing") or {}
+        for slug, m in prev_listing.items():
+            by_norm.setdefault(scene.norm(slug), slug)
+            by_title.setdefault(scene.norm(m.get("title", "")), slug)
+        listing, buttons = {}, {}
+        for key, (info, days) in read.items():
+            ec.setdefault("online", {})[key] = info["online"]
+            for iso, movies in days.items():
+                for mv in movies:
+                    slug = by_title.get(scene.norm(mv["title"])) or by_norm.get(scene.norm(mv["title"])) or scene.norm(mv["title"])
+                    sessions.setdefault(iso, []).extend(elcinema.sessions_for(mv, iso, key, slug, info["online"]))
+                    entry = listing.setdefault(slug, {"title": mv["title"], "theaters": []})
+                    if key not in entry["theaters"]:
+                        entry["theaters"].append(key)
+                    b = buttons.setdefault((key, slug), {"has": False, "url": None, "title": mv["title"]})
+                    if mv["button"]:
+                        b["has"], b["url"] = True, mv["button"]
+        for key in elcinema.THEATERS:      # a cinema we could not read keeps what we knew about it
+            if key not in read:
+                for slug, m in prev_listing.items():
+                    if key in m.get("theaters", []):
+                        entry = listing.setdefault(slug, {"title": m["title"], "theaters": []})
+                        entry["theaters"].append(key)
+        ec["listing"] = listing
+        old = ec.get("buttons") or {}
+        new = {k: v for k, v in old.items() if k.split("|")[0] not in read}
+        for (key, slug), b in buttons.items():
+            k = f"{key}|{slug}"
+            if ec.get("baseline") and not first_run and old.get(k) is False and b["has"]:
+                self.elc_events.append({"slug": slug, "title": b["title"], "cinema": elcinema.THEATERS[key]["name"], "url": b["url"]})
+            new[k] = b["has"]
+        ec["buttons"] = new
+        if read:
+            ec["baseline"] = True
+            ec["lastRead"] = self.now.isoformat(timespec="seconds")
+        self._set_off_vox(sessions)
+
+    def send_button_events(self):
+        """'Booking is now open': a Buy tickets button appeared for a movie somebody tracks at that cinema."""
+        today = today_cairo(self.now)
+        for ev in self.elc_events:
+            for w in self.config.get("watches", []):
+                if not w.get("active", True) or w["slug"] != ev["slug"]:
+                    continue
+                if w.get("cinemas") and ev["cinema"] not in w["cinemas"]:
+                    continue
+                mine = [s for s in sessions_for_watch(self.snapshot, w, today) if s["cinema"] == ev["cinema"]]
+                if not mine or (has_day_pref(w) and not any(day_wanted(w, s["date"]) for s in mine)):
+                    continue
+                text = F.render_button_message(w, ev)
+                booked = self.state["watches"].get(w["id"], {}).get("booked", [])
+                stop = {"text": f"🔕 Stop tracking {w['title']}", "callback_data": f"stop:{w['id']}"}
+                for pid in list(dict.fromkeys(w.get("recipients", []))):
+                    p = self.person(pid)
+                    key = (pid, w["slug"], ev["cinema"], "button")
+                    if not p or pid in booked or key in self._notified:
+                        continue
+                    self._notified.add(key)
+                    self.deliver(p, text, [[stop]], photo=(w["slug"], w["title"]))
+
     def _set_off_vox(self, sessions=None):
         """Movies VOX does not list get a Scene page link and site name in messages."""
         if sessions is not None:
-            vox_now = {s["slug"] for lst in sessions.values() for s in lst if not s["id"].startswith("scene:")}
+            vox_now = {s["slug"] for lst in sessions.values() for s in lst if is_vox(s)}
         else:
             vox_now = set()
         vox_now |= {m["slug"] for m in self.state.get("nowShowing", []) + self.state["comingSoon"]}
@@ -526,6 +654,11 @@ class Engine:
                 br = next(iter(m["raws"]))
                 names = " & ".join(scene.BRANCHES[b]["name"] for b in m["raws"])
                 F.OFF_VOX[slug] = (names, scene.public_movie_url(br, m["raws"][br]))
+        for slug, m in (self.state.get("elc", {}).get("listing") or {}).items():
+            if slug not in vox_now and slug not in F.OFF_VOX and m.get("theaters"):
+                th = [elcinema.THEATERS[k] for k in m["theaters"] if k in elcinema.THEATERS]
+                if th:
+                    F.OFF_VOX[slug] = (" & ".join(t["name"] for t in th), elcinema.theater_url(th[0]["id"]))
 
     def _keep_scene_listing(self):
         """No Scene branch could be read: keep showing its movies as they were last time."""
@@ -555,7 +688,7 @@ class Engine:
         fkey = json.dumps([sorted(w.get("cinemas") or []), sorted(w.get("experiences") or []), bool(w.get("includeSoldOut"))])
         seeded = st.get("sceneSeeded")
         seeded = ["cfc"] if seeded is True else list(seeded or [])
-        ready = [br for br in scene.BRANCHES if self.scene_ready(w["slug"], br)]
+        ready = [br for br in scene.BRANCHES if self.scene_ready(w["slug"], br)] + [f"elc-{k}" for k in sorted(self.elc_ok)]
         if first_look and not intro:
             st["filters"] = fkey
             st["seen"] = {s["id"]: s["date"] for s in sessions}
@@ -569,7 +702,7 @@ class Engine:
             st["sceneSeeded"] = sorted(set(seeded) | set(fresh_branches))
             if not first_look:
                 for sx in sessions:
-                    if any(sx["id"].startswith(f"scene:{br}:") for br in fresh_branches):
+                    if any(sx["id"].startswith(source_prefix(br)) for br in fresh_branches):
                         st["seen"][sx["id"]] = sx["date"]
         # Changing the cinema, screen types or sold-out switch changes WHICH showings count. Everything that now
         # matches would look "new", so record it silently instead (the Send now button still lists it all).
@@ -669,6 +802,7 @@ class Engine:
             self.process_watch(w)
         for wid in [k for k in st["watches"] if k not in configured]:
             del st["watches"][wid]
+        self.send_button_events()
         self.maybe_daily_roundup(today)
         return st
 
@@ -679,21 +813,24 @@ class Engine:
         showing = {}
         for lst in sess.values():
             for s in lst:
-                if s["id"].startswith("scene:"):
+                if not is_vox(s):
                     continue
                 showing.setdefault(s["slug"], {"title": s["title"], "cinemas": set(), "exps": set()})
                 showing[s["slug"]]["cinemas"].add(s["cinema"])
                 showing[s["slug"]]["exps"].add(s["exp"])
         posters = self.state.get("posters", {})
         listing = (self.state.get("scene", {}).get("listing") or {})
+        elc = (self.state.get("elc", {}).get("listing") or {})
         on_vox = set(showing) | {m["slug"] for m in self.state.get("nowShowing", [])} | {m["slug"] for m in self.state["comingSoon"]}
         known = self.state["knownMovies"]
 
         def entry(slug, title, status, **extra):
-            sources = (["vox"] if slug in on_vox else []) + (["scene"] if slug in listing else [])
+            sources = (["vox"] if slug in on_vox else []) + (["scene"] if slug in listing else []) + (["elc"] if slug in elc else [])
             e = {"slug": slug, "title": title, "status": status, "poster": posters.get(slug), "sources": sources}
             if slug in listing:
                 e["sceneCinemas"] = [scene.BRANCHES[b]["name"] for b in listing[slug]["raws"]]
+            if slug in elc:
+                e["elcCinemas"] = [elcinema.THEATERS[k]["name"] for k in elc[slug]["theaters"] if k in elcinema.THEATERS]
             if slug not in on_vox and (known.get(slug) or {}).get("source", "vox") == "vox" and slug in known:
                 e["goneFrom"] = ["vox"]   # VOX used to list it and no longer does
             e.update(extra)
@@ -714,6 +851,11 @@ class Engine:
             if slug not in seen:
                 out.append(entry(slug, m["title"], "now"))
                 seen.add(slug)
-        cinemas = sorted({c for v in showing.values() for c in v["cinemas"] if c} | ({scene.BRANCHES[b]["name"] for m in listing.values() for b in m["raws"]}))
+        for slug, m in sorted(elc.items(), key=lambda kv: kv[1]["title"].lower()):
+            if slug not in seen:
+                out.append(entry(slug, m["title"], "now"))
+                seen.add(slug)
+        cinemas = sorted({c for v in showing.values() for c in v["cinemas"] if c} | ({scene.BRANCHES[b]["name"] for m in listing.values() for b in m["raws"]})
+                         | {elcinema.THEATERS[k]["name"] for m in elc.values() for k in m["theaters"] if k in elcinema.THEATERS})
         exps = sorted({e for v in showing.values() for e in v["exps"] if e})
         return {"movies": out, "cinemas": cinemas, "experiences": exps}

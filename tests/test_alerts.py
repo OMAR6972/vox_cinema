@@ -74,9 +74,9 @@ class FakeVox:
 
 
 
-def make(cfg, state=None, vox=None, tg=None, scene=None):
+def make(cfg, state=None, vox=None, tg=None, scene=None, elc=None):
     return Engine(cfg, state or {}, tg or FakeTG(), vox or FakeVox(), owner_chat_id="111", now=NOW, sleep=lambda s: None,
-                  scene_fetch=scene)
+                  scene_fetch=scene, elc=elc)
 
 
 class FakeScene:
@@ -518,3 +518,128 @@ def test_discord_only_gets_watches_it_is_ticked_on():
     eng.D.send = lambda url, html, **k: got.append(html)
     Engine(cfg, {}, tg, vox, owner_chat_id="111", discord_url="https://hook", now=NOW, sleep=lambda s: None).run()
     assert got == []
+
+
+# ---------------- elcinema: Sun City + City Stars ----------------
+
+class FakeElc:
+    """Serves the saved elcinema pages for both cinemas. Tests can add a time or switch on a Buy tickets button."""
+    def __init__(self):
+        self.calls, self.down, self.extra, self.buttons = [], False, {}, set()
+
+    def _tweak(self, h, tid):
+        for t in self.extra.get(tid, []):
+            h = h.replace("</tbody>", f'<tr class=""><td></td><td><strong>{t}</strong></td><td></td></tr></tbody>', 1)
+        if tid in self.buttons:
+            h = h.replace('<ul class="unstyled no-margin">',
+                          f'<ul class="unstyled no-margin"><li><a class="button orange small" href="/en/booking/2095318/{tid}/"> Buy tickets</a></li>', 1)
+        return h
+
+    def theater(self, tid):
+        self.calls.append(("page", tid))
+        if self.down:
+            raise RuntimeError("elcinema is down")
+        return html("elc_page_citystars.html" if tid == 3101050 else "elc_page_suncity.html")
+
+    def day(self, tid, iso):
+        self.calls.append(("day", tid, iso))
+        if self.down:
+            raise RuntimeError("elcinema is down")
+        return self._tweak(html("elc_day.html"), tid)
+
+
+def ECFG(cinemas=None, minutes=0):
+    c = CFG()
+    c["settings"]["elcMinutes"] = minutes
+    c["watches"] = [{"id": "w1", "slug": "the-cat-in-the-hat", "title": "The Cat in the Hat", "recipients": ["me"],
+                     "cinemas": cinemas or []}]
+    return c
+
+
+def test_elcinema_reader():
+    from alerts import elcinema as E
+    assert E.parse_time("10:15 am") == 10 * 60 + 15 and E.parse_time("01:15 pm") == 13 * 60 + 15
+    assert E.parse_time("12:00 pm") == 12 * 60 and E.parse_time("12:30 midnight") == 24 * 60 + 30
+    assert E.parse_time("01:00 midnight") == 25 * 60 and E.parse_time("12:15 am") == 24 * 60 + 15 and E.parse_time("soon") is None
+    ms = E.parse_day(html("elc_day.html"))
+    assert [m["title"] for m in ms] == ["The Cat in the Hat", "Clayface", "Hadoota"]
+    assert [bool(m["button"]) for m in ms] == [False, True, False]            # only Clayface has a Buy tickets button
+    assert ms[1]["button"] == "https://elcinema.com/en/booking/2098155/3101119/"
+    assert len(ms[2]["times"]) == 11 and ms[2]["times"][-1][1] == 25 * 60      # times hidden behind "More (N)" are read too
+    ss = E.sessions_for(ms[0], "2026-10-28", "sun-city", "the-cat-in-the-hat")
+    assert ss[0]["cinema"] == "Sun City Cinema" and ss[0]["nobook"] and ss[0]["url"] == "https://elcinema.com/en/theater/3101119/"
+    assert ss[0]["id"].startswith("elc:sun-city:2026-10-28:") and len({s["id"] for s in ss}) == 4
+    info = E.parse_theater_page(html("elc_page_citystars.html"))
+    assert info["dates"] == ["2026-10-27", "2026-10-28", "2026-10-29"] and info["online"] is False and info["csrf"] == "tok123"
+    assert E.parse_theater_page(html("elc_page_suncity.html"))["online"] is True
+
+
+def test_elcinema_first_run_silent_then_new_time_alerts_with_no_button_notes():
+    el, tg = FakeElc(), FakeTG()
+    cfg = ECFG()
+    st = make(cfg, tg=tg, elc=el).run()
+    assert tg.sent == []
+    el.extra = {3101119: ["11:30 PM"], 3101050: ["11:30 PM"]}
+    make(cfg, st, tg=tg, elc=el).run()
+    msg = "\n".join(t for _, t, _ in tg.sent)
+    assert "11:30 PM" in msg and "Sun City Cinema" in msg and "City Stars Cinema" in msg
+    assert "Sun City Cinema has no Buy tickets button" in msg and "I will message you the moment it appears" in msg
+    assert "City Stars Cinema doesn't sell tickets online" in msg
+    assert "/booking/" not in msg and "09:45" not in msg and "9:45 AM" not in msg   # no dead links, older times not repeated
+
+
+def test_elcinema_buy_button_appearing_later_sends_one_message():
+    el, tg = FakeElc(), FakeTG()
+    cfg = ECFG(["Sun City Cinema"])
+    st = make(cfg, tg=tg, elc=el).run()
+    el.buttons = {3101119}
+    st = make(cfg, st, tg=tg, elc=el).run()
+    btn = [t for _, t, _ in tg.sent if "BOOKING IS NOW OPEN" in t]
+    assert len(btn) == 1 and "Sun City Cinema just put a" in btn[0] and "/en/booking/2095318/3101119/" in btn[0]
+    assert "The Cat in the Hat" in btn[0] and "Why you got this" in btn[0]
+    n = len(tg.sent)
+    make(cfg, st, tg=tg, elc=el).run()
+    assert len(tg.sent) == n                         # the button is already known: nothing again
+
+
+def test_elcinema_button_message_respects_the_cinema_choice():
+    el, tg = FakeElc(), FakeTG()
+    cfg = ECFG(["City Stars Cinema"])               # tracks the movie only at City Stars
+    st = make(cfg, tg=tg, elc=el).run()
+    el.buttons = {3101119}                          # Sun City gets a button
+    make(cfg, st, tg=tg, elc=el).run()
+    assert not any("BOOKING IS NOW OPEN" in t for _, t, _ in tg.sent)
+
+
+def test_elcinema_down_does_not_break_vox_and_recovers_without_flooding():
+    el, tg = FakeElc(), FakeTG()
+    el.down = True
+    cfg = ECFG()
+    e = make(cfg, tg=tg, elc=el)
+    st = e.run()
+    assert "elcError" in st and st["failures"] == 0
+    el.down = False
+    st = make(cfg, st, tg=tg, elc=el).run()          # elcinema comes back: what it already shows is not news
+    assert tg.sent == [] and "elcError" not in st
+
+
+def test_elcinema_is_read_at_most_every_few_minutes():
+    el = FakeElc()
+    cfg = ECFG(minutes=5)
+    st = make(cfg, elc=el).run()
+    n = len(el.calls)
+    assert n > 0
+    make(cfg, st, elc=el).run()                      # same clock: too soon to ask elcinema again
+    assert len(el.calls) == n
+
+
+def test_elcinema_panel_data_and_midnight_times():
+    el = FakeElc()
+    e = make(ECFG(), elc=el)
+    e.run()
+    mv = {m["slug"]: m for m in e.movies_doc()["movies"]}
+    assert mv["the-cat-in-the-hat"]["sources"] == ["elc"]
+    assert mv["the-cat-in-the-hat"]["elcCinemas"] == ["Sun City Cinema", "City Stars Cinema"]
+    assert "Sun City Cinema" in e.movies_doc()["cinemas"] and "City Stars Cinema" in e.movies_doc()["cinemas"]
+    times = {s["time"] for lst in e.snapshot["sessions"].values() for s in lst if s["id"].startswith("elc:")}
+    assert "12:00 AM" in times and "1:00 AM" in times
