@@ -724,7 +724,13 @@
         "elc:sun-city-vip:2026-11-25:765:vip:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
         "elc:sun-city-vip:2026-11-25:945:vip:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
         "elc:sun-city-vip:2026-11-25:1125:vip:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
-        "elc:sun-city-vip:2026-11-25:1305:vip:the-hunger-games-sunrise-on-the-reaping": "2026-11-25"
+        "elc:sun-city-vip:2026-11-25:1305:vip:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
+        "elc:city-stars:2026-11-25:615:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
+        "elc:city-stars:2026-11-25:780:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
+        "elc:city-stars:2026-11-25:960:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
+        "elc:city-stars:2026-11-25:1140:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
+        "elc:city-stars:2026-11-25:1320:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
+        "elc:city-stars:2026-11-25:1500:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-25"
       },
       "sceneSeeded": [
         "cfc",
@@ -926,7 +932,14 @@
         "elc:sun-city:2026-11-25:780:standard:clayface": "2026-11-25",
         "elc:sun-city:2026-11-25:945:standard:clayface": "2026-11-25",
         "elc:sun-city:2026-11-25:1125:standard:clayface": "2026-11-25",
-        "elc:sun-city:2026-11-25:1305:standard:clayface": "2026-11-25"
+        "elc:sun-city:2026-11-25:1305:standard:clayface": "2026-11-25",
+        "elc:city-stars:2026-11-25:615:standard:clayface": "2026-11-25",
+        "elc:city-stars:2026-11-25:795:standard:clayface": "2026-11-25",
+        "elc:city-stars:2026-11-25:960:standard:clayface": "2026-11-25",
+        "elc:city-stars:2026-11-25:1095:standard:clayface": "2026-11-25",
+        "elc:city-stars:2026-11-25:1215:standard:clayface": "2026-11-25",
+        "elc:city-stars:2026-11-25:1335:standard:clayface": "2026-11-25",
+        "elc:city-stars:2026-11-25:1455:standard:clayface": "2026-11-25"
       },
       "sceneSeeded": [
         "cfc",
@@ -1510,26 +1523,26 @@
       "sun-city-vip|les-miserables": false,
       "sun-city-vip|the-hunger-games-sunrise-on-the-reaping": false,
       "sun-city-vip|hadoota-arabic": true,
-      "city-stars|ebenezer": false,
-      "city-stars|the-cat-in-the-hat": false,
-      "city-stars|whalefall": false,
-      "city-stars|wala-kan-ala-el-bal-arabic": false,
-      "city-stars|saqr-w-kanarya": false,
-      "city-stars|clayface": false,
-      "city-stars|hadoota-arabic": false,
-      "city-stars|resident-evil": false,
-      "city-stars|forgotten-island": false,
-      "city-stars|matloub-aaeleyan": false,
       "city-stars|the-hunger-games-sunrise-on-the-reaping": false,
-      "city-stars|crypto-arabic": false,
       "city-stars|i-play-rocky": false,
-      "city-stars|les-miserables": false
+      "city-stars|the-cat-in-the-hat": false,
+      "city-stars|hadoota-arabic": false,
+      "city-stars|clayface": false,
+      "city-stars|forgotten-island": false,
+      "city-stars|crypto-arabic": false,
+      "city-stars|resident-evil": false,
+      "city-stars|matloub-aaeleyan": false,
+      "city-stars|wala-kan-ala-el-bal-arabic": false,
+      "city-stars|ebenezer": false,
+      "city-stars|whalefall": false,
+      "city-stars|les-miserables": false,
+      "city-stars|saqr-w-kanarya": false
     },
     "online": {
       "sun-city": true,
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-19T01:30:15+00:00"
+    "lastRead": "2026-11-19T01:40:14+00:00"
   }
 }
