@@ -684,7 +684,39 @@
     "IMAX",
     "Kids",
     "MAX",
-    "Standard"
+    "ScreenX",
+    "Standard",
+    "Standard & Deluxe"
   ],
+  "expByCinema": {
+    "City Centre Alexandria": [
+      "MAX",
+      "Standard"
+    ],
+    "City Centre Almaza": [
+      "4DX",
+      "GOLD",
+      "IMAX",
+      "Kids",
+      "MAX",
+      "Standard"
+    ],
+    "Mall of Egypt": [
+      "4DX",
+      "GOLD",
+      "Kids",
+      "MAX",
+      "Standard"
+    ],
+    "Scene CFC": [
+      "4DX",
+      "ScreenX",
+      "Standard"
+    ],
+    "Scene District 5": [
+      "IMAX",
+      "Standard & Deluxe"
+    ]
+  },
   "bot": "OmarVoxBot"
 }
