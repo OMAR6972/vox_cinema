@@ -314,6 +314,10 @@
     "forgotten-island": {
       "firstSeen": "2026-11-17T17:20:16+00:00",
       "title": "Forgotten Island"
+    },
+    "dune-part-thre": {
+      "firstSeen": "2026-11-19T12:00:20+00:00",
+      "title": "Dune: Part Thre"
     }
   },
   "comingSoon": [
@@ -363,6 +367,11 @@
       "release": "10 December 2026"
     },
     {
+      "slug": "dune-part-thre-preview-screening",
+      "title": "Dune: Part Thre-Preview Screening",
+      "release": "15 December 2026"
+    },
+    {
       "slug": "avengers-doomsday",
       "title": "Avengers: Doomsday",
       "release": "16 December 2026"
@@ -373,8 +382,8 @@
       "release": "16 December 2026"
     },
     {
-      "slug": "dune-part-three",
-      "title": "Dune: Part Three",
+      "slug": "dune-part-thre",
+      "title": "Dune: Part Thre",
       "release": "17 December 2026"
     },
     {
@@ -385,6 +394,11 @@
     {
       "slug": "the-angry-birds-movie-3",
       "title": "The Angry Birds Movie 3",
+      "release": "24 December 2026"
+    },
+    {
+      "slug": "sales-booking-ashar",
+      "title": "Sales Booking - Ashar",
       "release": "24 December 2026"
     },
     {
@@ -1106,7 +1120,18 @@
   "roundup": {
     "dates": [],
     "weekMovies": [],
-    "newMovies": [],
+    "newMovies": [
+      {
+        "slug": "dune-part-thre",
+        "title": "Dune: Part Thre",
+        "firstDate": "2026-12-17",
+        "experiences": [
+          "Standard",
+          "IMAX",
+          "GOLD"
+        ]
+      }
+    ],
     "coming": [
       {
         "slug": "sophia-arabic",
@@ -1122,6 +1147,21 @@
         "slug": "lela-bazit-khalis-arabic",
         "title": "Lela Bazit Khalis",
         "release": "26 November 2026"
+      },
+      {
+        "slug": "dune-part-thre-preview-screening",
+        "title": "Dune: Part Thre-Preview Screening",
+        "release": "15 December 2026"
+      },
+      {
+        "slug": "dune-part-thre",
+        "title": "Dune: Part Thre",
+        "release": "17 December 2026"
+      },
+      {
+        "slug": "sales-booking-ashar",
+        "title": "Sales Booking - Ashar",
+        "release": "24 December 2026"
       }
     ]
   },
@@ -1228,7 +1268,10 @@
     "forgotten-island": "https://assets.voxcinemas.com/posters/P_HO00013698_1791356496360.jpg",
     "sophia-arabic": "/assets/images/placeholder-poster.webp",
     "leila-bazet-khales-arabic": "/assets/images/placeholder-poster.webp",
-    "lela-bazit-khalis-arabic": "/assets/images/placeholder-poster.webp"
+    "lela-bazit-khalis-arabic": "/assets/images/placeholder-poster.webp",
+    "dune-part-thre-preview-screening": "/assets/images/placeholder-poster.webp",
+    "dune-part-thre": "https://assets.voxcinemas.com/posters/P_HO00013132_1795009844803.jpg",
+    "sales-booking-ashar": "/assets/images/placeholder-poster.webp"
   },
   "nowShowing": [
     {
@@ -1668,7 +1711,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-19T11:50:17+00:00"
+    "lastRead": "2026-11-19T12:00:20+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
