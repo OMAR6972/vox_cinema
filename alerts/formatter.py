@@ -178,9 +178,9 @@ def _booking_notes(plan):
         for key in ("sessions", "matches", "others"):
             for s in blk.get(key) or []:
                 if s.get("noOnline"):
-                    no_online[s["cinema"]] = 1
+                    no_online[s.get("place", s["cinema"])] = 1
                 elif s.get("nobook"):
-                    no_button[s["cinema"]] = 1
+                    no_button[s.get("place", s["cinema"])] = 1
     lines = [f"🎟️ {esc(c)} doesn't sell tickets online on elcinema, so these times have no booking link. Book at the cinema." for c in no_online]
     lines += [f"🎟️ {esc(c)} has no Buy tickets button for this movie on elcinema yet. {b('I will message you the moment it appears.')}" for c in no_button]
     return lines
@@ -203,8 +203,8 @@ def render_button_message(w, ev) -> str:
     title = w["title"]
     return "\n".join([
         f"🎟️ {b('BOOKING IS NOW OPEN')}", b(title), "",
-        f"{esc(ev['cinema'])} just put a {b('Buy tickets')} button up for this movie on elcinema.",
-        "", link(f"Book {title} at {ev['cinema']}", ev["url"]), "",
+        f"{esc(ev.get('label', ev['cinema']))} just put a {b('Buy tickets')} button up for this movie on elcinema.",
+        "", link(f"Book {title} at {ev.get('label', ev['cinema'])}", ev["url"]), "",
         _why(f"you're tracking {title} at {ev['cinema']}, and it had no booking button before."),
     ])
 

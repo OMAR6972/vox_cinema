@@ -21,10 +21,12 @@ SOURCE = "elc"
 # key -> elcinema cinema id and the name messages and the panel use
 THEATERS = {
     "sun-city": {"id": 3101119, "name": "Sun City Cinema"},
+    # Sun City's VIP halls are a separate cinema on elcinema. To people it is the same Sun City, so it shares the
+    # name and its showings are told apart by the screen type "VIP".
+    "sun-city-vip": {"id": 3101257, "name": "Sun City Cinema", "exp": "VIP", "label": "Sun City Cinema (VIP)"},
     "city-stars": {"id": 3101050, "name": "City Stars Cinema"},
 }
-CINEMAS = [t["name"] for t in THEATERS.values()]
-BY_NAME = {t["name"]: k for k, t in THEATERS.items()}
+CINEMAS = list(dict.fromkeys(t["name"] for t in THEATERS.values()))
 
 
 def theater_url(tid) -> str:
@@ -92,11 +94,13 @@ def sessions_for(movie: dict, iso: str, key: str, slug: str, online: bool = True
     th = THEATERS[key]
     out, ids = [], set()
     for exp, mins in movie["times"]:
+        exp = th.get("exp") or exp
         sid = f"elc:{key}:{iso}:{mins}:{norm(exp)}:{slug}"
         if sid in ids:
             continue
         ids.add(sid)
         out.append({
+            "place": th.get("label", th["name"]),   # what messages call this place (VIP is told apart from regular)
             "id": sid, "slug": slug, "title": movie["title"], "date": iso, "cinema": th["name"], "exp": exp,
             "min": mins, "time": pretty_time(mins),
             "available": True,                      # elcinema never says "sold out"

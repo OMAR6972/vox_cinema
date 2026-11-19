@@ -539,7 +539,7 @@ class FakeElc:
         self.calls.append(("page", tid))
         if self.down:
             raise RuntimeError("elcinema is down")
-        return html("elc_page_citystars.html" if tid == 3101050 else "elc_page_suncity.html")
+        return html("elc_page_citystars.html" if tid == 3101050 else "elc_page_suncity.html")  # 3101257 = Sun City VIP
 
     def day(self, tid, iso):
         self.calls.append(("day", tid, iso))
@@ -639,7 +639,42 @@ def test_elcinema_panel_data_and_midnight_times():
     e.run()
     mv = {m["slug"]: m for m in e.movies_doc()["movies"]}
     assert mv["the-cat-in-the-hat"]["sources"] == ["elc"]
-    assert mv["the-cat-in-the-hat"]["elcCinemas"] == ["Sun City Cinema", "City Stars Cinema"]
+    assert mv["the-cat-in-the-hat"]["elcCinemas"] == ["Sun City Cinema", "City Stars Cinema"]   # VIP is part of Sun City
     assert "Sun City Cinema" in e.movies_doc()["cinemas"] and "City Stars Cinema" in e.movies_doc()["cinemas"]
     times = {s["time"] for lst in e.snapshot["sessions"].values() for s in lst if s["id"].startswith("elc:")}
     assert "12:00 AM" in times and "1:00 AM" in times
+
+
+def test_sun_city_vip_is_part_of_sun_city_and_told_apart_by_screen_type():
+    from alerts import elcinema as E
+    assert E.CINEMAS == ["Sun City Cinema", "City Stars Cinema"]
+    mv = E.parse_day(html("elc_day.html"))[0]
+    vip = E.sessions_for(mv, "2026-10-28", "sun-city-vip", "the-cat-in-the-hat")
+    reg = E.sessions_for(mv, "2026-10-28", "sun-city", "the-cat-in-the-hat")
+    assert {s["cinema"] for s in vip} == {"Sun City Cinema"} and {s["exp"] for s in vip} == {"VIP"}
+    assert vip[0]["place"] == "Sun City Cinema (VIP)" and reg[0]["place"] == "Sun City Cinema"
+    assert not {s["id"] for s in vip} & {s["id"] for s in reg}
+    assert vip[0]["url"] == "https://elcinema.com/en/theater/3101257/"
+
+
+def test_sun_city_vip_screen_type_filter_and_new_vip_time():
+    el, tg = FakeElc(), FakeTG()
+    cfg = ECFG(["Sun City Cinema"])
+    cfg["watches"][0]["experiences"] = ["VIP"]          # only the VIP halls
+    st = make(cfg, tg=tg, elc=el).run()
+    assert tg.sent == []
+    el.extra = {3101257: ["11:15 PM"], 3101119: ["11:45 PM"]}
+    make(cfg, st, tg=tg, elc=el).run()
+    msg = "\n".join(t for _, t, _ in tg.sent)
+    assert "11:15 PM" in msg and "VIP" in msg and "11:45 PM" not in msg          # the regular hall is filtered out
+    assert "Sun City Cinema (VIP) has no Buy tickets button" in msg
+
+
+def test_sun_city_vip_button_message_names_the_vip_hall():
+    el, tg = FakeElc(), FakeTG()
+    cfg = ECFG(["Sun City Cinema"])
+    st = make(cfg, tg=tg, elc=el).run()
+    el.buttons = {3101257}
+    make(cfg, st, tg=tg, elc=el).run()
+    btn = [t for _, t, _ in tg.sent if "BOOKING IS NOW OPEN" in t]
+    assert len(btn) == 1 and "Sun City Cinema (VIP) just put a" in btn[0] and "/en/booking/2095318/3101257/" in btn[0]

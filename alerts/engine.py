@@ -611,7 +611,8 @@ class Engine:
         for (key, slug), b in buttons.items():
             k = f"{key}|{slug}"
             if ec.get("baseline") and not first_run and old.get(k) is False and b["has"]:
-                self.elc_events.append({"slug": slug, "title": b["title"], "cinema": elcinema.THEATERS[key]["name"], "url": b["url"]})
+                self.elc_events.append({"key": key, "slug": slug, "title": b["title"], "cinema": elcinema.THEATERS[key]["name"],
+                                        "label": elcinema.THEATERS[key].get("label", elcinema.THEATERS[key]["name"]), "url": b["url"]})
             new[k] = b["has"]
         ec["buttons"] = new
         if read:
@@ -628,7 +629,7 @@ class Engine:
                     continue
                 if w.get("cinemas") and ev["cinema"] not in w["cinemas"]:
                     continue
-                mine = [s for s in sessions_for_watch(self.snapshot, w, today) if s["cinema"] == ev["cinema"]]
+                mine = [s for s in sessions_for_watch(self.snapshot, w, today) if s["id"].startswith(f"elc:{ev['key']}:")]
                 if not mine or (has_day_pref(w) and not any(day_wanted(w, s["date"]) for s in mine)):
                     continue
                 text = F.render_button_message(w, ev)
@@ -658,7 +659,7 @@ class Engine:
             if slug not in vox_now and slug not in F.OFF_VOX and m.get("theaters"):
                 th = [elcinema.THEATERS[k] for k in m["theaters"] if k in elcinema.THEATERS]
                 if th:
-                    F.OFF_VOX[slug] = (" & ".join(t["name"] for t in th), elcinema.theater_url(th[0]["id"]))
+                    F.OFF_VOX[slug] = (" & ".join(dict.fromkeys(t["name"] for t in th)), elcinema.theater_url(th[0]["id"]))
 
     def _keep_scene_listing(self):
         """No Scene branch could be read: keep showing its movies as they were last time."""
@@ -830,7 +831,7 @@ class Engine:
             if slug in listing:
                 e["sceneCinemas"] = [scene.BRANCHES[b]["name"] for b in listing[slug]["raws"]]
             if slug in elc:
-                e["elcCinemas"] = [elcinema.THEATERS[k]["name"] for k in elc[slug]["theaters"] if k in elcinema.THEATERS]
+                e["elcCinemas"] = list(dict.fromkeys(elcinema.THEATERS[k]["name"] for k in elc[slug]["theaters"] if k in elcinema.THEATERS))
             if slug not in on_vox and (known.get(slug) or {}).get("source", "vox") == "vox" and slug in known:
                 e["goneFrom"] = ["vox"]   # VOX used to list it and no longer does
             e.update(extra)
