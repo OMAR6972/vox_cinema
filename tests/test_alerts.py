@@ -754,3 +754,16 @@ def test_panel_screen_types_come_from_every_cinema():
     assert doc["expByCinema"].get("Scene CFC") or doc["expByCinema"].get("Scene District 5")
     scene_exps = {x for c, v in doc["expByCinema"].items() if c.startswith("Scene") for x in v}
     assert scene_exps and scene_exps <= set(doc["experiences"])
+
+
+def test_screen_types_are_remembered_when_a_cinema_is_skipped_in_a_run():
+    sc, vox = FakeScene(), FakeVox()
+    e = make(SCFG(), vox=vox, scene=sc)
+    st = e.run()
+    known = e.movies_doc()["expByCinema"]
+    assert known.get("Scene CFC")
+    # the Scene cinemas are unreachable next run: their screen types stay in the panel list
+    sc.down = {"cfc", "district5"}
+    e2 = make(SCFG(), st, vox, scene=sc)
+    e2.run()
+    assert e2.movies_doc()["expByCinema"].get("Scene CFC") == known["Scene CFC"]

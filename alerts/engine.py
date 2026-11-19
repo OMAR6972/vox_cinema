@@ -440,6 +440,15 @@ class Engine:
         new_scene = self.crawl_scene(sessions, first_run, today)
         self.crawl_elcinema(sessions, first_run, today)
         self.snapshot = {"sessions": sessions, "movies": movies}
+        # Remember every screen type each cinema has shown. Some cinemas are only read every few minutes, and the
+        # panel's screen-type list must not lose (say) Sun City's VIP on the runs that skip them.
+        seen_exp = self.state.setdefault("expSeen", {})
+        for lst in sessions.values():
+            for x in lst:
+                if x.get("exp") and x.get("cinema"):
+                    seen_exp.setdefault(x["cinema"], [])
+                    if x["exp"] not in seen_exp[x["cinema"]]:
+                        seen_exp[x["cinema"]].append(x["exp"])
 
         # what the next daily roundup will say (only after the very first run, which just learns what is out)
         if first_run:
@@ -887,7 +896,7 @@ class Engine:
         cinemas = sorted({c for v in showing.values() for c in v["cinemas"] if c} | ({scene.BRANCHES[b]["name"] for m in listing.values() for b in m["raws"]})
                          | {elcinema.THEATERS[k]["name"] for m in elc.values() for k in m["theaters"] if k in elcinema.THEATERS})
         # screen types from EVERY cinema (VOX, Scene, Sun City, City Stars), and which cinemas have each one
-        by_cinema = {}
+        by_cinema = {c: set(v) for c, v in (self.state.get("expSeen") or {}).items()}
         for lst in sess.values():
             for x in lst:
                 if x.get("exp") and x.get("cinema"):
