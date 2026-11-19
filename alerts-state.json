@@ -328,16 +328,6 @@
       "release": "26 November 2026"
     },
     {
-      "slug": "dune-part-one-re-release",
-      "title": "Dune: Part One",
-      "release": "02 December 2026"
-    },
-    {
-      "slug": "dune-part-two-re-release",
-      "title": "Dune: Part Two",
-      "release": "02 December 2026"
-    },
-    {
       "slug": "maserati-the-brothers",
       "title": "Maserati: The Brothers",
       "release": "03 December 2026"
@@ -346,6 +336,16 @@
       "slug": "violent-night-2",
       "title": "Violent Night 2",
       "release": "04 December 2026"
+    },
+    {
+      "slug": "dune-part-one-re-release",
+      "title": "Dune: Part One",
+      "release": "10 December 2026"
+    },
+    {
+      "slug": "dune-part-two-re-release",
+      "title": "Dune: Part Two",
+      "release": "10 December 2026"
     },
     {
       "slug": "avengers-doomsday",
@@ -1628,7 +1628,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-19T04:40:14+00:00"
+    "lastRead": "2026-11-19T04:50:15+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
