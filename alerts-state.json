@@ -991,7 +991,7 @@
   "summary": {
     "lastSentDate": "2026-11-18"
   },
-  "offset": 601723959,
+  "offset": 601723960,
   "failures": 0,
   "warned": false,
   "lastError": null,
@@ -1529,6 +1529,6 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-19T02:05:18+00:00"
+    "lastRead": "2026-11-19T02:11:21+00:00"
   }
 }
