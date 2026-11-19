@@ -681,7 +681,45 @@
         "scene:cfc:2026-11-25:1035:screenx:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
         "scene:cfc:2026-11-25:1230:screenx:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
         "scene:cfc:2026-11-25:1230:4dx:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
-        "scene:cfc:2026-11-25:1440:4dx:the-hunger-games-sunrise-on-the-reaping": "2026-11-25"
+        "scene:cfc:2026-11-25:1440:4dx:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
+        "elc:sun-city:2026-11-19:585:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-19",
+        "elc:sun-city:2026-11-19:765:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-19",
+        "elc:sun-city:2026-11-19:945:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-19",
+        "elc:sun-city:2026-11-19:1125:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-19",
+        "elc:sun-city:2026-11-19:1305:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-19",
+        "elc:sun-city:2026-11-19:1455:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-19",
+        "elc:sun-city:2026-11-20:585:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-20",
+        "elc:sun-city:2026-11-20:765:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-20",
+        "elc:sun-city:2026-11-20:945:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-20",
+        "elc:sun-city:2026-11-20:1125:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-20",
+        "elc:sun-city:2026-11-20:1305:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-20",
+        "elc:sun-city:2026-11-20:1455:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-20",
+        "elc:sun-city:2026-11-21:585:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-21",
+        "elc:sun-city:2026-11-21:765:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-21",
+        "elc:sun-city:2026-11-21:945:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-21",
+        "elc:sun-city:2026-11-21:1125:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-21",
+        "elc:sun-city:2026-11-21:1305:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-21",
+        "elc:sun-city:2026-11-22:585:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-22",
+        "elc:sun-city:2026-11-22:765:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-22",
+        "elc:sun-city:2026-11-22:945:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-22",
+        "elc:sun-city:2026-11-22:1125:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-22",
+        "elc:sun-city:2026-11-22:1305:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-22",
+        "elc:sun-city:2026-11-23:585:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-23",
+        "elc:sun-city:2026-11-23:765:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-23",
+        "elc:sun-city:2026-11-23:945:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-23",
+        "elc:sun-city:2026-11-23:1125:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-23",
+        "elc:sun-city:2026-11-23:1305:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-23",
+        "elc:sun-city:2026-11-23:1455:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-23",
+        "elc:sun-city:2026-11-24:585:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-24",
+        "elc:sun-city:2026-11-24:765:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-24",
+        "elc:sun-city:2026-11-24:945:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-24",
+        "elc:sun-city:2026-11-24:1125:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-24",
+        "elc:sun-city:2026-11-24:1305:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-24",
+        "elc:sun-city:2026-11-25:585:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
+        "elc:sun-city:2026-11-25:765:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
+        "elc:sun-city:2026-11-25:945:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
+        "elc:sun-city:2026-11-25:1125:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
+        "elc:sun-city:2026-11-25:1305:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-25"
       },
       "sceneSeeded": [
         "cfc",
@@ -875,7 +913,15 @@
         "elc:city-stars:2026-11-24:1215:standard:clayface": "2026-11-24",
         "elc:sun-city:2026-11-24:1305:standard:clayface": "2026-11-24",
         "elc:city-stars:2026-11-24:1335:standard:clayface": "2026-11-24",
-        "elc:city-stars:2026-11-24:1455:standard:clayface": "2026-11-24"
+        "elc:city-stars:2026-11-24:1455:standard:clayface": "2026-11-24",
+        "elc:sun-city:2026-11-19:1455:standard:clayface": "2026-11-19",
+        "elc:sun-city:2026-11-20:1455:standard:clayface": "2026-11-20",
+        "elc:sun-city:2026-11-23:1455:standard:clayface": "2026-11-23",
+        "elc:sun-city:2026-11-25:615:standard:clayface": "2026-11-25",
+        "elc:sun-city:2026-11-25:780:standard:clayface": "2026-11-25",
+        "elc:sun-city:2026-11-25:945:standard:clayface": "2026-11-25",
+        "elc:sun-city:2026-11-25:1125:standard:clayface": "2026-11-25",
+        "elc:sun-city:2026-11-25:1305:standard:clayface": "2026-11-25"
       },
       "sceneSeeded": [
         "cfc",
@@ -1329,21 +1375,23 @@
   "elc": {
     "baseline": true,
     "listing": {
-      "the-cat-in-the-hat": {
-        "title": "The Cat in the Hat",
+      "the-hunger-games-sunrise-on-the-reaping": {
+        "title": "The Hunger Games: Sunrise on the Reaping",
+        "theaters": [
+          "sun-city",
+          "sun-city-vip",
+          "city-stars"
+        ]
+      },
+      "forgotten-island": {
+        "title": "Forgotten Island",
         "theaters": [
           "sun-city",
           "city-stars"
         ]
       },
-      "how-to-rob-a-bank": {
-        "title": "How to Rob a Bank",
-        "theaters": [
-          "sun-city"
-        ]
-      },
-      "whalefall": {
-        "title": "Whalefall",
+      "the-cat-in-the-hat": {
+        "title": "The Cat in the Hat",
         "theaters": [
           "sun-city",
           "city-stars"
@@ -1356,8 +1404,22 @@
           "city-stars"
         ]
       },
-      "matloub-aaeleyan": {
-        "title": "Matloub Aaeleyan",
+      "clayface": {
+        "title": "Clayface",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
+      "crypto-arabic": {
+        "title": "Crypto",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
+      "i-play-rocky": {
+        "title": "I Play Rocky",
         "theaters": [
           "sun-city",
           "city-stars"
@@ -1371,23 +1433,11 @@
           "city-stars"
         ]
       },
-      "resident-evil": {
-        "title": "Resident Evil",
+      "matloub-aaeleyan": {
+        "title": "Matloub Aaeleyan",
         "theaters": [
           "sun-city",
           "city-stars"
-        ]
-      },
-      "into-the-wonderwoods": {
-        "title": "Into the Wonderwoods",
-        "theaters": [
-          "sun-city"
-        ]
-      },
-      "other-mommy": {
-        "title": "Other Mommy",
-        "theaters": [
-          "sun-city"
         ]
       },
       "ebenezer": {
@@ -1397,36 +1447,30 @@
           "city-stars"
         ]
       },
-      "clayface": {
-        "title": "Clayface",
+      "resident-evil": {
+        "title": "Resident Evil",
         "theaters": [
           "sun-city",
           "city-stars"
         ]
       },
-      "godzilla-minus-zero-japanese": {
-        "title": "Godzilla Minus Zero",
+      "whalefall": {
+        "title": "Whalefall",
         "theaters": [
-          "sun-city"
-        ]
-      },
-      "mahmoud-el-tany-arabic": {
-        "title": "Mahmoud El Tany",
-        "theaters": [
-          "sun-city"
-        ]
-      },
-      "best-pancakes-in-the-county": {
-        "title": "Best Pancakes in the County",
-        "theaters": [
-          "sun-city"
-        ]
-      },
-      "the-hunger-games-sunrise-on-the-reaping": {
-        "title": "The Hunger Games: Sunrise on the Reaping",
-        "theaters": [
-          "sun-city-vip",
+          "sun-city",
           "city-stars"
+        ]
+      },
+      "belkis-turkish": {
+        "title": "Belkis",
+        "theaters": [
+          "sun-city"
+        ]
+      },
+      "how-to-rob-a-bank": {
+        "title": "How to Rob a Bank",
+        "theaters": [
+          "sun-city"
         ]
       },
       "les-miserables": {
@@ -1441,41 +1485,23 @@
         "theaters": [
           "city-stars"
         ]
-      },
-      "forgotten-island": {
-        "title": "Forgotten Island",
-        "theaters": [
-          "city-stars"
-        ]
-      },
-      "crypto-arabic": {
-        "title": "Crypto",
-        "theaters": [
-          "city-stars"
-        ]
-      },
-      "i-play-rocky": {
-        "title": "I Play Rocky",
-        "theaters": [
-          "city-stars"
-        ]
       }
     },
     "buttons": {
+      "sun-city|the-hunger-games-sunrise-on-the-reaping": false,
+      "sun-city|forgotten-island": false,
       "sun-city|the-cat-in-the-hat": false,
-      "sun-city|how-to-rob-a-bank": false,
-      "sun-city|whalefall": false,
       "sun-city|wala-kan-ala-el-bal-arabic": true,
-      "sun-city|matloub-aaeleyan": true,
-      "sun-city|hadoota-arabic": true,
-      "sun-city|resident-evil": false,
-      "sun-city|into-the-wonderwoods": false,
-      "sun-city|other-mommy": false,
-      "sun-city|ebenezer": false,
       "sun-city|clayface": true,
-      "sun-city|godzilla-minus-zero-japanese": false,
-      "sun-city|mahmoud-el-tany-arabic": false,
-      "sun-city|best-pancakes-in-the-county": false,
+      "sun-city|crypto-arabic": false,
+      "sun-city|i-play-rocky": false,
+      "sun-city|hadoota-arabic": true,
+      "sun-city|matloub-aaeleyan": true,
+      "sun-city|ebenezer": false,
+      "sun-city|resident-evil": false,
+      "sun-city|whalefall": false,
+      "sun-city|belkis-turkish": false,
+      "sun-city|how-to-rob-a-bank": false,
       "sun-city-vip|hadoota-arabic": true,
       "sun-city-vip|the-hunger-games-sunrise-on-the-reaping": false,
       "sun-city-vip|les-miserables": false,
@@ -1499,6 +1525,6 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-19T00:50:16+00:00"
+    "lastRead": "2026-11-19T01:00:16+00:00"
   }
 }
