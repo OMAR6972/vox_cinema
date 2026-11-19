@@ -64,26 +64,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013815_1793880331436.jpg"
     },
     {
-      "slug": "ciff-2026-the-second-wife-arabic",
-      "title": "CIFF 2026: The Second Wife",
-      "status": "now",
-      "poster": "posters/ciff-2026-the-second-wife-arabic.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013865_1794305425050.jpg"
-    },
-    {
-      "slug": "ciff-2026-the-soft-hands-arabic",
-      "title": "CIFF 2026: The Soft Hands",
-      "status": "now",
-      "poster": "posters/ciff-2026-the-soft-hands-arabic.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013869_1794481610194.jpg"
-    },
-    {
       "slug": "clayface",
       "title": "Clayface",
       "status": "now",
@@ -483,6 +463,26 @@
         "vox"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013854_1794303814366.jpg"
+    },
+    {
+      "slug": "ciff-2026-the-second-wife-arabic",
+      "title": "CIFF 2026: The Second Wife",
+      "status": "now",
+      "poster": "posters/ciff-2026-the-second-wife-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013865_1794305425050.jpg"
+    },
+    {
+      "slug": "ciff-2026-the-soft-hands-arabic",
+      "title": "CIFF 2026: The Soft Hands",
+      "status": "now",
+      "poster": "posters/ciff-2026-the-soft-hands-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013869_1794481610194.jpg"
     },
     {
       "slug": "sophia-arabic",
