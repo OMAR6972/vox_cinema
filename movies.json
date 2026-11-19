@@ -686,7 +686,8 @@
     "MAX",
     "ScreenX",
     "Standard",
-    "Standard & Deluxe"
+    "Standard & Deluxe",
+    "VIP"
   ],
   "expByCinema": {
     "City Centre Alexandria": [
@@ -699,6 +700,9 @@
       "IMAX",
       "Kids",
       "MAX",
+      "Standard"
+    ],
+    "City Stars Cinema": [
       "Standard"
     ],
     "Mall of Egypt": [
@@ -716,6 +720,10 @@
     "Scene District 5": [
       "IMAX",
       "Standard & Deluxe"
+    ],
+    "Sun City Cinema": [
+      "Standard",
+      "VIP"
     ]
   },
   "bot": "OmarVoxBot"
