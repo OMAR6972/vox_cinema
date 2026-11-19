@@ -1568,5 +1568,6 @@
     "City Stars Cinema": [
       "Standard"
     ]
-  }
+  },
+  "sceneError": "2026-11-19T02:50:17+00:00 - cfc: failed to fetch https://cfc.scenecinemas.com/ after 3 attempts: HTTP 403; district5: failed to fetch https://district5.scenecinemas.com/ after 3 attempts: HTTP 403"
 }
