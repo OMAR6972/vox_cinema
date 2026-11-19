@@ -719,7 +719,12 @@
         "elc:sun-city:2026-11-25:765:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
         "elc:sun-city:2026-11-25:945:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
         "elc:sun-city:2026-11-25:1125:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
-        "elc:sun-city:2026-11-25:1305:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-25"
+        "elc:sun-city:2026-11-25:1305:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
+        "elc:sun-city-vip:2026-11-25:585:vip:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
+        "elc:sun-city-vip:2026-11-25:765:vip:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
+        "elc:sun-city-vip:2026-11-25:945:vip:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
+        "elc:sun-city-vip:2026-11-25:1125:vip:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
+        "elc:sun-city-vip:2026-11-25:1305:vip:the-hunger-games-sunrise-on-the-reaping": "2026-11-25"
       },
       "sceneSeeded": [
         "cfc",
@@ -1502,9 +1507,9 @@
       "sun-city|whalefall": false,
       "sun-city|belkis-turkish": false,
       "sun-city|how-to-rob-a-bank": false,
-      "sun-city-vip|hadoota-arabic": true,
-      "sun-city-vip|the-hunger-games-sunrise-on-the-reaping": false,
       "sun-city-vip|les-miserables": false,
+      "sun-city-vip|the-hunger-games-sunrise-on-the-reaping": false,
+      "sun-city-vip|hadoota-arabic": true,
       "city-stars|ebenezer": false,
       "city-stars|the-cat-in-the-hat": false,
       "city-stars|whalefall": false,
@@ -1525,6 +1530,6 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-19T01:06:08+00:00"
+    "lastRead": "2026-11-19T01:20:15+00:00"
   }
 }
