@@ -571,11 +571,12 @@
       "slug": "dune-part-three-preview-screening",
       "title": "Dune: Part Three -Preview Screening",
       "status": "soon",
-      "poster": "/assets/images/placeholder-poster.webp",
+      "poster": "posters/dune-part-three-preview-screening.jpg",
       "sources": [
         "vox"
       ],
-      "release": "15 December 2026"
+      "release": "15 December 2026",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013911_1795099058494.jpg"
     },
     {
       "slug": "jumanji-open-world",
