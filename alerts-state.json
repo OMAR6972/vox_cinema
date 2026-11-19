@@ -1295,13 +1295,15 @@
       "the-hunger-games-sunrise-on-the-reaping": {
         "title": "The Hunger Games: Sunrise on the Reaping",
         "raws": {
-          "cfc": "the-hunger-games-sunrise-on-the-reaping"
+          "cfc": "the-hunger-games-sunrise-on-the-reaping",
+          "district5": "the-hunger-games-sunrise-on-the-reaping"
         }
       },
       "i-play-rocky": {
         "title": "I Play Rocky",
         "raws": {
-          "cfc": "i-play-rocky"
+          "cfc": "i-play-rocky",
+          "district5": "i-play-rocky"
         }
       },
       "matloub-aelyan": {
@@ -1314,13 +1316,15 @@
       "crypto-arabic": {
         "title": "Crypto",
         "raws": {
-          "cfc": "crypto-arabic"
+          "cfc": "crypto-arabic",
+          "district5": "crypto-arabic"
         }
       },
       "forgotten-island": {
         "title": "Forgotten Island",
         "raws": {
-          "cfc": "forgotten-island"
+          "cfc": "forgotten-island",
+          "district5": "forgotten-island"
         }
       },
       "belkis-turkish": {
@@ -1367,24 +1371,6 @@
         "title": "Resident Evil",
         "raws": {
           "cfc": "resident_evil"
-        }
-      },
-      "naseeb-arabic": {
-        "title": "Naseeb",
-        "raws": {
-          "district5": "naseeb-arabic"
-        }
-      },
-      "whalefall": {
-        "title": "Whalefall",
-        "raws": {
-          "district5": "whalefall"
-        }
-      },
-      "heart-of-the-beast": {
-        "title": "Heart of the Beast",
-        "raws": {
-          "district5": "heart-of-the-beast"
         }
       }
     }
@@ -1543,6 +1529,6 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-19T01:40:14+00:00"
+    "lastRead": "2026-11-19T01:50:16+00:00"
   }
 }

@@ -114,7 +114,8 @@
         "elc"
       ],
       "sceneCinemas": [
-        "Scene CFC"
+        "Scene CFC",
+        "Scene District 5"
       ],
       "elcCinemas": [
         "Sun City Cinema",
@@ -168,7 +169,8 @@
         "elc"
       ],
       "sceneCinemas": [
-        "Scene CFC"
+        "Scene CFC",
+        "Scene District 5"
       ],
       "elcCinemas": [
         "Sun City Cinema",
@@ -241,7 +243,8 @@
         "elc"
       ],
       "sceneCinemas": [
-        "Scene CFC"
+        "Scene CFC",
+        "Scene District 5"
       ],
       "elcCinemas": [
         "Sun City Cinema",
@@ -314,7 +317,8 @@
         "elc"
       ],
       "sceneCinemas": [
-        "Scene CFC"
+        "Scene CFC",
+        "Scene District 5"
       ],
       "elcCinemas": [
         "Sun City Cinema",
@@ -354,11 +358,7 @@
       "poster": "posters/whalefall.jpg",
       "sources": [
         "vox",
-        "scene",
         "elc"
-      ],
-      "sceneCinemas": [
-        "Scene District 5"
       ],
       "elcCinemas": [
         "Sun City Cinema",
@@ -372,11 +372,7 @@
       "status": "now",
       "poster": "posters/naseeb-arabic.jpg",
       "sources": [
-        "vox",
-        "scene"
-      ],
-      "sceneCinemas": [
-        "Scene District 5"
+        "vox"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013764_1792133076768.jpg"
     },
@@ -607,22 +603,6 @@
       ],
       "release": "01 April 2027",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013689_1790927489815.jpg"
-    },
-    {
-      "slug": "heart-of-the-beast",
-      "title": "Heart of the Beast",
-      "status": "now",
-      "poster": "posters/heart-of-the-beast.jpg",
-      "sources": [
-        "scene"
-      ],
-      "sceneCinemas": [
-        "Scene District 5"
-      ],
-      "goneFrom": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013349_1782370147754.jpg"
     },
     {
       "slug": "matloub-aelyan",
