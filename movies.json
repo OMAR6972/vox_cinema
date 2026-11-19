@@ -31,7 +31,11 @@
       "status": "now",
       "poster": "posters/belkis-turkish.jpg",
       "sources": [
-        "vox"
+        "vox",
+        "scene"
+      ],
+      "sceneCinemas": [
+        "Scene CFC"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013780_1792992991396.jpg"
     },
@@ -102,7 +106,11 @@
       "poster": "posters/crypto-arabic.jpg",
       "sources": [
         "vox",
+        "scene",
         "elc"
+      ],
+      "sceneCinemas": [
+        "Scene CFC"
       ],
       "elcCinemas": [
         "City Stars Cinema"
@@ -151,7 +159,11 @@
       "poster": "posters/forgotten-island.jpg",
       "sources": [
         "vox",
+        "scene",
         "elc"
+      ],
+      "sceneCinemas": [
+        "Scene CFC"
       ],
       "elcCinemas": [
         "City Stars Cinema"
@@ -223,7 +235,11 @@
       "poster": "posters/i-play-rocky.jpg",
       "sources": [
         "vox",
+        "scene",
         "elc"
+      ],
+      "sceneCinemas": [
+        "Scene CFC"
       ],
       "elcCinemas": [
         "City Stars Cinema"
@@ -291,9 +307,14 @@
       "poster": "posters/the-hunger-games-sunrise-on-the-reaping.png",
       "sources": [
         "vox",
+        "scene",
         "elc"
       ],
+      "sceneCinemas": [
+        "Scene CFC"
+      ],
       "elcCinemas": [
+        "Sun City Cinema",
         "City Stars Cinema"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013542_1790335408400.png"
@@ -334,7 +355,6 @@
         "elc"
       ],
       "sceneCinemas": [
-        "Scene CFC",
         "Scene District 5"
       ],
       "elcCinemas": [
@@ -353,7 +373,6 @@
         "scene"
       ],
       "sceneCinemas": [
-        "Scene CFC",
         "Scene District 5"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013764_1792133076768.jpg"
@@ -375,11 +394,7 @@
       "poster": "posters/other-mommy.jpg",
       "sources": [
         "vox",
-        "scene",
         "elc"
-      ],
-      "sceneCinemas": [
-        "Scene CFC"
       ],
       "elcCinemas": [
         "Sun City Cinema"
@@ -412,11 +427,7 @@
       "poster": "posters/best-pancakes-in-the-county.jpg",
       "sources": [
         "vox",
-        "scene",
         "elc"
-      ],
-      "sceneCinemas": [
-        "Scene CFC"
       ],
       "elcCinemas": [
         "Sun City Cinema"
@@ -611,7 +622,6 @@
         "scene"
       ],
       "sceneCinemas": [
-        "Scene CFC",
         "Scene District 5"
       ],
       "goneFrom": [
@@ -633,22 +643,6 @@
       ]
     },
     {
-      "slug": "verity",
-      "title": "Verity",
-      "status": "now",
-      "poster": "posters/verity.jpg",
-      "sources": [
-        "scene"
-      ],
-      "sceneCinemas": [
-        "Scene CFC"
-      ],
-      "goneFrom": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013148_1779080275617.jpg"
-    },
-    {
       "slug": "wala-kan-ala-albal",
       "title": "Wala Kan Ala Albal",
       "status": "now",
@@ -660,22 +654,6 @@
         "Scene CFC",
         "Scene District 5"
       ]
-    },
-    {
-      "slug": "wildwood",
-      "title": "Wildwood",
-      "status": "now",
-      "poster": "posters/wildwood.jpg",
-      "sources": [
-        "scene"
-      ],
-      "sceneCinemas": [
-        "Scene CFC"
-      ],
-      "goneFrom": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013671_1793634887028.jpg"
     },
     {
       "slug": "into-the-wonderwoods",
@@ -698,6 +676,7 @@
         "elc"
       ],
       "elcCinemas": [
+        "Sun City Cinema",
         "City Stars Cinema"
       ]
     },

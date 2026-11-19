@@ -473,7 +473,8 @@
         "cfc",
         "district5",
         "elc-city-stars",
-        "elc-sun-city"
+        "elc-sun-city",
+        "elc-sun-city-vip"
       ]
     },
     "dune-part-three": {
@@ -542,7 +543,8 @@
         "cfc",
         "district5",
         "elc-city-stars",
-        "elc-sun-city"
+        "elc-sun-city",
+        "elc-sun-city-vip"
       ]
     },
     "the-hunger-games-sunrise-on-the-reaping-9db4": {
@@ -574,7 +576,8 @@
         "cfc",
         "district5",
         "elc-city-stars",
-        "elc-sun-city"
+        "elc-sun-city",
+        "elc-sun-city-vip"
       ],
       "filters": "[[\"City Centre Almaza\"], [], false]",
       "everHadSessions": true
@@ -586,7 +589,8 @@
         "cfc",
         "district5",
         "elc-city-stars",
-        "elc-sun-city"
+        "elc-sun-city",
+        "elc-sun-city-vip"
       ],
       "filters": "[[\"City Centre Almaza\"], [], false]"
     },
@@ -765,7 +769,8 @@
         "cfc",
         "district5",
         "elc-city-stars",
-        "elc-sun-city"
+        "elc-sun-city",
+        "elc-sun-city-vip"
       ],
       "filters": "[[], [], false]",
       "everHadSessions": true
@@ -777,7 +782,8 @@
         "cfc",
         "district5",
         "elc-city-stars",
-        "elc-sun-city"
+        "elc-sun-city",
+        "elc-sun-city-vip"
       ],
       "filters": "[[\"City Centre Almaza\"], [\"IMAX\", \"Standard\"], false]"
     },
@@ -788,7 +794,8 @@
         "cfc",
         "district5",
         "elc-city-stars",
-        "elc-sun-city"
+        "elc-sun-city",
+        "elc-sun-city-vip"
       ],
       "filters": "[[\"City Centre Almaza\"], [\"IMAX\", \"MAX\", \"Standard\"], false]"
     }
@@ -1049,20 +1056,25 @@
     "baseline": true,
     "known": [
       "avengers-doomsday",
+      "belkis-turkish",
       "best-pancakes-in-the-county",
       "clayface",
+      "crypto-arabic",
       "dune-part-three",
       "ebenezer",
+      "forgotten-island",
       "godzilla-minus-zero-japanese",
       "hadoota-arabic",
       "heart-of-the-beast",
       "how-to-rob-a-bank",
+      "i-play-rocky",
       "matloub-aelyan",
       "naseeb-arabic",
       "other-mommy",
       "resident-evil",
       "the-cat-in-the-hat",
       "the-cat-in-the-hat-arabic",
+      "the-hunger-games-sunrise-on-the-reaping",
       "verity",
       "wala-kan-ala-albal",
       "whalefall",
@@ -1104,31 +1116,16 @@
           "district5": "wala-kan-ala-albal"
         }
       },
-      "the-cat-in-the-hat": {
-        "title": "The Cat In The Hat",
+      "the-hunger-games-sunrise-on-the-reaping": {
+        "title": "The Hunger Games: Sunrise on the Reaping",
         "raws": {
-          "cfc": "the-cat-in-the-hat",
-          "district5": "the-cat-in-the-hat"
+          "cfc": "the-hunger-games-sunrise-on-the-reaping"
         }
       },
-      "clayface": {
-        "title": "Clayface",
+      "i-play-rocky": {
+        "title": "I Play Rocky",
         "raws": {
-          "cfc": "clayface",
-          "district5": "clayface"
-        }
-      },
-      "whalefall": {
-        "title": "Whalefall",
-        "raws": {
-          "cfc": "whalefall",
-          "district5": "whalefall"
-        }
-      },
-      "other-mommy": {
-        "title": "Other Mommy",
-        "raws": {
-          "cfc": "other-mommy"
+          "cfc": "i-play-rocky"
         }
       },
       "matloub-aelyan": {
@@ -1136,6 +1133,24 @@
         "raws": {
           "cfc": "matloub-aelyan",
           "district5": "matloub-aelyan"
+        }
+      },
+      "crypto-arabic": {
+        "title": "Crypto",
+        "raws": {
+          "cfc": "crypto-arabic"
+        }
+      },
+      "forgotten-island": {
+        "title": "Forgotten Island",
+        "raws": {
+          "cfc": "forgotten-island"
+        }
+      },
+      "belkis-turkish": {
+        "title": "Belkis",
+        "raws": {
+          "cfc": "belkis-turkish"
         }
       },
       "godzilla-minus-zero-japanese": {
@@ -1152,10 +1167,11 @@
           "district5": "how_to_rob_a_bank"
         }
       },
-      "best-pancakes-in-the-county": {
-        "title": "Best Pancakes in the County",
+      "the-cat-in-the-hat": {
+        "title": "The Cat In The Hat",
         "raws": {
-          "cfc": "best-pancakes-in-the-county"
+          "cfc": "the-cat-in-the-hat",
+          "district5": "the-cat-in-the-hat"
         }
       },
       "the-cat-in-the-hat-arabic": {
@@ -1164,36 +1180,35 @@
           "cfc": "the-cat-in-the-hat-arabic"
         }
       },
-      "wildwood": {
-        "title": "Wildwood",
+      "clayface": {
+        "title": "Clayface",
         "raws": {
-          "cfc": "wildwood"
-        }
-      },
-      "naseeb-arabic": {
-        "title": "Naseeb",
-        "raws": {
-          "cfc": "naseeb-arabic",
-          "district5": "naseeb-arabic"
-        }
-      },
-      "verity": {
-        "title": "Verity",
-        "raws": {
-          "cfc": "verity"
-        }
-      },
-      "heart-of-the-beast": {
-        "title": "Heart of the Beast",
-        "raws": {
-          "cfc": "heart-of-the-beast",
-          "district5": "heart-of-the-beast"
+          "cfc": "clayface",
+          "district5": "clayface"
         }
       },
       "resident-evil": {
         "title": "Resident Evil",
         "raws": {
           "cfc": "resident_evil"
+        }
+      },
+      "naseeb-arabic": {
+        "title": "Naseeb",
+        "raws": {
+          "district5": "naseeb-arabic"
+        }
+      },
+      "whalefall": {
+        "title": "Whalefall",
+        "raws": {
+          "district5": "whalefall"
+        }
+      },
+      "heart-of-the-beast": {
+        "title": "Heart of the Beast",
+        "raws": {
+          "district5": "heart-of-the-beast"
         }
       }
     }
@@ -1240,6 +1255,7 @@
         "title": "Hadoota",
         "theaters": [
           "sun-city",
+          "sun-city-vip",
           "city-stars"
         ]
       },
@@ -1294,6 +1310,20 @@
           "sun-city"
         ]
       },
+      "the-hunger-games-sunrise-on-the-reaping": {
+        "title": "The Hunger Games: Sunrise on the Reaping",
+        "theaters": [
+          "sun-city-vip",
+          "city-stars"
+        ]
+      },
+      "les-miserables": {
+        "title": "Les Miserables",
+        "theaters": [
+          "sun-city-vip",
+          "city-stars"
+        ]
+      },
       "saqr-w-kanarya": {
         "title": "Saqr w Kanarya",
         "theaters": [
@@ -1306,12 +1336,6 @@
           "city-stars"
         ]
       },
-      "the-hunger-games-sunrise-on-the-reaping": {
-        "title": "The Hunger Games: Sunrise on the Reaping",
-        "theaters": [
-          "city-stars"
-        ]
-      },
       "crypto-arabic": {
         "title": "Crypto",
         "theaters": [
@@ -1320,12 +1344,6 @@
       },
       "i-play-rocky": {
         "title": "I Play Rocky",
-        "theaters": [
-          "city-stars"
-        ]
-      },
-      "les-miserables": {
-        "title": "Les Miserables",
         "theaters": [
           "city-stars"
         ]
@@ -1346,6 +1364,9 @@
       "sun-city|godzilla-minus-zero-japanese": false,
       "sun-city|mahmoud-el-tany-arabic": false,
       "sun-city|best-pancakes-in-the-county": false,
+      "sun-city-vip|hadoota-arabic": true,
+      "sun-city-vip|the-hunger-games-sunrise-on-the-reaping": false,
+      "sun-city-vip|les-miserables": false,
       "city-stars|ebenezer": false,
       "city-stars|the-cat-in-the-hat": false,
       "city-stars|whalefall": false,
@@ -1363,8 +1384,9 @@
     },
     "online": {
       "sun-city": true,
-      "city-stars": false
+      "city-stars": false,
+      "sun-city-vip": true
     },
-    "lastRead": "2026-11-18T23:50:16+00:00"
+    "lastRead": "2026-11-19T00:00:19+00:00"
   }
 }
