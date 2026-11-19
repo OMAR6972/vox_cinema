@@ -60,6 +60,15 @@
       "alerts": {
         "dailySummary": true
       }
+    },
+    {
+      "id": "p5014da",
+      "name": "Omar Hegab",
+      "invite": "58ea02df3f39ae61220ebcfe",
+      "active": true,
+      "alerts": {
+        "dailySummary": true
+      }
     }
   ],
   "watches": [
