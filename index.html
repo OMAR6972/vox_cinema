@@ -20,7 +20,7 @@ html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--body);
   padding-block:max(18px,env(safe-area-inset-top)) 110px;
   padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
-main{max-width:880px;margin:0 auto;display:grid;gap:18px}
+main{max-width:1180px;margin:0 auto;display:grid;gap:18px}
 [hidden]{display:none!important}
 h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.02em}
 h1{font-size:1.9rem;font-weight:700}
@@ -46,11 +46,18 @@ input::placeholder{color:var(--mute)}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;display:grid;gap:12px;box-shadow:0 1px 3px rgba(20,60,110,.06)}
 
 /* poster cards */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
 .mc{box-shadow:0 1px 3px rgba(20,60,110,.07);background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;position:relative}
 .mc.paused{opacity:.55}
-.poster{aspect-ratio:2/3;background:linear-gradient(160deg,var(--panel2),var(--line));display:grid;place-items:center;font:700 2.4rem var(--display);color:var(--mute);overflow:hidden}
-.poster img{width:100%;height:100%;object-fit:cover;display:block}
+.poster{aspect-ratio:7/10;background:var(--panel2);position:relative;overflow:hidden}
+.poster img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;background:var(--panel2)}
+.poster .nop{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px;text-align:center;background:linear-gradient(160deg,var(--panel2),var(--glow));color:var(--mute)}
+.poster .nop svg{font-size:2.4rem;color:var(--acc);opacity:.8}
+.poster .nop b{font:700 .95rem/1.25 var(--display);color:var(--fg);display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.poster .nop small{font-size:.75rem}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--acc);color:var(--acc-fg);font-size:1.5rem}
+.warn{color:#b45309}.ico{vertical-align:-.2em}
 .mc .body{padding:10px 12px 12px;display:grid;gap:6px;flex:1}
 .mc .t{font-weight:700;line-height:1.15}
 .mc .s{font-size:.8rem;color:var(--mute);line-height:1.35}
@@ -96,7 +103,7 @@ input::placeholder{color:var(--mute)}
 .pc .av2{width:64px;height:64px;font-size:1.6rem}
 /* picker */
 .pick{cursor:pointer;text-align:left;padding:0;border-radius:14px;overflow:hidden;background:var(--panel);border:1px solid var(--line);min-height:0;display:block;width:100%}
-.pick .p{aspect-ratio:2/3}
+.pick .p{aspect-ratio:7/10}
 .pick .nm{padding:7px 9px;font-size:.82rem;font-weight:700;line-height:1.2}
 .pick:hover{border-color:var(--acc)}
 
@@ -108,7 +115,7 @@ input::placeholder{color:var(--mute)}
 /* action bar */
 #bar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--panel);border-top:1px solid var(--line);
   padding:10px max(16px,env(safe-area-inset-left)) calc(10px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
-#bar .in{max-width:880px;margin:0 auto;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+#bar .in{max-width:1180px;margin:0 auto;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 #bar .primary{flex:1 1 180px}
 .msg{font-size:.9rem;min-height:1.2em;flex:1 1 100%}
 .msg.ok{color:var(--ok)}.msg.bad{color:var(--bad)}
@@ -120,7 +127,7 @@ body{background:linear-gradient(180deg,var(--bg),var(--bg))}
 <body>
 <main>
   <header class="head">
-    <div><h1>🎬 VOX Alerts</h1><p class="mute">Get a Telegram or Discord message the moment your movies get showtimes.</p></div>
+    <div><h1 class="brand"><span class="logo"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"/></svg></span>VOX Alerts</h1><p class="mute">Get a Telegram or Discord message the moment your movies get showtimes.</p></div>
     <div class="row"><span class="pill" id="status"><i class="dot"></i><span id="statusText">Connecting…</span></span><button class="link" id="forget" hidden>Disconnect</button></div>
   </header>
 
@@ -217,16 +224,18 @@ function otherNames(m) { return (m.sceneCinemas || []).concat(m.elcCinemas || []
 function sourceNote(m) {
   if (!m) return "";
   var src = srcOf(m), gone = (m.goneFrom || []).indexOf("vox") >= 0;
-  if (gone) return '<p class="eg" style="color:#b45309">⚠️ <b>No longer at VOX.</b> ' + (src.length ? "It is only at " + otherNames(m).join(" and ") + " now." : "") + '</p>';
+  if (gone) return '<p class="eg" style="color:#b45309"><span class="warn"><svg class="ico" viewBox="0 0 24 24" width="1.1em" height="1.1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.5"/></svg></span> <b>No longer at VOX.</b> ' + (src.length ? "It is only at " + otherNames(m).join(" and ") + " now." : "") + '</p>';
   if (src.indexOf("vox") < 0) return '<p class="eg">Only at <b>' + esc(otherNames(m).join(" and ")) + '</b> (VOX does not list this movie).</p>';
-  var noBtn = (m.elcCinemas || []).length ? '<p class="eg">🎟️ <b>Sun City / City Stars</b> show times from elcinema. Some movies have no Buy tickets button there yet; the bot tells you when one appears.</p>' : "";
+  var noBtn = (m.elcCinemas || []).length ? '<p class="eg"><span class="warn" style="color:var(--acc)"><svg class="ico" viewBox="0 0 24 24" width="1.1em" height="1.1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 0 0 6v3h18v-3a2 2 0 0 1 0-6V6H3z"/><path d="M14 6v12" stroke-dasharray="2 3"/></svg></span> <b>Sun City / City Stars</b> show times from elcinema. Some movies have no Buy tickets button there yet; the bot tells you when one appears.</p>' : "";
   if (noBtn) return noBtn;
   return "";
 }
 function person(id) { return S.cfg.people.find(function (x) { return x.id === id; }); }
 function posterHtml(slug, title) {
   var m = movie(slug), u = m && m.poster;
-  return '<div class="poster">' + (u ? '<img loading="lazy" referrerpolicy="no-referrer" alt="" src="' + esc(u) + '" onerror="this.remove()">' : "") + (u ? "" : esc((title || "?").charAt(0))) + '</div>';
+  if (u && /placeholder/i.test(u)) u = "";   // VOX's "no poster yet" image does not exist on this site
+  var ph = '<div class="nop"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"/></svg><b>Poster not out yet</b><small>VOX has not published one</small></div>';
+  return '<div class="poster">' + ph + (u ? '<img alt="" src="' + esc(u) + '" onerror="this.remove()">' : "") + '</div>';
 }
 function summary(w) {
   var days = (w.dates && w.dates.length ? w.dates.map(pretty).join(", ") : "") + ((w.weekdays && w.weekdays.length) ? ((w.dates && w.dates.length ? ", " : "") + "every " + w.weekdays.map(function (d) { return WD[d]; }).join("/")) : "");
@@ -355,7 +364,7 @@ $("veil").addEventListener("click", function (e) {
 var ALERT_DEF = { dailySummary: true };
 function roundupOn(p) { var a = p.alerts || {}; return a.dailySummary !== undefined ? !!a.dailySummary : !!(a.newWeek || a.newMovies || a.comingSoon); }
 function inviteUrl(p) { return S.bot ? "https://t.me/" + S.bot + "?start=" + p.invite : ""; }
-function pstate(p) { return p.discord ? "💬 Discord channel" : (p.owner || p.chatId || S.links[p.id]) ? "✅ Connected" : "⏳ Waiting for Start"; }
+function pstate(p) { return p.discord ? "Discord channel" : (p.owner || p.chatId || S.links[p.id]) ? "Connected" : "Waiting for Start"; }
 function renderPeople() {
   $("peopleList").innerHTML = S.cfg.people.map(function (p, i) {
     var n = p.discord ? S.cfg.watches.length : S.cfg.watches.filter(function (w) { return (w.recipients || []).indexOf(p.id) >= 0; }).length;
@@ -465,7 +474,7 @@ function doSave(run) {
   (S.dirty ? saveCfg() : Promise.resolve())
     .then(function () { if (run) { say("Saved. Starting the bot…"); return runNow(); } })
     .then(function () {
-      say(run ? "Saved ✔ The bot is checking now. Give it about a minute." : "Saved ✔ The bot uses this at its next check.", "ok");
+      say(run ? "Saved. The bot is checking now. Give it about a minute." : "Saved. The bot uses this at its next check.", "ok");
       if (run) { setTimeout(loadStatus, 4000); setTimeout(loadStatus, 30000); setTimeout(function () { if (!S.dirty) load(); }, 60000); }
     })
     .catch(function (e) { say(e.message + (/409/.test(e.message) ? " Reload the page and try again." : ""), "bad"); })
