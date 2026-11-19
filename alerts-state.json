@@ -745,7 +745,14 @@
         "elc:city-stars:2026-11-25:960:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
         "elc:city-stars:2026-11-25:1140:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
         "elc:city-stars:2026-11-25:1320:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
-        "elc:city-stars:2026-11-25:1500:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-25"
+        "elc:city-stars:2026-11-25:1500:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
+        "scene:cfc:2026-11-19:1440:screenx:the-hunger-games-sunrise-on-the-reaping": "2026-11-19",
+        "scene:cfc:2026-11-20:1440:screenx:the-hunger-games-sunrise-on-the-reaping": "2026-11-20",
+        "scene:cfc:2026-11-21:1440:screenx:the-hunger-games-sunrise-on-the-reaping": "2026-11-21",
+        "scene:cfc:2026-11-22:1440:screenx:the-hunger-games-sunrise-on-the-reaping": "2026-11-22",
+        "scene:cfc:2026-11-23:1440:screenx:the-hunger-games-sunrise-on-the-reaping": "2026-11-23",
+        "scene:cfc:2026-11-24:1440:screenx:the-hunger-games-sunrise-on-the-reaping": "2026-11-24",
+        "scene:cfc:2026-11-25:1440:screenx:the-hunger-games-sunrise-on-the-reaping": "2026-11-25"
       },
       "sceneSeeded": [
         "cfc",
@@ -1425,6 +1432,13 @@
           "district5": "wala-kan-ala-albal"
         }
       },
+      "matloub-aelyan": {
+        "title": "Matloub Aelyan",
+        "raws": {
+          "cfc": "matloub-aelyan",
+          "district5": "matloub-aelyan"
+        }
+      },
       "the-hunger-games-sunrise-on-the-reaping": {
         "title": "The Hunger Games: Sunrise on the Reaping",
         "raws": {
@@ -1437,13 +1451,6 @@
         "raws": {
           "cfc": "i-play-rocky",
           "district5": "i-play-rocky"
-        }
-      },
-      "matloub-aelyan": {
-        "title": "Matloub Aelyan",
-        "raws": {
-          "cfc": "matloub-aelyan",
-          "district5": "matloub-aelyan"
         }
       },
       "crypto-arabic": {
@@ -1661,7 +1668,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-19T10:30:15+00:00"
+    "lastRead": "2026-11-19T10:40:14+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
