@@ -230,6 +230,23 @@
       "includeSoldOut": false,
       "active": true,
       "intro": true
+    },
+    {
+      "id": "avengers-doomsday-infinity-vision-p609ad",
+      "slug": "avengers-doomsday-infinity-vision",
+      "title": "Avengers: Doomsday (Infinity Vision)",
+      "recipients": [
+        "p609ad3"
+      ],
+      "cinemas": [],
+      "dates": [],
+      "weekdays": [],
+      "times": [],
+      "flex": 30,
+      "experiences": [],
+      "includeSoldOut": false,
+      "active": true,
+      "intro": true
     }
   ]
 }
