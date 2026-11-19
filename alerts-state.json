@@ -1584,13 +1584,6 @@
           "city-stars"
         ]
       },
-      "the-cat-in-the-hat": {
-        "title": "The Cat in the Hat",
-        "theaters": [
-          "sun-city",
-          "city-stars"
-        ]
-      },
       "forgotten-island": {
         "title": "Forgotten Island",
         "theaters": [
@@ -1598,8 +1591,15 @@
           "city-stars"
         ]
       },
-      "whalefall": {
-        "title": "Whalefall",
+      "the-cat-in-the-hat": {
+        "title": "The Cat in the Hat",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
+      "wala-kan-ala-el-bal-arabic": {
+        "title": "Wala Kan Ala El-Bal",
         "theaters": [
           "sun-city",
           "city-stars"
@@ -1612,15 +1612,8 @@
           "city-stars"
         ]
       },
-      "resident-evil": {
-        "title": "Resident Evil",
-        "theaters": [
-          "sun-city",
-          "city-stars"
-        ]
-      },
-      "ebenezer": {
-        "title": "Ebenezer",
+      "crypto-arabic": {
+        "title": "Crypto",
         "theaters": [
           "sun-city",
           "city-stars"
@@ -1628,20 +1621,6 @@
       },
       "i-play-rocky": {
         "title": "I Play Rocky",
-        "theaters": [
-          "sun-city",
-          "city-stars"
-        ]
-      },
-      "matloub-aaeleyan": {
-        "title": "Matloub Aaeleyan",
-        "theaters": [
-          "sun-city",
-          "city-stars"
-        ]
-      },
-      "wala-kan-ala-el-bal-arabic": {
-        "title": "Wala Kan Ala El-Bal",
         "theaters": [
           "sun-city",
           "city-stars"
@@ -1655,21 +1634,42 @@
           "city-stars"
         ]
       },
-      "crypto-arabic": {
-        "title": "Crypto",
+      "matloub-aaeleyan": {
+        "title": "Matloub Aaeleyan",
         "theaters": [
           "sun-city",
           "city-stars"
         ]
       },
-      "how-to-rob-a-bank": {
-        "title": "How to Rob a Bank",
+      "ebenezer": {
+        "title": "Ebenezer",
         "theaters": [
-          "sun-city"
+          "sun-city",
+          "city-stars"
+        ]
+      },
+      "resident-evil": {
+        "title": "Resident Evil",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
+      "whalefall": {
+        "title": "Whalefall",
+        "theaters": [
+          "sun-city",
+          "city-stars"
         ]
       },
       "belkis-turkish": {
         "title": "Belkis",
+        "theaters": [
+          "sun-city"
+        ]
+      },
+      "how-to-rob-a-bank": {
+        "title": "How to Rob a Bank",
         "theaters": [
           "sun-city"
         ]
@@ -1690,19 +1690,19 @@
     },
     "buttons": {
       "sun-city|the-hunger-games-sunrise-on-the-reaping": true,
-      "sun-city|the-cat-in-the-hat": false,
       "sun-city|forgotten-island": false,
-      "sun-city|whalefall": false,
-      "sun-city|clayface": false,
-      "sun-city|resident-evil": false,
-      "sun-city|ebenezer": false,
-      "sun-city|i-play-rocky": false,
-      "sun-city|matloub-aaeleyan": true,
+      "sun-city|the-cat-in-the-hat": false,
       "sun-city|wala-kan-ala-el-bal-arabic": true,
-      "sun-city|hadoota-arabic": true,
+      "sun-city|clayface": false,
       "sun-city|crypto-arabic": true,
-      "sun-city|how-to-rob-a-bank": false,
+      "sun-city|i-play-rocky": false,
+      "sun-city|hadoota-arabic": true,
+      "sun-city|matloub-aaeleyan": true,
+      "sun-city|ebenezer": false,
+      "sun-city|resident-evil": false,
+      "sun-city|whalefall": false,
       "sun-city|belkis-turkish": false,
+      "sun-city|how-to-rob-a-bank": false,
       "sun-city-vip|les-miserables": false,
       "sun-city-vip|the-hunger-games-sunrise-on-the-reaping": true,
       "sun-city-vip|hadoota-arabic": true,
@@ -1726,7 +1726,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-19T13:30:16+00:00"
+    "lastRead": "2026-11-19T13:40:14+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
