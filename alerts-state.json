@@ -691,7 +691,8 @@
         "elc-sun-city-vip"
       ],
       "filters": "[[\"City Centre Almaza\", \"City Stars Cinema\", \"Scene CFC\", \"Sun City Cinema\"], [], false]",
-      "everHadSessions": true
+      "everHadSessions": true,
+      "introNonce": "ed0a08e938bf"
     },
     "jumanji-open-world-94a1": {
       "booked": [],
