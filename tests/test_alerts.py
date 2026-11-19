@@ -1,3 +1,4 @@
+import json
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -715,3 +716,41 @@ def test_long_messages_are_split_not_cut_off():
     d = Http()
     real_discord_send("http://hook", text, http=d)
     assert len(d.posts) >= 5 and all(len(p["content"]) <= 1900 for p in d.posts) and "LAST BLOCK" in d.posts[-1]["content"]
+
+
+def test_start_before_the_person_is_saved_connects_them_once_they_are():
+    """Friend presses their invite link BEFORE Omar saves them: no 'ask for a link' dead end, they get linked after the save."""
+    vox, tg = FakeVox(), FakeTG()
+    cfg = CFG()
+    st = make(cfg, vox=vox, tg=tg).run()
+    tg.sent.clear()
+    tg.queue = [{"update_id": 40, "message": {"chat": {"id": 555}, "text": "/start newtok"}}]
+    st = make(cfg, st, vox, tg).run()                       # a check starts before the save
+    mine = [t for c, t, _ in tg.sent if str(c) == "555"]
+    assert len(mine) == 1 and "Almost there" in mine[0] and "invite link" not in mine[0].lower().replace("personal invite link", "")
+    assert "newtok" not in json.dumps(st)                    # the code itself is never written to the state file
+    # a plain Start in the meantime must not break anything or lose the pending one
+    tg.sent.clear()
+    tg.queue = [{"update_id": 41, "message": {"chat": {"id": 555}, "text": "/start"}}]
+    st = make(cfg, st, vox, tg).run()
+    assert "personal invite link" in "\n".join(t for c, t, _ in tg.sent if str(c) == "555")
+    # now Omar saves the person; the next run links them and says hello, once
+    tg.sent.clear()
+    cfg["people"].append({"id": "g", "name": "Hegab", "invite": "newtok"})
+    st = make(cfg, st, vox, tg).run()
+    hello = [t for c, t, _ in tg.sent if str(c) == "555"]
+    assert len(hello) == 1 and "you're connected" in hello[0] and "Hegab" in hello[0]
+    assert str(st["links"]["g"]) == "555" and "pendingStarts" not in st
+    tg.sent.clear()
+    make(cfg, st, vox, tg).run()
+    assert not [1 for c, t, _ in tg.sent if str(c) == "555"]
+
+
+def test_panel_screen_types_come_from_every_cinema():
+    sc, vox = FakeScene(), FakeVox()
+    e = make(SCFG(), vox=vox, scene=sc)
+    e.run()
+    doc = e.movies_doc()
+    assert doc["expByCinema"].get("Scene CFC") or doc["expByCinema"].get("Scene District 5")
+    scene_exps = {x for c, v in doc["expByCinema"].items() if c.startswith("Scene") for x in v}
+    assert scene_exps and scene_exps <= set(doc["experiences"])

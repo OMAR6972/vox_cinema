@@ -395,6 +395,12 @@ WAIT_NOTE = ("When you send me a command or tap a button, give me about a minute
              "I answer at my next check of the cinemas.")
 
 
+PENDING_START_TEXT = ("👋 Almost there! I got your Start, but I'm still being set up for you. "
+                      "You'll get a \"you're connected\" message here within a few minutes. No need to press anything again.")
+NO_INVITE_TEXT = ("Hi! I don't know you yet. Open the personal invite link you were sent and press Start there. "
+                  "(Pressing Start in this chat won't work without that link.)")
+
+
 def welcome_text(name):
     return (f"✅ Hi {esc(name)}, you're connected!\n\n"
             "I watch VOX and Scene Cinemas and message you here the moment the movies you track get showtimes. "

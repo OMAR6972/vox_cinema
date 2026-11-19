@@ -286,7 +286,7 @@ function openEditor(i, slug) {
     : JSON.parse(JSON.stringify(S.cfg.watches[i]));
   S.ed = { i: i, w: w };
   var mv = movie(w.slug), cins = cinemasFor(mv, w);
-  var exps = S.exps.slice(); w.experiences.forEach(function (c) { if (exps.indexOf(c) < 0) exps.push(c); });
+  var exps = S.exps.filter(function (c) { return !Object.keys(S.expBy).length || cins.some(function (n) { return (S.expBy[n] || []).indexOf(c) >= 0; }); }); w.experiences.forEach(function (c) { if (exps.indexOf(c) < 0) exps.push(c); });
   var sheet = $("sheet");
   sheet.innerHTML =
     '<div class="row between"><div class="row" style="flex-wrap:nowrap"><div style="width:54px;flex:none">' + posterHtml(w.slug, w.title) + '</div><div><h2>' + esc(w.title) + '</h2><p class="mute">' + (isNew ? "New watch" : "Editing this watch") + '</p></div></div><button class="ghost" data-close>Close</button></div>' + sourceNote(mv) +
@@ -303,7 +303,7 @@ function openEditor(i, slug) {
       cins.map(function (c) { return '<button type="button" class="chip" data-cin="' + esc(c) + '" aria-pressed="' + (w.cinemas.indexOf(c) >= 0) + '">' + esc(c) + '</button>'; }).join("") + '</div></div>' +
 
     '<div class="step"><h3><span class="n">4</span>Which screen type?</h3><p class="eg">Example: tap <b>IMAX</b> to hear only about IMAX shows. Tap nothing to hear about <b>every</b> type.</p><div class="row" id="e_exp">' +
-      (exps.map(function (c) { return '<button type="button" class="chip" data-exp="' + esc(c) + '" aria-pressed="' + (w.experiences.indexOf(c) >= 0) + '">' + esc(c) + '</button>'; }).join("") || '<span class="mute">Screen types appear after the bot’s first check.</span>') + '</div></div>' +
+      (exps.map(function (c) { var where = cins.filter(function (n) { return (S.expBy[n] || []).indexOf(c) >= 0; }); return '<button type="button" class="chip" data-exp="' + esc(c) + '" aria-pressed="' + (w.experiences.indexOf(c) >= 0) + '">' + esc(c) + (where.length ? ' <small style="opacity:.65">· ' + esc(where.join(", ")) + '</small>' : '') + '</button>'; }).join("") || '<span class="mute">Screen types appear after the bot’s first check.</span>') + '</div></div>' +
 
     '<div class="step"><h3><span class="n">5</span>Who gets the alerts?</h3><p class="eg">Example: tap your friend’s name and they get a message every time something matches this movie.</p><div class="row" id="e_rec">' +
       S.cfg.people.map(function (p) { return '<button type="button" class="who-chip" data-rec="' + esc(p.id) + '" aria-pressed="' + (w.recipients.indexOf(p.id) >= 0) + '"><span class="av">' + esc(p.name.charAt(0)) + '</span>' + esc(p.name) + '</button>'; }).join("") + '</div></div>' +
@@ -431,7 +431,7 @@ function load() {
   return Promise.all([readFile("config.json"), pub("movies.json"), pub("alerts-state.json")]).then(function (res) {
     S.cfg = res[0].data; S.sha = res[0].sha;
     S.cfg.settings = S.cfg.settings || {}; S.cfg.people = S.cfg.people || []; S.cfg.watches = S.cfg.watches || [];
-    var m = res[1] || {}; S.movies = m.movies || []; S.cinemas = m.cinemas || []; S.exps = m.experiences || []; S.bot = m.bot || null;
+    var m = res[1] || {}; S.movies = m.movies || []; S.cinemas = m.cinemas || []; S.exps = m.experiences || []; S.expBy = m.expByCinema || {}; S.bot = m.bot || null;
     if (S.cinemas.indexOf("City Centre Almaza") < 0) S.cinemas.unshift("City Centre Almaza");
     S.links = (res[2] || {}).links || {};
     $("summaryTime").value = S.cfg.settings.summaryTime || "18:00";

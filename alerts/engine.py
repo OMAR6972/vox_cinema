@@ -57,6 +57,11 @@ def empty_roundup():
     return {"dates": [], "weekMovies": [], "newMovies": [], "coming": []}
 
 
+def token_hash(token) -> str:
+    """Invite codes are never written to the state file as they are; only this scrambled form."""
+    return hashlib.sha256(str(token).encode("utf-8")).hexdigest()[:24]
+
+
 def read_json(path, default):
     try:
         return json.loads(Path(path).read_text(encoding="utf-8"))
@@ -186,6 +191,24 @@ class Engine:
                     self.handle_update(u)
                 except Exception as e:
                     log.warning("update failed: %s", e)
+        self.link_pending_starts()
+
+    def link_pending_starts(self):
+        """Connect people who pressed Start before they were saved: their invite code is now in config.json."""
+        pending = self.state.get("pendingStarts") or {}
+        if not pending:
+            return
+        cutoff = int(self.now.timestamp()) - 14 * 86400
+        for p in self.people:
+            h = token_hash(p["invite"]) if p.get("invite") else None
+            hit = pending.pop(h, None) if h else None
+            if hit:
+                self.state["links"][p["id"]] = hit["chat"]
+                self.tg.send(hit["chat"], F.welcome_text(F.first_name(p)))
+        for h in [k for k, v in pending.items() if v.get("at", 0) < cutoff]:
+            del pending[h]
+        if not pending:
+            self.state.pop("pendingStarts", None)
 
     def _by_chat(self, chat_id):
         for p in self.people:
@@ -222,19 +245,24 @@ class Engine:
                     self.state["links"][p["id"]] = chat["id"]
                     name = F.first_name(p)
                     self.tg.send(chat["id"], F.welcome_text(name))
+                elif arg:
+                    # A real invite code the bot doesn't know YET (the person was added but not saved before they
+                    # pressed Start). Remember it; the next run links them as soon as the person is saved.
+                    self.state.setdefault("pendingStarts", {})[token_hash(arg)] = {"chat": chat["id"], "at": int(self.now.timestamp())}
+                    self.tg.send(chat["id"], F.PENDING_START_TEXT)
                 elif self._by_chat(chat["id"]):
                     self.tg.send(chat["id"], HELP)
                 else:
-                    self.tg.send(chat["id"], "Hi! Ask the person who runs this bot for your personal invite link.")
+                    self.tg.send(chat["id"], F.NO_INVITE_TEXT)
             elif cmd == "/status":
                 p = self._by_chat(chat["id"])
-                self.tg.send(chat["id"], self.status_text(p) if p else "I don't know you yet. Ask for your invite link.")
+                self.tg.send(chat["id"], self.status_text(p) if p else F.NO_INVITE_TEXT)
             elif cmd == "/movies":
                 p = self._by_chat(chat["id"])
                 if p:
                     self.pending_movies.append((p, chat["id"]))
                 else:
-                    self.tg.send(chat["id"], "I don't know you yet. Ask for your invite link.")
+                    self.tg.send(chat["id"], F.NO_INVITE_TEXT)
             elif cmd.startswith("/"):
                 self.tg.send(chat["id"], HELP)
         q = u.get("callback_query")
@@ -858,5 +886,12 @@ class Engine:
                 seen.add(slug)
         cinemas = sorted({c for v in showing.values() for c in v["cinemas"] if c} | ({scene.BRANCHES[b]["name"] for m in listing.values() for b in m["raws"]})
                          | {elcinema.THEATERS[k]["name"] for m in elc.values() for k in m["theaters"] if k in elcinema.THEATERS})
-        exps = sorted({e for v in showing.values() for e in v["exps"] if e})
-        return {"movies": out, "cinemas": cinemas, "experiences": exps}
+        # screen types from EVERY cinema (VOX, Scene, Sun City, City Stars), and which cinemas have each one
+        by_cinema = {}
+        for lst in sess.values():
+            for x in lst:
+                if x.get("exp") and x.get("cinema"):
+                    by_cinema.setdefault(x["cinema"], set()).add(x["exp"])
+        exps = sorted({e for v in by_cinema.values() for e in v} | {e for v in showing.values() for e in v["exps"] if e})
+        return {"movies": out, "cinemas": cinemas, "experiences": exps,
+                "expByCinema": {c: sorted(v) for c, v in sorted(by_cinema.items())}}
