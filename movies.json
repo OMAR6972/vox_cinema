@@ -124,12 +124,17 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013669_1795016162041.jpg"
     },
     {
-      "slug": "dune-part-thre",
-      "title": "Dune: Part Thre",
+      "slug": "dune-part-three",
+      "title": "Dune: Part Three",
       "status": "now",
-      "poster": "posters/dune-part-thre.jpg",
+      "poster": "posters/dune-part-three.jpg",
       "sources": [
-        "vox"
+        "vox",
+        "scene"
+      ],
+      "sceneCinemas": [
+        "Scene CFC",
+        "Scene District 5"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013132_1795009844803.jpg"
     },
@@ -371,21 +376,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013764_1792133076768.jpg"
     },
     {
-      "slug": "dune-part-three",
-      "title": "Dune: Part Three",
-      "status": "now",
-      "poster": "posters/dune-part-three.jpg",
-      "sources": [
-        "vox",
-        "scene"
-      ],
-      "sceneCinemas": [
-        "Scene CFC",
-        "Scene District 5"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013132_1795009844803.jpg"
-    },
-    {
       "slug": "sense-and-sensibility",
       "title": "Sense and Sensibility",
       "status": "now",
@@ -578,8 +568,8 @@
       "release": "10 December 2026"
     },
     {
-      "slug": "dune-part-thre-preview-screening",
-      "title": "Dune: Part Thre-Preview Screening",
+      "slug": "dune-part-three-preview-screening",
+      "title": "Dune: Part Three -Preview Screening",
       "status": "soon",
       "poster": "/assets/images/placeholder-poster.webp",
       "sources": [
