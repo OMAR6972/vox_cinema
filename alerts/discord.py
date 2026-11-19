@@ -6,6 +6,8 @@ import time
 
 import requests
 
+from .textsplit import split_message
+
 
 def to_discord(html: str) -> str:
     """Telegram-style HTML -> Discord markdown."""
@@ -14,13 +16,17 @@ def to_discord(html: str) -> str:
     t = re.sub(r"</?i>", "_", t)
     t = re.sub(r"</?s>", "~~", t)
     t = t.replace("&lt;", "<").replace("&gt;", ">").replace("&quot;", '"').replace("&amp;", "&")
-    if len(t) > 1900:
-        t = t[:1890].rsplit("\n", 1)[0] + "\n…"
     return t
 
 
 def send(webhook_url: str, html: str, http=requests, sleep=time.sleep, image=None):
-    body = {"content": to_discord(html), "allowed_mentions": {"parse": []}}
+    """Discord allows 2000 characters a message: a longer alert goes out as several, the poster on the first."""
+    for n, piece in enumerate(split_message(to_discord(html), 1900)):
+        _post(webhook_url, piece, http, sleep, image if n == 0 else None)
+
+
+def _post(webhook_url, content, http, sleep, image):
+    body = {"content": content, "allowed_mentions": {"parse": []}}
     if image:
         body["embeds"] = [{"image": {"url": image}}]
     for _ in range(3):

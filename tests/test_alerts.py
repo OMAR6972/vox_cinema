@@ -2,6 +2,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from alerts import formatter as F
+from alerts.discord import send as real_discord_send   # other tests swap Discord's send; keep the real one
 from alerts.engine import Engine
 from alerts.matcher import evaluate, sessions_for_watch
 from alerts.vox import parse_coming_soon, parse_showtimes_page
@@ -678,3 +679,39 @@ def test_sun_city_vip_button_message_names_the_vip_hall():
     make(cfg, st, tg=tg, elc=el).run()
     btn = [t for _, t, _ in tg.sent if "BOOKING IS NOW OPEN" in t]
     assert len(btn) == 1 and "Sun City Cinema (VIP) just put a" in btn[0] and "/en/booking/2095318/3101257/" in btn[0]
+
+
+def test_long_messages_are_split_not_cut_off():
+    from alerts.textsplit import split_message
+    from alerts.tg import Telegram
+    blocks = [f"📅 <b>Day {n}</b>\n📍 Cinema\n   Standard: " + " · ".join(f'<a href="https://x.example/{n}/{t}">{t}:00 PM</a>' for t in range(1, 11))
+              for n in range(1, 31)] + ["📍 Sun City Cinema (LAST BLOCK)"]
+    text = "\n\n".join(blocks)
+    assert len(text) > 8000
+    pieces = split_message(text, 4000)
+    assert len(pieces) >= 3 and all(len(p) <= 4000 for p in pieces) and "\n\n".join(pieces) == text
+    assert split_message("short", 4000) == ["short"]
+
+    class Http:
+        def __init__(self):
+            self.posts = []
+
+        def post(self, url, json=None, **k):
+            self.posts.append(json)
+
+            class R:
+                status_code = 200
+
+                def json(self_):
+                    return {"ok": True, "result": {}}
+            return R()
+
+    h = Http()
+    Telegram("t", session=h).send(1, text, [[{"text": "x", "callback_data": "y"}]])
+    sent = [p["text"] for p in h.posts]
+    assert len(sent) == len(pieces) and "LAST BLOCK" in sent[-1] and all(len(t) <= 4000 for t in sent)
+    assert "reply_markup" in h.posts[-1] and all("reply_markup" not in p for p in h.posts[:-1])
+    assert "disable_notification" not in h.posts[0] and h.posts[1]["disable_notification"] is True
+    d = Http()
+    real_discord_send("http://hook", text, http=d)
+    assert len(d.posts) >= 5 and all(len(p["content"]) <= 1900 for p in d.posts) and "LAST BLOCK" in d.posts[-1]["content"]

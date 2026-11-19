@@ -5,6 +5,8 @@ import re
 
 import requests
 
+from .textsplit import split_message
+
 
 class Telegram:
     def __init__(self, token: str, session=None):
@@ -34,16 +36,18 @@ class Telegram:
             pass
 
     def send(self, chat_id, html, buttons=None, silent=False):
-        text = html
-        if len(text) > 4000:
-            text = re.sub(r"<[^>]*$", "", text[:3990]) + "…"
-        body = {"chat_id": chat_id, "text": text, "parse_mode": "HTML",
-                "link_preview_options": {"is_disabled": True}}
-        if silent:
-            body["disable_notification"] = True
-        if buttons:
-            body["reply_markup"] = {"inline_keyboard": buttons}
-        return self.api("sendMessage", body)
+        """A message too long for Telegram goes out as several, in order; the buttons sit under the last one."""
+        pieces = split_message(html, 4000)
+        result = None
+        for n, text in enumerate(pieces):
+            body = {"chat_id": chat_id, "text": text, "parse_mode": "HTML",
+                    "link_preview_options": {"is_disabled": True}}
+            if silent or n > 0:
+                body["disable_notification"] = True
+            if buttons and n == len(pieces) - 1:
+                body["reply_markup"] = {"inline_keyboard": buttons}
+            result = self.api("sendMessage", body)
+        return result
 
     def send_photo(self, chat_id, path, caption_html=None, silent=True):
         """Send a poster from a file in the repo. Silent, so the details message that follows is the one that pings."""
