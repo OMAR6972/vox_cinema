@@ -692,7 +692,7 @@
       ],
       "filters": "[[\"City Centre Almaza\", \"City Stars Cinema\", \"Scene CFC\", \"Sun City Cinema\"], [], false]",
       "everHadSessions": true,
-      "introNonce": "ed0a08e938bf"
+      "introNonce": "1b8edb5cf2c3"
     },
     "jumanji-open-world-94a1": {
       "booked": [],
@@ -1499,6 +1499,6 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-19T00:17:29+00:00"
+    "lastRead": "2026-11-19T00:27:19+00:00"
   }
 }
