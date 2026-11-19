@@ -1128,63 +1128,11 @@
   "roundup": {
     "dates": [],
     "weekMovies": [],
-    "newMovies": [
-      {
-        "slug": "dune-part-thre",
-        "title": "Dune: Part Thre",
-        "firstDate": "2026-12-17",
-        "experiences": [
-          "Standard",
-          "IMAX",
-          "GOLD"
-        ]
-      }
-    ],
-    "coming": [
-      {
-        "slug": "sophia-arabic",
-        "title": "Sophia",
-        "release": "25 November 2026"
-      },
-      {
-        "slug": "leila-bazet-khales-arabic",
-        "title": "Leila Bazet Khales",
-        "release": "25 November 2026"
-      },
-      {
-        "slug": "lela-bazit-khalis-arabic",
-        "title": "Lela Bazit Khalis",
-        "release": "26 November 2026"
-      },
-      {
-        "slug": "dune-part-thre-preview-screening",
-        "title": "Dune: Part Thre-Preview Screening",
-        "release": "15 December 2026"
-      },
-      {
-        "slug": "dune-part-thre",
-        "title": "Dune: Part Thre",
-        "release": "17 December 2026"
-      },
-      {
-        "slug": "sales-booking-ashar",
-        "title": "Sales Booking - Ashar",
-        "release": "24 December 2026"
-      },
-      {
-        "slug": "dune-part-three-preview-screening",
-        "title": "Dune: Part Three -Preview Screening",
-        "release": "15 December 2026"
-      },
-      {
-        "slug": "dune-part-three",
-        "title": "Dune: Part Three",
-        "release": "17 December 2026"
-      }
-    ]
+    "newMovies": [],
+    "coming": []
   },
   "summary": {
-    "lastSentDate": "2026-11-18"
+    "lastSentDate": "2026-11-19"
   },
   "offset": 601723964,
   "failures": 0,
@@ -1730,7 +1678,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-19T15:50:15+00:00"
+    "lastRead": "2026-11-19T16:00:21+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
