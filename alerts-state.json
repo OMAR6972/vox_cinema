@@ -323,8 +323,23 @@
       "release": "21 November 2026"
     },
     {
+      "slug": "sophia-arabic",
+      "title": "Sophia",
+      "release": "25 November 2026"
+    },
+    {
+      "slug": "leila-bazet-khales-arabic",
+      "title": "Leila Bazet Khales",
+      "release": "25 November 2026"
+    },
+    {
       "slug": "hexed",
       "title": "Hexed",
+      "release": "26 November 2026"
+    },
+    {
+      "slug": "lela-bazit-khalis-arabic",
+      "title": "Lela Bazit Khalis",
       "release": "26 November 2026"
     },
     {
@@ -339,12 +354,12 @@
     },
     {
       "slug": "dune-part-one-re-release",
-      "title": "Dune: Part One",
+      "title": "Dune: Part One (Re-Release)",
       "release": "10 December 2026"
     },
     {
       "slug": "dune-part-two-re-release",
-      "title": "Dune: Part Two",
+      "title": "Dune: Part Two (Re-Release)",
       "release": "10 December 2026"
     },
     {
@@ -1085,7 +1100,23 @@
     "dates": [],
     "weekMovies": [],
     "newMovies": [],
-    "coming": []
+    "coming": [
+      {
+        "slug": "sophia-arabic",
+        "title": "Sophia",
+        "release": "25 November 2026"
+      },
+      {
+        "slug": "leila-bazet-khales-arabic",
+        "title": "Leila Bazet Khales",
+        "release": "25 November 2026"
+      },
+      {
+        "slug": "lela-bazit-khalis-arabic",
+        "title": "Lela Bazit Khalis",
+        "release": "26 November 2026"
+      }
+    ]
   },
   "summary": {
     "lastSentDate": "2026-11-18"
@@ -1187,7 +1218,10 @@
     "les-mis-rables": "https://assets.voxcinemas.com/posters/P_HO00013495_1783655778696.jpg",
     "dune-part-one-re-release": "/assets/images/placeholder-poster.webp",
     "dune-part-two-re-release": "/assets/images/placeholder-poster.webp",
-    "forgotten-island": "https://assets.voxcinemas.com/posters/P_HO00013698_1791356496360.jpg"
+    "forgotten-island": "https://assets.voxcinemas.com/posters/P_HO00013698_1791356496360.jpg",
+    "sophia-arabic": "/assets/images/placeholder-poster.webp",
+    "leila-bazet-khales-arabic": "/assets/images/placeholder-poster.webp",
+    "lela-bazit-khalis-arabic": "/assets/images/placeholder-poster.webp"
   },
   "nowShowing": [
     {
@@ -1628,7 +1662,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-19T05:10:17+00:00"
+    "lastRead": "2026-11-19T05:20:17+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
