@@ -18,7 +18,7 @@
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--body);
-  padding-block:max(18px,env(safe-area-inset-top)) 110px;
+  padding-block:max(18px,env(safe-area-inset-top)) 40px;
   padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
 main{max-width:1180px;margin:0 auto;display:grid;gap:18px}
 [hidden]{display:none!important}
@@ -47,6 +47,7 @@ input::placeholder{color:var(--mute)}
 
 /* poster cards */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
+@media (max-width:560px){.grid{grid-template-columns:repeat(2,1fr);gap:12px}.mc .act{flex-direction:column}}
 .mc{box-shadow:0 1px 3px rgba(20,60,110,.07);background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;position:relative}
 .mc.paused{opacity:.55}
 .poster{aspect-ratio:7/10;background:var(--panel2);position:relative;overflow:hidden}
@@ -112,11 +113,11 @@ input::placeholder{color:var(--mute)}
 .av2{width:44px;height:44px;border-radius:50%;background:var(--acc);color:var(--acc-fg);display:grid;place-items:center;font:800 1.1rem var(--display);flex:none}
 .linkbox{background:var(--panel2);border-radius:12px;padding:10px 12px;font-size:.85rem;word-break:break-all}
 
-/* action bar */
-#bar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--panel);border-top:1px solid var(--line);
-  padding:10px max(16px,env(safe-area-inset-left)) calc(10px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
-#bar .in{max-width:1180px;margin:0 auto;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-#bar .primary{flex:1 1 180px}
+/* action bar: small buttons in the top bar */
+button.sm{min-height:36px;padding:6px 14px;font-size:.9rem;border-radius:10px}
+header.head{position:sticky;top:0;z-index:20;background:var(--bg);padding:10px 0;margin-top:-10px;align-items:center}
+.toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:40;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:9px 16px;box-shadow:0 6px 24px rgba(0,0,0,.25);max-width:min(560px,92vw);flex:none;min-height:0}
+.toast:empty{display:none}
 .msg{font-size:.9rem;min-height:1.2em;flex:1 1 100%}
 .msg.ok{color:var(--ok)}.msg.bad{color:var(--bad)}
 .dot{width:9px;height:9px;border-radius:50%;background:var(--mute)}
@@ -128,6 +129,7 @@ body{background:linear-gradient(180deg,var(--bg),var(--bg))}
 <main>
   <header class="head">
     <div><h1 class="brand"><span class="logo"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"/></svg></span>VOX Alerts</h1><p class="mute">Get a Telegram or Discord message the moment your movies get showtimes.</p></div>
+    <div class="row" id="bar" hidden><button class="primary sm" id="saveRun">Save &amp; check now</button><button class="sm" id="save">Save only</button></div>
     <div class="row"><span class="pill" id="status"><i class="dot"></i><span id="statusText">Connecting…</span></span><button class="link" id="forget" hidden>Disconnect</button></div>
   </header>
 
@@ -166,12 +168,7 @@ body{background:linear-gradient(180deg,var(--bg),var(--bg))}
     </section>
   </div>
 </main>
-
-<div id="bar" hidden><div class="in">
-  <button class="primary" id="saveRun">Save &amp; check now</button>
-  <button id="save">Save only</button>
-  <p class="msg" id="msg"></p>
-</div></div>
+<p class="msg toast" id="msg"></p>
 
 <div class="veil" id="veil" hidden><div class="sheet" id="sheet"></div></div>
 
@@ -187,7 +184,7 @@ function setToken(t) { try { if (t) localStorage.setItem("voxToken", t); else lo
 function enc(s) { return btoa(unescape(encodeURIComponent(s))); }
 function dec(s) { return decodeURIComponent(escape(atob(s.replace(/\n/g, "")))); }
 function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-function say(t, k) { var m = $("msg"); m.textContent = t; m.className = "msg" + (k ? " " + k : ""); }
+function say(t, k) { var m = $("msg"); m.textContent = t; m.className = "msg toast" + (k ? " " + k : ""); }
 function rid() { var a = new Uint8Array(6); crypto.getRandomValues(a); return Array.prototype.map.call(a, function (b) { return ("0" + b.toString(16)).slice(-2); }).join(""); }
 function dirty() { S.dirty = true; say("You have unsaved changes."); }
 
