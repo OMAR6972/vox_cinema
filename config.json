@@ -133,7 +133,8 @@
       "experiences": [],
       "includeSoldOut": false,
       "active": true,
-      "intro": true
+      "intro": true,
+      "introNonce": "ed0a08e938bf"
     },
     {
       "id": "jumanji-open-world-94a1",
