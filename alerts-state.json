@@ -767,7 +767,13 @@
         "scene:cfc:2026-11-23:1440:screenx:the-hunger-games-sunrise-on-the-reaping": "2026-11-23",
         "scene:cfc:2026-11-24:1440:screenx:the-hunger-games-sunrise-on-the-reaping": "2026-11-24",
         "scene:cfc:2026-11-25:1440:screenx:the-hunger-games-sunrise-on-the-reaping": "2026-11-25",
-        "0047-278485": "2026-11-19"
+        "0047-278485": "2026-11-19",
+        "0047-278489": "2026-11-20",
+        "0047-278493": "2026-11-21",
+        "0047-278497": "2026-11-22",
+        "0047-278501": "2026-11-23",
+        "0047-278505": "2026-11-24",
+        "0047-278509": "2026-11-25"
       },
       "sceneSeeded": [
         "cfc",
@@ -979,7 +985,10 @@
         "elc:city-stars:2026-11-25:1095:standard:clayface": "2026-11-25",
         "elc:city-stars:2026-11-25:1215:standard:clayface": "2026-11-25",
         "elc:city-stars:2026-11-25:1335:standard:clayface": "2026-11-25",
-        "elc:city-stars:2026-11-25:1455:standard:clayface": "2026-11-25"
+        "elc:city-stars:2026-11-25:1455:standard:clayface": "2026-11-25",
+        "scene:cfc:2026-11-20:930:standard:clayface": "2026-11-20",
+        "scene:cfc:2026-11-21:930:standard:clayface": "2026-11-21",
+        "scene:cfc:2026-11-22:930:standard:clayface": "2026-11-22"
       },
       "sceneSeeded": [
         "cfc",
@@ -1726,7 +1735,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-19T14:10:21+00:00"
+    "lastRead": "2026-11-19T14:20:17+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
