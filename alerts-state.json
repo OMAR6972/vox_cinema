@@ -326,6 +326,11 @@
       "release": "21 November 2026"
     },
     {
+      "slug": "lela-bazit-khalis-arabic",
+      "title": "Lela Bazit Khalis",
+      "release": "25 November 2026"
+    },
+    {
       "slug": "sophia-arabic",
       "title": "Sophia",
       "release": "25 November 2026"
@@ -333,11 +338,6 @@
     {
       "slug": "hexed",
       "title": "Hexed",
-      "release": "26 November 2026"
-    },
-    {
-      "slug": "lela-bazit-khalis-arabic",
-      "title": "Lela Bazit Khalis",
       "release": "26 November 2026"
     },
     {
@@ -1648,7 +1648,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-20T07:50:15+00:00"
+    "lastRead": "2026-11-20T08:00:19+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [

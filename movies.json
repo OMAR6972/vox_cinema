@@ -486,6 +486,17 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013869_1794481610194.jpg"
     },
     {
+      "slug": "lela-bazit-khalis-arabic",
+      "title": "Lela Bazit Khalis",
+      "status": "soon",
+      "poster": "posters/lela-bazit-khalis-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
+      "release": "25 November 2026",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013904_1795158862960.jpg"
+    },
+    {
       "slug": "sophia-arabic",
       "title": "Sophia",
       "status": "soon",
@@ -506,17 +517,6 @@
       ],
       "release": "26 November 2026",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013335_1795158985488.jpg"
-    },
-    {
-      "slug": "lela-bazit-khalis-arabic",
-      "title": "Lela Bazit Khalis",
-      "status": "soon",
-      "poster": "posters/lela-bazit-khalis-arabic.jpg",
-      "sources": [
-        "vox"
-      ],
-      "release": "26 November 2026",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013904_1795158862960.jpg"
     },
     {
       "slug": "maserati-the-brothers",
