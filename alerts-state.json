@@ -1499,11 +1499,10 @@
   "elc": {
     "baseline": true,
     "listing": {
-      "the-hunger-games-sunrise-on-the-reaping": {
-        "title": "The Hunger Games: Sunrise on the Reaping",
+      "forgotten-island": {
+        "title": "Forgotten Island",
         "theaters": [
           "sun-city",
-          "sun-city-vip",
           "city-stars"
         ]
       },
@@ -1514,10 +1513,11 @@
           "city-stars"
         ]
       },
-      "forgotten-island": {
-        "title": "Forgotten Island",
+      "the-hunger-games-sunrise-on-the-reaping": {
+        "title": "The Hunger Games: Sunrise on the Reaping",
         "theaters": [
           "sun-city",
+          "sun-city-vip",
           "city-stars"
         ]
       },
@@ -1535,22 +1535,8 @@
           "city-stars"
         ]
       },
-      "resident-evil": {
-        "title": "Resident Evil",
-        "theaters": [
-          "sun-city",
-          "city-stars"
-        ]
-      },
       "ebenezer": {
         "title": "Ebenezer",
-        "theaters": [
-          "sun-city",
-          "city-stars"
-        ]
-      },
-      "i-play-rocky": {
-        "title": "I Play Rocky",
         "theaters": [
           "sun-city",
           "city-stars"
@@ -1578,8 +1564,22 @@
           "city-stars"
         ]
       },
+      "i-play-rocky": {
+        "title": "I Play Rocky",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
       "crypto-arabic": {
         "title": "Crypto",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
+      "resident-evil": {
+        "title": "Resident Evil",
         "theaters": [
           "sun-city",
           "city-stars"
@@ -1612,18 +1612,18 @@
       }
     },
     "buttons": {
-      "sun-city|the-hunger-games-sunrise-on-the-reaping": false,
-      "sun-city|the-cat-in-the-hat": false,
       "sun-city|forgotten-island": false,
+      "sun-city|the-cat-in-the-hat": false,
+      "sun-city|the-hunger-games-sunrise-on-the-reaping": false,
       "sun-city|whalefall": false,
       "sun-city|clayface": false,
-      "sun-city|resident-evil": false,
       "sun-city|ebenezer": false,
-      "sun-city|i-play-rocky": false,
       "sun-city|matloub-aaeleyan": false,
       "sun-city|wala-kan-ala-el-bal-arabic": false,
       "sun-city|hadoota-arabic": true,
+      "sun-city|i-play-rocky": false,
       "sun-city|crypto-arabic": false,
+      "sun-city|resident-evil": false,
       "sun-city|how-to-rob-a-bank": false,
       "sun-city|belkis-turkish": false,
       "sun-city-vip|the-hunger-games-sunrise-on-the-reaping": false,
@@ -1649,7 +1649,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-20T11:10:13+00:00"
+    "lastRead": "2026-11-20T11:20:16+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
