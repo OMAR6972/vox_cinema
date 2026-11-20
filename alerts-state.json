@@ -1086,21 +1086,10 @@
     "dates": [],
     "weekMovies": [],
     "newMovies": [],
-    "coming": [
-      {
-        "slug": "the-beekeeper-2",
-        "title": "The Beekeeper 2",
-        "release": "14 January 2027"
-      },
-      {
-        "slug": "spider-man-brand-new-brand-new-day",
-        "title": "Spider-Man: (Brand New) Brand New Day",
-        "release": "03 December 2026"
-      }
-    ]
+    "coming": []
   },
   "summary": {
-    "lastSentDate": "2026-11-19"
+    "lastSentDate": "2026-11-20"
   },
   "offset": 601723964,
   "failures": 0,
@@ -1649,7 +1638,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-20T15:50:15+00:00"
+    "lastRead": "2026-11-20T16:00:14+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
