@@ -504,17 +504,18 @@
         "vox"
       ],
       "release": "26 November 2026",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013335_1782228087065.jpg"
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013335_1795158985488.jpg"
     },
     {
       "slug": "lela-bazit-khalis-arabic",
       "title": "Lela Bazit Khalis",
       "status": "soon",
-      "poster": "/assets/images/placeholder-poster.webp",
+      "poster": "posters/lela-bazit-khalis-arabic.jpg",
       "sources": [
         "vox"
       ],
-      "release": "26 November 2026"
+      "release": "26 November 2026",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013904_1795158862960.jpg"
     },
     {
       "slug": "maserati-the-brothers",
@@ -552,21 +553,23 @@
       "slug": "dune-part-one-re-release",
       "title": "Dune: Part One (Re-Release)",
       "status": "soon",
-      "poster": "/assets/images/placeholder-poster.webp",
+      "poster": "posters/dune-part-one-re-release.jpg",
       "sources": [
         "vox"
       ],
-      "release": "10 December 2026"
+      "release": "10 December 2026",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013767_1795158819474.jpg"
     },
     {
       "slug": "dune-part-two-re-release",
       "title": "Dune: Part Two (Re-Release)",
       "status": "soon",
-      "poster": "/assets/images/placeholder-poster.webp",
+      "poster": "posters/dune-part-two-re-release.jpg",
       "sources": [
         "vox"
       ],
-      "release": "10 December 2026"
+      "release": "10 December 2026",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013768_1795158825707.jpg"
     },
     {
       "slug": "dune-part-three-preview-screening",
@@ -621,17 +624,18 @@
         "vox"
       ],
       "release": "14 January 2027",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013577_1787744001464.jpg"
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013577_1795158915242.jpg"
     },
     {
       "slug": "the-beekeeper-2",
       "title": "The Beekeeper 2",
       "status": "soon",
-      "poster": "/assets/images/placeholder-poster.webp",
+      "poster": "posters/the-beekeeper-2.jpg",
       "sources": [
         "vox"
       ],
-      "release": "14 January 2027"
+      "release": "14 January 2027",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013914_1795158883411.jpg"
     },
     {
       "slug": "narnia-the-magicians-nephew",
