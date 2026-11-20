@@ -744,7 +744,8 @@
         "0047-278501": "2026-11-23",
         "0047-278505": "2026-11-24",
         "0047-278509": "2026-11-25",
-        "scene:cfc:2026-11-20:1440:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-20"
+        "scene:cfc:2026-11-20:1440:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-20",
+        "scene:cfc:2026-11-21:1440:standard:the-hunger-games-sunrise-on-the-reaping": "2026-11-21"
       },
       "sceneSeeded": [
         "cfc",
@@ -1638,7 +1639,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-20T19:00:19+00:00"
+    "lastRead": "2026-11-20T19:10:14+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
