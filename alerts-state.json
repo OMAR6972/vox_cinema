@@ -721,7 +721,8 @@
         "0032-170558": "2026-11-22",
         "0032-170564": "2026-11-23",
         "0032-170568": "2026-11-24",
-        "0032-170574": "2026-11-25"
+        "0032-170574": "2026-11-25",
+        "scene:cfc:2026-11-21:1485:standard:clayface": "2026-11-21"
       },
       "sceneSeeded": [
         "cfc",
@@ -936,7 +937,8 @@
         "scene:cfc:2026-11-25:930:standard:how-to-rob-a-bank": "2026-11-25",
         "elc:sun-city:2026-11-25:1125:standard:how-to-rob-a-bank": "2026-11-25",
         "elc:sun-city:2026-11-25:1305:standard:how-to-rob-a-bank": "2026-11-25",
-        "0047-278668": "2026-11-25"
+        "0047-278668": "2026-11-25",
+        "scene:cfc:2026-11-21:1470:standard:how-to-rob-a-bank": "2026-11-21"
       },
       "sceneSeeded": [
         "cfc",
@@ -1683,7 +1685,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-21T12:50:18+00:00"
+    "lastRead": "2026-11-21T13:00:14+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
