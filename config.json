@@ -249,6 +249,23 @@
       "includeSoldOut": false,
       "active": true,
       "intro": true
+    },
+    {
+      "id": "ebenezer-me",
+      "slug": "ebenezer",
+      "title": "Ebenezer",
+      "recipients": [
+        "me"
+      ],
+      "cinemas": [],
+      "dates": [],
+      "weekdays": [],
+      "times": [],
+      "flex": 30,
+      "experiences": [],
+      "includeSoldOut": false,
+      "active": true,
+      "intro": true
     }
   ]
 }
