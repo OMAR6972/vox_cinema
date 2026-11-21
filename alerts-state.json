@@ -1672,17 +1672,17 @@
       "sun-city-vip|les-miserables": false,
       "sun-city-vip|the-hunger-games-sunrise-on-the-reaping": false,
       "sun-city-vip|hadoota-arabic": true,
-      "city-stars|the-hunger-games-sunrise-on-the-reaping": false,
+      "city-stars|crypto-arabic": false,
       "city-stars|the-cat-in-the-hat": false,
       "city-stars|clayface": false,
-      "city-stars|resident-evil": false,
-      "city-stars|ebenezer": false,
-      "city-stars|i-play-rocky": false,
       "city-stars|forgotten-island": false,
       "city-stars|matloub-aaeleyan": false,
-      "city-stars|wala-kan-ala-el-bal-arabic": false,
       "city-stars|hadoota-arabic": false,
-      "city-stars|crypto-arabic": false,
+      "city-stars|the-hunger-games-sunrise-on-the-reaping": false,
+      "city-stars|i-play-rocky": false,
+      "city-stars|ebenezer": false,
+      "city-stars|resident-evil": false,
+      "city-stars|wala-kan-ala-el-bal-arabic": false,
       "city-stars|whalefall": false,
       "city-stars|saqr-w-kanarya": false,
       "city-stars|les-miserables": false
@@ -1692,7 +1692,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-21T19:10:14+00:00"
+    "lastRead": "2026-11-21T19:20:16+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
@@ -1732,5 +1732,6 @@
     "City Stars Cinema": [
       "Standard"
     ]
-  }
+  },
+  "sceneError": "2026-11-21T19:20:16+00:00 - cfc: failed to fetch https://cfc.scenecinemas.com/ after 3 attempts: HTTP 403; district5: failed to fetch https://district5.scenecinemas.com/ after 3 attempts: HTTP 403"
 }
