@@ -741,6 +741,7 @@
     "IMAX",
     "Kids",
     "MAX",
+    "Premiere",
     "ScreenX",
     "Standard",
     "Standard & Deluxe",
@@ -776,6 +777,7 @@
     ],
     "Scene District 5": [
       "IMAX",
+      "Premiere",
       "Standard & Deluxe"
     ],
     "Sun City Cinema": [
