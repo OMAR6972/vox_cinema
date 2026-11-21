@@ -73,6 +73,31 @@
   ],
   "watches": [
     {
+      "id": "how-to-rob-a-bank-c7f7",
+      "slug": "how-to-rob-a-bank",
+      "title": "How to Rob a Bank",
+      "recipients": [
+        "me",
+        "p93877b",
+        "discord"
+      ],
+      "cinemas": [
+        "City Centre Almaza",
+        "Mall of Egypt",
+        "Scene CFC",
+        "Sun City Cinema",
+        "Scene District 5"
+      ],
+      "dates": [],
+      "weekdays": [],
+      "times": [],
+      "flex": 30,
+      "experiences": [],
+      "includeSoldOut": false,
+      "active": true,
+      "intro": true
+    },
+    {
       "id": "dune-part-two-re-release-a410",
       "slug": "dune-part-two-re-release",
       "title": "Dune: Part Two",
@@ -120,29 +145,6 @@
       "includeSoldOut": false,
       "active": true,
       "intro": true
-    },
-    {
-      "id": "the-hunger-games-sunrise-on-the-reaping-9db4",
-      "slug": "the-hunger-games-sunrise-on-the-reaping",
-      "title": "The Hunger Games: Sunrise on the Reaping",
-      "recipients": [
-        "discord"
-      ],
-      "cinemas": [
-        "City Centre Almaza",
-        "Sun City Cinema",
-        "Scene CFC",
-        "City Stars Cinema"
-      ],
-      "dates": [],
-      "weekdays": [],
-      "times": [],
-      "flex": 30,
-      "experiences": [],
-      "includeSoldOut": false,
-      "active": true,
-      "intro": true,
-      "introNonce": "1b8edb5cf2c3"
     },
     {
       "id": "jumanji-open-world-94a1",
