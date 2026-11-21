@@ -95,7 +95,8 @@
       "experiences": [],
       "includeSoldOut": false,
       "active": true,
-      "intro": true
+      "intro": true,
+      "introNonce": "fcff24c81ad9"
     },
     {
       "id": "dune-part-two-re-release-a410",
