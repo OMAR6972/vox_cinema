@@ -713,7 +713,22 @@
         "elc:city-stars:2026-11-28:1095:standard:clayface": "2026-11-28",
         "elc:city-stars:2026-11-28:1215:standard:clayface": "2026-11-28",
         "elc:city-stars:2026-11-28:1335:standard:clayface": "2026-11-28",
-        "elc:city-stars:2026-11-28:1455:standard:clayface": "2026-11-28"
+        "elc:city-stars:2026-11-28:1455:standard:clayface": "2026-11-28",
+        "elc:sun-city:2026-11-26:615:standard:clayface": "2026-11-26",
+        "elc:sun-city:2026-11-26:780:standard:clayface": "2026-11-26",
+        "elc:sun-city:2026-11-26:945:standard:clayface": "2026-11-26",
+        "elc:sun-city:2026-11-26:1125:standard:clayface": "2026-11-26",
+        "elc:sun-city:2026-11-26:1305:standard:clayface": "2026-11-26",
+        "elc:sun-city:2026-11-27:615:standard:clayface": "2026-11-27",
+        "elc:sun-city:2026-11-27:780:standard:clayface": "2026-11-27",
+        "elc:sun-city:2026-11-27:945:standard:clayface": "2026-11-27",
+        "elc:sun-city:2026-11-27:1125:standard:clayface": "2026-11-27",
+        "elc:sun-city:2026-11-27:1305:standard:clayface": "2026-11-27",
+        "elc:sun-city:2026-11-28:615:standard:clayface": "2026-11-28",
+        "elc:sun-city:2026-11-28:780:standard:clayface": "2026-11-28",
+        "elc:sun-city:2026-11-28:945:standard:clayface": "2026-11-28",
+        "elc:sun-city:2026-11-28:1125:standard:clayface": "2026-11-28",
+        "elc:sun-city:2026-11-28:1305:standard:clayface": "2026-11-28"
       },
       "sceneSeeded": [
         "cfc",
@@ -913,7 +928,13 @@
         "scene:cfc:2026-11-25:930:standard:how-to-rob-a-bank": "2026-11-25",
         "elc:sun-city:2026-11-25:1125:standard:how-to-rob-a-bank": "2026-11-25",
         "elc:sun-city:2026-11-25:1305:standard:how-to-rob-a-bank": "2026-11-25",
-        "0047-278668": "2026-11-25"
+        "0047-278668": "2026-11-25",
+        "elc:sun-city:2026-11-26:1125:standard:how-to-rob-a-bank": "2026-11-26",
+        "elc:sun-city:2026-11-26:1305:standard:how-to-rob-a-bank": "2026-11-26",
+        "elc:sun-city:2026-11-27:1125:standard:how-to-rob-a-bank": "2026-11-27",
+        "elc:sun-city:2026-11-27:1305:standard:how-to-rob-a-bank": "2026-11-27",
+        "elc:sun-city:2026-11-28:1125:standard:how-to-rob-a-bank": "2026-11-28",
+        "elc:sun-city:2026-11-28:1305:standard:how-to-rob-a-bank": "2026-11-28"
       },
       "sceneSeeded": [
         "cfc",
@@ -1073,7 +1094,22 @@
         "elc:city-stars:2026-11-28:960:standard:ebenezer": "2026-11-28",
         "elc:city-stars:2026-11-28:1140:standard:ebenezer": "2026-11-28",
         "elc:city-stars:2026-11-28:1320:standard:ebenezer": "2026-11-28",
-        "elc:city-stars:2026-11-28:1470:standard:ebenezer": "2026-11-28"
+        "elc:city-stars:2026-11-28:1470:standard:ebenezer": "2026-11-28",
+        "elc:sun-city:2026-11-26:615:standard:ebenezer": "2026-11-26",
+        "elc:sun-city:2026-11-26:780:standard:ebenezer": "2026-11-26",
+        "elc:sun-city:2026-11-26:945:standard:ebenezer": "2026-11-26",
+        "elc:sun-city:2026-11-26:1125:standard:ebenezer": "2026-11-26",
+        "elc:sun-city:2026-11-26:1305:standard:ebenezer": "2026-11-26",
+        "elc:sun-city:2026-11-27:615:standard:ebenezer": "2026-11-27",
+        "elc:sun-city:2026-11-27:780:standard:ebenezer": "2026-11-27",
+        "elc:sun-city:2026-11-27:945:standard:ebenezer": "2026-11-27",
+        "elc:sun-city:2026-11-27:1125:standard:ebenezer": "2026-11-27",
+        "elc:sun-city:2026-11-27:1305:standard:ebenezer": "2026-11-27",
+        "elc:sun-city:2026-11-28:615:standard:ebenezer": "2026-11-28",
+        "elc:sun-city:2026-11-28:780:standard:ebenezer": "2026-11-28",
+        "elc:sun-city:2026-11-28:945:standard:ebenezer": "2026-11-28",
+        "elc:sun-city:2026-11-28:1125:standard:ebenezer": "2026-11-28",
+        "elc:sun-city:2026-11-28:1305:standard:ebenezer": "2026-11-28"
       },
       "sceneSeeded": [
         "cfc",
@@ -1498,6 +1534,13 @@
   "elc": {
     "baseline": true,
     "listing": {
+      "forgotten-island": {
+        "title": "Forgotten Island",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
       "the-hunger-games-sunrise-on-the-reaping": {
         "title": "The Hunger Games: Sunrise on the Reaping",
         "theaters": [
@@ -1513,29 +1556,15 @@
           "city-stars"
         ]
       },
-      "forgotten-island": {
-        "title": "Forgotten Island",
-        "theaters": [
-          "sun-city",
-          "city-stars"
-        ]
-      },
-      "whalefall": {
-        "title": "Whalefall",
-        "theaters": [
-          "sun-city",
-          "city-stars"
-        ]
-      },
-      "clayface": {
-        "title": "Clayface",
-        "theaters": [
-          "sun-city",
-          "city-stars"
-        ]
-      },
       "resident-evil": {
         "title": "Resident Evil",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
+      "crypto-arabic": {
+        "title": "Crypto",
         "theaters": [
           "sun-city",
           "city-stars"
@@ -1548,15 +1577,8 @@
           "city-stars"
         ]
       },
-      "i-play-rocky": {
-        "title": "I Play Rocky",
-        "theaters": [
-          "sun-city",
-          "city-stars"
-        ]
-      },
-      "matloub-aaeleyan": {
-        "title": "Matloub Aaeleyan",
+      "clayface": {
+        "title": "Clayface",
         "theaters": [
           "sun-city",
           "city-stars"
@@ -1577,8 +1599,22 @@
           "city-stars"
         ]
       },
-      "crypto-arabic": {
-        "title": "Crypto",
+      "matloub-aaeleyan": {
+        "title": "Matloub Aaeleyan",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
+      "i-play-rocky": {
+        "title": "I Play Rocky",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
+      "whalefall": {
+        "title": "Whalefall",
         "theaters": [
           "sun-city",
           "city-stars"
@@ -1611,18 +1647,18 @@
       }
     },
     "buttons": {
+      "sun-city|forgotten-island": false,
       "sun-city|the-hunger-games-sunrise-on-the-reaping": false,
       "sun-city|the-cat-in-the-hat": false,
-      "sun-city|forgotten-island": false,
-      "sun-city|whalefall": false,
-      "sun-city|clayface": false,
       "sun-city|resident-evil": false,
+      "sun-city|crypto-arabic": false,
       "sun-city|ebenezer": false,
-      "sun-city|i-play-rocky": false,
-      "sun-city|matloub-aaeleyan": false,
+      "sun-city|clayface": false,
       "sun-city|wala-kan-ala-el-bal-arabic": false,
       "sun-city|hadoota-arabic": true,
-      "sun-city|crypto-arabic": false,
+      "sun-city|matloub-aaeleyan": false,
+      "sun-city|i-play-rocky": false,
+      "sun-city|whalefall": false,
       "sun-city|how-to-rob-a-bank": false,
       "sun-city|belkis-turkish": false,
       "sun-city-vip|les-miserables": false,
@@ -1648,7 +1684,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-22T01:50:13+00:00"
+    "lastRead": "2026-11-22T02:00:25+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
