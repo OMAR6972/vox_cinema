@@ -934,7 +934,8 @@
         "elc:sun-city:2026-11-27:1125:standard:how-to-rob-a-bank": "2026-11-27",
         "elc:sun-city:2026-11-27:1305:standard:how-to-rob-a-bank": "2026-11-27",
         "elc:sun-city:2026-11-28:1125:standard:how-to-rob-a-bank": "2026-11-28",
-        "elc:sun-city:2026-11-28:1305:standard:how-to-rob-a-bank": "2026-11-28"
+        "elc:sun-city:2026-11-28:1305:standard:how-to-rob-a-bank": "2026-11-28",
+        "scene:cfc:2026-11-22:960:standard:how-to-rob-a-bank": "2026-11-22"
       },
       "sceneSeeded": [
         "cfc",
@@ -1684,7 +1685,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-22T07:30:22+00:00"
+    "lastRead": "2026-11-22T07:40:14+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
