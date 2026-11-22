@@ -730,7 +730,8 @@
         "elc:sun-city:2026-11-28:1125:standard:clayface": "2026-11-28",
         "elc:sun-city:2026-11-28:1305:standard:clayface": "2026-11-28",
         "scene:cfc:2026-11-22:1485:standard:clayface": "2026-11-22",
-        "scene:cfc:2026-11-22:1050:standard:clayface": "2026-11-22"
+        "scene:cfc:2026-11-22:1050:standard:clayface": "2026-11-22",
+        "scene:district5:2026-11-23:1470:standard-deluxe:clayface": "2026-11-23"
       },
       "sceneSeeded": [
         "cfc",
@@ -1691,7 +1692,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-22T18:10:15+00:00"
+    "lastRead": "2026-11-22T18:20:21+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
