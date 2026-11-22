@@ -1511,7 +1511,8 @@
       "how-to-rob-a-bank": {
         "title": "How to Rob a Bank",
         "raws": {
-          "cfc": "how-to-rob-a-bank"
+          "cfc": "how-to-rob-a-bank",
+          "district5": "how_to_rob_a_bank"
         }
       },
       "the-cat-in-the-hat": {
@@ -1702,7 +1703,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-22T21:00:14+00:00"
+    "lastRead": "2026-11-22T21:10:15+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
