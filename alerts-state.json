@@ -1725,5 +1725,6 @@
     "City Stars Cinema": [
       "Standard"
     ]
-  }
+  },
+  "elcError": "2026-11-22T09:10:16+00:00 - sun-city: elcinema cinema 3101119 failed: Failed to perform, curl: (28) Operation timed out after 20001 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.; sun-city-vip: elcinema cinema 3101257 failed: Failed to perform, curl: (28) Operation timed out after 20002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.; city-stars: elcinema cinema 3101050 failed: HTTP 500"
 }
