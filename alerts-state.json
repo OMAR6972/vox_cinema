@@ -853,7 +853,8 @@
         "0028-568216": "2026-12-23",
         "0028-568266": "2026-12-20",
         "0028-568264": "2026-12-20",
-        "0047-276789": "2026-12-21"
+        "0047-276789": "2026-12-21",
+        "0028-568263": "2026-12-19"
       },
       "sceneSeeded": [
         "cfc",
@@ -1687,7 +1688,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-22T09:50:14+00:00"
+    "lastRead": "2026-11-22T10:20:18+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
@@ -1727,6 +1728,5 @@
     "City Stars Cinema": [
       "Standard"
     ]
-  },
-  "elcError": "2026-11-22T10:10:13+00:00 - sun-city: elcinema cinema 3101119 failed: Failed to perform, curl: (28) Operation timed out after 20000 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.; sun-city-vip: it lists no movies on any day. The page layout may have changed.; city-stars: it lists no movies on any day. The page layout may have changed."
+  }
 }
