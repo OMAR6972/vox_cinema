@@ -314,6 +314,14 @@
     "dune-part-thre": {
       "firstSeen": "2026-11-19T12:00:20+00:00",
       "title": "Dune: Part Thre"
+    },
+    "sophia-arabic": {
+      "firstSeen": "2026-11-23T18:00:19+00:00",
+      "title": "Sophia"
+    },
+    "lela-bazit-khalis-arabic": {
+      "firstSeen": "2026-11-23T18:00:19+00:00",
+      "title": "Lela Bazit Khalis"
     }
   },
   "comingSoon": [
@@ -714,7 +722,9 @@
         "elc:city-stars:2026-11-29:1095:standard:clayface": "2026-11-29",
         "elc:city-stars:2026-11-29:1215:standard:clayface": "2026-11-29",
         "elc:city-stars:2026-11-29:1335:standard:clayface": "2026-11-29",
-        "elc:city-stars:2026-11-29:1455:standard:clayface": "2026-11-29"
+        "elc:city-stars:2026-11-29:1455:standard:clayface": "2026-11-29",
+        "0028-571459": "2026-11-25",
+        "0028-571458": "2026-11-25"
       },
       "sceneSeeded": [
         "cfc",
@@ -911,7 +921,11 @@
         "elc:sun-city:2026-11-28:1305:standard:how-to-rob-a-bank": "2026-11-28",
         "elc:sun-city:2026-11-29:1125:standard:how-to-rob-a-bank": "2026-11-29",
         "elc:sun-city:2026-11-29:1305:standard:how-to-rob-a-bank": "2026-11-29",
-        "scene:cfc:2026-11-23:1170:standard:how-to-rob-a-bank": "2026-11-23"
+        "scene:cfc:2026-11-23:1170:standard:how-to-rob-a-bank": "2026-11-23",
+        "0028-571246": "2026-11-25",
+        "0028-571247": "2026-11-25",
+        "0028-571248": "2026-11-25",
+        "0028-571249": "2026-11-25"
       },
       "sceneSeeded": [
         "cfc",
@@ -1063,7 +1077,10 @@
         "elc:city-stars:2026-11-29:960:standard:ebenezer": "2026-11-29",
         "elc:city-stars:2026-11-29:1140:standard:ebenezer": "2026-11-29",
         "elc:city-stars:2026-11-29:1320:standard:ebenezer": "2026-11-29",
-        "elc:city-stars:2026-11-29:1470:standard:ebenezer": "2026-11-29"
+        "elc:city-stars:2026-11-29:1470:standard:ebenezer": "2026-11-29",
+        "0028-571084": "2026-11-25",
+        "0028-571085": "2026-11-25",
+        "0028-571087": "2026-11-25"
       },
       "sceneSeeded": [
         "cfc",
@@ -1086,7 +1103,25 @@
   "roundup": {
     "dates": [],
     "weekMovies": [],
-    "newMovies": [],
+    "newMovies": [
+      {
+        "slug": "sophia-arabic",
+        "title": "Sophia",
+        "firstDate": "2026-11-25",
+        "experiences": [
+          "Standard"
+        ]
+      },
+      {
+        "slug": "lela-bazit-khalis-arabic",
+        "title": "Lela Bazit Khalis",
+        "firstDate": "2026-11-25",
+        "experiences": [
+          "Standard",
+          "GOLD"
+        ]
+      }
+    ],
     "coming": []
   },
   "summary": {
@@ -1502,7 +1537,7 @@
           "city-stars"
         ]
       },
-      "the-cat-in-the-hat": {
+      "the-cat-in-the-hat-arabic": {
         "title": "The Cat in the Hat",
         "theaters": [
           "sun-city",
@@ -1608,7 +1643,7 @@
     },
     "buttons": {
       "sun-city|the-hunger-games-sunrise-on-the-reaping": false,
-      "sun-city|the-cat-in-the-hat": false,
+      "sun-city|the-cat-in-the-hat-arabic": false,
       "sun-city|forgotten-island": false,
       "sun-city|whalefall": false,
       "sun-city|clayface": false,
@@ -1625,7 +1660,7 @@
       "sun-city-vip|les-miserables": false,
       "sun-city-vip|hadoota-arabic": true,
       "city-stars|the-hunger-games-sunrise-on-the-reaping": false,
-      "city-stars|the-cat-in-the-hat": false,
+      "city-stars|the-cat-in-the-hat-arabic": false,
       "city-stars|clayface": false,
       "city-stars|resident-evil": false,
       "city-stars|ebenezer": false,
@@ -1644,7 +1679,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-23T17:50:16+00:00"
+    "lastRead": "2026-11-23T18:00:19+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [

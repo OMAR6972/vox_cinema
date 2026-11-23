@@ -222,6 +222,16 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013824_1793870958335.jpg"
     },
     {
+      "slug": "lela-bazit-khalis-arabic",
+      "title": "Lela Bazit Khalis",
+      "status": "now",
+      "poster": "posters/lela-bazit-khalis-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013904_1795158862960.jpg"
+    },
+    {
       "slug": "les-mis-rables",
       "title": "Les Misérables",
       "status": "now",
@@ -242,22 +252,27 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013664_1791446223943.jpg"
     },
     {
+      "slug": "sophia-arabic",
+      "title": "Sophia",
+      "status": "now",
+      "poster": "posters/sophia-arabic.jpg",
+      "sources": [
+        "vox"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013909_1795159459330.jpg"
+    },
+    {
       "slug": "the-cat-in-the-hat",
       "title": "The Cat In The Hat",
       "status": "now",
       "poster": "posters/the-cat-in-the-hat.jpg",
       "sources": [
         "vox",
-        "scene",
-        "elc"
+        "scene"
       ],
       "sceneCinemas": [
         "Scene CFC",
         "Scene District 5"
-      ],
-      "elcCinemas": [
-        "Sun City Cinema",
-        "City Stars Cinema"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00012362_1793613218305.jpg"
     },
@@ -268,10 +283,15 @@
       "poster": "posters/the-cat-in-the-hat-arabic.jpg",
       "sources": [
         "vox",
-        "scene"
+        "scene",
+        "elc"
       ],
       "sceneCinemas": [
         "Scene CFC"
+      ],
+      "elcCinemas": [
+        "Sun City Cinema",
+        "City Stars Cinema"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013769_1793613239809.jpg"
     },
@@ -483,28 +503,6 @@
         "vox"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013815_1793880331436.jpg"
-    },
-    {
-      "slug": "lela-bazit-khalis-arabic",
-      "title": "Lela Bazit Khalis",
-      "status": "soon",
-      "poster": "posters/lela-bazit-khalis-arabic.jpg",
-      "sources": [
-        "vox"
-      ],
-      "release": "25 November 2026",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013904_1795158862960.jpg"
-    },
-    {
-      "slug": "sophia-arabic",
-      "title": "Sophia",
-      "status": "soon",
-      "poster": "posters/sophia-arabic.jpg",
-      "sources": [
-        "vox"
-      ],
-      "release": "25 November 2026",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013909_1795159459330.jpg"
     },
     {
       "slug": "hexed",
