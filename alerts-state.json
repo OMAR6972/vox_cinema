@@ -884,7 +884,7 @@
         "elc-sun-city",
         "elc-sun-city-vip"
       ],
-      "filters": "[[\"City Centre Almaza\", \"Mall of Egypt\", \"Scene CFC\", \"Scene District 5\", \"Sun City Cinema\"], [], false]",
+      "filters": "[[\"City Centre Almaza\", \"Sun City Cinema\"], [], false]",
       "everHadSessions": true,
       "introNonce": "fcff24c81ad9"
     },
@@ -1004,7 +1004,7 @@
         "elc-sun-city",
         "elc-sun-city-vip"
       ],
-      "filters": "[[], [], false]",
+      "filters": "[[\"City Centre Almaza\", \"Sun City Cinema\"], [], false]",
       "everHadSessions": true
     }
   },
@@ -1595,7 +1595,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-23T23:10:19+00:00"
+    "lastRead": "2026-11-23T23:20:17+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
