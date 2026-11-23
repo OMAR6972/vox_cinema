@@ -252,9 +252,13 @@
       "slug": "ebenezer",
       "title": "Ebenezer",
       "recipients": [
-        "me"
+        "me",
+        "discord"
       ],
-      "cinemas": [],
+      "cinemas": [
+        "City Centre Almaza",
+        "Sun City Cinema"
+      ],
       "dates": [],
       "weekdays": [],
       "times": [],
