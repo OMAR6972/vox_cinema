@@ -1588,26 +1588,26 @@
       "sun-city-vip|les-miserables": false,
       "sun-city-vip|hadoota-arabic": true,
       "city-stars|the-hunger-games-sunrise-on-the-reaping": false,
-      "city-stars|the-cat-in-the-hat-arabic": false,
-      "city-stars|clayface": false,
-      "city-stars|resident-evil": false,
-      "city-stars|ebenezer": false,
       "city-stars|i-play-rocky": false,
+      "city-stars|the-cat-in-the-hat-arabic": false,
+      "city-stars|hadoota-arabic": false,
+      "city-stars|clayface": false,
       "city-stars|forgotten-island": false,
+      "city-stars|crypto-arabic": false,
+      "city-stars|resident-evil": false,
       "city-stars|matloub-aaeleyan": false,
       "city-stars|wala-kan-ala-el-bal-arabic": false,
-      "city-stars|hadoota-arabic": false,
-      "city-stars|crypto-arabic": false,
+      "city-stars|ebenezer": false,
       "city-stars|whalefall": false,
-      "city-stars|saqr-w-kanarya": false,
-      "city-stars|les-miserables": false
+      "city-stars|les-miserables": false,
+      "city-stars|saqr-w-kanarya": false
     },
     "online": {
       "sun-city": true,
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-24T10:20:17+00:00"
+    "lastRead": "2026-11-24T10:30:18+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
