@@ -335,8 +335,18 @@
       "release": "25 November 2026"
     },
     {
+      "slug": "focker-in-law",
+      "title": "Focker In-Law",
+      "release": "26 November 2026"
+    },
+    {
       "slug": "hexed",
       "title": "Hexed",
+      "release": "26 November 2026"
+    },
+    {
+      "slug": "paper-tiger",
+      "title": "Paper Tiger",
       "release": "26 November 2026"
     },
     {
@@ -1056,7 +1066,18 @@
         ]
       }
     ],
-    "coming": []
+    "coming": [
+      {
+        "slug": "focker-in-law",
+        "title": "Focker In-Law",
+        "release": "26 November 2026"
+      },
+      {
+        "slug": "paper-tiger",
+        "title": "Paper Tiger",
+        "release": "26 November 2026"
+      }
+    ]
   },
   "summary": {
     "lastSentDate": "2026-11-23"
@@ -1167,7 +1188,9 @@
     "sales-booking-ashar": "/assets/images/placeholder-poster.webp",
     "dune-part-three-preview-screening": "https://assets.voxcinemas.com/posters/P_HO00013911_1795099058494.jpg",
     "the-beekeeper-2": "https://assets.voxcinemas.com/posters/P_HO00013914_1795158883411.jpg",
-    "spider-man-brand-new-brand-new-day": "https://assets.voxcinemas.com/posters/P_HO00013919_1795159425177.jpg"
+    "spider-man-brand-new-brand-new-day": "https://assets.voxcinemas.com/posters/P_HO00013919_1795159425177.jpg",
+    "focker-in-law": "https://assets.voxcinemas.com/posters/P_HO00013100_1792992744914.jpg",
+    "paper-tiger": "https://assets.voxcinemas.com/posters/P_HO00013773_1792993069513.jpg"
   },
   "nowShowing": [
     {
@@ -1607,7 +1630,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-24T11:10:14+00:00"
+    "lastRead": "2026-11-24T11:20:20+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [

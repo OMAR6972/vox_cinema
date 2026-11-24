@@ -505,6 +505,17 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013815_1793880331436.jpg"
     },
     {
+      "slug": "focker-in-law",
+      "title": "Focker In-Law",
+      "status": "soon",
+      "poster": "posters/focker-in-law.jpg",
+      "sources": [
+        "vox"
+      ],
+      "release": "26 November 2026",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013100_1792992744914.jpg"
+    },
+    {
       "slug": "hexed",
       "title": "Hexed",
       "status": "soon",
@@ -514,6 +525,17 @@
       ],
       "release": "26 November 2026",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013335_1795158985488.jpg"
+    },
+    {
+      "slug": "paper-tiger",
+      "title": "Paper Tiger",
+      "status": "soon",
+      "poster": "posters/paper-tiger.jpg",
+      "sources": [
+        "vox"
+      ],
+      "release": "26 November 2026",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013773_1792993069513.jpg"
     },
     {
       "slug": "violent-night-2",
