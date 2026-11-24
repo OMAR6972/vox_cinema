@@ -723,6 +723,18 @@
       ]
     },
     {
+      "slug": "laylat-bazet-khalis",
+      "title": "Laylat Bazet Khalis",
+      "status": "now",
+      "poster": null,
+      "sources": [
+        "elc"
+      ],
+      "elcCinemas": [
+        "Sun City Cinema"
+      ]
+    },
+    {
       "slug": "les-miserables",
       "title": "Les Miserables",
       "status": "now",

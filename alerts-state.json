@@ -1047,40 +1047,11 @@
   "roundup": {
     "dates": [],
     "weekMovies": [],
-    "newMovies": [
-      {
-        "slug": "sophia-arabic",
-        "title": "Sophia",
-        "firstDate": "2026-11-25",
-        "experiences": [
-          "Standard"
-        ]
-      },
-      {
-        "slug": "lela-bazit-khalis-arabic",
-        "title": "Lela Bazit Khalis",
-        "firstDate": "2026-11-25",
-        "experiences": [
-          "Standard",
-          "GOLD"
-        ]
-      }
-    ],
-    "coming": [
-      {
-        "slug": "focker-in-law",
-        "title": "Focker In-Law",
-        "release": "26 November 2026"
-      },
-      {
-        "slug": "paper-tiger",
-        "title": "Paper Tiger",
-        "release": "26 November 2026"
-      }
-    ]
+    "newMovies": [],
+    "coming": []
   },
   "summary": {
-    "lastSentDate": "2026-11-23"
+    "lastSentDate": "2026-11-24"
   },
   "offset": 601723966,
   "failures": 0,
@@ -1591,6 +1562,12 @@
           "city-stars"
         ]
       },
+      "laylat-bazet-khalis": {
+        "title": "Laylat Bazet Khalis",
+        "theaters": [
+          "sun-city-vip"
+        ]
+      },
       "saqr-w-kanarya": {
         "title": "Saqr w Kanarya",
         "theaters": [
@@ -1616,6 +1593,7 @@
       "sun-city-vip|the-hunger-games-sunrise-on-the-reaping": false,
       "sun-city-vip|les-miserables": false,
       "sun-city-vip|hadoota-arabic": true,
+      "sun-city-vip|laylat-bazet-khalis": true,
       "city-stars|the-hunger-games-sunrise-on-the-reaping": false,
       "city-stars|i-play-rocky": false,
       "city-stars|the-cat-in-the-hat-arabic": false,
@@ -1636,7 +1614,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-24T15:50:17+00:00"
+    "lastRead": "2026-11-24T16:00:16+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
