@@ -706,7 +706,22 @@
         "elc:sun-city:2026-11-30:780:standard:clayface": "2026-11-30",
         "elc:sun-city:2026-11-30:945:standard:clayface": "2026-11-30",
         "elc:sun-city:2026-11-30:1125:standard:clayface": "2026-11-30",
-        "elc:sun-city:2026-11-30:1305:standard:clayface": "2026-11-30"
+        "elc:sun-city:2026-11-30:1305:standard:clayface": "2026-11-30",
+        "scene:cfc:2026-11-26:795:standard:clayface": "2026-11-26",
+        "scene:cfc:2026-11-27:795:standard:clayface": "2026-11-27",
+        "scene:cfc:2026-11-28:795:standard:clayface": "2026-11-28",
+        "scene:cfc:2026-11-29:795:standard:clayface": "2026-11-29",
+        "scene:cfc:2026-11-29:1140:standard:clayface": "2026-11-29",
+        "scene:cfc:2026-11-29:1470:standard:clayface": "2026-11-29",
+        "scene:cfc:2026-11-30:795:standard:clayface": "2026-11-30",
+        "scene:cfc:2026-11-30:1140:standard:clayface": "2026-11-30",
+        "scene:cfc:2026-11-30:1470:standard:clayface": "2026-11-30",
+        "scene:cfc:2026-12-01:795:standard:clayface": "2026-12-01",
+        "scene:cfc:2026-12-01:1140:standard:clayface": "2026-12-01",
+        "scene:cfc:2026-12-01:1470:standard:clayface": "2026-12-01",
+        "scene:cfc:2026-12-02:795:standard:clayface": "2026-12-02",
+        "scene:cfc:2026-12-02:1140:standard:clayface": "2026-12-02",
+        "scene:cfc:2026-12-02:1470:standard:clayface": "2026-12-02"
       },
       "sceneSeeded": [
         "cfc",
@@ -1608,7 +1623,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-24T20:50:13+00:00"
+    "lastRead": "2026-11-24T21:00:15+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
