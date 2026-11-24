@@ -325,16 +325,6 @@
   },
   "comingSoon": [
     {
-      "slug": "lela-bazit-khalis-arabic",
-      "title": "Lela Bazit Khalis",
-      "release": "25 November 2026"
-    },
-    {
-      "slug": "sophia-arabic",
-      "title": "Sophia",
-      "release": "25 November 2026"
-    },
-    {
       "slug": "focker-in-law",
       "title": "Focker In-Law",
       "release": "26 November 2026"
@@ -1617,7 +1607,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-24T19:50:19+00:00"
+    "lastRead": "2026-11-24T20:01:38+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
