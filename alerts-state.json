@@ -340,6 +340,11 @@
       "release": "26 November 2026"
     },
     {
+      "slug": "violent-night-2",
+      "title": "Violent Night 2",
+      "release": "03 December 2026"
+    },
+    {
       "slug": "maserati-the-brothers",
       "title": "Maserati: The Brothers",
       "release": "03 December 2026"
@@ -348,11 +353,6 @@
       "slug": "spider-man-brand-new-brand-new-day",
       "title": "Spider-Man: (Brand New) Brand New Day",
       "release": "03 December 2026"
-    },
-    {
-      "slug": "violent-night-2",
-      "title": "Violent Night 2",
-      "release": "04 December 2026"
     },
     {
       "slug": "dune-part-one-re-release",
@@ -1607,7 +1607,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-24T08:50:19+00:00"
+    "lastRead": "2026-11-24T09:00:30+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [

@@ -516,6 +516,17 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013335_1795158985488.jpg"
     },
     {
+      "slug": "violent-night-2",
+      "title": "Violent Night 2",
+      "status": "soon",
+      "poster": "posters/violent-night-2.jpg",
+      "sources": [
+        "vox"
+      ],
+      "release": "03 December 2026",
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013590_1787744179734.jpg"
+    },
+    {
       "slug": "maserati-the-brothers",
       "title": "Maserati: The Brothers",
       "status": "soon",
@@ -536,17 +547,6 @@
       ],
       "release": "03 December 2026",
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013919_1795159425177.jpg"
-    },
-    {
-      "slug": "violent-night-2",
-      "title": "Violent Night 2",
-      "status": "soon",
-      "poster": "posters/violent-night-2.jpg",
-      "sources": [
-        "vox"
-      ],
-      "release": "04 December 2026",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013590_1787744179734.jpg"
     },
     {
       "slug": "dune-part-one-re-release",
