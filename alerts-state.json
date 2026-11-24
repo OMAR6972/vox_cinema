@@ -1555,17 +1555,18 @@
           "sun-city"
         ]
       },
+      "laylat-bazet-khalis": {
+        "title": "Laylat Bazet Khalis",
+        "theaters": [
+          "sun-city",
+          "sun-city-vip"
+        ]
+      },
       "les-miserables": {
         "title": "Les Miserables",
         "theaters": [
           "sun-city-vip",
           "city-stars"
-        ]
-      },
-      "laylat-bazet-khalis": {
-        "title": "Laylat Bazet Khalis",
-        "theaters": [
-          "sun-city-vip"
         ]
       },
       "saqr-w-kanarya": {
@@ -1590,6 +1591,7 @@
       "sun-city|hadoota-arabic": true,
       "sun-city|belkis-turkish": false,
       "sun-city|how-to-rob-a-bank": false,
+      "sun-city|laylat-bazet-khalis": true,
       "sun-city-vip|the-hunger-games-sunrise-on-the-reaping": false,
       "sun-city-vip|les-miserables": false,
       "sun-city-vip|hadoota-arabic": true,
@@ -1614,7 +1616,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-24T16:20:17+00:00"
+    "lastRead": "2026-11-24T16:30:19+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
