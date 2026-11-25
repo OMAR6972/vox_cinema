@@ -1,7 +1,6 @@
 {
   "baselineDone": true,
   "dates": [
-    "2026-11-25",
     "2026-11-26",
     "2026-11-27",
     "2026-11-28",
@@ -601,33 +600,6 @@
     "clayface-pbda93": {
       "booked": [],
       "seen": {
-        "0028-570888": "2026-11-25",
-        "0028-570890": "2026-11-25",
-        "0028-570892": "2026-11-25",
-        "scene:district5:2026-11-25:630:standard-deluxe:clayface": "2026-11-25",
-        "scene:district5:2026-11-25:795:standard-deluxe:clayface": "2026-11-25",
-        "scene:district5:2026-11-25:960:standard-deluxe:clayface": "2026-11-25",
-        "scene:district5:2026-11-25:1140:standard-deluxe:clayface": "2026-11-25",
-        "scene:district5:2026-11-25:1320:standard-deluxe:clayface": "2026-11-25",
-        "scene:cfc:2026-11-25:630:standard:clayface": "2026-11-25",
-        "scene:cfc:2026-11-25:795:standard:clayface": "2026-11-25",
-        "scene:cfc:2026-11-25:960:standard:clayface": "2026-11-25",
-        "scene:cfc:2026-11-25:1140:standard:clayface": "2026-11-25",
-        "scene:cfc:2026-11-25:1320:standard:clayface": "2026-11-25",
-        "scene:cfc:2026-11-25:1470:standard:clayface": "2026-11-25",
-        "elc:sun-city:2026-11-25:615:standard:clayface": "2026-11-25",
-        "elc:sun-city:2026-11-25:780:standard:clayface": "2026-11-25",
-        "elc:sun-city:2026-11-25:945:standard:clayface": "2026-11-25",
-        "elc:sun-city:2026-11-25:1125:standard:clayface": "2026-11-25",
-        "elc:sun-city:2026-11-25:1305:standard:clayface": "2026-11-25",
-        "elc:city-stars:2026-11-25:615:standard:clayface": "2026-11-25",
-        "elc:city-stars:2026-11-25:795:standard:clayface": "2026-11-25",
-        "elc:city-stars:2026-11-25:960:standard:clayface": "2026-11-25",
-        "elc:city-stars:2026-11-25:1095:standard:clayface": "2026-11-25",
-        "elc:city-stars:2026-11-25:1215:standard:clayface": "2026-11-25",
-        "elc:city-stars:2026-11-25:1335:standard:clayface": "2026-11-25",
-        "elc:city-stars:2026-11-25:1455:standard:clayface": "2026-11-25",
-        "0032-170574": "2026-11-25",
         "elc:city-stars:2026-11-26:615:standard:clayface": "2026-11-26",
         "elc:city-stars:2026-11-26:795:standard:clayface": "2026-11-26",
         "elc:city-stars:2026-11-26:960:standard:clayface": "2026-11-26",
@@ -664,7 +636,6 @@
         "elc:sun-city:2026-11-28:945:standard:clayface": "2026-11-28",
         "elc:sun-city:2026-11-28:1125:standard:clayface": "2026-11-28",
         "elc:sun-city:2026-11-28:1305:standard:clayface": "2026-11-28",
-        "scene:district5:2026-11-25:1470:standard-deluxe:clayface": "2026-11-25",
         "elc:sun-city:2026-11-29:615:standard:clayface": "2026-11-29",
         "elc:sun-city:2026-11-29:780:standard:clayface": "2026-11-29",
         "elc:sun-city:2026-11-29:945:standard:clayface": "2026-11-29",
@@ -677,8 +648,6 @@
         "elc:city-stars:2026-11-29:1215:standard:clayface": "2026-11-29",
         "elc:city-stars:2026-11-29:1335:standard:clayface": "2026-11-29",
         "elc:city-stars:2026-11-29:1455:standard:clayface": "2026-11-29",
-        "0028-571459": "2026-11-25",
-        "0028-571458": "2026-11-25",
         "elc:city-stars:2026-11-30:615:standard:clayface": "2026-11-30",
         "elc:city-stars:2026-11-30:795:standard:clayface": "2026-11-30",
         "elc:city-stars:2026-11-30:960:standard:clayface": "2026-11-30",
@@ -889,14 +858,6 @@
     "how-to-rob-a-bank-c7f7": {
       "booked": [],
       "seen": {
-        "scene:cfc:2026-11-25:630:standard:how-to-rob-a-bank": "2026-11-25",
-        "0047-278665": "2026-11-25",
-        "scene:cfc:2026-11-25:795:standard:how-to-rob-a-bank": "2026-11-25",
-        "0047-278666": "2026-11-25",
-        "scene:cfc:2026-11-25:930:standard:how-to-rob-a-bank": "2026-11-25",
-        "elc:sun-city:2026-11-25:1125:standard:how-to-rob-a-bank": "2026-11-25",
-        "elc:sun-city:2026-11-25:1305:standard:how-to-rob-a-bank": "2026-11-25",
-        "0047-278668": "2026-11-25",
         "elc:sun-city:2026-11-26:1125:standard:how-to-rob-a-bank": "2026-11-26",
         "elc:sun-city:2026-11-26:1305:standard:how-to-rob-a-bank": "2026-11-26",
         "elc:sun-city:2026-11-27:1125:standard:how-to-rob-a-bank": "2026-11-27",
@@ -905,10 +866,6 @@
         "elc:sun-city:2026-11-28:1305:standard:how-to-rob-a-bank": "2026-11-28",
         "elc:sun-city:2026-11-29:1125:standard:how-to-rob-a-bank": "2026-11-29",
         "elc:sun-city:2026-11-29:1305:standard:how-to-rob-a-bank": "2026-11-29",
-        "0028-571246": "2026-11-25",
-        "0028-571247": "2026-11-25",
-        "0028-571248": "2026-11-25",
-        "0028-571249": "2026-11-25",
         "elc:sun-city:2026-11-30:1125:standard:how-to-rob-a-bank": "2026-11-30",
         "elc:sun-city:2026-11-30:1305:standard:how-to-rob-a-bank": "2026-11-30",
         "elc:sun-city:2026-12-01:1125:standard:how-to-rob-a-bank": "2026-12-01",
@@ -942,30 +899,6 @@
     "ebenezer-me": {
       "booked": [],
       "seen": {
-        "elc:sun-city:2026-11-25:615:standard:ebenezer": "2026-11-25",
-        "elc:city-stars:2026-11-25:615:standard:ebenezer": "2026-11-25",
-        "scene:cfc:2026-11-25:630:premiere:ebenezer": "2026-11-25",
-        "scene:cfc:2026-11-25:630:standard:ebenezer": "2026-11-25",
-        "0047-278860": "2026-11-25",
-        "scene:cfc:2026-11-25:780:premiere:ebenezer": "2026-11-25",
-        "elc:sun-city:2026-11-25:780:standard:ebenezer": "2026-11-25",
-        "scene:cfc:2026-11-25:795:standard:ebenezer": "2026-11-25",
-        "elc:city-stars:2026-11-25:795:standard:ebenezer": "2026-11-25",
-        "scene:cfc:2026-11-25:915:premiere:ebenezer": "2026-11-25",
-        "elc:sun-city:2026-11-25:945:standard:ebenezer": "2026-11-25",
-        "scene:cfc:2026-11-25:960:standard:ebenezer": "2026-11-25",
-        "elc:city-stars:2026-11-25:960:standard:ebenezer": "2026-11-25",
-        "0047-278862": "2026-11-25",
-        "elc:sun-city:2026-11-25:1125:standard:ebenezer": "2026-11-25",
-        "scene:cfc:2026-11-25:1140:standard:ebenezer": "2026-11-25",
-        "elc:city-stars:2026-11-25:1140:standard:ebenezer": "2026-11-25",
-        "elc:sun-city:2026-11-25:1305:standard:ebenezer": "2026-11-25",
-        "scene:cfc:2026-11-25:1320:standard:ebenezer": "2026-11-25",
-        "elc:city-stars:2026-11-25:1320:standard:ebenezer": "2026-11-25",
-        "0032-170576": "2026-11-25",
-        "0047-278864": "2026-11-25",
-        "scene:cfc:2026-11-25:1470:standard:ebenezer": "2026-11-25",
-        "elc:city-stars:2026-11-25:1470:standard:ebenezer": "2026-11-25",
         "elc:city-stars:2026-11-26:615:standard:ebenezer": "2026-11-26",
         "elc:city-stars:2026-11-26:795:standard:ebenezer": "2026-11-26",
         "elc:city-stars:2026-11-26:960:standard:ebenezer": "2026-11-26",
@@ -1010,9 +943,6 @@
         "elc:city-stars:2026-11-29:1140:standard:ebenezer": "2026-11-29",
         "elc:city-stars:2026-11-29:1320:standard:ebenezer": "2026-11-29",
         "elc:city-stars:2026-11-29:1470:standard:ebenezer": "2026-11-29",
-        "0028-571084": "2026-11-25",
-        "0028-571085": "2026-11-25",
-        "0028-571087": "2026-11-25",
         "elc:sun-city:2026-11-30:615:standard:ebenezer": "2026-11-30",
         "elc:sun-city:2026-11-30:780:standard:ebenezer": "2026-11-30",
         "elc:sun-city:2026-11-30:945:standard:ebenezer": "2026-11-30",
@@ -1517,21 +1447,13 @@
       "the-hunger-games-sunrise-on-the-reaping": {
         "title": "The Hunger Games: Sunrise on the Reaping",
         "theaters": [
-          "sun-city",
-          "sun-city-vip"
-        ]
-      },
-      "forgotten-island": {
-        "title": "Forgotten Island",
-        "theaters": [
           "sun-city"
         ]
       },
       "the-cat-in-the-hat-arabic": {
         "title": "The Cat in the Hat",
         "theaters": [
-          "sun-city",
-          "city-stars"
+          "sun-city"
         ]
       },
       "matloub-aaeleyan": {
@@ -1597,18 +1519,6 @@
           "city-stars"
         ]
       },
-      "belkis-turkish": {
-        "title": "Belkis",
-        "theaters": [
-          "sun-city"
-        ]
-      },
-      "how-to-rob-a-bank": {
-        "title": "How to Rob a Bank",
-        "theaters": [
-          "sun-city"
-        ]
-      },
       "hexed": {
         "title": "Hexed",
         "theaters": [
@@ -1647,17 +1557,10 @@
         "theaters": [
           "city-stars"
         ]
-      },
-      "saqr-w-kanarya": {
-        "title": "Saqr w Kanarya",
-        "theaters": [
-          "city-stars"
-        ]
       }
     },
     "buttons": {
       "sun-city|the-hunger-games-sunrise-on-the-reaping": false,
-      "sun-city|forgotten-island": false,
       "sun-city|the-cat-in-the-hat-arabic": false,
       "sun-city|matloub-aaeleyan": false,
       "sun-city|ebenezer": false,
@@ -1668,12 +1571,9 @@
       "sun-city|hadoota-arabic": true,
       "sun-city|clayface": false,
       "sun-city|crypto-arabic": false,
-      "sun-city|belkis-turkish": false,
-      "sun-city|how-to-rob-a-bank": false,
       "sun-city|hexed": false,
       "sun-city|focker-in-law": false,
       "sun-city|paper-tiger": false,
-      "sun-city-vip|the-hunger-games-sunrise-on-the-reaping": false,
       "sun-city-vip|hadoota-arabic": true,
       "sun-city-vip|laylat-bazet-khalis": true,
       "sun-city-vip|you-can-see-everything": false,
@@ -1683,11 +1583,9 @@
       "city-stars|sophia-arabic": false,
       "city-stars|clayface": false,
       "city-stars|matloub-aaeleyan": false,
-      "city-stars|the-cat-in-the-hat-arabic": false,
       "city-stars|hadoota-arabic": false,
       "city-stars|i-play-rocky": false,
       "city-stars|laylat-bazet-khalis": false,
-      "city-stars|saqr-w-kanarya": false,
       "city-stars|hexed": false,
       "city-stars|focker-in-law": false,
       "city-stars|you-can-see-everything": false
@@ -1697,7 +1595,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-25T21:50:17+00:00"
+    "lastRead": "2026-11-25T22:00:18+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
