@@ -1311,18 +1311,18 @@
           "district5": "hadoota-arabic"
         }
       },
+      "lela-bazit-khalis-arabic": {
+        "title": "Leila Bazet Khales",
+        "raws": {
+          "cfc": "lela-bazit-khalis-arabic",
+          "district5": "lela-bazit-khalis-arabic"
+        }
+      },
       "dune-part-three": {
         "title": "Dune: Part Three",
         "raws": {
           "cfc": "dune-part-three",
           "district5": "dune-part-three"
-        }
-      },
-      "ebenezer": {
-        "title": "Ebenezer",
-        "raws": {
-          "cfc": "ebenezer",
-          "district5": "ebenezer"
         }
       },
       "wala-kan-ala-albal": {
@@ -1332,18 +1332,18 @@
           "district5": "wala-kan-ala-albal"
         }
       },
-      "lela-bazit-khalis-arabic": {
-        "title": "Leila Bazet Khales",
-        "raws": {
-          "cfc": "lela-bazit-khalis-arabic",
-          "district5": "lela-bazit-khalis-arabic"
-        }
-      },
       "the-hunger-games-sunrise-on-the-reaping": {
         "title": "The Hunger Games: Sunrise on the Reaping",
         "raws": {
           "cfc": "the-hunger-games-sunrise-on-the-reaping",
           "district5": "the-hunger-games-sunrise-on-the-reaping"
+        }
+      },
+      "ebenezer": {
+        "title": "Ebenezer",
+        "raws": {
+          "cfc": "ebenezer",
+          "district5": "ebenezer"
         }
       },
       "matloub-aelyan": {
@@ -1383,8 +1383,7 @@
       "godzilla-minus-zero-japanese": {
         "title": "Godzilla Minus Zero",
         "raws": {
-          "cfc": "godzilla-minus-zero",
-          "district5": "godzilla-minus-zero"
+          "cfc": "godzilla-minus-zero"
         }
       },
       "the-cat-in-the-hat": {
@@ -1574,7 +1573,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-25T05:20:18+00:00"
+    "lastRead": "2026-11-25T05:30:18+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
