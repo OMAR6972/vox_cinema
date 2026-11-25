@@ -376,20 +376,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013648_1792992542800.jpg"
     },
     {
-      "slug": "whalefall",
-      "title": "Whalefall",
-      "status": "now",
-      "poster": "posters/whalefall.jpg",
-      "sources": [
-        "vox",
-        "elc"
-      ],
-      "elcCinemas": [
-        "Sun City Cinema"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013581_1787744273942.jpg"
-    },
-    {
       "slug": "you-can-see-everything",
       "title": "You Can See Everything",
       "status": "now",
@@ -403,6 +389,20 @@
         "City Stars Cinema"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013875_1795010215072.jpg"
+    },
+    {
+      "slug": "whalefall",
+      "title": "Whalefall",
+      "status": "now",
+      "poster": "posters/whalefall.jpg",
+      "sources": [
+        "vox",
+        "elc"
+      ],
+      "elcCinemas": [
+        "Sun City Cinema"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013581_1787744273942.jpg"
     },
     {
       "slug": "les-mis-rables",
