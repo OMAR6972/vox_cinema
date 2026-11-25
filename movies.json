@@ -54,26 +54,6 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013816_1793880287431.jpg"
     },
     {
-      "slug": "clayface",
-      "title": "Clayface",
-      "status": "now",
-      "poster": "posters/clayface.jpg",
-      "sources": [
-        "vox",
-        "scene",
-        "elc"
-      ],
-      "sceneCinemas": [
-        "Scene CFC",
-        "Scene District 5"
-      ],
-      "elcCinemas": [
-        "Sun City Cinema",
-        "City Stars Cinema"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013587_1792992609492.jpg"
-    },
-    {
       "slug": "crypto-arabic",
       "title": "Crypto",
       "status": "now",
@@ -370,6 +350,26 @@
         "City Stars Cinema"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013875_1795010215072.jpg"
+    },
+    {
+      "slug": "clayface",
+      "title": "Clayface",
+      "status": "now",
+      "poster": "posters/clayface.jpg",
+      "sources": [
+        "vox",
+        "scene",
+        "elc"
+      ],
+      "sceneCinemas": [
+        "Scene CFC",
+        "Scene District 5"
+      ],
+      "elcCinemas": [
+        "Sun City Cinema",
+        "City Stars Cinema"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013587_1792992609492.jpg"
     },
     {
       "slug": "whalefall",
