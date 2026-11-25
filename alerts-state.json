@@ -4,6 +4,11 @@
     "2026-11-25",
     "2026-11-26",
     "2026-11-27",
+    "2026-11-28",
+    "2026-11-29",
+    "2026-11-30",
+    "2026-12-01",
+    "2026-12-02",
     "2026-12-16",
     "2026-12-17",
     "2026-12-18",
@@ -919,7 +924,9 @@
         "elc:sun-city:2026-11-30:1125:standard:how-to-rob-a-bank": "2026-11-30",
         "elc:sun-city:2026-11-30:1305:standard:how-to-rob-a-bank": "2026-11-30",
         "elc:sun-city:2026-12-01:1125:standard:how-to-rob-a-bank": "2026-12-01",
-        "elc:sun-city:2026-12-01:1305:standard:how-to-rob-a-bank": "2026-12-01"
+        "elc:sun-city:2026-12-01:1305:standard:how-to-rob-a-bank": "2026-12-01",
+        "0047-279856": "2026-12-02",
+        "0047-279857": "2026-12-02"
       },
       "sceneSeeded": [
         "cfc",
@@ -1015,7 +1022,9 @@
         "elc:sun-city:2026-12-01:780:standard:ebenezer": "2026-12-01",
         "elc:sun-city:2026-12-01:945:standard:ebenezer": "2026-12-01",
         "elc:sun-city:2026-12-01:1125:standard:ebenezer": "2026-12-01",
-        "elc:sun-city:2026-12-01:1305:standard:ebenezer": "2026-12-01"
+        "elc:sun-city:2026-12-01:1305:standard:ebenezer": "2026-12-01",
+        "0047-279498": "2026-12-02",
+        "0047-279501": "2026-12-02"
       },
       "sceneSeeded": [
         "cfc",
@@ -1036,8 +1045,75 @@
     "p609ad3": 5523812581
   },
   "roundup": {
-    "dates": [],
-    "weekMovies": [],
+    "dates": [
+      "2026-11-28",
+      "2026-11-29",
+      "2026-11-30",
+      "2026-12-01",
+      "2026-12-02"
+    ],
+    "weekMovies": [
+      {
+        "slug": "crypto-arabic",
+        "title": "Crypto"
+      },
+      {
+        "slug": "ebenezer",
+        "title": "Ebenezer"
+      },
+      {
+        "slug": "focker-in-law",
+        "title": "Focker In-Law"
+      },
+      {
+        "slug": "godzilla-minus-zero-japanese",
+        "title": "Godzilla Minus Zero"
+      },
+      {
+        "slug": "hadoota-arabic",
+        "title": "Hadoota"
+      },
+      {
+        "slug": "hexed",
+        "title": "Hexed"
+      },
+      {
+        "slug": "how-to-rob-a-bank",
+        "title": "How to Rob a Bank"
+      },
+      {
+        "slug": "i-play-rocky",
+        "title": "I Play Rocky"
+      },
+      {
+        "slug": "lela-bazit-khalis-arabic",
+        "title": "Lela Bazit Khalis"
+      },
+      {
+        "slug": "matloub-3a2eleyain-arabic",
+        "title": "Matloub 3a2eleyain"
+      },
+      {
+        "slug": "sophia-arabic",
+        "title": "Sophia"
+      },
+      {
+        "slug": "the-hunger-games-sunrise-on-the-reaping",
+        "title": "The Hunger Games: Sunrise on the Reaping"
+      },
+      {
+        "slug": "the-odyssey",
+        "title": "The Odyssey"
+      },
+      {
+        "slug": "wala-kan-ala-el-bal-arabic",
+        "title": "Wala Kan Ala El-Bal"
+      },
+      {
+        "slug": "you-can-see-everything",
+        "title": "You Can See Everything"
+      }
+    ],
     "newMovies": [],
     "coming": []
   },
@@ -1587,7 +1663,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-25T17:10:13+00:00"
+    "lastRead": "2026-11-25T17:20:29+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
