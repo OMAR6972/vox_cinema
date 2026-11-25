@@ -2,6 +2,8 @@
   "baselineDone": true,
   "dates": [
     "2026-11-25",
+    "2026-11-26",
+    "2026-11-27",
     "2026-12-16",
     "2026-12-17",
     "2026-12-18",
@@ -1011,7 +1013,10 @@
     "p609ad3": 5523812581
   },
   "roundup": {
-    "dates": [],
+    "dates": [
+      "2026-11-26",
+      "2026-11-27"
+    ],
     "weekMovies": [],
     "newMovies": [],
     "coming": []
@@ -1551,8 +1556,8 @@
       "sun-city|how-to-rob-a-bank": false,
       "sun-city|belkis-turkish": false,
       "sun-city-vip|the-hunger-games-sunrise-on-the-reaping": false,
-      "sun-city-vip|hadoota-arabic": true,
       "sun-city-vip|laylat-bazet-khalis": true,
+      "sun-city-vip|hadoota-arabic": true,
       "city-stars|the-hunger-games-sunrise-on-the-reaping": false,
       "city-stars|the-cat-in-the-hat-arabic": false,
       "city-stars|clayface": false,
@@ -1573,7 +1578,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-25T09:10:28+00:00"
+    "lastRead": "2026-11-25T09:20:15+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
