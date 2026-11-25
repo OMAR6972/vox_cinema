@@ -1581,16 +1581,16 @@
         "title": "Laylat Bazet Khalis",
         "theaters": [
           "sun-city",
-          "sun-city-vip",
-          "city-stars"
+          "city-stars",
+          "sun-city-vip"
         ]
       },
       "hadoota-arabic": {
         "title": "Hadoota",
         "theaters": [
           "sun-city",
-          "sun-city-vip",
-          "city-stars"
+          "city-stars",
+          "sun-city-vip"
         ]
       },
       "crypto-arabic": {
@@ -1650,6 +1650,9 @@
       }
     },
     "buttons": {
+      "sun-city-vip|the-hunger-games-sunrise-on-the-reaping": false,
+      "sun-city-vip|hadoota-arabic": true,
+      "sun-city-vip|laylat-bazet-khalis": true,
       "sun-city|the-hunger-games-sunrise-on-the-reaping": false,
       "sun-city|the-cat-in-the-hat-arabic": false,
       "sun-city|forgotten-island": false,
@@ -1664,9 +1667,6 @@
       "sun-city|crypto-arabic": false,
       "sun-city|how-to-rob-a-bank": false,
       "sun-city|belkis-turkish": false,
-      "sun-city-vip|the-hunger-games-sunrise-on-the-reaping": false,
-      "sun-city-vip|hadoota-arabic": true,
-      "sun-city-vip|laylat-bazet-khalis": true,
       "city-stars|crypto-arabic": false,
       "city-stars|wala-kan-ala-el-bal-arabic": false,
       "city-stars|ebenezer": false,
@@ -1687,7 +1687,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-25T18:00:15+00:00"
+    "lastRead": "2026-11-25T18:10:16+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
@@ -1727,5 +1727,6 @@
     "City Stars Cinema": [
       "Standard"
     ]
-  }
+  },
+  "elcError": "2026-11-25T18:10:16+00:00 - sun-city-vip: elcinema cinema 3101257 failed: Failed to perform, curl: (28) Operation timed out after 20002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
 }
