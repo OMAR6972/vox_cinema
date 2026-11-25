@@ -1522,14 +1522,14 @@
           "city-stars"
         ]
       },
-      "les-miserables": {
-        "title": "Les Miserables",
+      "saqr-w-kanarya": {
+        "title": "Saqr w Kanarya",
         "theaters": [
           "city-stars"
         ]
       },
-      "saqr-w-kanarya": {
-        "title": "Saqr w Kanarya",
+      "les-miserables": {
+        "title": "Les Miserables",
         "theaters": [
           "city-stars"
         ]
@@ -1554,26 +1554,26 @@
       "sun-city-vip|hadoota-arabic": true,
       "sun-city-vip|laylat-bazet-khalis": true,
       "city-stars|the-hunger-games-sunrise-on-the-reaping": false,
-      "city-stars|i-play-rocky": false,
       "city-stars|the-cat-in-the-hat-arabic": false,
-      "city-stars|hadoota-arabic": false,
       "city-stars|clayface": false,
-      "city-stars|forgotten-island": false,
-      "city-stars|crypto-arabic": false,
       "city-stars|resident-evil": false,
+      "city-stars|ebenezer": false,
+      "city-stars|i-play-rocky": false,
+      "city-stars|forgotten-island": false,
       "city-stars|matloub-aaeleyan": false,
       "city-stars|wala-kan-ala-el-bal-arabic": false,
-      "city-stars|ebenezer": false,
+      "city-stars|hadoota-arabic": false,
+      "city-stars|crypto-arabic": false,
       "city-stars|whalefall": false,
-      "city-stars|les-miserables": false,
-      "city-stars|saqr-w-kanarya": false
+      "city-stars|saqr-w-kanarya": false,
+      "city-stars|les-miserables": false
     },
     "online": {
       "sun-city": true,
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-25T07:50:13+00:00"
+    "lastRead": "2026-11-25T08:00:20+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
