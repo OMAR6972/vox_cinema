@@ -129,6 +129,16 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013804_1793271879769.jpg"
     },
     {
+      "slug": "focker-in-law",
+      "title": "Focker In-Law",
+      "status": "now",
+      "poster": "posters/focker-in-law.jpg",
+      "sources": [
+        "vox"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013100_1792992744914.jpg"
+    },
+    {
       "slug": "forgotten-island",
       "title": "Forgotten Island",
       "status": "now",
@@ -181,6 +191,16 @@
         "City Stars Cinema"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013755_1793793510180.jpg"
+    },
+    {
+      "slug": "hexed",
+      "title": "Hexed",
+      "status": "now",
+      "poster": "posters/hexed.jpg",
+      "sources": [
+        "vox"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013335_1795158985488.jpg"
     },
     {
       "slug": "how-to-rob-a-bank",
@@ -249,6 +269,16 @@
         "vox"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013664_1791446223943.jpg"
+    },
+    {
+      "slug": "paper-tiger",
+      "title": "Paper Tiger",
+      "status": "now",
+      "poster": "posters/paper-tiger.jpg",
+      "sources": [
+        "vox"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013773_1792993069513.jpg"
     },
     {
       "slug": "sophia-arabic",
@@ -355,186 +385,14 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013581_1787744273942.jpg"
     },
     {
-      "slug": "naseeb-arabic",
-      "title": "Naseeb",
+      "slug": "you-can-see-everything",
+      "title": "You Can See Everything",
       "status": "now",
-      "poster": "posters/naseeb-arabic.jpg",
+      "poster": "posters/you-can-see-everything.jpg",
       "sources": [
         "vox"
       ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013764_1792133076768.jpg"
-    },
-    {
-      "slug": "sense-and-sensibility",
-      "title": "Sense and Sensibility",
-      "status": "now",
-      "poster": "posters/sense-and-sensibility.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013636_1789645652221.jpg"
-    },
-    {
-      "slug": "other-mommy",
-      "title": "Other Mommy",
-      "status": "now",
-      "poster": "posters/other-mommy.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013661_1790166755402.jpg"
-    },
-    {
-      "slug": "resident-evil",
-      "title": "Resident Evil",
-      "status": "now",
-      "poster": "posters/resident-evil.jpg",
-      "sources": [
-        "vox",
-        "scene",
-        "elc"
-      ],
-      "sceneCinemas": [
-        "Scene CFC"
-      ],
-      "elcCinemas": [
-        "Sun City Cinema",
-        "City Stars Cinema"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013591_1787744773009.jpg"
-    },
-    {
-      "slug": "best-pancakes-in-the-county",
-      "title": "Best Pancakes in the County",
-      "status": "now",
-      "poster": "posters/best-pancakes-in-the-county.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013834_1794302408405.jpg"
-    },
-    {
-      "slug": "ciff-2026-the-mirage-arabic",
-      "title": "CIFF 2026: The Mirage",
-      "status": "now",
-      "poster": "posters/ciff-2026-the-mirage-arabic.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013859_1794305461180.jpg"
-    },
-    {
-      "slug": "ciff-2026-to-the-sun-and-beyond-tunisian-arabic",
-      "title": "CIFF 2026: To the Sun and Beyond",
-      "status": "now",
-      "poster": "posters/ciff-2026-to-the-sun-and-beyond-tunisian-arabic.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013860_1794305214088.jpg"
-    },
-    {
-      "slug": "ciff-2026-summer-meadow-french-arabic",
-      "title": "CIFF 2026: Summer Meadow",
-      "status": "now",
-      "poster": "posters/ciff-2026-summer-meadow-french-arabic.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013863_1794318918859.jpg"
-    },
-    {
-      "slug": "ciff-2026-the-female-idol-arabic",
-      "title": "CIFF 2026: The Female Idol",
-      "status": "now",
-      "poster": "posters/ciff-2026-the-female-idol-arabic.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013862_1794305284715.jpg"
-    },
-    {
-      "slug": "ciff-2026-the-people-and-the-nile-arabic",
-      "title": "CIFF 2026: The People and The Nile",
-      "status": "now",
-      "poster": "posters/ciff-2026-the-people-and-the-nile-arabic.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013844_1794305247972.jpg"
-    },
-    {
-      "slug": "ciff-2026-the-violinist-english-japanese",
-      "title": "CIFF 2026: The Violinist",
-      "status": "now",
-      "poster": "posters/ciff-2026-the-violinist-english-japanese.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013854_1794303814366.jpg"
-    },
-    {
-      "slug": "ciff-2026-the-second-wife-arabic",
-      "title": "CIFF 2026: The Second Wife",
-      "status": "now",
-      "poster": "posters/ciff-2026-the-second-wife-arabic.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013865_1794305425050.jpg"
-    },
-    {
-      "slug": "ciff-2026-the-soft-hands-arabic",
-      "title": "CIFF 2026: The Soft Hands",
-      "status": "now",
-      "poster": "posters/ciff-2026-the-soft-hands-arabic.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013869_1794481610194.jpg"
-    },
-    {
-      "slug": "bts-world-tour-arirang-in-kaohsiung-live-viewin",
-      "title": "BTS WORLD TOUR 'ARIRANG' IN KAOHSIUNG: LIVE VIEWIN",
-      "status": "now",
-      "poster": "posters/bts-world-tour-arirang-in-kaohsiung-live-viewin.jpg",
-      "sources": [
-        "vox"
-      ],
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013815_1793880331436.jpg"
-    },
-    {
-      "slug": "focker-in-law",
-      "title": "Focker In-Law",
-      "status": "soon",
-      "poster": "posters/focker-in-law.jpg",
-      "sources": [
-        "vox"
-      ],
-      "release": "26 November 2026",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013100_1792992744914.jpg"
-    },
-    {
-      "slug": "hexed",
-      "title": "Hexed",
-      "status": "soon",
-      "poster": "posters/hexed.jpg",
-      "sources": [
-        "vox"
-      ],
-      "release": "26 November 2026",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013335_1795158985488.jpg"
-    },
-    {
-      "slug": "paper-tiger",
-      "title": "Paper Tiger",
-      "status": "soon",
-      "poster": "posters/paper-tiger.jpg",
-      "sources": [
-        "vox"
-      ],
-      "release": "26 November 2026",
-      "remote": "https://assets.voxcinemas.com/posters/P_HO00013773_1792993069513.jpg"
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013875_1795010215072.jpg"
     },
     {
       "slug": "violent-night-2",
@@ -691,6 +549,27 @@
         "Scene CFC",
         "Scene District 5"
       ]
+    },
+    {
+      "slug": "resident-evil",
+      "title": "Resident Evil",
+      "status": "now",
+      "poster": "posters/resident-evil.jpg",
+      "sources": [
+        "scene",
+        "elc"
+      ],
+      "sceneCinemas": [
+        "Scene CFC"
+      ],
+      "elcCinemas": [
+        "Sun City Cinema",
+        "City Stars Cinema"
+      ],
+      "goneFrom": [
+        "vox"
+      ],
+      "remote": "https://assets.voxcinemas.com/posters/P_HO00013591_1787744773009.jpg"
     },
     {
       "slug": "wala-kan-ala-albal",

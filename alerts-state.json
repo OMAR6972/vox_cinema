@@ -322,6 +322,22 @@
     "lela-bazit-khalis-arabic": {
       "firstSeen": "2026-11-23T18:00:19+00:00",
       "title": "Lela Bazit Khalis"
+    },
+    "hexed": {
+      "firstSeen": "2026-11-25T09:30:24+00:00",
+      "title": "Hexed"
+    },
+    "focker-in-law": {
+      "firstSeen": "2026-11-25T09:30:24+00:00",
+      "title": "Focker In-Law"
+    },
+    "you-can-see-everything": {
+      "firstSeen": "2026-11-25T09:30:24+00:00",
+      "title": "You Can See Everything"
+    },
+    "paper-tiger": {
+      "firstSeen": "2026-11-25T09:30:24+00:00",
+      "title": "Paper Tiger"
     }
   },
   "comingSoon": [
@@ -1018,7 +1034,43 @@
       "2026-11-27"
     ],
     "weekMovies": [],
-    "newMovies": [],
+    "newMovies": [
+      {
+        "slug": "hexed",
+        "title": "Hexed",
+        "firstDate": "2026-11-26",
+        "experiences": [
+          "4DX",
+          "Standard",
+          "Kids"
+        ]
+      },
+      {
+        "slug": "focker-in-law",
+        "title": "Focker In-Law",
+        "firstDate": "2026-11-26",
+        "experiences": [
+          "GOLD",
+          "Standard"
+        ]
+      },
+      {
+        "slug": "you-can-see-everything",
+        "title": "You Can See Everything",
+        "firstDate": "2026-11-26",
+        "experiences": [
+          "Standard"
+        ]
+      },
+      {
+        "slug": "paper-tiger",
+        "title": "Paper Tiger",
+        "firstDate": "2026-11-26",
+        "experiences": [
+          "Standard"
+        ]
+      }
+    ],
     "coming": []
   },
   "summary": {
@@ -1132,12 +1184,25 @@
     "the-beekeeper-2": "https://assets.voxcinemas.com/posters/P_HO00013914_1795158883411.jpg",
     "spider-man-brand-new-brand-new-day": "https://assets.voxcinemas.com/posters/P_HO00013919_1795159425177.jpg",
     "focker-in-law": "https://assets.voxcinemas.com/posters/P_HO00013100_1792992744914.jpg",
-    "paper-tiger": "https://assets.voxcinemas.com/posters/P_HO00013773_1792993069513.jpg"
+    "paper-tiger": "https://assets.voxcinemas.com/posters/P_HO00013773_1792993069513.jpg",
+    "you-can-see-everything": "https://assets.voxcinemas.com/posters/P_HO00013875_1795010215072.jpg"
   },
   "nowShowing": [
     {
       "slug": "hadoota-arabic",
       "title": "Hadoota"
+    },
+    {
+      "slug": "lela-bazit-khalis-arabic",
+      "title": "Lela Bazit Khalis"
+    },
+    {
+      "slug": "hexed",
+      "title": "Hexed"
+    },
+    {
+      "slug": "focker-in-law",
+      "title": "Focker In-Law"
     },
     {
       "slug": "wala-kan-ala-el-bal-arabic",
@@ -1148,12 +1213,8 @@
       "title": "Matloub 3a2eleyain"
     },
     {
-      "slug": "godzilla-minus-zero-japanese",
-      "title": "Godzilla Minus Zero"
-    },
-    {
-      "slug": "how-to-rob-a-bank",
-      "title": "How to Rob a Bank"
+      "slug": "the-hunger-games-sunrise-on-the-reaping",
+      "title": "The Hunger Games: Sunrise on the Reaping"
     },
     {
       "slug": "ebenezer",
@@ -1162,18 +1223,6 @@
     {
       "slug": "the-cat-in-the-hat",
       "title": "The Cat In The Hat"
-    },
-    {
-      "slug": "clayface",
-      "title": "Clayface"
-    },
-    {
-      "slug": "whalefall",
-      "title": "Whalefall"
-    },
-    {
-      "slug": "naseeb-arabic",
-      "title": "Naseeb"
     },
     {
       "slug": "dune-part-three",
@@ -1188,16 +1237,28 @@
       "title": "Avengers: Doomsday"
     },
     {
-      "slug": "sense-and-sensibility",
-      "title": "Sense and Sensibility"
+      "slug": "crypto-arabic",
+      "title": "Crypto"
     },
     {
-      "slug": "other-mommy",
-      "title": "Other Mommy"
+      "slug": "i-play-rocky",
+      "title": "I Play Rocky"
     },
     {
-      "slug": "resident-evil",
-      "title": "Resident Evil"
+      "slug": "godzilla-minus-zero-japanese",
+      "title": "Godzilla Minus Zero"
+    },
+    {
+      "slug": "how-to-rob-a-bank",
+      "title": "How to Rob a Bank"
+    },
+    {
+      "slug": "clayface",
+      "title": "Clayface"
+    },
+    {
+      "slug": "whalefall",
+      "title": "Whalefall"
     },
     {
       "slug": "the-odyssey",
@@ -1212,60 +1273,24 @@
       "title": "Belkis"
     },
     {
-      "slug": "best-pancakes-in-the-county",
-      "title": "Best Pancakes in the County"
-    },
-    {
-      "slug": "ciff-2026-the-mirage-arabic",
-      "title": "CIFF 2026: The Mirage"
-    },
-    {
-      "slug": "ciff-2026-to-the-sun-and-beyond-tunisian-arabic",
-      "title": "CIFF 2026: To the Sun and Beyond"
-    },
-    {
-      "slug": "ciff-2026-summer-meadow-french-arabic",
-      "title": "CIFF 2026: Summer Meadow"
-    },
-    {
-      "slug": "ciff-2026-the-female-idol-arabic",
-      "title": "CIFF 2026: The Female Idol"
-    },
-    {
-      "slug": "ciff-2026-the-people-and-the-nile-arabic",
-      "title": "CIFF 2026: The People and The Nile"
-    },
-    {
-      "slug": "ciff-2026-the-violinist-english-japanese",
-      "title": "CIFF 2026: The Violinist"
-    },
-    {
-      "slug": "ciff-2026-the-second-wife-arabic",
-      "title": "CIFF 2026: The Second Wife"
-    },
-    {
-      "slug": "ciff-2026-the-soft-hands-arabic",
-      "title": "CIFF 2026: The Soft Hands"
-    },
-    {
-      "slug": "crypto-arabic",
-      "title": "Crypto"
-    },
-    {
-      "slug": "i-play-rocky",
-      "title": "I Play Rocky"
+      "slug": "forgotten-island",
+      "title": "Forgotten Island"
     },
     {
       "slug": "les-mis-rables",
       "title": "Les Misérables"
     },
     {
-      "slug": "the-hunger-games-sunrise-on-the-reaping",
-      "title": "The Hunger Games: Sunrise on the Reaping"
+      "slug": "you-can-see-everything",
+      "title": "You Can See Everything"
     },
     {
-      "slug": "bts-world-tour-arirang-in-kaohsiung-live-viewin",
-      "title": "BTS WORLD TOUR 'ARIRANG' IN KAOHSIUNG: LIVE VIEWIN"
+      "slug": "sophia-arabic",
+      "title": "Sophia"
+    },
+    {
+      "slug": "paper-tiger",
+      "title": "Paper Tiger"
     },
     {
       "slug": "bts-world-tour-arirang-in-jakarta-live-viewing",
@@ -1578,7 +1603,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-25T09:20:15+00:00"
+    "lastRead": "2026-11-25T09:30:24+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
