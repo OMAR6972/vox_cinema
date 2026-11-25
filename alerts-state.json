@@ -720,7 +720,12 @@
         "scene:district5:2026-12-01:1470:standard-deluxe:clayface": "2026-12-01",
         "scene:district5:2026-12-02:795:standard-deluxe:clayface": "2026-12-02",
         "scene:district5:2026-12-02:1140:standard-deluxe:clayface": "2026-12-02",
-        "scene:district5:2026-12-02:1470:standard-deluxe:clayface": "2026-12-02"
+        "scene:district5:2026-12-02:1470:standard-deluxe:clayface": "2026-12-02",
+        "elc:sun-city:2026-12-01:615:standard:clayface": "2026-12-01",
+        "elc:sun-city:2026-12-01:780:standard:clayface": "2026-12-01",
+        "elc:sun-city:2026-12-01:945:standard:clayface": "2026-12-01",
+        "elc:sun-city:2026-12-01:1125:standard:clayface": "2026-12-01",
+        "elc:sun-city:2026-12-01:1305:standard:clayface": "2026-12-01"
       },
       "sceneSeeded": [
         "cfc",
@@ -887,7 +892,9 @@
         "0028-571248": "2026-11-25",
         "0028-571249": "2026-11-25",
         "elc:sun-city:2026-11-30:1125:standard:how-to-rob-a-bank": "2026-11-30",
-        "elc:sun-city:2026-11-30:1305:standard:how-to-rob-a-bank": "2026-11-30"
+        "elc:sun-city:2026-11-30:1305:standard:how-to-rob-a-bank": "2026-11-30",
+        "elc:sun-city:2026-12-01:1125:standard:how-to-rob-a-bank": "2026-12-01",
+        "elc:sun-city:2026-12-01:1305:standard:how-to-rob-a-bank": "2026-12-01"
       },
       "sceneSeeded": [
         "cfc",
@@ -978,7 +985,12 @@
         "elc:sun-city:2026-11-30:780:standard:ebenezer": "2026-11-30",
         "elc:sun-city:2026-11-30:945:standard:ebenezer": "2026-11-30",
         "elc:sun-city:2026-11-30:1125:standard:ebenezer": "2026-11-30",
-        "elc:sun-city:2026-11-30:1305:standard:ebenezer": "2026-11-30"
+        "elc:sun-city:2026-11-30:1305:standard:ebenezer": "2026-11-30",
+        "elc:sun-city:2026-12-01:615:standard:ebenezer": "2026-12-01",
+        "elc:sun-city:2026-12-01:780:standard:ebenezer": "2026-12-01",
+        "elc:sun-city:2026-12-01:945:standard:ebenezer": "2026-12-01",
+        "elc:sun-city:2026-12-01:1125:standard:ebenezer": "2026-12-01",
+        "elc:sun-city:2026-12-01:1305:standard:ebenezer": "2026-12-01"
       },
       "sceneSeeded": [
         "cfc",
@@ -1412,10 +1424,11 @@
   "elc": {
     "baseline": true,
     "listing": {
-      "forgotten-island": {
-        "title": "Forgotten Island",
+      "the-hunger-games-sunrise-on-the-reaping": {
+        "title": "The Hunger Games: Sunrise on the Reaping",
         "theaters": [
           "sun-city",
+          "sun-city-vip",
           "city-stars"
         ]
       },
@@ -1426,30 +1439,8 @@
           "city-stars"
         ]
       },
-      "the-hunger-games-sunrise-on-the-reaping": {
-        "title": "The Hunger Games: Sunrise on the Reaping",
-        "theaters": [
-          "sun-city",
-          "sun-city-vip",
-          "city-stars"
-        ]
-      },
-      "clayface": {
-        "title": "Clayface",
-        "theaters": [
-          "sun-city",
-          "city-stars"
-        ]
-      },
-      "matloub-aaeleyan": {
-        "title": "Matloub Aaeleyan",
-        "theaters": [
-          "sun-city",
-          "city-stars"
-        ]
-      },
-      "ebenezer": {
-        "title": "Ebenezer",
+      "forgotten-island": {
+        "title": "Forgotten Island",
         "theaters": [
           "sun-city",
           "city-stars"
@@ -1462,8 +1453,8 @@
           "city-stars"
         ]
       },
-      "crypto-arabic": {
-        "title": "Crypto",
+      "clayface": {
+        "title": "Clayface",
         "theaters": [
           "sun-city",
           "city-stars"
@@ -1476,11 +1467,32 @@
           "city-stars"
         ]
       },
+      "ebenezer": {
+        "title": "Ebenezer",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
+      "matloub-aaeleyan": {
+        "title": "Matloub Aaeleyan",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
       "wala-kan-ala-el-bal-arabic": {
         "title": "Wala Kan Ala El-Bal",
         "theaters": [
           "sun-city",
           "city-stars"
+        ]
+      },
+      "laylat-bazet-khalis": {
+        "title": "Laylat Bazet Khalis",
+        "theaters": [
+          "sun-city",
+          "sun-city-vip"
         ]
       },
       "hadoota-arabic": {
@@ -1491,10 +1503,11 @@
           "city-stars"
         ]
       },
-      "belkis-turkish": {
-        "title": "Belkis",
+      "crypto-arabic": {
+        "title": "Crypto",
         "theaters": [
-          "sun-city"
+          "sun-city",
+          "city-stars"
         ]
       },
       "how-to-rob-a-bank": {
@@ -1503,11 +1516,10 @@
           "sun-city"
         ]
       },
-      "laylat-bazet-khalis": {
-        "title": "Laylat Bazet Khalis",
+      "belkis-turkish": {
+        "title": "Belkis",
         "theaters": [
-          "sun-city",
-          "sun-city-vip"
+          "sun-city"
         ]
       },
       "i-play-rocky": {
@@ -1530,20 +1542,20 @@
       }
     },
     "buttons": {
-      "sun-city|forgotten-island": false,
-      "sun-city|the-cat-in-the-hat-arabic": false,
       "sun-city|the-hunger-games-sunrise-on-the-reaping": false,
-      "sun-city|clayface": false,
-      "sun-city|matloub-aaeleyan": false,
-      "sun-city|ebenezer": false,
+      "sun-city|the-cat-in-the-hat-arabic": false,
+      "sun-city|forgotten-island": false,
       "sun-city|whalefall": false,
-      "sun-city|crypto-arabic": false,
+      "sun-city|clayface": false,
       "sun-city|resident-evil": false,
+      "sun-city|ebenezer": false,
+      "sun-city|matloub-aaeleyan": false,
       "sun-city|wala-kan-ala-el-bal-arabic": false,
-      "sun-city|hadoota-arabic": true,
-      "sun-city|belkis-turkish": false,
-      "sun-city|how-to-rob-a-bank": false,
       "sun-city|laylat-bazet-khalis": true,
+      "sun-city|hadoota-arabic": true,
+      "sun-city|crypto-arabic": false,
+      "sun-city|how-to-rob-a-bank": false,
+      "sun-city|belkis-turkish": false,
       "sun-city-vip|the-hunger-games-sunrise-on-the-reaping": false,
       "sun-city-vip|hadoota-arabic": true,
       "sun-city-vip|laylat-bazet-khalis": true,
@@ -1567,7 +1579,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-25T01:00:16+00:00"
+    "lastRead": "2026-11-25T01:10:16+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
