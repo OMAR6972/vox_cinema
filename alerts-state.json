@@ -1574,9 +1574,9 @@
       "sun-city|hexed": false,
       "sun-city|focker-in-law": false,
       "sun-city|paper-tiger": false,
-      "sun-city-vip|hadoota-arabic": true,
-      "sun-city-vip|laylat-bazet-khalis": true,
       "sun-city-vip|you-can-see-everything": false,
+      "sun-city-vip|laylat-bazet-khalis": false,
+      "sun-city-vip|hadoota-arabic": true,
       "city-stars|crypto-arabic": false,
       "city-stars|wala-kan-ala-el-bal-arabic": false,
       "city-stars|ebenezer": false,
@@ -1595,7 +1595,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-25T22:40:12+00:00"
+    "lastRead": "2026-11-25T22:50:15+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
