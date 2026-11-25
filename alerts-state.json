@@ -1036,58 +1036,13 @@
     "p609ad3": 5523812581
   },
   "roundup": {
-    "dates": [
-      "2026-11-26",
-      "2026-11-27"
-    ],
+    "dates": [],
     "weekMovies": [],
-    "newMovies": [
-      {
-        "slug": "hexed",
-        "title": "Hexed",
-        "firstDate": "2026-11-26",
-        "experiences": [
-          "4DX",
-          "Standard",
-          "Kids"
-        ]
-      },
-      {
-        "slug": "focker-in-law",
-        "title": "Focker In-Law",
-        "firstDate": "2026-11-26",
-        "experiences": [
-          "GOLD",
-          "Standard"
-        ]
-      },
-      {
-        "slug": "you-can-see-everything",
-        "title": "You Can See Everything",
-        "firstDate": "2026-11-26",
-        "experiences": [
-          "Standard"
-        ]
-      },
-      {
-        "slug": "paper-tiger",
-        "title": "Paper Tiger",
-        "firstDate": "2026-11-26",
-        "experiences": [
-          "Standard"
-        ]
-      }
-    ],
-    "coming": [
-      {
-        "slug": "gun-maaster-g9-hindi",
-        "title": "Gun Maaster G9",
-        "release": "27 November 2026"
-      }
-    ]
+    "newMovies": [],
+    "coming": []
   },
   "summary": {
-    "lastSentDate": "2026-11-24"
+    "lastSentDate": "2026-11-25"
   },
   "offset": 601723966,
   "failures": 0,
@@ -1632,7 +1587,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-25T15:40:16+00:00"
+    "lastRead": "2026-11-25T16:00:15+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
