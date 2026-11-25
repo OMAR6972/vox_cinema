@@ -1335,7 +1335,8 @@
       "lela-bazit-khalis-arabic": {
         "title": "Leila Bazet Khales",
         "raws": {
-          "cfc": "lela-bazit-khalis-arabic"
+          "cfc": "lela-bazit-khalis-arabic",
+          "district5": "lela-bazit-khalis-arabic"
         }
       },
       "the-hunger-games-sunrise-on-the-reaping": {
@@ -1410,12 +1411,6 @@
         "title": "Resident Evil",
         "raws": {
           "cfc": "resident_evil"
-        }
-      },
-      "how-to-rob-a-bank": {
-        "title": "How to Rob a Bank",
-        "raws": {
-          "district5": "how_to_rob_a_bank"
         }
       }
     }
@@ -1579,7 +1574,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-25T01:40:17+00:00"
+    "lastRead": "2026-11-25T01:50:22+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [

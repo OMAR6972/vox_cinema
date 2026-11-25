@@ -190,11 +190,7 @@
       "poster": "posters/how-to-rob-a-bank.jpg",
       "sources": [
         "vox",
-        "scene",
         "elc"
-      ],
-      "sceneCinemas": [
-        "Scene District 5"
       ],
       "elcCinemas": [
         "Sun City Cinema"
@@ -230,7 +226,8 @@
         "scene"
       ],
       "sceneCinemas": [
-        "Scene CFC"
+        "Scene CFC",
+        "Scene District 5"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013904_1795158862960.jpg"
     },
