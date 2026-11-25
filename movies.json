@@ -138,6 +138,7 @@
         "elc"
       ],
       "elcCinemas": [
+        "Sun City Cinema",
         "City Stars Cinema"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013100_1792992744914.jpg"
@@ -205,6 +206,7 @@
         "elc"
       ],
       "elcCinemas": [
+        "Sun City Cinema",
         "City Stars Cinema"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013335_1795158985488.jpg"
@@ -273,7 +275,11 @@
       "status": "now",
       "poster": "posters/paper-tiger.jpg",
       "sources": [
-        "vox"
+        "vox",
+        "elc"
+      ],
+      "elcCinemas": [
+        "Sun City Cinema"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013773_1792993069513.jpg"
     },
