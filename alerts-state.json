@@ -1511,6 +1511,12 @@
           "district5": "clayface"
         }
       },
+      "heart-of-the-beast": {
+        "title": "Heart of the Beast",
+        "raws": {
+          "cfc": "heart-of-the-beast"
+        }
+      },
       "resident-evil": {
         "title": "Resident Evil",
         "raws": {
@@ -1706,7 +1712,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-25T18:40:13+00:00"
+    "lastRead": "2026-11-25T18:50:17+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
