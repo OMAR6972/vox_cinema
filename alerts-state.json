@@ -1250,6 +1250,7 @@
       "heart-of-the-beast",
       "how-to-rob-a-bank",
       "i-play-rocky",
+      "lela-bazit-khalis-arabic",
       "matloub-aelyan",
       "naseeb-arabic",
       "other-mommy",
@@ -1298,18 +1299,17 @@
           "district5": "wala-kan-ala-albal"
         }
       },
+      "lela-bazit-khalis-arabic": {
+        "title": "Leila Bazet Khales",
+        "raws": {
+          "cfc": "lela-bazit-khalis-arabic"
+        }
+      },
       "the-hunger-games-sunrise-on-the-reaping": {
         "title": "The Hunger Games: Sunrise on the Reaping",
         "raws": {
           "cfc": "the-hunger-games-sunrise-on-the-reaping",
           "district5": "the-hunger-games-sunrise-on-the-reaping"
-        }
-      },
-      "i-play-rocky": {
-        "title": "I Play Rocky",
-        "raws": {
-          "cfc": "i-play-rocky",
-          "district5": "i-play-rocky"
         }
       },
       "matloub-aelyan": {
@@ -1339,18 +1339,18 @@
           "cfc": "belkis-turkish"
         }
       },
+      "i-play-rocky": {
+        "title": "I Play Rocky",
+        "raws": {
+          "cfc": "i-play-rocky",
+          "district5": "i-play-rocky"
+        }
+      },
       "godzilla-minus-zero-japanese": {
         "title": "Godzilla Minus Zero",
         "raws": {
           "cfc": "godzilla-minus-zero",
           "district5": "godzilla-minus-zero"
-        }
-      },
-      "how-to-rob-a-bank": {
-        "title": "How to Rob a Bank",
-        "raws": {
-          "cfc": "how-to-rob-a-bank",
-          "district5": "how_to_rob_a_bank"
         }
       },
       "the-cat-in-the-hat": {
@@ -1373,16 +1373,16 @@
           "district5": "clayface"
         }
       },
-      "heart-of-the-beast": {
-        "title": "Heart of the Beast",
-        "raws": {
-          "cfc": "heart-of-the-beast"
-        }
-      },
       "resident-evil": {
         "title": "Resident Evil",
         "raws": {
           "cfc": "resident_evil"
+        }
+      },
+      "how-to-rob-a-bank": {
+        "title": "How to Rob a Bank",
+        "raws": {
+          "district5": "how_to_rob_a_bank"
         }
       }
     }
@@ -1546,7 +1546,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-25T00:00:13+00:00"
+    "lastRead": "2026-11-25T00:06:02+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
