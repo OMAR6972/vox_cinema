@@ -710,7 +710,12 @@
         "elc:sun-city:2026-12-01:1305:standard:clayface": "2026-12-01",
         "elc:sun-city:2026-11-26:1455:standard:clayface": "2026-11-26",
         "elc:sun-city:2026-11-27:1455:standard:clayface": "2026-11-27",
-        "elc:sun-city:2026-11-30:1455:standard:clayface": "2026-11-30"
+        "elc:sun-city:2026-11-30:1455:standard:clayface": "2026-11-30",
+        "elc:sun-city:2026-12-02:615:standard:clayface": "2026-12-02",
+        "elc:sun-city:2026-12-02:780:standard:clayface": "2026-12-02",
+        "elc:sun-city:2026-12-02:945:standard:clayface": "2026-12-02",
+        "elc:sun-city:2026-12-02:1125:standard:clayface": "2026-12-02",
+        "elc:sun-city:2026-12-02:1305:standard:clayface": "2026-12-02"
       },
       "sceneSeeded": [
         "cfc",
@@ -969,7 +974,12 @@
         "0047-279496": "2026-12-01",
         "elc:sun-city:2026-11-26:1455:standard:ebenezer": "2026-11-26",
         "elc:sun-city:2026-11-27:1455:standard:ebenezer": "2026-11-27",
-        "elc:sun-city:2026-11-30:1455:standard:ebenezer": "2026-11-30"
+        "elc:sun-city:2026-11-30:1455:standard:ebenezer": "2026-11-30",
+        "elc:sun-city:2026-12-02:615:standard:ebenezer": "2026-12-02",
+        "elc:sun-city:2026-12-02:780:standard:ebenezer": "2026-12-02",
+        "elc:sun-city:2026-12-02:945:standard:ebenezer": "2026-12-02",
+        "elc:sun-city:2026-12-02:1125:standard:ebenezer": "2026-12-02",
+        "elc:sun-city:2026-12-02:1305:standard:ebenezer": "2026-12-02"
       },
       "sceneSeeded": [
         "cfc",
@@ -1450,17 +1460,44 @@
           "sun-city"
         ]
       },
+      "hexed": {
+        "title": "Hexed",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
       "the-cat-in-the-hat-arabic": {
         "title": "The Cat in the Hat",
         "theaters": [
           "sun-city"
         ]
       },
-      "matloub-aaeleyan": {
-        "title": "Matloub Aaeleyan",
+      "crypto-arabic": {
+        "title": "Crypto",
         "theaters": [
           "sun-city",
           "city-stars"
+        ]
+      },
+      "clayface": {
+        "title": "Clayface",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
+      "wala-kan-ala-el-bal-arabic": {
+        "title": "Wala Kan Ala El-Bal",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
+      "paper-tiger": {
+        "title": "Paper Tiger",
+        "theaters": [
+          "sun-city"
         ]
       },
       "ebenezer": {
@@ -1470,28 +1507,8 @@
           "city-stars"
         ]
       },
-      "resident-evil": {
-        "title": "Resident Evil",
-        "theaters": [
-          "sun-city"
-        ]
-      },
-      "whalefall": {
-        "title": "Whalefall",
-        "theaters": [
-          "sun-city"
-        ]
-      },
-      "laylat-bazet-khalis": {
-        "title": "Laylat Bazet Khalis",
-        "theaters": [
-          "sun-city",
-          "sun-city-vip",
-          "city-stars"
-        ]
-      },
-      "wala-kan-ala-el-bal-arabic": {
-        "title": "Wala Kan Ala El-Bal",
+      "matloub-aaeleyan": {
+        "title": "Matloub Aaeleyan",
         "theaters": [
           "sun-city",
           "city-stars"
@@ -1505,27 +1522,6 @@
           "city-stars"
         ]
       },
-      "clayface": {
-        "title": "Clayface",
-        "theaters": [
-          "sun-city",
-          "city-stars"
-        ]
-      },
-      "crypto-arabic": {
-        "title": "Crypto",
-        "theaters": [
-          "sun-city",
-          "city-stars"
-        ]
-      },
-      "hexed": {
-        "title": "Hexed",
-        "theaters": [
-          "sun-city",
-          "city-stars"
-        ]
-      },
       "focker-in-law": {
         "title": "Focker In-Law",
         "theaters": [
@@ -1533,8 +1529,22 @@
           "city-stars"
         ]
       },
-      "paper-tiger": {
-        "title": "Paper Tiger",
+      "laylat-bazet-khalis": {
+        "title": "Laylat Bazet Khalis",
+        "theaters": [
+          "sun-city",
+          "sun-city-vip",
+          "city-stars"
+        ]
+      },
+      "resident-evil": {
+        "title": "Resident Evil",
+        "theaters": [
+          "sun-city"
+        ]
+      },
+      "whalefall": {
+        "title": "Whalefall",
         "theaters": [
           "sun-city"
         ]
@@ -1561,19 +1571,19 @@
     },
     "buttons": {
       "sun-city|the-hunger-games-sunrise-on-the-reaping": false,
+      "sun-city|hexed": false,
       "sun-city|the-cat-in-the-hat-arabic": false,
-      "sun-city|matloub-aaeleyan": false,
+      "sun-city|crypto-arabic": false,
+      "sun-city|clayface": false,
+      "sun-city|wala-kan-ala-el-bal-arabic": false,
+      "sun-city|paper-tiger": false,
       "sun-city|ebenezer": false,
+      "sun-city|matloub-aaeleyan": false,
+      "sun-city|hadoota-arabic": true,
+      "sun-city|focker-in-law": false,
+      "sun-city|laylat-bazet-khalis": true,
       "sun-city|resident-evil": false,
       "sun-city|whalefall": false,
-      "sun-city|laylat-bazet-khalis": true,
-      "sun-city|wala-kan-ala-el-bal-arabic": false,
-      "sun-city|hadoota-arabic": true,
-      "sun-city|clayface": false,
-      "sun-city|crypto-arabic": false,
-      "sun-city|hexed": false,
-      "sun-city|focker-in-law": false,
-      "sun-city|paper-tiger": false,
       "sun-city-vip|you-can-see-everything": false,
       "sun-city-vip|laylat-bazet-khalis": false,
       "sun-city-vip|hadoota-arabic": true,
@@ -1595,7 +1605,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-25T22:50:15+00:00"
+    "lastRead": "2026-11-25T23:00:12+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
