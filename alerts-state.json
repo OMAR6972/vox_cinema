@@ -1464,8 +1464,7 @@
       "forgotten-island": {
         "title": "Forgotten Island",
         "theaters": [
-          "sun-city",
-          "city-stars"
+          "sun-city"
         ]
       },
       "the-cat-in-the-hat-arabic": {
@@ -1479,8 +1478,7 @@
         "title": "The Hunger Games: Sunrise on the Reaping",
         "theaters": [
           "sun-city",
-          "sun-city-vip",
-          "city-stars"
+          "sun-city-vip"
         ]
       },
       "clayface": {
@@ -1507,8 +1505,7 @@
       "whalefall": {
         "title": "Whalefall",
         "theaters": [
-          "sun-city",
-          "city-stars"
+          "sun-city"
         ]
       },
       "crypto-arabic": {
@@ -1521,8 +1518,7 @@
       "resident-evil": {
         "title": "Resident Evil",
         "theaters": [
-          "sun-city",
-          "city-stars"
+          "sun-city"
         ]
       },
       "wala-kan-ala-el-bal-arabic": {
@@ -1536,7 +1532,8 @@
         "title": "Laylat Bazet Khalis",
         "theaters": [
           "sun-city",
-          "sun-city-vip"
+          "sun-city-vip",
+          "city-stars"
         ]
       },
       "hadoota-arabic": {
@@ -1559,6 +1556,12 @@
           "sun-city"
         ]
       },
+      "sophia-arabic": {
+        "title": "Sophia",
+        "theaters": [
+          "city-stars"
+        ]
+      },
       "i-play-rocky": {
         "title": "I Play Rocky",
         "theaters": [
@@ -1571,8 +1574,20 @@
           "city-stars"
         ]
       },
-      "les-miserables": {
-        "title": "Les Miserables",
+      "focker-in-law": {
+        "title": "Focker In-Law",
+        "theaters": [
+          "city-stars"
+        ]
+      },
+      "hexed": {
+        "title": "Hexed",
+        "theaters": [
+          "city-stars"
+        ]
+      },
+      "you-can-see-everything": {
+        "title": "You Can See Everything",
         "theaters": [
           "city-stars"
         ]
@@ -1596,27 +1611,27 @@
       "sun-city-vip|the-hunger-games-sunrise-on-the-reaping": false,
       "sun-city-vip|laylat-bazet-khalis": true,
       "sun-city-vip|hadoota-arabic": true,
-      "city-stars|the-hunger-games-sunrise-on-the-reaping": false,
       "city-stars|the-cat-in-the-hat-arabic": false,
+      "city-stars|sophia-arabic": false,
       "city-stars|clayface": false,
-      "city-stars|resident-evil": false,
       "city-stars|ebenezer": false,
       "city-stars|i-play-rocky": false,
-      "city-stars|forgotten-island": false,
       "city-stars|matloub-aaeleyan": false,
       "city-stars|wala-kan-ala-el-bal-arabic": false,
+      "city-stars|laylat-bazet-khalis": false,
       "city-stars|hadoota-arabic": false,
       "city-stars|crypto-arabic": false,
-      "city-stars|whalefall": false,
       "city-stars|saqr-w-kanarya": false,
-      "city-stars|les-miserables": false
+      "city-stars|focker-in-law": false,
+      "city-stars|hexed": false,
+      "city-stars|you-can-see-everything": false
     },
     "online": {
       "sun-city": true,
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-25T12:00:17+00:00"
+    "lastRead": "2026-11-25T12:10:16+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
