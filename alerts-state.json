@@ -699,7 +699,28 @@
         "elc:city-stars:2026-12-01:1095:standard:clayface": "2026-12-01",
         "elc:city-stars:2026-12-01:1215:standard:clayface": "2026-12-01",
         "elc:city-stars:2026-12-01:1335:standard:clayface": "2026-12-01",
-        "elc:city-stars:2026-12-01:1455:standard:clayface": "2026-12-01"
+        "elc:city-stars:2026-12-01:1455:standard:clayface": "2026-12-01",
+        "scene:district5:2026-11-26:795:standard-deluxe:clayface": "2026-11-26",
+        "scene:district5:2026-11-26:1140:standard-deluxe:clayface": "2026-11-26",
+        "scene:district5:2026-11-26:1470:standard-deluxe:clayface": "2026-11-26",
+        "scene:district5:2026-11-27:795:standard-deluxe:clayface": "2026-11-27",
+        "scene:district5:2026-11-27:1140:standard-deluxe:clayface": "2026-11-27",
+        "scene:district5:2026-11-27:1470:standard-deluxe:clayface": "2026-11-27",
+        "scene:district5:2026-11-28:795:standard-deluxe:clayface": "2026-11-28",
+        "scene:district5:2026-11-28:1140:standard-deluxe:clayface": "2026-11-28",
+        "scene:district5:2026-11-28:1470:standard-deluxe:clayface": "2026-11-28",
+        "scene:district5:2026-11-29:795:standard-deluxe:clayface": "2026-11-29",
+        "scene:district5:2026-11-29:1140:standard-deluxe:clayface": "2026-11-29",
+        "scene:district5:2026-11-29:1470:standard-deluxe:clayface": "2026-11-29",
+        "scene:district5:2026-11-30:795:standard-deluxe:clayface": "2026-11-30",
+        "scene:district5:2026-11-30:1140:standard-deluxe:clayface": "2026-11-30",
+        "scene:district5:2026-11-30:1470:standard-deluxe:clayface": "2026-11-30",
+        "scene:district5:2026-12-01:795:standard-deluxe:clayface": "2026-12-01",
+        "scene:district5:2026-12-01:1140:standard-deluxe:clayface": "2026-12-01",
+        "scene:district5:2026-12-01:1470:standard-deluxe:clayface": "2026-12-01",
+        "scene:district5:2026-12-02:795:standard-deluxe:clayface": "2026-12-02",
+        "scene:district5:2026-12-02:1140:standard-deluxe:clayface": "2026-12-02",
+        "scene:district5:2026-12-02:1470:standard-deluxe:clayface": "2026-12-02"
       },
       "sceneSeeded": [
         "cfc",
@@ -1546,7 +1567,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-25T00:20:16+00:00"
+    "lastRead": "2026-11-25T00:30:17+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
