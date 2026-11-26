@@ -1367,13 +1367,6 @@
           "district5": "hadoota-arabic"
         }
       },
-      "lela-bazit-khalis-arabic": {
-        "title": "Leila Bazet Khales",
-        "raws": {
-          "cfc": "lela-bazit-khalis-arabic",
-          "district5": "lela-bazit-khalis-arabic"
-        }
-      },
       "dune-part-three": {
         "title": "Dune: Part Three",
         "raws": {
@@ -1386,6 +1379,13 @@
         "raws": {
           "cfc": "wala-kan-ala-albal",
           "district5": "wala-kan-ala-albal"
+        }
+      },
+      "lela-bazit-khalis-arabic": {
+        "title": "Leila Bazet Khales",
+        "raws": {
+          "cfc": "lela-bazit-khalis-arabic",
+          "district5": "lela-bazit-khalis-arabic"
         }
       },
       "focker-in-law": {
@@ -1639,7 +1639,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-26T07:00:14+00:00"
+    "lastRead": "2026-11-26T07:10:14+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
