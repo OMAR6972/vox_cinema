@@ -544,6 +544,16 @@
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013747_1792133293834.jpg"
     },
     {
+      "slug": "k-pop-the-debut",
+      "title": "K-Pop: The Debut",
+      "status": "soon",
+      "poster": "/assets/images/placeholder-poster.webp",
+      "sources": [
+        "vox"
+      ],
+      "release": "11 March 2027"
+    },
+    {
       "slug": "day-drinker",
       "title": "Day Drinker",
       "status": "soon",

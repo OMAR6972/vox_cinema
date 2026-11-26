@@ -431,6 +431,11 @@
       "release": "11 February 2027"
     },
     {
+      "slug": "k-pop-the-debut",
+      "title": "K-Pop: The Debut",
+      "release": "11 March 2027"
+    },
+    {
       "slug": "day-drinker",
       "title": "Day Drinker",
       "release": "01 April 2027"
@@ -1090,6 +1095,11 @@
         "slug": "sophia-arabic",
         "title": "Sophia",
         "release": "25 November 2026"
+      },
+      {
+        "slug": "k-pop-the-debut",
+        "title": "K-Pop: The Debut",
+        "release": "11 March 2027"
       }
     ]
   },
@@ -1206,7 +1216,8 @@
     "focker-in-law": "https://assets.voxcinemas.com/posters/P_HO00013100_1792992744914.jpg",
     "paper-tiger": "https://assets.voxcinemas.com/posters/P_HO00013773_1792993069513.jpg",
     "you-can-see-everything": "https://assets.voxcinemas.com/posters/P_HO00013875_1795010215072.jpg",
-    "gun-maaster-g9-hindi": "https://assets.voxcinemas.com/posters/P_HO00013754_1792992790280.jpg"
+    "gun-maaster-g9-hindi": "https://assets.voxcinemas.com/posters/P_HO00013754_1792992790280.jpg",
+    "k-pop-the-debut": "/assets/images/placeholder-poster.webp"
   },
   "nowShowing": [
     {
@@ -1640,7 +1651,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-26T11:10:15+00:00"
+    "lastRead": "2026-11-26T11:20:18+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
