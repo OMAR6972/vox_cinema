@@ -1639,7 +1639,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-26T03:10:14+00:00"
+    "lastRead": "2026-11-26T03:20:18+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
@@ -1680,5 +1680,5 @@
       "Standard"
     ]
   },
-  "sceneError": "2026-11-26T03:10:14+00:00 - district5: failed to fetch https://district5.scenecinemas.com/ after 3 attempts: server error 500"
+  "sceneError": "2026-11-26T03:20:18+00:00 - district5: failed to fetch https://district5.scenecinemas.com/ after 3 attempts: server error 500"
 }
