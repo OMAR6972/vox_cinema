@@ -1013,99 +1013,13 @@
     "p609ad3": 5523812581
   },
   "roundup": {
-    "dates": [
-      "2026-11-28",
-      "2026-11-29",
-      "2026-11-30",
-      "2026-12-01",
-      "2026-12-02"
-    ],
-    "weekMovies": [
-      {
-        "slug": "crypto-arabic",
-        "title": "Crypto"
-      },
-      {
-        "slug": "ebenezer",
-        "title": "Ebenezer"
-      },
-      {
-        "slug": "focker-in-law",
-        "title": "Focker In-Law"
-      },
-      {
-        "slug": "godzilla-minus-zero-japanese",
-        "title": "Godzilla Minus Zero"
-      },
-      {
-        "slug": "hadoota-arabic",
-        "title": "Hadoota"
-      },
-      {
-        "slug": "hexed",
-        "title": "Hexed"
-      },
-      {
-        "slug": "how-to-rob-a-bank",
-        "title": "How to Rob a Bank"
-      },
-      {
-        "slug": "i-play-rocky",
-        "title": "I Play Rocky"
-      },
-      {
-        "slug": "lela-bazit-khalis-arabic",
-        "title": "Lela Bazit Khalis"
-      },
-      {
-        "slug": "matloub-3a2eleyain-arabic",
-        "title": "Matloub 3a2eleyain"
-      },
-      {
-        "slug": "sophia-arabic",
-        "title": "Sophia"
-      },
-      {
-        "slug": "the-hunger-games-sunrise-on-the-reaping",
-        "title": "The Hunger Games: Sunrise on the Reaping"
-      },
-      {
-        "slug": "the-odyssey",
-        "title": "The Odyssey"
-      },
-      {
-        "slug": "wala-kan-ala-el-bal-arabic",
-        "title": "Wala Kan Ala El-Bal"
-      },
-      {
-        "slug": "you-can-see-everything",
-        "title": "You Can See Everything"
-      }
-    ],
-    "newMovies": [
-      {
-        "slug": "hexed-arabic",
-        "title": "Hexed Arabic",
-        "firstDate": null,
-        "experiences": [],
-        "source": "Scene CFC"
-      }
-    ],
-    "coming": [
-      {
-        "slug": "sophia-arabic",
-        "title": "Sophia",
-        "release": "25 November 2026"
-      },
-      {
-        "slug": "k-pop-the-debut",
-        "title": "K-Pop: The Debut",
-        "release": "11 March 2027"
-      }
-    ]
+    "dates": [],
+    "weekMovies": [],
+    "newMovies": [],
+    "coming": []
   },
   "summary": {
-    "lastSentDate": "2026-11-25"
+    "lastSentDate": "2026-11-26"
   },
   "offset": 601723967,
   "failures": 0,
@@ -1652,7 +1566,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-26T15:40:18+00:00"
+    "lastRead": "2026-11-26T16:00:29+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
