@@ -1108,9 +1108,9 @@
     "lastSentDate": "2026-11-25"
   },
   "offset": 601723967,
-  "failures": 1,
+  "failures": 0,
   "warned": false,
-  "lastError": "2026-11-26T13:20:27+00:00 - failed to fetch https://egy.voxcinemas.com/showtimes after 3 attempts: HTTP 403",
+  "lastError": null,
   "trackingSince": "2026-10-29T02:23:15+00:00",
   "posters": {
     "bts-world-tour-arirang-in-s-o-paulo-delayed": "https://assets.voxcinemas.com/posters/P_HO00013745_1792240609627.jpg",
@@ -1652,7 +1652,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-26T13:10:26+00:00"
+    "lastRead": "2026-11-26T13:30:17+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
