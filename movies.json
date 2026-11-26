@@ -258,14 +258,10 @@
       "poster": "posters/the-cat-in-the-hat.jpg",
       "sources": [
         "vox",
-        "scene",
-        "elc"
+        "scene"
       ],
       "sceneCinemas": [
         "Scene District 5"
-      ],
-      "elcCinemas": [
-        "Sun City Cinema"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00012362_1793613218305.jpg"
     },
@@ -276,10 +272,14 @@
       "poster": "posters/the-cat-in-the-hat-arabic.jpg",
       "sources": [
         "vox",
-        "scene"
+        "scene",
+        "elc"
       ],
       "sceneCinemas": [
         "Scene CFC"
+      ],
+      "elcCinemas": [
+        "Sun City Cinema"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013769_1793613239809.jpg"
     },
