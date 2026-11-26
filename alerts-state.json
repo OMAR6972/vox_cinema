@@ -342,6 +342,11 @@
     "paper-tiger": {
       "firstSeen": "2026-11-25T09:30:24+00:00",
       "title": "Paper Tiger"
+    },
+    "hexed-arabic": {
+      "firstSeen": "2026-11-26T00:10:12+00:00",
+      "title": "Hexed Arabic",
+      "source": "scene"
     }
   },
   "comingSoon": [
@@ -1069,7 +1074,15 @@
         "title": "You Can See Everything"
       }
     ],
-    "newMovies": [],
+    "newMovies": [
+      {
+        "slug": "hexed-arabic",
+        "title": "Hexed Arabic",
+        "firstDate": null,
+        "experiences": [],
+        "source": "Scene CFC"
+      }
+    ],
     "coming": []
   },
   "summary": {
@@ -1307,24 +1320,30 @@
       "crypto-arabic",
       "dune-part-three",
       "ebenezer",
+      "focker-in-law",
       "forgotten-island",
       "godzilla-minus-zero-japanese",
       "hadoota-arabic",
       "heart-of-the-beast",
+      "hexed",
+      "hexed-arabic",
       "how-to-rob-a-bank",
       "i-play-rocky",
       "lela-bazit-khalis-arabic",
       "matloub-aelyan",
       "naseeb-arabic",
       "other-mommy",
+      "paper-tiger",
       "resident-evil",
+      "sophia-arabic",
       "the-cat-in-the-hat",
       "the-cat-in-the-hat-arabic",
       "the-hunger-games-sunrise-on-the-reaping",
       "verity",
       "wala-kan-ala-albal",
       "whalefall",
-      "wildwood"
+      "wildwood",
+      "you-can-see-everything"
     ],
     "listing": {
       "avengers-doomsday": {
@@ -1362,18 +1381,17 @@
           "district5": "wala-kan-ala-albal"
         }
       },
+      "focker-in-law": {
+        "title": "Focker In-Law",
+        "raws": {
+          "cfc": "focker-in-law"
+        }
+      },
       "the-hunger-games-sunrise-on-the-reaping": {
         "title": "The Hunger Games: Sunrise on the Reaping",
         "raws": {
           "cfc": "the-hunger-games-sunrise-on-the-reaping",
           "district5": "the-hunger-games-sunrise-on-the-reaping"
-        }
-      },
-      "ebenezer": {
-        "title": "Ebenezer",
-        "raws": {
-          "cfc": "ebenezer",
-          "district5": "ebenezer"
         }
       },
       "matloub-aelyan": {
@@ -1383,24 +1401,41 @@
           "district5": "matloub-aelyan"
         }
       },
+      "hexed-arabic": {
+        "title": "Hexed Arabic",
+        "raws": {
+          "cfc": "hexed-arabic"
+        }
+      },
+      "hexed": {
+        "title": "Hexed",
+        "raws": {
+          "cfc": "hexed"
+        }
+      },
+      "you-can-see-everything": {
+        "title": "You Can See Everything",
+        "raws": {
+          "cfc": "you-can-see-everything"
+        }
+      },
+      "sophia-arabic": {
+        "title": "Sophia",
+        "raws": {
+          "cfc": "sophia-arabic"
+        }
+      },
+      "paper-tiger": {
+        "title": "Paper Tiger",
+        "raws": {
+          "cfc": "paper-tiger"
+        }
+      },
       "crypto-arabic": {
         "title": "Crypto",
         "raws": {
           "cfc": "crypto-arabic",
           "district5": "crypto-arabic"
-        }
-      },
-      "forgotten-island": {
-        "title": "Forgotten Island",
-        "raws": {
-          "cfc": "forgotten-island",
-          "district5": "forgotten-island"
-        }
-      },
-      "belkis-turkish": {
-        "title": "Belkis",
-        "raws": {
-          "cfc": "belkis-turkish"
         }
       },
       "i-play-rocky": {
@@ -1410,17 +1445,11 @@
           "district5": "i-play-rocky"
         }
       },
-      "godzilla-minus-zero-japanese": {
-        "title": "Godzilla Minus Zero",
+      "ebenezer": {
+        "title": "Ebenezer",
         "raws": {
-          "cfc": "godzilla-minus-zero"
-        }
-      },
-      "the-cat-in-the-hat": {
-        "title": "The Cat In The Hat",
-        "raws": {
-          "cfc": "the-cat-in-the-hat",
-          "district5": "the-cat-in-the-hat"
+          "cfc": "ebenezer",
+          "district5": "ebenezer"
         }
       },
       "the-cat-in-the-hat-arabic": {
@@ -1436,16 +1465,16 @@
           "district5": "clayface"
         }
       },
-      "heart-of-the-beast": {
-        "title": "Heart of the Beast",
+      "forgotten-island": {
+        "title": "Forgotten Island",
         "raws": {
-          "cfc": "heart-of-the-beast"
+          "district5": "forgotten-island"
         }
       },
-      "resident-evil": {
-        "title": "Resident Evil",
+      "the-cat-in-the-hat": {
+        "title": "The Cat In The Hat",
         "raws": {
-          "cfc": "resident_evil"
+          "district5": "the-cat-in-the-hat"
         }
       }
     }
@@ -1605,7 +1634,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-26T00:00:15+00:00"
+    "lastRead": "2026-11-26T00:10:12+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
