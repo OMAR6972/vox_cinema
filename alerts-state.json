@@ -1443,6 +1443,12 @@
           "sun-city"
         ]
       },
+      "the-cat-in-the-hat-arabic": {
+        "title": "The Cat in the Hat",
+        "theaters": [
+          "sun-city"
+        ]
+      },
       "hexed": {
         "title": "Hexed",
         "theaters": [
@@ -1450,14 +1456,14 @@
           "city-stars"
         ]
       },
-      "the-cat-in-the-hat-arabic": {
-        "title": "The Cat in the Hat",
+      "paper-tiger": {
+        "title": "Paper Tiger",
         "theaters": [
           "sun-city"
         ]
       },
-      "crypto-arabic": {
-        "title": "Crypto",
+      "focker-in-law": {
+        "title": "Focker In-Law",
         "theaters": [
           "sun-city",
           "city-stars"
@@ -1468,19 +1474,6 @@
         "theaters": [
           "sun-city",
           "city-stars"
-        ]
-      },
-      "wala-kan-ala-el-bal-arabic": {
-        "title": "Wala Kan Ala El-Bal",
-        "theaters": [
-          "sun-city",
-          "city-stars"
-        ]
-      },
-      "paper-tiger": {
-        "title": "Paper Tiger",
-        "theaters": [
-          "sun-city"
         ]
       },
       "ebenezer": {
@@ -1497,16 +1490,8 @@
           "city-stars"
         ]
       },
-      "hadoota-arabic": {
-        "title": "Hadoota",
-        "theaters": [
-          "sun-city",
-          "sun-city-vip",
-          "city-stars"
-        ]
-      },
-      "focker-in-law": {
-        "title": "Focker In-Law",
+      "wala-kan-ala-el-bal-arabic": {
+        "title": "Wala Kan Ala El-Bal",
         "theaters": [
           "sun-city",
           "city-stars"
@@ -1517,6 +1502,21 @@
         "theaters": [
           "sun-city",
           "sun-city-vip",
+          "city-stars"
+        ]
+      },
+      "hadoota-arabic": {
+        "title": "Hadoota",
+        "theaters": [
+          "sun-city",
+          "sun-city-vip",
+          "city-stars"
+        ]
+      },
+      "crypto-arabic": {
+        "title": "Crypto",
+        "theaters": [
+          "sun-city",
           "city-stars"
         ]
       },
@@ -1554,17 +1554,17 @@
     },
     "buttons": {
       "sun-city|the-hunger-games-sunrise-on-the-reaping": false,
-      "sun-city|hexed": false,
       "sun-city|the-cat-in-the-hat-arabic": false,
-      "sun-city|crypto-arabic": false,
-      "sun-city|clayface": false,
-      "sun-city|wala-kan-ala-el-bal-arabic": false,
+      "sun-city|hexed": false,
       "sun-city|paper-tiger": false,
+      "sun-city|focker-in-law": false,
+      "sun-city|clayface": false,
       "sun-city|ebenezer": false,
       "sun-city|matloub-aaeleyan": false,
-      "sun-city|hadoota-arabic": true,
-      "sun-city|focker-in-law": false,
+      "sun-city|wala-kan-ala-el-bal-arabic": false,
       "sun-city|laylat-bazet-khalis": true,
+      "sun-city|hadoota-arabic": true,
+      "sun-city|crypto-arabic": false,
       "sun-city|resident-evil": false,
       "sun-city|whalefall": false,
       "sun-city-vip|you-can-see-everything": false,
@@ -1588,7 +1588,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-26T21:00:16+00:00"
+    "lastRead": "2026-11-26T21:10:12+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
