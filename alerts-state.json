@@ -351,6 +351,11 @@
   },
   "comingSoon": [
     {
+      "slug": "sophia-arabic",
+      "title": "Sophia",
+      "release": "25 November 2026"
+    },
+    {
       "slug": "violent-night-2",
       "title": "Violent Night 2",
       "release": "03 December 2026"
@@ -1085,7 +1090,13 @@
         "source": "Scene CFC"
       }
     ],
-    "coming": []
+    "coming": [
+      {
+        "slug": "sophia-arabic",
+        "title": "Sophia",
+        "release": "25 November 2026"
+      }
+    ]
   },
   "summary": {
     "lastSentDate": "2026-11-25"
@@ -1634,7 +1645,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-26T08:10:32+00:00"
+    "lastRead": "2026-11-26T08:20:15+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
