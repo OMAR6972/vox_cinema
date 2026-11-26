@@ -1500,7 +1500,7 @@
           "sun-city"
         ]
       },
-      "the-cat-in-the-hat-arabic": {
+      "the-cat-in-the-hat": {
         "title": "The Cat in the Hat",
         "theaters": [
           "sun-city"
@@ -1611,7 +1611,7 @@
     },
     "buttons": {
       "sun-city|the-hunger-games-sunrise-on-the-reaping": false,
-      "sun-city|the-cat-in-the-hat-arabic": false,
+      "sun-city|the-cat-in-the-hat": false,
       "sun-city|hexed": false,
       "sun-city|paper-tiger": false,
       "sun-city|focker-in-law": false,
@@ -1645,7 +1645,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-26T09:40:12+00:00"
+    "lastRead": "2026-11-26T09:50:15+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
