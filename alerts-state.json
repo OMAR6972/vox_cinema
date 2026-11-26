@@ -720,7 +720,14 @@
         "elc:sun-city:2026-12-02:780:standard:clayface": "2026-12-02",
         "elc:sun-city:2026-12-02:945:standard:clayface": "2026-12-02",
         "elc:sun-city:2026-12-02:1125:standard:clayface": "2026-12-02",
-        "elc:sun-city:2026-12-02:1305:standard:clayface": "2026-12-02"
+        "elc:sun-city:2026-12-02:1305:standard:clayface": "2026-12-02",
+        "elc:city-stars:2026-12-02:615:standard:clayface": "2026-12-02",
+        "elc:city-stars:2026-12-02:795:standard:clayface": "2026-12-02",
+        "elc:city-stars:2026-12-02:960:standard:clayface": "2026-12-02",
+        "elc:city-stars:2026-12-02:1095:standard:clayface": "2026-12-02",
+        "elc:city-stars:2026-12-02:1215:standard:clayface": "2026-12-02",
+        "elc:city-stars:2026-12-02:1335:standard:clayface": "2026-12-02",
+        "elc:city-stars:2026-12-02:1455:standard:clayface": "2026-12-02"
       },
       "sceneSeeded": [
         "cfc",
@@ -1616,17 +1623,17 @@
       "sun-city-vip|you-can-see-everything": false,
       "sun-city-vip|laylat-bazet-khalis": false,
       "sun-city-vip|hadoota-arabic": true,
+      "city-stars|sophia-arabic": false,
+      "city-stars|i-play-rocky": false,
+      "city-stars|focker-in-law": false,
+      "city-stars|hadoota-arabic": false,
+      "city-stars|clayface": false,
+      "city-stars|laylat-bazet-khalis": false,
       "city-stars|crypto-arabic": false,
+      "city-stars|hexed": false,
+      "city-stars|matloub-aaeleyan": false,
       "city-stars|wala-kan-ala-el-bal-arabic": false,
       "city-stars|ebenezer": false,
-      "city-stars|sophia-arabic": false,
-      "city-stars|clayface": false,
-      "city-stars|matloub-aaeleyan": false,
-      "city-stars|hadoota-arabic": false,
-      "city-stars|i-play-rocky": false,
-      "city-stars|laylat-bazet-khalis": false,
-      "city-stars|hexed": false,
-      "city-stars|focker-in-law": false,
       "city-stars|you-can-see-everything": false
     },
     "online": {
@@ -1634,7 +1641,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-26T01:10:12+00:00"
+    "lastRead": "2026-11-26T01:20:25+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
