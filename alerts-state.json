@@ -1569,18 +1569,6 @@
       }
     },
     "buttons": {
-      "city-stars|laylat-bazet-khalis": false,
-      "city-stars|hexed": false,
-      "city-stars|matloub-aaeleyan": false,
-      "city-stars|wala-kan-ala-el-bal-arabic": false,
-      "city-stars|clayface": false,
-      "city-stars|sophia-arabic": false,
-      "city-stars|hadoota-arabic": false,
-      "city-stars|crypto-arabic": false,
-      "city-stars|focker-in-law": false,
-      "city-stars|i-play-rocky": false,
-      "city-stars|ebenezer": false,
-      "city-stars|you-can-see-everything": false,
       "sun-city|the-hunger-games-sunrise-on-the-reaping": false,
       "sun-city|the-cat-in-the-hat-arabic": false,
       "sun-city|hexed": false,
@@ -1597,14 +1585,26 @@
       "sun-city|whalefall": false,
       "sun-city-vip|you-can-see-everything": false,
       "sun-city-vip|laylat-bazet-khalis": true,
-      "sun-city-vip|hadoota-arabic": true
+      "sun-city-vip|hadoota-arabic": true,
+      "city-stars|laylat-bazet-khalis": false,
+      "city-stars|hexed": false,
+      "city-stars|matloub-aaeleyan": false,
+      "city-stars|wala-kan-ala-el-bal-arabic": false,
+      "city-stars|clayface": false,
+      "city-stars|sophia-arabic": false,
+      "city-stars|hadoota-arabic": false,
+      "city-stars|crypto-arabic": false,
+      "city-stars|focker-in-law": false,
+      "city-stars|i-play-rocky": false,
+      "city-stars|ebenezer": false,
+      "city-stars|you-can-see-everything": false
     },
     "online": {
       "sun-city": true,
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-27T18:10:12+00:00"
+    "lastRead": "2026-11-27T18:20:20+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
@@ -1644,6 +1644,5 @@
     "City Stars Cinema": [
       "Standard"
     ]
-  },
-  "elcError": "2026-11-27T18:10:12+00:00 - city-stars: elcinema day 2026-11-27 for cinema 3101050 failed: Failed to perform, curl: (28) Operation timed out after 20001 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+  }
 }
