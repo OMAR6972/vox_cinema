@@ -1408,6 +1408,12 @@
           "district5": "crypto-arabic"
         }
       },
+      "belkis-turkish": {
+        "title": "Belkis",
+        "raws": {
+          "cfc": "belkis-turkish"
+        }
+      },
       "i-play-rocky": {
         "title": "I Play Rocky",
         "raws": {
@@ -1598,7 +1604,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-27T12:40:13+00:00"
+    "lastRead": "2026-11-27T12:50:13+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [

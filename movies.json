@@ -387,7 +387,11 @@
       "status": "now",
       "poster": "posters/belkis-turkish.jpg",
       "sources": [
-        "vox"
+        "vox",
+        "scene"
+      ],
+      "sceneCinemas": [
+        "Scene CFC"
       ],
       "remote": "https://assets.voxcinemas.com/posters/P_HO00013780_1792992991396.jpg"
     },
