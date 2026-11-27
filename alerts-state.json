@@ -1580,17 +1580,17 @@
       "sun-city-vip|you-can-see-everything": false,
       "sun-city-vip|laylat-bazet-khalis": false,
       "sun-city-vip|hadoota-arabic": true,
-      "city-stars|focker-in-law": false,
-      "city-stars|sophia-arabic": false,
-      "city-stars|clayface": false,
-      "city-stars|ebenezer": false,
-      "city-stars|i-play-rocky": false,
+      "city-stars|laylat-bazet-khalis": false,
       "city-stars|hexed": false,
       "city-stars|matloub-aaeleyan": false,
       "city-stars|wala-kan-ala-el-bal-arabic": false,
-      "city-stars|laylat-bazet-khalis": false,
+      "city-stars|clayface": false,
+      "city-stars|sophia-arabic": false,
       "city-stars|hadoota-arabic": false,
       "city-stars|crypto-arabic": false,
+      "city-stars|focker-in-law": false,
+      "city-stars|i-play-rocky": false,
+      "city-stars|ebenezer": false,
       "city-stars|you-can-see-everything": false
     },
     "online": {
@@ -1598,7 +1598,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-27T08:20:16+00:00"
+    "lastRead": "2026-11-27T08:30:16+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
