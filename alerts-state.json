@@ -709,7 +709,8 @@
         "elc:city-stars:2026-12-02:1095:standard:clayface": "2026-12-02",
         "elc:city-stars:2026-12-02:1215:standard:clayface": "2026-12-02",
         "elc:city-stars:2026-12-02:1335:standard:clayface": "2026-12-02",
-        "elc:city-stars:2026-12-02:1455:standard:clayface": "2026-12-02"
+        "elc:city-stars:2026-12-02:1455:standard:clayface": "2026-12-02",
+        "scene:cfc:2026-11-27:1470:standard:clayface": "2026-11-27"
       },
       "sceneSeeded": [
         "cfc",
@@ -1584,7 +1585,7 @@
       "sun-city|resident-evil": false,
       "sun-city|whalefall": false,
       "sun-city-vip|you-can-see-everything": false,
-      "sun-city-vip|laylat-bazet-khalis": true,
+      "sun-city-vip|laylat-bazet-khalis": false,
       "sun-city-vip|hadoota-arabic": true,
       "city-stars|laylat-bazet-khalis": false,
       "city-stars|hexed": false,
@@ -1604,7 +1605,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-27T18:50:13+00:00"
+    "lastRead": "2026-11-27T19:00:21+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
