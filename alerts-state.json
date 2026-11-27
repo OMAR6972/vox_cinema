@@ -1,7 +1,6 @@
 {
   "baselineDone": true,
   "dates": [
-    "2026-11-27",
     "2026-11-28",
     "2026-11-29",
     "2026-11-30",
@@ -604,13 +603,6 @@
     "clayface-pbda93": {
       "booked": [],
       "seen": {
-        "elc:city-stars:2026-11-27:615:standard:clayface": "2026-11-27",
-        "elc:city-stars:2026-11-27:795:standard:clayface": "2026-11-27",
-        "elc:city-stars:2026-11-27:960:standard:clayface": "2026-11-27",
-        "elc:city-stars:2026-11-27:1095:standard:clayface": "2026-11-27",
-        "elc:city-stars:2026-11-27:1215:standard:clayface": "2026-11-27",
-        "elc:city-stars:2026-11-27:1335:standard:clayface": "2026-11-27",
-        "elc:city-stars:2026-11-27:1455:standard:clayface": "2026-11-27",
         "elc:city-stars:2026-11-28:615:standard:clayface": "2026-11-28",
         "elc:city-stars:2026-11-28:795:standard:clayface": "2026-11-28",
         "elc:city-stars:2026-11-28:960:standard:clayface": "2026-11-28",
@@ -618,11 +610,6 @@
         "elc:city-stars:2026-11-28:1215:standard:clayface": "2026-11-28",
         "elc:city-stars:2026-11-28:1335:standard:clayface": "2026-11-28",
         "elc:city-stars:2026-11-28:1455:standard:clayface": "2026-11-28",
-        "elc:sun-city:2026-11-27:615:standard:clayface": "2026-11-27",
-        "elc:sun-city:2026-11-27:780:standard:clayface": "2026-11-27",
-        "elc:sun-city:2026-11-27:945:standard:clayface": "2026-11-27",
-        "elc:sun-city:2026-11-27:1125:standard:clayface": "2026-11-27",
-        "elc:sun-city:2026-11-27:1305:standard:clayface": "2026-11-27",
         "elc:sun-city:2026-11-28:615:standard:clayface": "2026-11-28",
         "elc:sun-city:2026-11-28:780:standard:clayface": "2026-11-28",
         "elc:sun-city:2026-11-28:945:standard:clayface": "2026-11-28",
@@ -652,7 +639,6 @@
         "elc:sun-city:2026-11-30:945:standard:clayface": "2026-11-30",
         "elc:sun-city:2026-11-30:1125:standard:clayface": "2026-11-30",
         "elc:sun-city:2026-11-30:1305:standard:clayface": "2026-11-30",
-        "scene:cfc:2026-11-27:795:standard:clayface": "2026-11-27",
         "scene:cfc:2026-11-28:795:standard:clayface": "2026-11-28",
         "scene:cfc:2026-11-29:795:standard:clayface": "2026-11-29",
         "scene:cfc:2026-11-29:1140:standard:clayface": "2026-11-29",
@@ -673,9 +659,6 @@
         "elc:city-stars:2026-12-01:1215:standard:clayface": "2026-12-01",
         "elc:city-stars:2026-12-01:1335:standard:clayface": "2026-12-01",
         "elc:city-stars:2026-12-01:1455:standard:clayface": "2026-12-01",
-        "scene:district5:2026-11-27:795:standard-deluxe:clayface": "2026-11-27",
-        "scene:district5:2026-11-27:1140:standard-deluxe:clayface": "2026-11-27",
-        "scene:district5:2026-11-27:1470:standard-deluxe:clayface": "2026-11-27",
         "scene:district5:2026-11-28:795:standard-deluxe:clayface": "2026-11-28",
         "scene:district5:2026-11-28:1140:standard-deluxe:clayface": "2026-11-28",
         "scene:district5:2026-11-28:1470:standard-deluxe:clayface": "2026-11-28",
@@ -696,7 +679,6 @@
         "elc:sun-city:2026-12-01:945:standard:clayface": "2026-12-01",
         "elc:sun-city:2026-12-01:1125:standard:clayface": "2026-12-01",
         "elc:sun-city:2026-12-01:1305:standard:clayface": "2026-12-01",
-        "elc:sun-city:2026-11-27:1455:standard:clayface": "2026-11-27",
         "elc:sun-city:2026-11-30:1455:standard:clayface": "2026-11-30",
         "elc:sun-city:2026-12-02:615:standard:clayface": "2026-12-02",
         "elc:sun-city:2026-12-02:780:standard:clayface": "2026-12-02",
@@ -709,8 +691,7 @@
         "elc:city-stars:2026-12-02:1095:standard:clayface": "2026-12-02",
         "elc:city-stars:2026-12-02:1215:standard:clayface": "2026-12-02",
         "elc:city-stars:2026-12-02:1335:standard:clayface": "2026-12-02",
-        "elc:city-stars:2026-12-02:1455:standard:clayface": "2026-12-02",
-        "scene:cfc:2026-11-27:1470:standard:clayface": "2026-11-27"
+        "elc:city-stars:2026-12-02:1455:standard:clayface": "2026-12-02"
       },
       "sceneSeeded": [
         "cfc",
@@ -927,8 +908,6 @@
     "how-to-rob-a-bank-c7f7": {
       "booked": [],
       "seen": {
-        "elc:sun-city:2026-11-27:1125:standard:how-to-rob-a-bank": "2026-11-27",
-        "elc:sun-city:2026-11-27:1305:standard:how-to-rob-a-bank": "2026-11-27",
         "elc:sun-city:2026-11-28:1125:standard:how-to-rob-a-bank": "2026-11-28",
         "elc:sun-city:2026-11-28:1305:standard:how-to-rob-a-bank": "2026-11-28",
         "elc:sun-city:2026-11-29:1125:standard:how-to-rob-a-bank": "2026-11-29",
@@ -939,8 +918,6 @@
         "elc:sun-city:2026-12-01:1305:standard:how-to-rob-a-bank": "2026-12-01",
         "0047-279856": "2026-12-02",
         "0047-279857": "2026-12-02",
-        "0047-279826": "2026-11-27",
-        "0047-279827": "2026-11-27",
         "0047-279836": "2026-11-28",
         "0047-279837": "2026-11-28",
         "0047-279263": "2026-11-29",
@@ -964,23 +941,12 @@
     "ebenezer-me": {
       "booked": [],
       "seen": {
-        "elc:city-stars:2026-11-27:615:standard:ebenezer": "2026-11-27",
-        "elc:city-stars:2026-11-27:795:standard:ebenezer": "2026-11-27",
-        "elc:city-stars:2026-11-27:960:standard:ebenezer": "2026-11-27",
-        "elc:city-stars:2026-11-27:1140:standard:ebenezer": "2026-11-27",
-        "elc:city-stars:2026-11-27:1320:standard:ebenezer": "2026-11-27",
-        "elc:city-stars:2026-11-27:1470:standard:ebenezer": "2026-11-27",
         "elc:city-stars:2026-11-28:615:standard:ebenezer": "2026-11-28",
         "elc:city-stars:2026-11-28:795:standard:ebenezer": "2026-11-28",
         "elc:city-stars:2026-11-28:960:standard:ebenezer": "2026-11-28",
         "elc:city-stars:2026-11-28:1140:standard:ebenezer": "2026-11-28",
         "elc:city-stars:2026-11-28:1320:standard:ebenezer": "2026-11-28",
         "elc:city-stars:2026-11-28:1470:standard:ebenezer": "2026-11-28",
-        "elc:sun-city:2026-11-27:615:standard:ebenezer": "2026-11-27",
-        "elc:sun-city:2026-11-27:780:standard:ebenezer": "2026-11-27",
-        "elc:sun-city:2026-11-27:945:standard:ebenezer": "2026-11-27",
-        "elc:sun-city:2026-11-27:1125:standard:ebenezer": "2026-11-27",
-        "elc:sun-city:2026-11-27:1305:standard:ebenezer": "2026-11-27",
         "elc:sun-city:2026-11-28:615:standard:ebenezer": "2026-11-28",
         "elc:sun-city:2026-11-28:780:standard:ebenezer": "2026-11-28",
         "elc:sun-city:2026-11-28:945:standard:ebenezer": "2026-11-28",
@@ -1009,8 +975,6 @@
         "elc:sun-city:2026-12-01:1305:standard:ebenezer": "2026-12-01",
         "0047-279498": "2026-12-02",
         "0047-279501": "2026-12-02",
-        "0047-279473": "2026-11-27",
-        "0047-279476": "2026-11-27",
         "0047-279478": "2026-11-28",
         "0047-279481": "2026-11-28",
         "0047-279483": "2026-11-29",
@@ -1019,7 +983,6 @@
         "0047-279491": "2026-11-30",
         "0047-279493": "2026-12-01",
         "0047-279496": "2026-12-01",
-        "elc:sun-city:2026-11-27:1455:standard:ebenezer": "2026-11-27",
         "elc:sun-city:2026-11-30:1455:standard:ebenezer": "2026-11-30",
         "elc:sun-city:2026-12-02:615:standard:ebenezer": "2026-12-02",
         "elc:sun-city:2026-12-02:780:standard:ebenezer": "2026-12-02",
@@ -1605,7 +1568,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-27T21:50:12+00:00"
+    "lastRead": "2026-11-27T22:00:14+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
