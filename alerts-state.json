@@ -1447,10 +1447,11 @@
   "elc": {
     "baseline": true,
     "listing": {
-      "the-hunger-games-sunrise-on-the-reaping": {
-        "title": "The Hunger Games: Sunrise on the Reaping",
+      "hexed": {
+        "title": "Hexed",
         "theaters": [
-          "sun-city"
+          "sun-city",
+          "city-stars"
         ]
       },
       "the-cat-in-the-hat-arabic": {
@@ -1459,49 +1460,14 @@
           "sun-city"
         ]
       },
-      "hexed": {
-        "title": "Hexed",
-        "theaters": [
-          "sun-city",
-          "city-stars"
-        ]
-      },
-      "paper-tiger": {
-        "title": "Paper Tiger",
+      "the-hunger-games-sunrise-on-the-reaping": {
+        "title": "The Hunger Games: Sunrise on the Reaping",
         "theaters": [
           "sun-city"
         ]
       },
-      "focker-in-law": {
-        "title": "Focker In-Law",
-        "theaters": [
-          "sun-city",
-          "city-stars"
-        ]
-      },
-      "clayface": {
-        "title": "Clayface",
-        "theaters": [
-          "sun-city",
-          "city-stars"
-        ]
-      },
       "ebenezer": {
         "title": "Ebenezer",
-        "theaters": [
-          "sun-city",
-          "city-stars"
-        ]
-      },
-      "matloub-aaeleyan": {
-        "title": "Matloub Aaeleyan",
-        "theaters": [
-          "sun-city",
-          "city-stars"
-        ]
-      },
-      "wala-kan-ala-el-bal-arabic": {
-        "title": "Wala Kan Ala El-Bal",
         "theaters": [
           "sun-city",
           "city-stars"
@@ -1515,6 +1481,27 @@
           "city-stars"
         ]
       },
+      "focker-in-law": {
+        "title": "Focker In-Law",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
+      "crypto-arabic": {
+        "title": "Crypto",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
+      "clayface": {
+        "title": "Clayface",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
       "hadoota-arabic": {
         "title": "Hadoota",
         "theaters": [
@@ -1523,8 +1510,21 @@
           "city-stars"
         ]
       },
-      "crypto-arabic": {
-        "title": "Crypto",
+      "paper-tiger": {
+        "title": "Paper Tiger",
+        "theaters": [
+          "sun-city"
+        ]
+      },
+      "wala-kan-ala-el-bal-arabic": {
+        "title": "Wala Kan Ala El-Bal",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
+      "matloub-aaeleyan": {
+        "title": "Matloub Aaeleyan",
         "theaters": [
           "sun-city",
           "city-stars"
@@ -1563,18 +1563,18 @@
       }
     },
     "buttons": {
-      "sun-city|the-hunger-games-sunrise-on-the-reaping": false,
-      "sun-city|the-cat-in-the-hat-arabic": false,
       "sun-city|hexed": false,
-      "sun-city|paper-tiger": false,
-      "sun-city|focker-in-law": false,
-      "sun-city|clayface": false,
+      "sun-city|the-cat-in-the-hat-arabic": false,
+      "sun-city|the-hunger-games-sunrise-on-the-reaping": false,
       "sun-city|ebenezer": false,
-      "sun-city|matloub-aaeleyan": false,
-      "sun-city|wala-kan-ala-el-bal-arabic": false,
       "sun-city|laylat-bazet-khalis": true,
-      "sun-city|hadoota-arabic": true,
+      "sun-city|focker-in-law": false,
       "sun-city|crypto-arabic": false,
+      "sun-city|clayface": false,
+      "sun-city|hadoota-arabic": true,
+      "sun-city|paper-tiger": false,
+      "sun-city|wala-kan-ala-el-bal-arabic": false,
+      "sun-city|matloub-aaeleyan": false,
       "sun-city|resident-evil": false,
       "sun-city|whalefall": false,
       "sun-city-vip|you-can-see-everything": false,
@@ -1598,7 +1598,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-27T05:20:16+00:00"
+    "lastRead": "2026-11-27T05:30:17+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
