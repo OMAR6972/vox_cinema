@@ -1585,7 +1585,7 @@
       "sun-city|resident-evil": false,
       "sun-city|whalefall": false,
       "sun-city-vip|you-can-see-everything": false,
-      "sun-city-vip|laylat-bazet-khalis": false,
+      "sun-city-vip|laylat-bazet-khalis": true,
       "sun-city-vip|hadoota-arabic": true,
       "city-stars|laylat-bazet-khalis": false,
       "city-stars|hexed": false,
@@ -1605,7 +1605,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-27T21:00:18+00:00"
+    "lastRead": "2026-11-27T21:10:17+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
