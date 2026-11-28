@@ -691,7 +691,8 @@
         "elc:city-stars:2026-12-02:1095:standard:clayface": "2026-12-02",
         "elc:city-stars:2026-12-02:1215:standard:clayface": "2026-12-02",
         "elc:city-stars:2026-12-02:1335:standard:clayface": "2026-12-02",
-        "elc:city-stars:2026-12-02:1455:standard:clayface": "2026-12-02"
+        "elc:city-stars:2026-12-02:1455:standard:clayface": "2026-12-02",
+        "elc:sun-city:2026-11-28:1290:standard:clayface": "2026-11-28"
       },
       "sceneSeeded": [
         "cfc",
@@ -988,7 +989,8 @@
         "elc:sun-city:2026-12-02:780:standard:ebenezer": "2026-12-02",
         "elc:sun-city:2026-12-02:945:standard:ebenezer": "2026-12-02",
         "elc:sun-city:2026-12-02:1125:standard:ebenezer": "2026-12-02",
-        "elc:sun-city:2026-12-02:1305:standard:ebenezer": "2026-12-02"
+        "elc:sun-city:2026-12-02:1305:standard:ebenezer": "2026-12-02",
+        "elc:sun-city:2026-11-28:1290:standard:ebenezer": "2026-11-28"
       },
       "sceneSeeded": [
         "cfc",
@@ -1436,28 +1438,8 @@
           "city-stars"
         ]
       },
-      "paper-tiger": {
-        "title": "Paper Tiger",
-        "theaters": [
-          "sun-city"
-        ]
-      },
-      "focker-in-law": {
-        "title": "Focker In-Law",
-        "theaters": [
-          "sun-city",
-          "city-stars"
-        ]
-      },
-      "clayface": {
-        "title": "Clayface",
-        "theaters": [
-          "sun-city",
-          "city-stars"
-        ]
-      },
-      "ebenezer": {
-        "title": "Ebenezer",
+      "crypto-arabic": {
+        "title": "Crypto",
         "theaters": [
           "sun-city",
           "city-stars"
@@ -1470,18 +1452,16 @@
           "city-stars"
         ]
       },
-      "wala-kan-ala-el-bal-arabic": {
-        "title": "Wala Kan Ala El-Bal",
+      "paper-tiger": {
+        "title": "Paper Tiger",
         "theaters": [
-          "sun-city",
-          "city-stars"
+          "sun-city"
         ]
       },
-      "laylat-bazet-khalis": {
-        "title": "Laylat Bazet Khalis",
+      "clayface": {
+        "title": "Clayface",
         "theaters": [
           "sun-city",
-          "sun-city-vip",
           "city-stars"
         ]
       },
@@ -1493,10 +1473,32 @@
           "city-stars"
         ]
       },
-      "crypto-arabic": {
-        "title": "Crypto",
+      "wala-kan-ala-el-bal-arabic": {
+        "title": "Wala Kan Ala El-Bal",
         "theaters": [
           "sun-city",
+          "city-stars"
+        ]
+      },
+      "ebenezer": {
+        "title": "Ebenezer",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
+      "focker-in-law": {
+        "title": "Focker In-Law",
+        "theaters": [
+          "sun-city",
+          "city-stars"
+        ]
+      },
+      "laylat-bazet-khalis": {
+        "title": "Laylat Bazet Khalis",
+        "theaters": [
+          "sun-city",
+          "sun-city-vip",
           "city-stars"
         ]
       },
@@ -1536,15 +1538,15 @@
       "sun-city|the-hunger-games-sunrise-on-the-reaping": false,
       "sun-city|the-cat-in-the-hat-arabic": false,
       "sun-city|hexed": false,
-      "sun-city|paper-tiger": false,
-      "sun-city|focker-in-law": false,
-      "sun-city|clayface": false,
-      "sun-city|ebenezer": false,
-      "sun-city|matloub-aaeleyan": false,
-      "sun-city|wala-kan-ala-el-bal-arabic": false,
-      "sun-city|laylat-bazet-khalis": true,
-      "sun-city|hadoota-arabic": true,
       "sun-city|crypto-arabic": false,
+      "sun-city|matloub-aaeleyan": false,
+      "sun-city|paper-tiger": false,
+      "sun-city|clayface": false,
+      "sun-city|hadoota-arabic": true,
+      "sun-city|wala-kan-ala-el-bal-arabic": false,
+      "sun-city|ebenezer": false,
+      "sun-city|focker-in-law": false,
+      "sun-city|laylat-bazet-khalis": true,
       "sun-city|resident-evil": false,
       "sun-city|whalefall": false,
       "sun-city-vip|you-can-see-everything": false,
@@ -1568,7 +1570,7 @@
       "city-stars": false,
       "sun-city-vip": true
     },
-    "lastRead": "2026-11-28T10:40:19+00:00"
+    "lastRead": "2026-11-28T10:50:14+00:00"
   },
   "expSeen": {
     "City Centre Alexandria": [
